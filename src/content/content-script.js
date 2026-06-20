@@ -183,6 +183,59 @@
     });
   }
 
+  let hoverHideTimer = null;
+
+  function cancelHoverHide() {
+    if (hoverHideTimer) {
+      clearTimeout(hoverHideTimer);
+      hoverHideTimer = null;
+    }
+  }
+
+  function scheduleHoverHide() {
+    cancelHoverHide();
+    hoverHideTimer = setTimeout(() => {
+      extension.tooltip.hideTooltip();
+      hoverHideTimer = null;
+    }, 200);
+  }
+
+  function handleMouseOver(event) {
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const word = target.closest(`.${extension.constants.classes.word}`);
+    if (word) {
+      cancelHoverHide();
+      showTooltipForWord(word);
+      return;
+    }
+
+    if (extension.tooltip.isTooltipElement(target)) {
+      cancelHoverHide();
+    }
+  }
+
+  function handleMouseOut(event) {
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const related = event.relatedTarget;
+    const word = target.closest(`.${extension.constants.classes.word}`);
+    const tooltipEl = document.getElementById(extension.constants.classes.tooltip);
+
+    if (word || extension.tooltip.isTooltipElement(target)) {
+      if (related instanceof Element && (related.closest(`.${extension.constants.classes.word}`) || extension.tooltip.isTooltipElement(related))) {
+        return;
+      }
+      scheduleHoverHide();
+    }
+  }
+
   function handleDocumentClick(event) {
     const target = event.target;
     if (!(target instanceof Element)) {
@@ -191,6 +244,7 @@
 
     const word = target.closest(`.${extension.constants.classes.word}`);
     if (word) {
+      cancelHoverHide();
       showTooltipForWord(word);
       return;
     }
@@ -214,6 +268,7 @@
 
   function handleKeyDown(event) {
     if (event.key === "Escape") {
+      cancelHoverHide();
       extension.tooltip.hideTooltip();
     }
   }
@@ -276,6 +331,8 @@
       return;
     }
 
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
     document.addEventListener("click", handleDocumentClick, true);
     document.addEventListener("focusin", handleFocusIn, true);
     document.addEventListener("keydown", handleKeyDown, true);
