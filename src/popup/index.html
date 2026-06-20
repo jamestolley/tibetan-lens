@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tibetan Page Tools</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="hero">
+        <p class="eyebrow">Tibetan Page Tools</p>
+        <h1>Page controls</h1>
+        <p class="intro">
+          Segment Tibetan text on the current page, add readable spacing, and click tokens for
+          dictionary popups.
+        </p>
+      </header>
+
+      <section class="card">
+        <label class="toggle-row" for="extensionEnabled">
+          <span>Extension enabled</span>
+          <input id="extensionEnabled" type="checkbox" />
+        </label>
+
+        <label class="toggle-row" for="insertSpaces">
+          <span>Insert spaces between tokens</span>
+          <input id="insertSpaces" type="checkbox" />
+        </label>
+
+        <label class="toggle-row" for="showTooltips">
+          <span>Show click-to-open popups</span>
+          <input id="showTooltips" type="checkbox" />
+        </label>
+
+        <label class="field" for="targetLanguage">
+          <span>Translation language</span>
+          <select id="targetLanguage"></select>
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="stats-grid">
+          <article class="stat">
+            <strong id="processedNodes">0</strong>
+            <span>processed nodes</span>
+          </article>
+          <article class="stat">
+            <strong id="annotatedWords">0</strong>
+            <span>annotated words</span>
+          </article>
+        </div>
+
+        <p id="pageMessage" class="page-message">
+          Open a standard web page to inspect the current page scan.
+        </p>
+      </section>
+
+      <div class="actions">
+        <button id="refreshPage" class="primary" type="button">Refresh page</button>
+        <button id="openOptions" class="secondary" type="button">Dictionaries</button>
+      </div>
+    </main>
+
+    <script src="../shared/constants.js"></script>
+    <script src="../shared/defaults.js"></script>
+    <script src="../shared/storage.js"></script>
+    <script src="../core/mockDictionary.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

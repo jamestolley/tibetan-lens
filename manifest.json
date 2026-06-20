@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Tibetan Page Tools",
+  "version": "0.1.0",
+  "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_title": "Tibetan Page Tools",
+    "default_popup": "src/popup/index.html"
+  },
+  "options_page": "src/options/index.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/resources/SylComponents.json",
+        "data/dialect_packs/extension_demo/dictionary/words/common.tsv",
+        "data/dialect_packs/extension_demo/dictionary/words/buddhist.tsv",
+        "data/dialect_packs/extension_demo/dictionary/words_non_inflected/particles.tsv"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/shared/constants.js",
+        "src/shared/defaults.js",
+        "src/shared/storage.js",
+        "src/shared/tibetan.js",
+        "src/core/botokPackManifest.js",
+        "src/core/botokTokenizer.js",
+        "src/core/mockDictionary.js",
+        "src/content/replacement-engine.js",
+        "src/content/tooltip.js",
+        "src/content/content-script.js"
+      ],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

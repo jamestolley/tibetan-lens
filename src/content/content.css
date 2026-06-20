@@ -1,0 +1,96 @@
+:root {
+  --tibetan-extension-ink: #2c2117;
+  --tibetan-extension-saffron: #be861e;
+  --tibetan-extension-clay: #7a2f2a;
+  --tibetan-extension-paper: #fff7e8;
+  --tibetan-extension-shadow: rgba(44, 33, 23, 0.2);
+}
+
+.tibetan-extension-node {
+  display: inline;
+}
+
+.tibetan-extension-word {
+  cursor: pointer;
+  border-bottom: 1px dotted var(--tibetan-extension-saffron);
+  border-radius: 0.16em;
+  padding: 0 0.05em;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.tibetan-extension-word.is-matched {
+  background: rgba(190, 134, 30, 0.14);
+}
+
+.tibetan-extension-word.is-unmatched {
+  border-bottom-style: dashed;
+  opacity: 0.84;
+}
+
+.tibetan-extension-word:hover,
+.tibetan-extension-word:focus-visible {
+  outline: none;
+  background: rgba(122, 47, 42, 0.14);
+  border-bottom-color: var(--tibetan-extension-clay);
+}
+
+.tibetan-extension-tooltip {
+  position: absolute;
+  z-index: 2147483646;
+  display: none;
+  max-width: min(26rem, calc(100vw - 2rem));
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(122, 47, 42, 0.18);
+  background: linear-gradient(180deg, #fff9ef 0%, #f5ead0 100%);
+  color: var(--tibetan-extension-ink);
+  box-shadow: 0 16px 40px var(--tibetan-extension-shadow);
+  font: 14px/1.45 Georgia, "Palatino Linotype", serif;
+}
+
+.tibetan-extension-tooltip.is-visible {
+  display: block;
+}
+
+.tibetan-extension-tooltip-heading {
+  margin-bottom: 0.2rem;
+  color: var(--tibetan-extension-clay);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.tibetan-extension-tooltip-subheading {
+  margin-bottom: 0.75rem;
+  color: rgba(44, 33, 23, 0.74);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tibetan-extension-tooltip-entry + .tibetan-extension-tooltip-entry {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(122, 47, 42, 0.12);
+}
+
+.tibetan-extension-tooltip-label {
+  margin-bottom: 0.2rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tibetan-extension-tooltip-gloss {
+  font-size: 0.96rem;
+}
+
+.tibetan-extension-tooltip-notes {
+  margin-top: 0.25rem;
+  color: rgba(44, 33, 23, 0.72);
+  font-size: 0.86rem;
+}
+
+.tibetan-extension-tooltip-empty {
+  color: rgba(44, 33, 23, 0.76);
+}

@@ -1,2 +1,2 @@
 # tibetan-lens
-A browser extention for learners of the Tibetan language.
+A browser extension for learners of the Tibetan language.
