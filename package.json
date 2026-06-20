@@ -1,6 +1,6 @@
 {
   "name": "tibetan-lens",
-  "version": "0.1.0",
+  "version": "0.50.0",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "scripts": {
