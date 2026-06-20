@@ -29,7 +29,7 @@
     if (token.pos) {
       element.dataset.pos = token.pos;
     }
-    element.textContent = token.text;
+    element.textContent = token.surfaceText || token.text;
     return element;
   }
 
