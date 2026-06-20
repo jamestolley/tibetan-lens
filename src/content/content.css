@@ -19,13 +19,28 @@
 }
 
 .tibetan-extension-word.is-matched {
-  background: rgba(190, 134, 30, 0.14);
+  background: rgba(190, 134, 30, 0.08);
 }
 
 .tibetan-extension-word.is-unmatched {
   border-bottom-style: dashed;
   opacity: 0.84;
 }
+
+/* POS color-coding */
+.tibetan-extension-word.pos-noun { color: #1a5fb4; border-bottom-color: #1a5fb4; }
+.tibetan-extension-word.pos-propn { color: #1c3a6e; border-bottom-color: #1c3a6e; }
+.tibetan-extension-word.pos-verb { color: #b5360a; border-bottom-color: #b5360a; }
+.tibetan-extension-word.pos-adj { color: #1f7a3a; border-bottom-color: #1f7a3a; }
+.tibetan-extension-word.pos-adv { color: #6e3ab5; border-bottom-color: #6e3ab5; }
+.tibetan-extension-word.pos-part { color: #6b6b6b; border-bottom-color: #9e9e9e; }
+.tibetan-extension-word.pos-det { color: #6b6b6b; border-bottom-color: #9e9e9e; }
+.tibetan-extension-word.pos-adp { color: #6b6b6b; border-bottom-color: #9e9e9e; }
+.tibetan-extension-word.pos-conj { color: #6b6b6b; border-bottom-color: #9e9e9e; }
+.tibetan-extension-word.pos-pron { color: #4a6fa5; border-bottom-color: #4a6fa5; }
+.tibetan-extension-word.pos-num { color: #8b5e3c; border-bottom-color: #8b5e3c; }
+.tibetan-extension-word.pos-intj { color: #d4530a; border-bottom-color: #d4530a; }
+.tibetan-extension-word.pos-unknown { color: #5c4a32; border-bottom-color: #be861e; }
 
 .tibetan-extension-word:hover,
 .tibetan-extension-word:focus-visible {

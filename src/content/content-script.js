@@ -16,14 +16,19 @@
 
   function createWordElement(token) {
     const element = document.createElement("span");
+    const posClass = token.pos ? `pos-${token.pos.toLowerCase()}` : "pos-unknown";
     element.className = [
       extension.constants.classes.word,
-      token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched
+      token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched,
+      posClass
     ].join(" ");
     element.tabIndex = 0;
     element.setAttribute("role", "button");
     element.dataset.term = token.text;
     element.dataset.lookupKey = token.lookupKey || token.text;
+    if (token.pos) {
+      element.dataset.pos = token.pos;
+    }
     element.textContent = token.text;
     return element;
   }
