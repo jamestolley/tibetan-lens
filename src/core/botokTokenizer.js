@@ -109,19 +109,27 @@
   }
 
   async function fetchText(path) {
-    const response = await fetch(chrome.runtime.getURL(path));
+    const url = chrome.runtime.getURL(path);
+    console.log('[TibetanLens:tokenizer] fetching:', path, '->', url);
+    const response = await fetch(url);
 
     if (!response.ok) {
+      console.error('[TibetanLens:tokenizer] FAILED to load:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
-    return response.text();
+    const text = await response.text();
+    console.log('[TibetanLens:tokenizer] loaded:', path, '(' + text.length + ' chars)');
+    return text;
   }
 
   async function fetchJson(path) {
-    const response = await fetch(chrome.runtime.getURL(path));
+    const url = chrome.runtime.getURL(path);
+    console.log('[TibetanLens:tokenizer] fetching JSON:', path, '->', url);
+    const response = await fetch(url);
 
     if (!response.ok) {
+      console.error('[TibetanLens:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
@@ -129,8 +137,10 @@
   }
 
   async function loadFileEntries(fileDescriptor, component, category) {
+    console.log('[TibetanLens:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
     const text = await fetchText(fileDescriptor.path);
     const rows = cleanDataLines(text);
+    console.log('[TibetanLens:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
 
     return rows
       .map((line) => (category === "remove" ? parseRemoveRow(line) : parseWordRow(line)))

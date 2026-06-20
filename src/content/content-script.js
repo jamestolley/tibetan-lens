@@ -76,39 +76,57 @@
   }
 
   function scanDocument() {
+    console.log('[TibetanLens] scanDocument starting...');
     extension.replacementEngine.restoreProcessedNodes(document);
     extension.tooltip.hideTooltip();
     resetStats();
 
     if (!state.settings || !state.settings.extensionEnabled) {
+      console.warn('[TibetanLens] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
       return state.stats;
     }
 
     const root = document.body || document.documentElement;
     const nodes = extension.replacementEngine.collectTextNodes(root);
+    console.log('[TibetanLens] found', nodes.length, 'text nodes to process');
 
     nodes.forEach((textNode) => {
       state.stats.processedNodes += 1;
       state.stats.annotatedWords += renderTextNode(textNode);
     });
 
+    console.log('[TibetanLens] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
     state.ignoreMutationsUntil = Date.now() + 250;
     return state.stats;
   }
 
   async function refreshAnnotations() {
     if (state.isRendering) {
+      console.log('[TibetanLens] refreshAnnotations skipped — already rendering');
       return state.stats;
     }
 
     state.isRendering = true;
+    console.log('[TibetanLens] refreshAnnotations starting...');
 
     try {
       state.settings = await extension.storage.getSettings();
+      console.log('[TibetanLens] settings loaded:', JSON.stringify(state.settings, null, 2));
+
       if (typeof extension.tokenizer.ensureReady === "function") {
+        console.log('[TibetanLens] loading tokenizer pack...');
         await extension.tokenizer.ensureReady(state.settings);
+        console.log('[TibetanLens] tokenizer pack loaded successfully');
+      } else {
+        console.warn('[TibetanLens] extension.tokenizer.ensureReady is not a function!');
       }
-      return scanDocument();
+
+      const stats = scanDocument();
+      console.log('[TibetanLens] scanDocument complete:', stats);
+      return stats;
+    } catch (err) {
+      console.error('[TibetanLens] refreshAnnotations ERROR:', err);
+      throw err;
     } finally {
       state.isRendering = false;
     }
@@ -294,14 +312,28 @@
   }
 
   async function bootstrap() {
+    console.log('[TibetanLens] bootstrap starting...');
+    console.log('[TibetanLens] extension object keys:', Object.keys(extension));
+    console.log('[TibetanLens] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
+    console.log('[TibetanLens] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
+    console.log('[TibetanLens] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
+    console.log('[TibetanLens] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
+    console.log('[TibetanLens] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
+    console.log('[TibetanLens] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
+    console.log('[TibetanLens] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
+    console.log('[TibetanLens] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
+    console.log('[TibetanLens] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
     bindEvents();
     observeDocument();
     await refreshAnnotations();
+    console.log('[TibetanLens] bootstrap complete');
   }
 
   if (document.readyState === "loading") {
+    console.log('[TibetanLens] waiting for DOMContentLoaded...');
     document.addEventListener("DOMContentLoaded", bootstrap, { once: true });
   } else {
+    console.log('[TibetanLens] document already ready, bootstrapping now');
     bootstrap();
   }
 })();
