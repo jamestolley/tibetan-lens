@@ -2,153 +2,39 @@
   const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
 
   const catalog = {
-    "buddhist-terms": {
-      id: "buddhist-terms",
-      label: "Buddhist Terms",
-      description: "Seed entries for classical and Buddhist vocabulary."
+    "botok-core": {
+      id: "botok-core",
+      label: "Botok Core Wordlist",
+      description: "Core Tibetan word segmentation dictionary from botok-data (~31K entries)."
     },
-    "common-words": {
-      id: "common-words",
-      label: "Common Words",
-      description: "Everyday Tibetan words and phrases for the MVP."
+    "hopkins": {
+      id: "hopkins",
+      label: "Hopkins Tibetan-English",
+      description: "Jeffrey Hopkins' Tibetan-English dictionary (~18K entries)."
+    },
+    "jim-valby": {
+      id: "jim-valby",
+      label: "Jim Valby Tibetan-English",
+      description: "Jim Valby's Tibetan-English dictionary (~64K entries)."
+    },
+    "ives-waldo": {
+      id: "ives-waldo",
+      label: "Ives Waldo Tibetan-English",
+      description: "Ives Waldo's Tibetan-English dictionary (~121K entries)."
+    },
+    "tsepak-rigdzin": {
+      id: "tsepak-rigdzin",
+      label: "Tsepak Rigdzin",
+      description: "Tsepak Rigdzin's Tibetan-English dictionary (~2.7K entries)."
+    },
+    "84000": {
+      id: "84000",
+      label: "84000 Dictionary",
+      description: "Glossary from 84000: Translating the Words of the Buddha (~25K entries)."
     }
   };
 
-  const entries = {
-    "གལ་ཆེན": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["important", "significant"],
-          es: ["importante", "significativo"],
-          fr: ["important", "significatif"]
-        },
-        notes: "Often used in modern prose."
-      }
-    ],
-    "དགའ་པོ": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["happy", "pleased"],
-          es: ["feliz", "contento"],
-          fr: ["heureux", "content"]
-        }
-      }
-    ],
-    "དགེ་རྒན": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["teacher"],
-          es: ["maestro", "profesor"],
-          fr: ["professeur", "enseignant"]
-        }
-      }
-    ],
-    "དགེ་འདུན": [
-      {
-        dictionaryId: "buddhist-terms",
-        glosses: {
-          en: ["sangha", "monastic community"],
-          es: ["sangha", "comunidad monastica"],
-          fr: ["sangha", "communaute monastique"]
-        }
-      }
-    ],
-    "བོད": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["Tibet"],
-          es: ["Tibet"],
-          fr: ["Tibet"]
-        },
-        notes: "Place name."
-      }
-    ],
-    "བོད་སྐད": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["Tibetan language"],
-          es: ["idioma tibetano"],
-          fr: ["langue tibetaine"]
-        }
-      }
-    ],
-    "བོད་སྐད་ཡིག": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["Tibetan language and script"],
-          es: ["lengua y escritura tibetanas"],
-          fr: ["langue et ecriture tibetaines"]
-        }
-      }
-    ],
-    "མི": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["person", "people"],
-          es: ["persona", "gente"],
-          fr: ["personne", "gens"]
-        }
-      }
-    ],
-    "མེ": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["fire"],
-          es: ["fuego"],
-          fr: ["feu"]
-        }
-      }
-    ],
-    "ཞི་བདེ": [
-      {
-        dictionaryId: "buddhist-terms",
-        glosses: {
-          en: ["peace"],
-          es: ["paz"],
-          fr: ["paix"]
-        }
-      }
-    ],
-    "ཡིག": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["writing", "script", "letter"],
-          es: ["escritura", "guion", "letra"],
-          fr: ["ecriture", "script", "lettre"]
-        }
-      }
-    ],
-    "ཆུ": [
-      {
-        dictionaryId: "common-words",
-        glosses: {
-          en: ["water"],
-          es: ["agua"],
-          fr: ["eau"]
-        }
-      }
-    ],
-    "ཆོས": [
-      {
-        dictionaryId: "buddhist-terms",
-        glosses: {
-          en: ["dharma", "religion"],
-          es: ["dharma", "religion"],
-          fr: ["dharma", "religion"]
-        },
-        notes: "Meaning depends on context."
-      }
-    ]
-  };
+  const entries = {};
 
   function getEnabledDictionaryIds(settings) {
     if (settings && Array.isArray(settings.enabledDictionaries) && settings.enabledDictionaries.length) {

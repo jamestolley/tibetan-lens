@@ -13,9 +13,17 @@
     {
       "resources": [
         "data/resources/SylComponents.json",
-        "data/dialect_packs/extension_demo/dictionary/words/common.tsv",
-        "data/dialect_packs/extension_demo/dictionary/words/buddhist.tsv",
-        "data/dialect_packs/extension_demo/dictionary/words_non_inflected/particles.tsv"
+        "data/dialect_packs/botok_general/dictionary/words/tsikchen.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/uncompound_lexicon.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/ancient.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/exceptions.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/jim-valby.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/ives-waldo.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/tsepak-rigdzin.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/84000.tsv",
+        "data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],
       "matches": ["<all_urls>"]
     }
