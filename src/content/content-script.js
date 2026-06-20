@@ -115,6 +115,10 @@
     console.log('[TibetanLens] refreshAnnotations starting...');
 
     try {
+      chrome.runtime.sendMessage({ type: "set-icon-loading" });
+    } catch (_) { /* may fail if no background script yet */ }
+
+    try {
       state.settings = await extension.storage.getSettings();
       console.log('[TibetanLens] settings loaded:', JSON.stringify(state.settings, null, 2));
 
@@ -134,6 +138,9 @@
       throw err;
     } finally {
       state.isRendering = false;
+      try {
+        chrome.runtime.sendMessage({ type: "set-icon-ready" });
+      } catch (_) { /* may fail if no background script yet */ }
     }
   }
 

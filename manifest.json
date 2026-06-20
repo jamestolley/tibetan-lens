@@ -4,9 +4,22 @@
   "version": "0.50",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "permissions": ["storage", "activeTab"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
     "default_title": "Tibetan Lens",
-    "default_popup": "src/popup/index.html"
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js"
   },
   "options_page": "src/options/index.html",
   "web_accessible_resources": [
