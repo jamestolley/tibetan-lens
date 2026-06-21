@@ -1,0 +1,12 @@
+{
+  "name": "tibetan-lens",
+  "version": "0.50.0",
+  "private": true,
+  "description": "A browser extension for learners of the Tibetan language.",
+  "scripts": {
+    "build:dictionaries": "node scripts/build-dictionaries.js"
+  },
+  "devDependencies": {
+    "jsewts": "^1.0.4"
+  }
+}

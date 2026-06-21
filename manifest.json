@@ -1,21 +1,42 @@
 {
   "manifest_version": 3,
-  "name": "Tibetan Page Tools",
-  "version": "0.1.0",
+  "name": "Tibetan Lens",
+  "version": "0.50",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "permissions": ["storage", "activeTab"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
-    "default_title": "Tibetan Page Tools",
-    "default_popup": "src/popup/index.html"
+    "default_title": "Tibetan Lens",
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js"
   },
   "options_page": "src/options/index.html",
   "web_accessible_resources": [
     {
       "resources": [
         "data/resources/SylComponents.json",
-        "data/dialect_packs/extension_demo/dictionary/words/common.tsv",
-        "data/dialect_packs/extension_demo/dictionary/words/buddhist.tsv",
-        "data/dialect_packs/extension_demo/dictionary/words_non_inflected/particles.tsv"
+        "data/dialect_packs/botok_general/dictionary/words/tsikchen.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/uncompound_lexicon.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/ancient.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/exceptions.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/jim-valby.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/ives-waldo.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/tsepak-rigdzin.tsv",
+        "data/dialect_packs/botok_general/dictionary/words/84000.tsv",
+        "data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],
       "matches": ["<all_urls>"]
     }

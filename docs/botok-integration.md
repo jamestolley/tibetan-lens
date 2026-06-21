@@ -10,9 +10,12 @@ This file is the handoff contract between the browser-extension repo and the sep
 
 ## What is integrated now
 
-- The extension now ships a small Botok-style demo dialect pack under `data/dialect_packs/extension_demo/`.
-- The content script loads that pack at runtime and uses a browser-safe trie tokenizer in [src/core/botokTokenizer.js](../src/core/botokTokenizer.js).
-- Translation popups still keep the existing mock dictionary overlay, and they also fall back to the demo pack's `sense` column when no richer entry exists.
+- The extension ships a full dictionary pack under `data/dialect_packs/botok_general/` containing:
+  - **Tokenization wordlists** (~31K entries) from [botok-data](https://github.com/Esukhia/botok-data) for word segmentation.
+  - **Definition dictionaries** (~231K entries) converted from [Christian Steinert's collection](https://github.com/christiansteinert/tibetan-dictionary): Hopkins, Jim Valby, Ives Waldo, Tsepak Rigdzin, and 84000.
+- The content script loads these at runtime via a browser-safe trie tokenizer in [src/core/botokTokenizer.js](../src/core/botokTokenizer.js).
+- Tooltip lookups merge results from the mock dictionary catalog and the pack's `sense` column.
+- Dictionary files are rebuilt from source using `npm run build:dictionaries` (requires cloning botok-data and tibetan-dictionary repos locally).
 
 ## Proposed tokenizer adapter shape
 
@@ -39,7 +42,7 @@ Output:
 1. Keep the current content script and tooltip behavior stable.
 2. Treat [src/core/botokTokenizer.js](../src/core/botokTokenizer.js) as a browser runtime snapshot of the separate repo's tokenizer logic.
 3. Preserve output compatibility with the structure above.
-4. Replace the demo pack with a generated artifact or synced pack once the separate repo's browser export is ready.
+4. The demo pack has been replaced with the full botok_general pack containing real dictionaries.
 5. Add fixtures that compare the separate repo's output against the extension adapter on representative Tibetan passages.
 
 ## DOM replacement note
