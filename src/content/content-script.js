@@ -16,15 +16,20 @@
 
   function createWordElement(token) {
     const element = document.createElement("span");
+    const posClass = token.pos ? `pos-${token.pos.toLowerCase()}` : "pos-unknown";
     element.className = [
       extension.constants.classes.word,
-      token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched
+      token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched,
+      posClass
     ].join(" ");
     element.tabIndex = 0;
     element.setAttribute("role", "button");
     element.dataset.term = token.text;
     element.dataset.lookupKey = token.lookupKey || token.text;
-    element.textContent = token.text;
+    if (token.pos) {
+      element.dataset.pos = token.pos;
+    }
+    element.textContent = token.surfaceText || token.text;
     return element;
   }
 
@@ -76,41 +81,66 @@
   }
 
   function scanDocument() {
+    console.log('[TibetanLens] scanDocument starting...');
     extension.replacementEngine.restoreProcessedNodes(document);
     extension.tooltip.hideTooltip();
     resetStats();
 
     if (!state.settings || !state.settings.extensionEnabled) {
+      console.warn('[TibetanLens] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
       return state.stats;
     }
 
     const root = document.body || document.documentElement;
     const nodes = extension.replacementEngine.collectTextNodes(root);
+    console.log('[TibetanLens] found', nodes.length, 'text nodes to process');
 
     nodes.forEach((textNode) => {
       state.stats.processedNodes += 1;
       state.stats.annotatedWords += renderTextNode(textNode);
     });
 
+    console.log('[TibetanLens] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
     state.ignoreMutationsUntil = Date.now() + 250;
     return state.stats;
   }
 
   async function refreshAnnotations() {
     if (state.isRendering) {
+      console.log('[TibetanLens] refreshAnnotations skipped — already rendering');
       return state.stats;
     }
 
     state.isRendering = true;
+    console.log('[TibetanLens] refreshAnnotations starting...');
+
+    try {
+      chrome.runtime.sendMessage({ type: "set-icon-loading" });
+    } catch (_) { /* may fail if no background script yet */ }
 
     try {
       state.settings = await extension.storage.getSettings();
+      console.log('[TibetanLens] settings loaded:', JSON.stringify(state.settings, null, 2));
+
       if (typeof extension.tokenizer.ensureReady === "function") {
+        console.log('[TibetanLens] loading tokenizer pack...');
         await extension.tokenizer.ensureReady(state.settings);
+        console.log('[TibetanLens] tokenizer pack loaded successfully');
+      } else {
+        console.warn('[TibetanLens] extension.tokenizer.ensureReady is not a function!');
       }
-      return scanDocument();
+
+      const stats = scanDocument();
+      console.log('[TibetanLens] scanDocument complete:', stats);
+      return stats;
+    } catch (err) {
+      console.error('[TibetanLens] refreshAnnotations ERROR:', err);
+      throw err;
     } finally {
       state.isRendering = false;
+      try {
+        chrome.runtime.sendMessage({ type: "set-icon-ready" });
+      } catch (_) { /* may fail if no background script yet */ }
     }
   }
 
@@ -160,6 +190,59 @@
     });
   }
 
+  let hoverHideTimer = null;
+
+  function cancelHoverHide() {
+    if (hoverHideTimer) {
+      clearTimeout(hoverHideTimer);
+      hoverHideTimer = null;
+    }
+  }
+
+  function scheduleHoverHide() {
+    cancelHoverHide();
+    hoverHideTimer = setTimeout(() => {
+      extension.tooltip.hideTooltip();
+      hoverHideTimer = null;
+    }, 200);
+  }
+
+  function handleMouseOver(event) {
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const word = target.closest(`.${extension.constants.classes.word}`);
+    if (word) {
+      cancelHoverHide();
+      showTooltipForWord(word);
+      return;
+    }
+
+    if (extension.tooltip.isTooltipElement(target)) {
+      cancelHoverHide();
+    }
+  }
+
+  function handleMouseOut(event) {
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const related = event.relatedTarget;
+    const word = target.closest(`.${extension.constants.classes.word}`);
+    const tooltipEl = document.getElementById(extension.constants.classes.tooltip);
+
+    if (word || extension.tooltip.isTooltipElement(target)) {
+      if (related instanceof Element && (related.closest(`.${extension.constants.classes.word}`) || extension.tooltip.isTooltipElement(related))) {
+        return;
+      }
+      scheduleHoverHide();
+    }
+  }
+
   function handleDocumentClick(event) {
     const target = event.target;
     if (!(target instanceof Element)) {
@@ -168,6 +251,7 @@
 
     const word = target.closest(`.${extension.constants.classes.word}`);
     if (word) {
+      cancelHoverHide();
       showTooltipForWord(word);
       return;
     }
@@ -191,6 +275,7 @@
 
   function handleKeyDown(event) {
     if (event.key === "Escape") {
+      cancelHoverHide();
       extension.tooltip.hideTooltip();
     }
   }
@@ -253,6 +338,8 @@
       return;
     }
 
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
     document.addEventListener("click", handleDocumentClick, true);
     document.addEventListener("focusin", handleFocusIn, true);
     document.addEventListener("keydown", handleKeyDown, true);
@@ -294,14 +381,28 @@
   }
 
   async function bootstrap() {
+    console.log('[TibetanLens] bootstrap starting...');
+    console.log('[TibetanLens] extension object keys:', Object.keys(extension));
+    console.log('[TibetanLens] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
+    console.log('[TibetanLens] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
+    console.log('[TibetanLens] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
+    console.log('[TibetanLens] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
+    console.log('[TibetanLens] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
+    console.log('[TibetanLens] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
+    console.log('[TibetanLens] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
+    console.log('[TibetanLens] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
+    console.log('[TibetanLens] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
     bindEvents();
     observeDocument();
     await refreshAnnotations();
+    console.log('[TibetanLens] bootstrap complete');
   }
 
   if (document.readyState === "loading") {
+    console.log('[TibetanLens] waiting for DOMContentLoaded...');
     document.addEventListener("DOMContentLoaded", bootstrap, { once: true });
   } else {
+    console.log('[TibetanLens] document already ready, bootstrapping now');
     bootstrap();
   }
 })();

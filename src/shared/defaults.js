@@ -7,8 +7,8 @@
       insertSpaces: true,
       showTooltips: true,
       targetLanguage: "en",
-      enabledDictionaries: ["common-words", "buddhist-terms"],
-      tokenizerMode: "botok-demo-pack"
+      enabledDictionaries: ["botok-core", "hopkins", "jim-valby", "ives-waldo", "tsepak-rigdzin", "84000"],
+      tokenizerMode: "botok-general"
     }
   };
 })();
