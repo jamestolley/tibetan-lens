@@ -13,18 +13,18 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "data/resources/SylComponents.json",
-        "data/dialect_packs/botok_general/dictionary/words/tsikchen.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/uncompound_lexicon.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/ancient.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/exceptions.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/jim-valby.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/ives-waldo.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/tsepak-rigdzin.tsv",
-        "data/dialect_packs/botok_general/dictionary/words/84000.tsv",
-        "data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
+        "public/data/resources/SylComponents.json",
+        "public/data/dialect_packs/botok_general/dictionary/words/tsikchen.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/uncompound_lexicon.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/ancient.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/exceptions.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/jim-valby.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/ives-waldo.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/tsepak-rigdzin.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/84000.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],
       "matches": ["<all_urls>"]
     }

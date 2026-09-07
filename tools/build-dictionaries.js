@@ -17,7 +17,7 @@ const jsewts = require("jsewts");
 
 const BOTOK_DATA_DIR = process.argv[2] || "/tmp/botok-data";
 const STEINERT_DIR = process.argv[3] || "/tmp/tibetan-dictionary/_input/dictionaries/public";
-const OUTPUT_DIR = path.join(__dirname, "..", "data", "dialect_packs", "botok_general", "dictionary");
+const OUTPUT_DIR = path.join(__dirname, "..", "public", "data", "dialect_packs", "botok_general", "dictionary");
 
 const STEINERT_SOURCES = [
   { file: "01-Hopkins2015", id: "hopkins", label: "Hopkins Tibetan-English Dictionary" },
