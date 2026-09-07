@@ -116,3 +116,40 @@
   color: rgba(190, 134, 30, 0.92);
   font-style: italic;
 }
+
+.tibetan-lens-loading {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147483647;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 251, 245, 0.94);
+  border: 1px solid rgba(122, 47, 42, 0.16);
+  box-shadow: 0 8px 24px rgba(44, 33, 23, 0.14);
+  color: var(--tibetan-extension-ink);
+  font: 13px/1.4 Georgia, "Palatino Linotype", serif;
+  pointer-events: none;
+}
+
+.tibetan-lens-loading.is-visible {
+  display: flex;
+}
+
+.tibetan-lens-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(190, 134, 30, 0.3);
+  border-top-color: #bf8520;
+  border-radius: 50%;
+  animation: tibetan-lens-spin 0.9s linear infinite;
+}
+
+@keyframes tibetan-lens-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

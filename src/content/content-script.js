@@ -8,6 +8,7 @@
     observer: null,
     refreshTimer: null,
     settings: null,
+    spinner: null,
     stats: {
       processedNodes: 0,
       annotatedWords: 0
@@ -105,6 +106,35 @@
     return state.stats;
   }
 
+  function ensureSpinner() {
+    if (state.spinner) {
+      return state.spinner;
+    }
+
+    const node = document.createElement("div");
+    node.id = "tibetan-lens-loading";
+    node.className = "tibetan-lens-loading";
+    node.setAttribute("aria-live", "polite");
+    node.setAttribute("aria-label", "Tibetan Lens is loading");
+    node.innerHTML = '<div class="tibetan-lens-spinner" role="status" aria-hidden="true"></div><span class="tibetan-lens-loading-text">Loading…</span>';
+    (document.body || document.documentElement).appendChild(node);
+    state.spinner = node;
+    return node;
+  }
+
+  function showSpinner(message) {
+    const node = ensureSpinner();
+    const text = node.querySelector(".tibetan-lens-loading-text");
+    if (text) text.textContent = message || "Loading…";
+    node.classList.add("is-visible");
+  }
+
+  function hideSpinner() {
+    if (state.spinner) {
+      state.spinner.classList.remove("is-visible");
+    }
+  }
+
   async function refreshAnnotations() {
     if (state.isRendering) {
       console.log('[TibetanLens] refreshAnnotations skipped — already rendering');
@@ -112,6 +142,7 @@
     }
 
     state.isRendering = true;
+    showSpinner("Loading dictionaries…");
     console.log('[TibetanLens] refreshAnnotations starting...');
 
     try {
@@ -133,6 +164,7 @@
       console.error('[TibetanLens] refreshAnnotations ERROR:', err);
       throw err;
     } finally {
+      hideSpinner();
       state.isRendering = false;
     }
   }
