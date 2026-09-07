@@ -12,7 +12,7 @@
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
-    ui.targetLanguage = document.getElementById("targetLanguage");
+    // ui.targetLanguage = document.getElementById("targetLanguage");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
   }

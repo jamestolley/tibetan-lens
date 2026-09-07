@@ -14,8 +14,10 @@
       refreshAnnotations: "refresh-annotations",
       getAnnotationStats: "get-annotation-stats"
     },
-    supportedLanguages: [
-      { code: "en", label: "English" },
+    
+  };
+})();
+ish" },
       { code: "es", label: "Spanish" },
       { code: "fr", label: "French" }
     ]

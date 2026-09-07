@@ -73,7 +73,7 @@
 
     lookup(term, settings) {
       const headword = extension.tibetan.normalizeLookupKey(term);
-      const language = settings?.targetLanguage || extension.defaults.settings.targetLanguage;
+      const language = 'en';
       const enabled = new Set(getEnabledDictionaryIds(settings));
       const matches = entries[headword] || [];
 
