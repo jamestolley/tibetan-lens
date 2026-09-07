@@ -6,10 +6,10 @@
   "scripts": {
     "test": "node tools/test.js",
     "build:dictionaries": "node tools/build-dictionaries.js",
-    "dev": "extension dev --browser=chrome",
-    "build": "extension build --browser=chrome,edge,firefox --zip",
-    "start": "extension start",
-    "preview": "extension preview",
+    "dev": "extension dev --browser=chrome --no-telemetry",
+    "build": "extension build --browser=chrome,edge,firefox --zip --no-telemetry",
+    "start": "extension start --no-telemetry",
+    "preview": "extension preview --no-telemetry",
     "publish:init": "publish-extension init",
     "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.0.zip --edge-zip dist/edge/tibetan-lens-0.50.0.zip --firefox-zip dist/firefox/tibetan-lens-0.50.0.zip"
   },
