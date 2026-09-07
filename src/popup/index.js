@@ -2,6 +2,7 @@
   const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
 
   const ui = {};
+  const TEST_PAGE_URL = "file:///C:/Users/james/sites/tibetan/tibetan-lens/demo/sample.html";
 
   function getControls() {
     ui.extensionEnabled = document.getElementById("extensionEnabled");
@@ -12,6 +13,7 @@
     ui.annotatedWords = document.getElementById("annotatedWords");
     ui.pageMessage = document.getElementById("pageMessage");
     ui.refreshPage = document.getElementById("refreshPage");
+    ui.openTestPage = document.getElementById("openTestPage");
     ui.openOptions = document.getElementById("openOptions");
   }
 
@@ -86,6 +88,16 @@
 
     ui.refreshPage.addEventListener("click", async () => {
       updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));
+    });
+
+    ui.openTestPage.addEventListener("click", async () => {
+      const allowed = await new Promise((resolve) => chrome.extension.isAllowedFileSchemeAccess(resolve));
+      if (!allowed) {
+        ui.pageMessage.textContent =
+          "File URL access is disabled. Enable 'Allow access to file URLs' for Tibetan Lens in chrome://extensions, then try again.";
+        return;
+      }
+      chrome.tabs.create({ url: TEST_PAGE_URL, active: true });
     });
 
     ui.openOptions.addEventListener("click", () => {
