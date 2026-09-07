@@ -11,6 +11,7 @@
     ui.tooltipMode = document.getElementById("tooltipMode");
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
+    ui.colorByPos = document.getElementById("colorByPos");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
@@ -91,6 +92,7 @@
     ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
+    ui.colorByPos.checked = settings.colorByPos;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
     renderDictionaryList(settings);
   }
@@ -101,6 +103,7 @@
     ui.tooltipMode.addEventListener("change", saveSettings);
     ui.showWylie.addEventListener("change", saveSettings);
     ui.showPhonetic.addEventListener("change", saveSettings);
+    ui.colorByPos.addEventListener("change", saveSettings);
     ui.minTibetanFontSize.addEventListener("change", saveSettings);
 
     extension.storage.onSettingsChanged((settings) => {
@@ -109,6 +112,7 @@
       ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
       ui.showWylie.checked = settings.showWylie;
       ui.showPhonetic.checked = settings.showPhonetic;
+      ui.colorByPos.checked = settings.colorByPos;
       ui.minTibetanFontSize.value = settings.minTibetanFontSize;
       renderDictionaryList(settings);
     });

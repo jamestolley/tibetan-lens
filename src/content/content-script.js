@@ -18,11 +18,12 @@
 
   function createWordElement(token) {
     const element = document.createElement("span");
-    const posClass = state.settings?.colorByPos && token.pos ? `tibetan-extension-word--${token.pos}` : '';
+    const posClass = state.settings?.colorByPos && token.pos ? `tibetan-extension-word--${token.pos}` : "";
     element.className = [
       extension.constants.classes.word,
-      token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched
-    ].join(" ");
+      token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched,
+      posClass
+    ].filter(Boolean).join(" ");
     element.tabIndex = 0;
     element.setAttribute("role", "button");
     element.dataset.term = token.text;
