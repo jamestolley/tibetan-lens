@@ -120,7 +120,7 @@
     node.className = "tibetan-lens-loading";
     node.setAttribute("aria-live", "polite");
     node.setAttribute("aria-label", "Tibetan Lens is loading");
-    node.innerHTML = '<div class="tibetan-lens-spinner" role="status" aria-hidden="true"></div><span class="tibetan-lens-loading-text">Loading…</span>';
+    node.innerHTML = `<div class="tibetan-lens-spinner" role="status" aria-hidden="true"></div><span class="tibetan-lens-loading-text">${extension.i18n.getMessage("loadingDefault")}</span>`;
     (document.body || document.documentElement).appendChild(node);
     state.spinner = node;
     return node;
@@ -129,7 +129,7 @@
   function showSpinner(message) {
     const node = ensureSpinner();
     const text = node.querySelector(".tibetan-lens-loading-text");
-    if (text) text.textContent = message || "Loading…";
+    if (text) text.textContent = message || extension.i18n.getMessage("loadingDefault");
     node.classList.add("is-visible");
   }
 

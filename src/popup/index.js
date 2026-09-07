@@ -2,7 +2,6 @@
   const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
 
   const ui = {};
-  const TEST_PAGE_URL = "file:///C:/Users/james/sites/tibetan/tibetan-lens/demo/sample.html";
 
   function getControls() {
     ui.insertSpaces = document.getElementById("insertSpaces");
@@ -68,22 +67,24 @@
       await sendPageMessage(extension.constants.messages.refreshAnnotations);
     });
 
-    ui.openTestPage.addEventListener("click", async () => {
-  chrome.tabs.create({ url: chrome.runtime.getURL("demo/sample.html"), active: true });
-      const allowed = await new Promise((resolve) => chrome.extension.isAllowedFileSchemeAccess(resolve));
-      if (!allowed) {
-        return;
-      }
-      chrome.tabs.create({ url: TEST_PAGE_URL, active: true });
+    ui.openTestPage.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("demo/sample.html"), active: true });
     });
 
     ui.openOptions.addEventListener("click", () => {
       chrome.runtime.openOptionsPage();
     });
+
+    chrome.storage.onChanged.addListener((_changes, areaName) => {
+      if (areaName === "sync") {
+        loadSettings();
+      }
+    });
   }
 
   async function init() {
     getControls();
+    extension.i18n.localizePage();
     bindEvents();
     await loadSettings();
   }

@@ -1,7 +1,122 @@
 {
-  "extensionName": "Tibetan Lens",
-  "extensionDescription": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
-  "settingsSyncMessage": "Settings sync automatically.",
-  "loadingDictionaries": "Loading dictionaries…",
-  "noEnabledDictionary": "No enabled dictionary has a definition for this term yet."
+  "extensionName": {
+    "message": "Tibetan Lens",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Tibetan Lens",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Control how Tibetan text is segmented, displayed, and translated.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Tibetan Lens",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Segment Tibetan text and click or hover tokens for definitions.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Reading experience",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Control what happens when Tibetan text is detected on a page.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Extension enabled",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Insert spaces between tokens",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Show translations on",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Hover",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Click",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Show Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Show phonetic",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Color words by part of speech",
+    "description": "Color by POS toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Minimum Tibetan font size",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Dictionaries",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Enabled dictionaries drive tooltip results and the tokenizer lexicon.",
+    "description": "Dictionaries section hint"
+  },
+  "settingsSyncMessage": {
+    "message": "Settings sync automatically.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Saved to Chrome sync storage.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Loading dictionaries…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Loading…",
+    "description": "Generic loading spinner text"
+  },
+  "noEnabledDictionary": {
+    "message": "No enabled dictionary has a definition for this term yet.",
+    "description": "Tooltip empty state"
+  },
+  "refreshPage": {
+    "message": "Refresh page",
+    "description": "Popup refresh button"
+  },
+  "openTestPage": {
+    "message": "Open test page",
+    "description": "Popup test page button"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Popup options button"
+  },
+  "demoTitle": {
+    "message": "Sample Page for Tibetan Lens",
+    "description": "Demo page title"
+  },
+  "demoDescription": {
+    "message": "This is a sample page for the extension. To see annotations and definitions, open any public webpage that contains Tibetan text and ensure the extension is enabled.",
+    "description": "Demo page description"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མིག་ཤེལ།",
+    "description": "Tibetan script brand name"
+  }
 }

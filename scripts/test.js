@@ -67,6 +67,77 @@ for (const subdir of ["options", "popup"]) {
   }
 }
 
+function extractI18nKeysFromHtml(html) {
+  const keys = new Set();
+  const regex = /data-i18n=["']([^"']+)["']/g;
+  let match;
+  while ((match = regex.exec(html)) !== null) {
+    keys.add(match[1]);
+  }
+  return keys;
+}
+
+function extractI18nKeysFromJs(js) {
+  const keys = new Set();
+  const regex = /(?:extension\.i18n|i18n)\.getMessage\s*\(\s*["']([^"']+)["']\s*\)/g;
+  let match;
+  while ((match = regex.exec(js)) !== null) {
+    keys.add(match[1]);
+  }
+  return keys;
+}
+
+const messagesPath = path.join(root, "_locales", "en", "messages.json");
+let messageKeys = new Set();
+if (fs.existsSync(messagesPath)) {
+  try {
+    const messages = JSON.parse(fs.readFileSync(messagesPath, "utf8"));
+    messageKeys = new Set(Object.keys(messages));
+  } catch (error) {
+    errors.push(`Could not parse _locales/en/messages.json: ${error.message}`);
+  }
+} else {
+  errors.push("Missing _locales/en/messages.json");
+}
+
+for (const subdir of ["options", "popup"]) {
+  const htmlPath = path.join(root, "src", subdir, "index.html");
+  if (!fs.existsSync(htmlPath)) {
+    continue;
+  }
+  const html = fs.readFileSync(htmlPath, "utf8");
+  const htmlKeys = extractI18nKeysFromHtml(html);
+  const missing = [...htmlKeys].filter((key) => !messageKeys.has(key));
+  if (missing.length) {
+    errors.push(`Missing i18n message keys for ${subdir}/index.html [data-i18n]: ${missing.join(", ")}`);
+  }
+  if (!html.includes("src=\"../shared/i18n.js\"")) {
+    errors.push(`${subdir}/index.html does not load ../shared/i18n.js`);
+  }
+}
+
+for (const file of jsFiles) {
+  if (path.basename(file) === "i18n.js") {
+    continue;
+  }
+  const js = fs.readFileSync(file, "utf8");
+  const jsKeys = extractI18nKeysFromJs(js);
+  const missing = [...jsKeys].filter((key) => !messageKeys.has(key));
+  if (missing.length) {
+    errors.push(`Missing i18n message keys in ${path.relative(root, file)}: ${missing.join(", ")}`);
+  }
+}
+
+const manifestPath = path.join(root, "manifest.json");
+if (fs.existsSync(manifestPath)) {
+  const manifest = fs.readFileSync(manifestPath, "utf8");
+  if (!manifest.includes('"src/shared/i18n.js"')) {
+    errors.push("manifest.json content_scripts does not include src/shared/i18n.js");
+  }
+} else {
+  errors.push("Missing manifest.json");
+}
+
 if (errors.length) {
   console.error("Tests failed:");
   for (const error of errors) {
@@ -75,4 +146,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`All ${jsFiles.length} JavaScript files passed syntax check and UI IDs are consistent.`);
+console.log(`All ${jsFiles.length} JavaScript files passed syntax check, UI IDs and i18n keys are consistent.`);

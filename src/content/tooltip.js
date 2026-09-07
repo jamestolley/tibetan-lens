@@ -140,7 +140,7 @@
     if (!uniqueGlosses.length) {
       const emptyState = document.createElement("div");
       emptyState.className = "tibetan-extension-tooltip-empty";
-      emptyState.textContent = "No enabled dictionary has a definition for this term yet.";
+      emptyState.textContent = extension.i18n.getMessage("noEnabledDictionary");
       fragment.appendChild(emptyState);
       return fragment;
     }

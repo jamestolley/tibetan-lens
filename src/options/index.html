@@ -3,60 +3,60 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tibetan Lens Settings</title>
+    <title data-i18n="settingsTitle">Tibetan Lens</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <main class="options-shell">
       <header class="hero">
-        <p class="eyebrow">Tibetan Lens</p>
-        <h1>Tibetan Lens <span lang="bo">བོད་ཡིག་མིག་ཤེལ།</span></h1>
-        <p class="intro" data-i18n="extensionDescription">
+        <p class="eyebrow" data-i18n="extensionName">Tibetan Lens</p>
+        <h1 data-i18n="extensionName">Tibetan Lens <span lang="bo">བོད་ཡིག་མིག་ཤེལ།</span></h1>
+        <p class="intro" data-i18n="settingsIntro">
           Control how Tibetan text is segmented, displayed, and translated.
         </p>
       </header>
 
       <section class="panel">
         <div class="panel-head">
-          <h2>Reading experience</h2>
-          <p>Control what happens when Tibetan text is detected on a page.</p>
+          <h2 data-i18n="readingExperience">Reading experience</h2>
+          <p data-i18n="readingExperienceHint">Control what happens when Tibetan text is detected on a page.</p>
         </div>
 
         <div class="settings-grid">
           <label class="toggle-row" for="extensionEnabled">
-            <span>Extension enabled</span>
+            <span data-i18n="extensionEnabled">Extension enabled</span>
             <input id="extensionEnabled" type="checkbox" />
           </label>
 
           <label class="toggle-row" for="insertSpaces">
-            <span>Insert spaces between tokens</span>
+            <span data-i18n="insertSpaces">Insert spaces between tokens</span>
             <input id="insertSpaces" type="checkbox" />
           </label>
 
           <label class="field" for="tooltipMode">
-            <span>Show translations on</span>
+            <span data-i18n="showTranslationsOn">Show translations on</span>
             <select id="tooltipMode">
-              <option value="hover">Hover</option>
-              <option value="click">Click</option>
+              <option value="hover" data-i18n="tooltipModeHover">Hover</option>
+              <option value="click" data-i18n="tooltipModeClick">Click</option>
             </select>
           </label>
 
           <label class="toggle-row" for="showWylie">
-            <span>Show Wylie</span>
+            <span data-i18n="showWylie">Show Wylie</span>
             <input id="showWylie" type="checkbox" />
           </label>
 
           <label class="toggle-row" for="colorByPos">
-            <span>Color words by part of speech</span>
+            <span data-i18n="colorByPos">Color words by part of speech</span>
             <input id="colorByPos" type="checkbox" />
           </label>
           <label class="toggle-row" for="showPhonetic">
-            <span>Show phonetic</span>
+            <span data-i18n="showPhonetic">Show phonetic</span>
             <input id="showPhonetic" type="checkbox" />
           </label>
 
           <label class="field" for="minTibetanFontSize">
-            <span>Minimum Tibetan font size</span>
+            <span data-i18n="minTibetanFontSize">Minimum Tibetan font size</span>
             <input id="minTibetanFontSize" type="number" min="10" max="72" value="16" />
           </label>
         </div>
@@ -64,21 +64,20 @@
 
       <section class="panel">
         <div class="panel-head">
-          <h2>Dictionaries</h2>
-          <p>Enabled dictionaries drive tooltip results and the tokenizer lexicon.</p>
+          <h2 data-i18n="dictionaries">Dictionaries</h2>
+          <p data-i18n="dictionariesHint">Enabled dictionaries drive tooltip results and the tokenizer lexicon.</p>
         </div>
 
         <div id="dictionaryList" class="dictionary-list"></div>
-        <p id="statusLine" class="status-line">Settings sync automatically.</p>
+        <p id="statusLine" class="status-line" data-i18n="settingsSyncMessage">Settings sync automatically.</p>
       </section>
     </main>
 
     <script src="../shared/constants.js"></script>
+    <script src="../shared/i18n.js"></script>
     <script src="../shared/defaults.js"></script>
     <script src="../shared/storage.js"></script>
     <script src="../core/mockDictionary.js"></script>
     <script src="./index.js"></script>
   </body>
-</html>
-
 </html>

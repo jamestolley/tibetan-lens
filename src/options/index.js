@@ -68,14 +68,14 @@
   }
 
   function flashSavedState() {
-    ui.statusLine.textContent = "Saved to Chrome sync storage.";
+    ui.statusLine.textContent = extension.i18n.getMessage("settingsSaved");
 
     if (ui.saveTimer) {
       window.clearTimeout(ui.saveTimer);
     }
 
     ui.saveTimer = window.setTimeout(() => {
-      ui.statusLine.textContent = "Settings sync automatically.";
+      ui.statusLine.textContent = extension.i18n.getMessage("settingsSyncMessage");
       ui.saveTimer = null;
     }, 1800);
   }
@@ -120,6 +120,7 @@
 
   async function init() {
     getControls();
+    extension.i18n.localizePage();
     bindEvents();
     await loadSettings();
   }
