@@ -32,13 +32,24 @@ File:
 The bundled copy is derived from the 84000 public glossary data. Attribution is
 provided in the extension's options page and NOTICE file.
 
+## Definition Dictionary (Hopkins)
+
+Source: [Jeffrey Hopkins' Tibetan-Sanskrit-English Dictionary — Dharma Drum Buddhist College digital edition](https://glossaries.dila.edu.tw/data/hopkins.dila.pdf)  
+License: [Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/)
+
+File:
+- `words/hopkins.tsv` — Buddhist philosophy and general vocabulary (~18.5K entries)
+
+The bundled TSV is generated from the CC BY-SA source using `tools/build-hopkins.js`.
+Because the license is ShareAlike, the derived dictionary data is itself
+distributed under CC BY-SA 3.0.
+
 ## Dictionaries that are NOT bundled
 
 Tibetan Lens does **not** ship the following popular dictionaries unless and
 until their authors or publishers grant explicit redistribution permission or
 release them under an open license:
 
-- Jeffrey Hopkins' Tibetan-Sanskrit-English dictionary
 - Jim Valby's Tibetan-English dictionary
 - Ives Waldo's Tibetan-English glossary compilation
 - Tsepak Rigdzin's *Tibetan-English Dictionary of Buddhist Terms*

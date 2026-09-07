@@ -25,6 +25,7 @@
         "public/data/dialect_packs/botok_general/dictionary/words/ancient.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/exceptions.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/84000.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],
