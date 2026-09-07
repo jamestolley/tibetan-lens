@@ -23,6 +23,8 @@
     minTibetanFontSize: "Minimum Tibetan font size",
     dictionaries: "Dictionaries",
     dictionariesHint: "Enabled dictionaries drive tooltip results and the tokenizer lexicon.",
+    dictionarySources: "Dictionary sources",
+    dictionarySourcesNote: "Bundled data remains under its original license. See the included NOTICE file for full attribution.",
     settingsSyncMessage: "Settings sync automatically.",
     settingsSaved: "Saved to Chrome sync storage.",
     loadingDictionaries: "Loading dictionaries…",

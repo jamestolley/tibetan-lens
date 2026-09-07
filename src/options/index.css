@@ -137,6 +137,26 @@ select {
   color: rgba(40, 31, 23, 0.76);
 }
 
+.source-list {
+  margin: 14px 0 0;
+  padding-left: 1.2rem;
+}
+
+.source-list li {
+  margin-bottom: 10px;
+  color: rgba(40, 31, 23, 0.78);
+}
+
+.source-list strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ink);
+}
+
+.source-list a {
+  color: var(--clay);
+}
+
 @media (max-width: 640px) {
   .options-shell {
     width: calc(100% - 24px);

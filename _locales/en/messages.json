@@ -75,6 +75,14 @@
     "message": "Enabled dictionaries drive tooltip results and the tokenizer lexicon.",
     "description": "Dictionaries section hint"
   },
+  "dictionarySources": {
+    "message": "Dictionary sources",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Bundled data remains under its original license. See the included NOTICE file for full attribution.",
+    "description": "Dictionary sources note"
+  },
   "settingsSyncMessage": {
     "message": "Settings sync automatically.",
     "description": "Status line default"
