@@ -1,14 +1,1 @@
-(() => {
-  const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
-
-  extension.defaults = {
-    settings: {
-      extensionEnabled: true,
-      insertSpaces: true,
-      showTooltips: true,
-      targetLanguage: "en",
-      enabledDictionaries: ["botok-core", "hopkins", "jim-valby", "ives-waldo", "tsepak-rigdzin", "84000"],
-      tokenizerMode: "botok-general"
-    }
-  };
-})();
+(() => {\n  const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});\n\n  extension.defaults = {\n    settings: {\n      extensionEnabled: true,\n      insertSpaces: true,\n      showTooltips: true,\n      targetLanguage: \"en\",\n      enabledDictionaries: [\"botok-core\", \"hopkins\", \"jim-valby\", \"ives-waldo\", \"tsepak-rigdzin\", \"84000\"],\n      tokenizerMode: \"botok-general\",\n      showWylie: false,\n      showPhonetic: false,\n      minTibetanFontSize: 16,\n    }\n  };\n})();\n
