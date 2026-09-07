@@ -4,10 +4,18 @@
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "scripts": {
-    "test": "node scripts/test.js",
-    "build:dictionaries": "node scripts/build-dictionaries.js"
+    "test": "node tools/test.js",
+    "build:dictionaries": "node tools/build-dictionaries.js",
+    "dev": "extension dev --browser=chrome",
+    "build": "extension build --browser=chrome,edge,firefox --zip",
+    "start": "extension start",
+    "preview": "extension preview",
+    "publish:init": "publish-extension init",
+    "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.0.zip --edge-zip dist/edge/tibetan-lens-0.50.0.zip --firefox-zip dist/firefox/tibetan-lens-0.50.0.zip"
   },
   "devDependencies": {
-    "jsewts": "^1.0.4"
+    "extension": "3.18.2",
+    "jsewts": "^1.0.4",
+    "publish-browser-extension": "6.1.1"
   }
 }
