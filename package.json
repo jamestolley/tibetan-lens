@@ -4,6 +4,7 @@
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "scripts": {
+    "test": "node scripts/test.js",
     "build:dictionaries": "node scripts/build-dictionaries.js"
   },
   "devDependencies": {
