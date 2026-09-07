@@ -3,6 +3,7 @@
   "name": "Tibetan Lens",
   "version": "0.50",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
+  "default_locale": "en",
   "permissions": ["storage", "activeTab"],
   "action": {
     "default_title": "Tibetan Lens",

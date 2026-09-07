@@ -1,0 +1,7 @@
+{
+  "extensionName": "Tibetan Lens",
+  "extensionDescription": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
+  "settingsSyncMessage": "Settings sync automatically.",
+  "loadingDictionaries": "Loading dictionaries…",
+  "noEnabledDictionary": "No enabled dictionary has a definition for this term yet."
+}

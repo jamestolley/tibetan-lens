@@ -69,6 +69,7 @@
     });
 
     ui.openTestPage.addEventListener("click", async () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("demo/sample.html"), active: true });
       const allowed = await new Promise((resolve) => chrome.extension.isAllowedFileSchemeAccess(resolve));
       if (!allowed) {
         return;

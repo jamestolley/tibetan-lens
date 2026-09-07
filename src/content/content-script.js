@@ -146,7 +146,7 @@
     }
 
     state.isRendering = true;
-    showSpinner("Loading dictionaries…");
+    showSpinner(extension.i18n.getMessage('loadingDictionaries'));
     console.log('[TibetanLens] refreshAnnotations starting...');
 
     try {
