@@ -12,18 +12,8 @@
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
-    // ui.targetLanguage = document.getElementById("targetLanguage");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
-  }
-
-  function populateLanguageSelect() {
-    extension.constants.supportedLanguages.forEach((language) => {
-      const option = document.createElement("option");
-      option.value = language.code;
-      option.textContent = language.label;
-      ui.targetLanguage.appendChild(option);
-    });
   }
 
   function renderDictionaryList(settings) {
@@ -68,7 +58,6 @@
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
-      targetLanguage: ui.targetLanguage.value,
       enabledDictionaries:
         enabledDictionaries.length > 0
           ? enabledDictionaries
@@ -102,7 +91,6 @@
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
-    
     renderDictionaryList(settings);
   }
 
@@ -113,7 +101,6 @@
     ui.showWylie.addEventListener("change", saveSettings);
     ui.showPhonetic.addEventListener("change", saveSettings);
     ui.minTibetanFontSize.addEventListener("change", saveSettings);
-    ui.targetLanguage.addEventListener("change", saveSettings);
 
     extension.storage.onSettingsChanged((settings) => {
       ui.extensionEnabled.checked = settings.extensionEnabled;
@@ -128,12 +115,9 @@
 
   async function init() {
     getControls();
-    populateLanguageSelect();
     bindEvents();
     await loadSettings();
   }
 
   document.addEventListener("DOMContentLoaded", init, { once: true });
-})();
-});
 })();

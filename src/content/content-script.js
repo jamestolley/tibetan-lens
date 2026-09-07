@@ -405,15 +405,6 @@
         return undefined;
       }
 
-      if (message.type === extension.constants.messages.getAnnotationStats) {
-        sendResponse({
-          ok: true,
-          stats: state.stats,
-          settings: state.settings
-        });
-        return undefined;
-      }
-
       if (message.type === extension.constants.messages.refreshAnnotations) {
         refreshAnnotations().then((stats) => {
           sendResponse({

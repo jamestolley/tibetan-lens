@@ -15,8 +15,3 @@
     }
   };
 })();
-      { code: "es", label: "Spanish" },
-      { code: "fr", label: "French" }
-    ]
-  };
-})();
