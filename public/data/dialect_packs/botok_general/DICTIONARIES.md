@@ -1,46 +1,63 @@
 # Dictionary Sources
 
-The `botok_general` dialect pack contains dictionaries from the following open-source projects:
+The `botok_general` dialect pack bundled with Tibetan Lens contains only data
+whose redistribution is explicitly permitted. Please do not re-add material
+from commercial or all-rights-reserved dictionaries without written permission.
 
 ## Tokenization Wordlists (botok-data)
 
 Source: [Esukhia/botok-data](https://github.com/Esukhia/botok-data) — general dialect pack  
-License: Public domain (unless indicated otherwise per file)
+License: [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) for the
+curated pack; individual files are public domain unless marked otherwise.
 
 Files:
-- `words/tsikchen.tsv` — Main Tibetan wordlist (~31K entries)
-- `words/uncompound_lexicon.tsv` — Compound word components
-- `words/ancient.tsv` — Classical/archaic forms
-- `words/exceptions.tsv` — Proper nouns and exceptions
-- `words/dagdra.tsv` — Homophone disambiguation entries
-- `words_non_inflected/particles.tsv` — Grammatical particles (not inflected)
+- `words/tsikchen.tsv` — main Tibetan wordlist (~31K entries)
+- `words/uncompound_lexicon.tsv` — compound word components
+- `words/ancient.tsv` — classical/archaic forms
+- `words/exceptions.tsv` — proper nouns and exceptions
+- `words/dagdra.tsv` — homophone disambiguation entries
+- `words_non_inflected/particles.tsv` — grammatical particles
 
-## Definition Dictionaries (Steinert collection)
+These files provide Tibetan word forms, part-of-speech tags, and lemmas.
+They do **not** contain English definitions.
 
-Source: [christiansteinert/tibetan-dictionary](https://github.com/christiansteinert/tibetan-dictionary)  
-Original format: Pipe-delimited EWTS (Wylie) with English definitions  
-Conversion: EWTS → Unicode Tibetan via [jsewts](https://github.com/buda-base/jsewts)
+## Definition Dictionary (84000 glossary)
 
-| File | Source | Entries | Notes |
-|------|--------|---------|-------|
-| `words/hopkins.tsv` | Hopkins 2015 | ~18K | Jeffrey Hopkins' Tibetan-English dictionary. Buddhist philosophy and general vocabulary. |
-| `words/jim-valby.tsv` | Jim Valby | ~64K | Broad general Tibetan-English vocabulary. |
-| `words/ives-waldo.tsv` | Ives Waldo | ~121K | The largest open-source Tibetan-English dictionary. |
-| `words/tsepak-rigdzin.tsv` | Tsepak Rigdzin | ~2.7K | Concise, authoritative definitions. |
-| `words/84000.tsv` | 84000 | ~25K | Glossary from 84000: Translating the Words of the Buddha. |
+Source: [84000: Translating the Words of the Buddha](https://read.84000.co/glossary/downloads.html)  
+License: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+
+File:
+- `words/84000.tsv` — canonical Buddhist terminology (~25K entries)
+
+The bundled copy is derived from the 84000 public glossary data. Attribution is
+provided in the extension's options page and NOTICE file.
+
+## Dictionaries that are NOT bundled
+
+Tibetan Lens does **not** ship the following popular dictionaries unless and
+until their authors or publishers grant explicit redistribution permission or
+release them under an open license:
+
+- Jeffrey Hopkins' Tibetan-Sanskrit-English dictionary
+- Jim Valby's Tibetan-English dictionary
+- Ives Waldo's Tibetan-English glossary compilation
+- Tsepak Rigdzin's *Tibetan-English Dictionary of Buddhist Terms*
+
+These works are copyrighted by their respective authors. Several existing apps
+have obtained individual permission; Tibetan Lens must do the same before
+including them.
 
 ## Rebuilding
 
-To rebuild these files from source:
+To rebuild the tokenization wordlists from upstream botok-data:
 
 ```bash
-# Clone source repositories
+# Clone source repository
 git clone https://github.com/Esukhia/botok-data.git /tmp/botok-data
-git clone --depth 1 https://github.com/christiansteinert/tibetan-dictionary.git /tmp/tibetan-dictionary
 
 # Install build dependencies and run
 npm install
-npm run build:dictionaries
+npm run build:dictionaries /tmp/botok-data
 ```
 
-The build script is at `scripts/build-dictionaries.js`.
+The build script is at `tools/build-dictionaries.js`.

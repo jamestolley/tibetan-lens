@@ -1,0 +1,23 @@
+Tibetan Lens
+Copyright 2026 Tibetan Lens contributors
+
+This software is licensed under the MIT License. See LICENSE for details.
+
+Third-party data and assets included in this extension:
+
+- Tokenization wordlists from Esukhia botok-data, used under the Creative
+  Commons Attribution 4.0 International License (CC-BY 4.0) or public domain
+  where marked. https://github.com/Esukhia/botok-data
+
+- 84000 glossary data from 84000: Translating the Words of the Buddha,
+  used under the Creative Commons Attribution 4.0 International License
+  (CC BY 4.0). https://read.84000.co/glossary/downloads.html
+
+- The extension icon uses the Tibetan letter "ཨ" rendered in the Jomolhari
+  font, which is licensed under the SIL Open Font License 1.1.
+  https://github.com/google/fonts/tree/main/ofl/jomolhari
+
+Tibetan Lens does not include dictionaries whose authors have not granted
+redistribution permission or released them under an open license. If you
+would like to contribute a dictionary, please ensure it is either your own
+work or explicitly licensed for redistribution.

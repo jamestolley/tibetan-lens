@@ -3,6 +3,7 @@
   "version": "0.50.0",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
+  "license": "MIT",
   "scripts": {
     "test": "node tools/test.js",
     "build:dictionaries": "node tools/build-dictionaries.js",

@@ -5,8 +5,14 @@
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "default_locale": "en",
   "permissions": ["storage", "activeTab"],
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
+  },
   "action": {
     "default_title": "Tibetan Lens",
+    "default_icon": "public/icons/icon48.png",
     "default_popup": "src/popup/index.html"
   },
   "options_page": "src/options/index.html",
@@ -19,10 +25,6 @@
         "public/data/dialect_packs/botok_general/dictionary/words/ancient.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/exceptions.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
-        "public/data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
-        "public/data/dialect_packs/botok_general/dictionary/words/jim-valby.tsv",
-        "public/data/dialect_packs/botok_general/dictionary/words/ives-waldo.tsv",
-        "public/data/dialect_packs/botok_general/dictionary/words/tsepak-rigdzin.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/84000.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],
