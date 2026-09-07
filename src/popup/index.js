@@ -1,1 +1,129 @@
-(() => {\n  const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});\n\n  const ui = {};\n  const TEST_PAGE_URL = \"file:///C:/Users/james/sites/tibetan/tibetan-lens/demo/sample.html\";\n\n  function getControls() {\n    ui.extensionEnabled = document.getElementById(\"extensionEnabled\");\n    ui.insertSpaces = document.getElementById(\"insertSpaces\");\n    ui.showTooltips = document.getElementById(\"showTooltips\");\n    ui.showWylie = document.getElementById(\"showWylie\");\n    ui.showPhonetic = document.getElementById(\"showPhonetic\");\n    ui.minTibetanFontSize = document.getElementById(\"minTibetanFontSize\");\n    ui.targetLanguage = document.getElementById(\"targetLanguage\");\n    ui.processedNodes = document.getElementById(\"processedNodes\");\n    ui.annotatedWords = document.getElementById(\"annotatedWords\");\n    ui.pageMessage = document.getElementById(\"pageMessage\");\n    ui.refreshPage = document.getElementById(\"refreshPage\");\n    ui.openTestPage = document.getElementById(\"openTestPage\");\n    ui.openOptions = document.getElementById(\"openOptions\");\n  }\n\n  function populateLanguageSelect() {\n    extension.constants.supportedLanguages.forEach((language) => {\n      const option = document.createElement(\"option\");\n      option.value = language.code;\n      option.textContent = language.label;\n      ui.targetLanguage.appendChild(option);\n    });\n  }\n\n  function readSettingsFromControls() {\n    return {\n      extensionEnabled: ui.extensionEnabled.checked,\n      insertSpaces: ui.insertSpaces.checked,\n      showTooltips: ui.showTooltips.checked,\n      showWylie: ui.showWylie.checked,\n      showPhonetic: ui.showPhonetic.checked,\n      minTibetanFontSize: Number(ui.minTibetanFontSize.value),\n      targetLanguage: ui.targetLanguage.value\n    };\n  }\n\n  async function getActiveTab() {\n    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });\n    return tabs[0] || null;\n  }\n\n  async function sendPageMessage(type) {\n    try {\n      const tab = await getActiveTab();\n      if (!tab?.id) {\n        return null;\n      }\n\n      return await chrome.tabs.sendMessage(tab.id, { type });\n    } catch (_error) {\n      return null;\n    }\n  }\n\n  function updateStats(response) {\n    const stats = response?.stats;\n    ui.processedNodes.textContent = String(stats?.processedNodes || 0);\n    ui.annotatedWords.textContent = String(stats?.annotatedWords || 0);\n\n    if (!response?.ok) {\n      ui.pageMessage.textContent =\n        \"This tab does not expose content scripts. Try a regular website instead of a browser-internal page.\";\n      return;\n    }\n\n    ui.pageMessage.textContent = `Tokenizer: ${response.settings?.tokenizerMode || \"mock-lexicon\"}. Click a Tibetan token on the page to inspect its entries.`;\n  }\n\n  async function loadSettings() {\n    const settings = await extension.storage.getSettings();\n    ui.extensionEnabled.checked = settings.extensionEnabled;\n    ui.insertSpaces.checked = settings.insertSpaces;\n    ui.showTooltips.checked = settings.showTooltips;\n    ui.showWylie.checked = settings.showWylie;\n    ui.showPhonetic.checked = settings.showPhonetic;\n    ui.minTibetanFontSize.value = settings.minTibetanFontSize;\n    ui.targetLanguage.value = settings.targetLanguage;\n  }\n\n  async function saveSettingsAndRefresh() {\n    await extension.storage.setSettings(readSettingsFromControls());\n    updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));\n  }\n\n  async function handleTokenClick(term) {\n    const settings = await extension.storage.getSettings();\n    let definition = '';\n\n    // Assuming dictionaries are available in the response\n    const dictionaries = await sendPageMessage(extension.constants.messages.getDictionaries);\n    if (dictionaries && dictionaries.entries) {\n      definition = dictionaries.entries.map(entry => entry.gloss).join(' ');\n    }\n\n    if (!definition) {\n      ui.pageMessage.textContent = 'Term not found in dictionaries.';\n      return;\n    }\n\n    ui.pageMessage.textContent = definition;\n\n    if (settings.showWylie) {\n      const wylie = window.jsEWTS.toWylie(term).trim();\n      ui.pageMessage.textContent += `\\nWylie: ${wylie}`;\n    }\n\n    if (settings.showPhonetic) {\n      const phonetic = window.TibetanConverter.get_phonetics({style:'thl', lang:'en'}).phonetics(term, {autosplit: true});\n      ui.pageMessage.textContent += `\\nPhonetic: ${phonetic}`;\n    }\n  }\n\n  function bindEvents() {\n    ui.extensionEnabled.addEventListener(\"change\", saveSettingsAndRefresh);\n    ui.insertSpaces.addEventListener(\"change\", saveSettingsAndRefresh);\n    ui.showTooltips.addEventListener(\"change\", saveSettingsAndRefresh);\n    ui.showWylie.addEventListener(\"change\", saveSettingsAndRefresh);\n    ui.showPhonetic.addEventListener(\"change\", saveSettingsAndRefresh);\n    ui.targetLanguage.addEventListener(\"change\", saveSettingsAndRefresh);\n\n    ui.refreshPage.addEventListener(\"click\", async () => {\n      updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));\n    });\n\n    ui.openTestPage.addEventListener(\"click\", async () => {\n      const allowed = await new Promise((resolve) => chrome.extension.isAllowedFileSchemeAccess(resolve));\n      if (!allowed) {\n        ui.pageMessage.textContent =\n          \"File URL access is disabled. Enable 'Allow access to file URLs' for Tibetan Lens in chrome://extensions, then try again.\";\n        return;\n      }\n      chrome.tabs.create({ url: TEST_PAGE_URL, active: true });\n    });\
+(() => {
+  const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
+
+  const ui = {};
+  const TEST_PAGE_URL = "file:///C:/Users/james/sites/tibetan/tibetan-lens/demo/sample.html";
+
+  function getControls() {
+    ui.extensionEnabled = document.getElementById("extensionEnabled");
+    ui.insertSpaces = document.getElementById("insertSpaces");
+    ui.showTooltips = document.getElementById("showTooltips");
+    ui.showWylie = document.getElementById("showWylie");
+    ui.showPhonetic = document.getElementById("showPhonetic");
+    ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
+    ui.targetLanguage = document.getElementById("targetLanguage");
+    ui.processedNodes = document.getElementById("processedNodes");
+    ui.annotatedWords = document.getElementById("annotatedWords");
+    ui.pageMessage = document.getElementById("pageMessage");
+    ui.refreshPage = document.getElementById("refreshPage");
+    ui.openTestPage = document.getElementById("openTestPage");
+    ui.openOptions = document.getElementById("openOptions");
+  }
+
+  function populateLanguageSelect() {
+    extension.constants.supportedLanguages.forEach((language) => {
+      const option = document.createElement("option");
+      option.value = language.code;
+      option.textContent = language.label;
+      ui.targetLanguage.appendChild(option);
+    });
+  }
+
+  function readSettingsFromControls() {
+    return {
+      extensionEnabled: ui.extensionEnabled.checked,
+      insertSpaces: ui.insertSpaces.checked,
+      showTooltips: ui.showTooltips.checked,
+      showWylie: ui.showWylie.checked,
+      showPhonetic: ui.showPhonetic.checked,
+      minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
+      targetLanguage: ui.targetLanguage.value
+    };
+  }
+
+  async function getActiveTab() {
+    const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    return tabs[0] || null;
+  }
+
+  async function sendPageMessage(type) {
+    try {
+      const tab = await getActiveTab();
+      if (!tab?.id) {
+        return null;
+      }
+
+      return await chrome.tabs.sendMessage(tab.id, { type });
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function updateStats(response) {
+    const stats = response?.stats;
+    ui.processedNodes.textContent = String(stats?.processedNodes || 0);
+    ui.annotatedWords.textContent = String(stats?.annotatedWords || 0);
+
+    if (!response?.ok) {
+      ui.pageMessage.textContent =
+        "This tab does not expose content scripts. Try a regular website instead of a browser-internal page.";
+      return;
+    }
+
+    ui.pageMessage.textContent = `Tokenizer: ${response.settings?.tokenizerMode || "mock-lexicon"}. Click a Tibetan token on the page to inspect its entries.`;
+  }
+
+  async function loadSettings() {
+    const settings = await extension.storage.getSettings();
+    ui.extensionEnabled.checked = settings.extensionEnabled;
+    ui.insertSpaces.checked = settings.insertSpaces;
+    ui.showTooltips.checked = settings.showTooltips;
+    ui.showWylie.checked = settings.showWylie;
+    ui.showPhonetic.checked = settings.showPhonetic;
+    ui.minTibetanFontSize.value = settings.minTibetanFontSize;
+    ui.targetLanguage.value = settings.targetLanguage;
+  }
+
+  async function saveSettingsAndRefresh() {
+    await extension.storage.setSettings(readSettingsFromControls());
+    updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));
+  }
+
+  function bindEvents() {
+    ui.extensionEnabled.addEventListener("change", saveSettingsAndRefresh);
+    ui.insertSpaces.addEventListener("change", saveSettingsAndRefresh);
+    ui.showTooltips.addEventListener("change", saveSettingsAndRefresh);
+    ui.showWylie.addEventListener("change", saveSettingsAndRefresh);
+    ui.showPhonetic.addEventListener("change", saveSettingsAndRefresh);
+    ui.minTibetanFontSize.addEventListener("change", saveSettingsAndRefresh);
+    ui.targetLanguage.addEventListener("change", saveSettingsAndRefresh);
+
+    ui.refreshPage.addEventListener("click", async () => {
+      updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));
+    });
+
+    ui.openTestPage.addEventListener("click", async () => {
+      const allowed = await new Promise((resolve) => chrome.extension.isAllowedFileSchemeAccess(resolve));
+      if (!allowed) {
+        ui.pageMessage.textContent =
+          "File URL access is disabled. Enable 'Allow access to file URLs' for Tibetan Lens in chrome://extensions, then try again.";
+        return;
+      }
+      chrome.tabs.create({ url: TEST_PAGE_URL, active: true });
+    });
+
+    ui.openOptions.addEventListener("click", () => {
+      chrome.runtime.openOptionsPage();
+    });
+  }
+
+  async function init() {
+    getControls();
+    populateLanguageSelect();
+    bindEvents();
+    await loadSettings();
+    updateStats(await sendPageMessage(extension.constants.messages.getAnnotationStats));
+  }
+
+  document.addEventListener("DOMContentLoaded", init, { once: true });
+})();

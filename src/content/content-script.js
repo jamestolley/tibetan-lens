@@ -25,6 +25,11 @@
     element.dataset.term = token.text;
     element.dataset.lookupKey = token.lookupKey || token.text;
     element.textContent = token.text;
+
+    if (state.settings?.minTibetanFontSize) {
+      element.style.fontSize = `max(1em, ${state.settings.minTibetanFontSize}px)`;
+    }
+
     return element;
   }
 
@@ -174,7 +179,8 @@
     extension.tooltip.showTooltip(wordElement, {
       term: wordElement.dataset.term || wordElement.textContent || "",
       entries,
-      language: state.settings.targetLanguage
+      language: state.settings.targetLanguage,
+      settings: state.settings
     });
   }
 

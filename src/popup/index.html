@@ -1,1 +1,89 @@
-<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>Tibetan Page Tools</title>\n    <link rel=\"stylesheet\" href=\"./index.css\" />\n  </head>\n  <body>\n    <main class=\"popup-shell\">\n      <header class=\"hero\">\n        <p class=\"eyebrow\">Tibetan Page Tools</p>\n        <h1>Page controls</h1>\n        <p class=\"intro\">\n          Segment Tibetan text on the current page, add readable spacing, and click tokens for\n          dictionary popups.\n        </p>\n      </header>\n\n      <section class=\"card\">\n        <label class=\"toggle-row\" for=\"extensionEnabled\">\n          <span>Extension enabled</span>\n          <input id=\"extensionEnabled\" type=\"checkbox\" />\n        </label>\n\n        <label class=\"toggle-row\" for=\"insertSpaces\">\n          <span>Insert spaces between tokens</span>\n          <input id=\"insertSpaces\" type=\"checkbox\" />\n        </label>\n\n        <label class=\"toggle-row\" for=\"showTooltips\">\n          <span>Show click-to-open popups</span>\n          <input id=\"showTooltips\" type=\"checkbox\" />\n        </label>\n\n        <label class=\"toggle-row\" for=\"showWylie\">\n          <span>Show Wylie</span>\n          <input id=\"showWylie\" type=\"checkbox\" />\n        </label>\n\n        <label class=\"toggle-row\" for=\"showPhonetic\">\n          <span>Show Phonetic</span>\n          <input id=\"showPhonetic\" type=\"checkbox\" />\n        </label>\n\n        <label class=\"field\" for=\"minTibetanFontSize\">\n          <span>Minimum Tibetan Font Size</span>\n          <input id=\"minTibetanFontSize\" type=\"number\" value=\"16\" />\n        </label>\n\n      </section>\n\n      <section class=\"card\">\n        <div class=\"stats-grid\">\n          <article class=\"stat\">\n            <strong id=\"processedNodes\">0</strong>\n            <span>processed nodes</span>\n          </article>\n          <article class=\"stat\">\n            <strong id=\"annotatedWords\">0</strong>\n            <span>annotated words</span>\n          </article>\n        </div>\n\n        <p id=\"pageMessage\" class=\"page-message\">\n          Open a standard web page to inspect the current page scan.\n        </p>\n      </section>\n\n      <div class=\"actions\">\n        <button id=\"refreshPage\" class=\"primary\" type=\"button\">Refresh page</button>\n        <button id=\"openTestPage\" class=\"secondary\" type=\"button\">Open test page</button>\n        <button id=\"openOptions\" class=\"secondary\" type=\"button\">Dictionaries</button>\n      </div>\n    </main>\n\n    <script src=\"../shared/constants.js\"></script>\n    <script src=\"../shared/defaults.js\"></script>\n    <script src=\"../shared/storage.js\"></script>\n    <script src=\"../core/mockDictionary.js\"></script>\n    <script src=\"../shared/jsewts.js\"></script>\n    <script src=\"../shared/ewts-converter.js\"></script>\n    <script src=\"./index.js\"></script>\n  </body>\n</html>\n
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tibetan Page Tools</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="hero">
+        <p class="eyebrow">Tibetan Page Tools</p>
+        <h1>Page controls</h1>
+        <p class="intro">
+          Segment Tibetan text on the current page, add readable spacing, and click tokens for
+          dictionary popups.
+        </p>
+      </header>
+
+      <section class="card">
+        <label class="toggle-row" for="extensionEnabled">
+          <span>Extension enabled</span>
+          <input id="extensionEnabled" type="checkbox" />
+        </label>
+
+        <label class="toggle-row" for="insertSpaces">
+          <span>Insert spaces between tokens</span>
+          <input id="insertSpaces" type="checkbox" />
+        </label>
+
+        <label class="toggle-row" for="showTooltips">
+          <span>Show click-to-open popups</span>
+          <input id="showTooltips" type="checkbox" />
+        </label>
+
+        <label class="field" for="targetLanguage">
+          <span>Translation language</span>
+          <select id="targetLanguage"></select>
+        </label>
+
+        <label class="toggle-row" for="showWylie">
+          <span>Show Wylie</span>
+          <input id="showWylie" type="checkbox" />
+        </label>
+
+        <label class="toggle-row" for="showPhonetic">
+          <span>Show phonetic</span>
+          <input id="showPhonetic" type="checkbox" />
+        </label>
+
+        <label class="field" for="minTibetanFontSize">
+          <span>Minimum Tibetan font size</span>
+          <input id="minTibetanFontSize" type="number" min="10" max="72" value="16" />
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="stats-grid">
+          <article class="stat">
+            <strong id="processedNodes">0</strong>
+            <span>processed nodes</span>
+          </article>
+          <article class="stat">
+            <strong id="annotatedWords">0</strong>
+            <span>annotated words</span>
+          </article>
+        </div>
+
+        <p id="pageMessage" class="page-message">
+          Open a standard web page to inspect the current page scan.
+        </p>
+      </section>
+
+      <div class="actions">
+        <button id="refreshPage" class="primary" type="button">Refresh page</button>
+        <button id="openTestPage" class="secondary" type="button">Open test page</button>
+        <button id="openOptions" class="secondary" type="button">Dictionaries</button>
+      </div>
+    </main>
+
+    <script src="../shared/constants.js"></script>
+    <script src="../shared/defaults.js"></script>
+    <script src="../shared/storage.js"></script>
+    <script src="../core/mockDictionary.js"></script>
+    <script src="../shared/jsewts.js"></script>
+    <script src="../shared/ewts-converter.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

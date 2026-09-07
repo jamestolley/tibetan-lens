@@ -18,19 +18,75 @@
     return node;
   }
 
-  function renderTooltipContent(term, entries, language) {
+  function getWylie(term) {
+    if (typeof window !== "undefined" && window.jsEWTS && typeof window.jsEWTS.toWylie === "function") {
+      return window.jsEWTS.toWylie(term).trim();
+    }
+    return "";
+  }
+
+  function getPhonetic(term) {
+    if (typeof window !== "undefined" && window.TibetanConverter && typeof window.TibetanConverter.get_phonetics === "function") {
+      try {
+        return window.TibetanConverter.get_phonetics({ style: "thl", lang: "en" }).phonetics(term, { autosplit: true });
+      } catch (_e) {
+        return "";
+      }
+    }
+    return "";
+  }
+
+  function renderTooltipContent(payload) {
+    const { term, entries, language, settings } = payload;
     const fragment = document.createDocumentFragment();
+
     const heading = document.createElement("div");
     heading.className = "tibetan-extension-tooltip-heading";
     heading.textContent = term;
     fragment.appendChild(heading);
+
+    const allGlosses = [];
+    const allNotes = [];
+    entries.forEach((entry) => {
+      allGlosses.push(...(entry.glosses || []));
+      if (entry.notes) allNotes.push(entry.notes);
+    });
+
+    const uniqueGlosses = [...new Set(allGlosses)];
+
+    const extras = document.createElement("div");
+    extras.className = "tibetan-extension-tooltip-extras";
+
+    if (settings?.showWylie) {
+      const wylie = getWylie(term);
+      if (wylie) {
+        const line = document.createElement("div");
+        line.className = "tibetan-extension-tooltip-wylie";
+        line.textContent = `Wylie: ${wylie}`;
+        extras.appendChild(line);
+      }
+    }
+
+    if (settings?.showPhonetic) {
+      const phonetic = getPhonetic(term);
+      if (phonetic) {
+        const line = document.createElement("div");
+        line.className = "tibetan-extension-tooltip-phonetic";
+        line.textContent = `Phonetic: ${phonetic}`;
+        extras.appendChild(line);
+      }
+    }
+
+    if (extras.childNodes.length) {
+      fragment.appendChild(extras);
+    }
 
     const subheading = document.createElement("div");
     subheading.className = "tibetan-extension-tooltip-subheading";
     subheading.textContent = `Translation language: ${language.toUpperCase()}`;
     fragment.appendChild(subheading);
 
-    if (!entries.length) {
+    if (!uniqueGlosses.length) {
       const emptyState = document.createElement("div");
       emptyState.className = "tibetan-extension-tooltip-empty";
       emptyState.textContent = "No enabled dictionary has a definition for this term yet.";
@@ -38,29 +94,17 @@
       return fragment;
     }
 
-    entries.forEach((entry) => {
-      const entryNode = document.createElement("section");
-      entryNode.className = "tibetan-extension-tooltip-entry";
+    const combinedGloss = document.createElement("div");
+    combinedGloss.className = "tibetan-extension-tooltip-gloss";
+    combinedGloss.textContent = uniqueGlosses.join("; ");
+    fragment.appendChild(combinedGloss);
 
-      const label = document.createElement("div");
-      label.className = "tibetan-extension-tooltip-label";
-      label.textContent = entry.dictionaryLabel;
-      entryNode.appendChild(label);
-
-      const gloss = document.createElement("div");
-      gloss.className = "tibetan-extension-tooltip-gloss";
-      gloss.textContent = entry.glosses.join("; ");
-      entryNode.appendChild(gloss);
-
-      if (entry.notes) {
-        const notes = document.createElement("div");
-        notes.className = "tibetan-extension-tooltip-notes";
-        notes.textContent = entry.notes;
-        entryNode.appendChild(notes);
-      }
-
-      fragment.appendChild(entryNode);
-    });
+    if (allNotes.length) {
+      const notes = document.createElement("div");
+      notes.className = "tibetan-extension-tooltip-notes";
+      notes.textContent = [...new Set(allNotes)].join(" | ");
+      fragment.appendChild(notes);
+    }
 
     return fragment;
   }
@@ -87,7 +131,7 @@
     showTooltip(anchor, payload) {
       const node = ensureTooltip();
       node.innerHTML = "";
-      node.appendChild(renderTooltipContent(payload.term, payload.entries, payload.language));
+      node.appendChild(renderTooltipContent(payload));
       node.classList.add(tooltipVisible);
       positionTooltip(anchor, node);
     },
