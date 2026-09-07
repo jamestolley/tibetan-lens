@@ -77,9 +77,9 @@
       return "";
     }
     return notesString
-      .replace(/POS:\s*[^\s|,)]+/g, "")
-      .replace(/,\s*$/, "")
-      .trim();
+      .split(" | ")
+      .filter((part) => !/^\s*POS:/.test(part) && part.trim())
+      .join(" | ");
   }
 
   function renderTooltipContent(payload) {
