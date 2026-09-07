@@ -11,13 +11,10 @@
       tooltipVisible: "is-visible"
     },
     messages: {
-      refreshAnnotations: "refresh-annotations",
-      getAnnotationStats: "get-annotation-stats"
-    },
-    
+      refreshAnnotations: "refresh-annotations"
+    }
   };
 })();
-ish" },
       { code: "es", label: "Spanish" },
       { code: "fr", label: "French" }
     ]

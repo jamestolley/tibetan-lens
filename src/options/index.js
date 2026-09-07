@@ -102,7 +102,7 @@
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
-    ui.targetLanguage.value = settings.targetLanguage;
+    
     renderDictionaryList(settings);
   }
 
@@ -122,7 +122,6 @@
       ui.showWylie.checked = settings.showWylie;
       ui.showPhonetic.checked = settings.showPhonetic;
       ui.minTibetanFontSize.value = settings.minTibetanFontSize;
-      ui.targetLanguage.value = settings.targetLanguage;
       renderDictionaryList(settings);
     });
   }
@@ -135,4 +134,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", init, { once: true });
+})();
+});
 })();
