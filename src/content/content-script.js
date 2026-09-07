@@ -402,12 +402,47 @@
       scheduleRefresh();
     });
 
+    function insertTestText() {
+      const id = "tibetan-lens-test-sample";
+      const existing = document.getElementById(id);
+      if (existing) {
+        existing.remove();
+      }
+
+      const container = document.createElement("div");
+      container.id = id;
+      container.lang = "bo";
+      container.style.cssText = "margin:1rem;padding:1rem;border-radius:12px;background:#fff7e8;color:#2c2117;font:18px/1.6 Georgia,\"Palatino Linotype\",serif;";
+      container.innerHTML = `
+        <p style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;">Tibetan Lens test text</p>
+        <p>བོད་སྐད་ཡིག་ལ་མི་མང་པོས་དགའ་པོ་བྱེད།</p>
+        <p>ཆོས་དང་ཞི་བདེ་ནི་གལ་ཆེན་པོ་རེད།</p>
+        <p>དགེ་རྒན་ཞིག་གིས་བོད་སྐད་བསླབས།</p>
+        <p>ཨོཾ་ག་ཏེ་ག་ཏེ་པཱ་ར་ག་ཏེ་པཱ་ར་སཾ་ག་ཏེ་བོ་དྷི་སྭཱ་ཧཱ།</p>
+      `;
+
+      const target = document.body || document.documentElement;
+      target.insertBefore(container, target.firstChild);
+    }
+
     chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       if (!message?.type) {
         return undefined;
       }
 
       if (message.type === extension.constants.messages.refreshAnnotations) {
+        refreshAnnotations().then((stats) => {
+          sendResponse({
+            ok: true,
+            stats,
+            settings: state.settings
+          });
+        });
+        return true;
+      }
+
+      if (message.type === extension.constants.messages.insertTestText) {
+        insertTestText();
         refreshAnnotations().then((stats) => {
           sendResponse({
             ok: true,

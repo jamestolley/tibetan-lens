@@ -99,21 +99,13 @@
     "message": "Refresh page",
     "description": "Popup refresh button"
   },
-  "openTestPage": {
-    "message": "Open test page",
-    "description": "Popup test page button"
+  "insertTestText": {
+    "message": "Insert sample text",
+    "description": "Popup insert sample Tibetan text button"
   },
   "options": {
     "message": "Options",
     "description": "Popup options button"
-  },
-  "demoTitle": {
-    "message": "Sample Page for Tibetan Lens",
-    "description": "Demo page title"
-  },
-  "demoDescription": {
-    "message": "This is a sample page for the extension. To see annotations and definitions, open any public webpage that contains Tibetan text and ensure the extension is enabled.",
-    "description": "Demo page description"
   },
   "brandTibetan": {
     "message": "བོད་ཡིག་མིག་ཤེལ།",

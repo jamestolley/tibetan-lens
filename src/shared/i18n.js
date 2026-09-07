@@ -29,10 +29,8 @@
     loadingDefault: "Loading…",
     noEnabledDictionary: "No enabled dictionary has a definition for this term yet.",
     refreshPage: "Refresh page",
-    openTestPage: "Open test page",
+    insertTestText: "Insert sample text",
     options: "Options",
-    demoTitle: "Sample Page for Tibetan Lens",
-    demoDescription: "This is a sample page for the extension. To see annotations and definitions, open any public webpage that contains Tibetan text and ensure the extension is enabled.",
     brandTibetan: "བོད་ཡིག་མིག་ཤེལ།"
   };
 

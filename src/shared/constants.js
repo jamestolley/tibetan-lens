@@ -11,7 +11,8 @@
       tooltipVisible: "is-visible"
     },
     messages: {
-      refreshAnnotations: "refresh-annotations"
+      refreshAnnotations: "refresh-annotations",
+      insertTestText: "insert-test-text"
     }
   };
 })();

@@ -10,7 +10,7 @@
     ui.showPhonetic = document.getElementById("showPhonetic");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.refreshPage = document.getElementById("refreshPage");
-    ui.openTestPage = document.getElementById("openTestPage");
+    ui.insertTestText = document.getElementById("insertTestText");
     ui.openOptions = document.getElementById("openOptions");
   }
 
@@ -67,8 +67,8 @@
       await sendPageMessage(extension.constants.messages.refreshAnnotations);
     });
 
-    ui.openTestPage.addEventListener("click", () => {
-      chrome.tabs.create({ url: chrome.runtime.getURL("demo/sample.html"), active: true });
+    ui.insertTestText.addEventListener("click", async () => {
+      await sendPageMessage(extension.constants.messages.insertTestText);
     });
 
     ui.openOptions.addEventListener("click", () => {
