@@ -8,7 +8,10 @@
   function getControls() {
     ui.extensionEnabled = document.getElementById("extensionEnabled");
     ui.insertSpaces = document.getElementById("insertSpaces");
-    ui.showTooltips = document.getElementById("showTooltips");
+    ui.tooltipMode = document.getElementById("tooltipMode");
+    ui.showWylie = document.getElementById("showWylie");
+    ui.showPhonetic = document.getElementById("showPhonetic");
+    ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.targetLanguage = document.getElementById("targetLanguage");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
@@ -61,7 +64,10 @@
     return {
       extensionEnabled: ui.extensionEnabled.checked,
       insertSpaces: ui.insertSpaces.checked,
-      showTooltips: ui.showTooltips.checked,
+      tooltipMode: ui.tooltipMode.value,
+      showWylie: ui.showWylie.checked,
+      showPhonetic: ui.showPhonetic.checked,
+      minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
       targetLanguage: ui.targetLanguage.value,
       enabledDictionaries:
         enabledDictionaries.length > 0
@@ -92,7 +98,10 @@
     const settings = await extension.storage.getSettings();
     ui.extensionEnabled.checked = settings.extensionEnabled;
     ui.insertSpaces.checked = settings.insertSpaces;
-    ui.showTooltips.checked = settings.showTooltips;
+    ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
+    ui.showWylie.checked = settings.showWylie;
+    ui.showPhonetic.checked = settings.showPhonetic;
+    ui.minTibetanFontSize.value = settings.minTibetanFontSize;
     ui.targetLanguage.value = settings.targetLanguage;
     renderDictionaryList(settings);
   }
@@ -100,13 +109,19 @@
   function bindEvents() {
     ui.extensionEnabled.addEventListener("change", saveSettings);
     ui.insertSpaces.addEventListener("change", saveSettings);
-    ui.showTooltips.addEventListener("change", saveSettings);
+    ui.tooltipMode.addEventListener("change", saveSettings);
+    ui.showWylie.addEventListener("change", saveSettings);
+    ui.showPhonetic.addEventListener("change", saveSettings);
+    ui.minTibetanFontSize.addEventListener("change", saveSettings);
     ui.targetLanguage.addEventListener("change", saveSettings);
 
     extension.storage.onSettingsChanged((settings) => {
       ui.extensionEnabled.checked = settings.extensionEnabled;
       ui.insertSpaces.checked = settings.insertSpaces;
-      ui.showTooltips.checked = settings.showTooltips;
+      ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
+      ui.showWylie.checked = settings.showWylie;
+      ui.showPhonetic.checked = settings.showPhonetic;
+      ui.minTibetanFontSize.value = settings.minTibetanFontSize;
       ui.targetLanguage.value = settings.targetLanguage;
       renderDictionaryList(settings);
     });

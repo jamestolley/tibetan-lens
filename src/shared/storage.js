@@ -5,6 +5,14 @@
     const defaults = extension.defaults.settings;
     const merged = { ...defaults, ...raw };
 
+    if (raw && "showTooltips" in raw && !("tooltipMode" in raw)) {
+      merged.tooltipMode = raw.showTooltips ? "click" : "hover";
+    }
+
+    if (merged.tooltipMode !== "hover" && merged.tooltipMode !== "click") {
+      merged.tooltipMode = defaults.tooltipMode;
+    }
+
     if (!Array.isArray(merged.enabledDictionaries) || !merged.enabledDictionaries.length) {
       merged.enabledDictionaries = [...defaults.enabledDictionaries];
     }

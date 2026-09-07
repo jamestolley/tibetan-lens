@@ -51,6 +51,13 @@ select {
   font-size: clamp(2rem, 3vw, 3rem);
 }
 
+.hero h1 span {
+  margin-left: 0.45em;
+  color: var(--clay);
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
 .intro {
   max-width: 48rem;
   margin: 10px 0 0;
@@ -99,12 +106,14 @@ select {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.field select {
-  min-width: 160px;
+.field select,
+.field input[type="number"] {
+  min-width: 120px;
   padding: 9px 12px;
   border: 1px solid rgba(40, 31, 23, 0.16);
   border-radius: 999px;
   background: #fff;
+  text-align: right;
 }
 
 .dictionary-list {

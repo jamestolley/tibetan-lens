@@ -5,7 +5,7 @@
     settings: {
       extensionEnabled: true,
       insertSpaces: true,
-      showTooltips: true,
+      tooltipMode: "click",
       showWylie: true,
       showPhonetic: false,
       minTibetanFontSize: 16,

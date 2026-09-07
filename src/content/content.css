@@ -96,24 +96,32 @@
 }
 
 .tibetan-extension-tooltip-extras {
-  margin: 0.3rem 0 0.5rem;
-  color: rgba(44, 33, 23, 0.78);
-  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.25rem 0 0.6rem;
+  font-size: 0.92rem;
 }
 
-.tibetan-extension-tooltip-wylie,
-.tibetan-extension-tooltip-phonetic {
-  line-height: 1.4;
+.tibetan-extension-tooltip-pos {
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(190, 134, 30, 0.16);
+  color: rgba(122, 47, 42, 0.92);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .tibetan-extension-tooltip-wylie {
-  color: rgba(122, 47, 42, 0.86);
+  color: rgba(122, 47, 42, 0.9);
   font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.88rem;
 }
 
 .tibetan-extension-tooltip-phonetic {
-  color: rgba(190, 134, 30, 0.92);
+  color: rgba(190, 134, 30, 0.95);
   font-style: italic;
 }
 

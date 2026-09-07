@@ -7,6 +7,7 @@
     ignoreMutationsUntil: 0,
     observer: null,
     refreshTimer: null,
+    tooltipHideTimer: null,
     settings: null,
     spinner: null,
     stats: {
@@ -25,6 +26,7 @@
     element.setAttribute("role", "button");
     element.dataset.term = token.text;
     element.dataset.lookupKey = token.lookupKey || token.text;
+    element.dataset.pos = token.pos || "";
     element.textContent = token.text;
 
     if (state.settings?.minTibetanFontSize) {
@@ -196,10 +198,6 @@
   }
 
   function showTooltipForWord(wordElement) {
-    if (!state.settings?.showTooltips) {
-      return;
-    }
-
     const lookupTerm = wordElement.dataset.lookupKey || wordElement.dataset.term || "";
     const entries = mergeTooltipEntries(
       extension.dictionary.lookup(lookupTerm, state.settings),
@@ -210,10 +208,24 @@
 
     extension.tooltip.showTooltip(wordElement, {
       term: wordElement.dataset.term || wordElement.textContent || "",
+      pos: wordElement.dataset.pos || "",
       entries,
-      language: state.settings.targetLanguage,
       settings: state.settings
     });
+  }
+
+  function scheduleHideTooltip() {
+    state.tooltipHideTimer = window.setTimeout(() => {
+      extension.tooltip.hideTooltip();
+      state.tooltipHideTimer = null;
+    }, 200);
+  }
+
+  function cancelHideTooltip() {
+    if (state.tooltipHideTimer) {
+      window.clearTimeout(state.tooltipHideTimer);
+      state.tooltipHideTimer = null;
+    }
   }
 
   function handleDocumentClick(event) {
@@ -222,8 +234,13 @@
       return;
     }
 
+    if (state.settings?.tooltipMode !== "click") {
+      return;
+    }
+
     const word = target.closest(`.${extension.constants.classes.word}`);
     if (word) {
+      cancelHideTooltip();
       showTooltipForWord(word);
       return;
     }
@@ -231,6 +248,64 @@
     if (!extension.tooltip.isTooltipElement(target)) {
       extension.tooltip.hideTooltip();
     }
+  }
+
+  function handleMouseOver(event) {
+    if (state.settings?.tooltipMode !== "hover") {
+      return;
+    }
+
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const word = target.closest(`.${extension.constants.classes.word}`);
+    if (!word) {
+      return;
+    }
+
+    if (event.relatedTarget instanceof Element && word.contains(event.relatedTarget)) {
+      return;
+    }
+
+    cancelHideTooltip();
+    showTooltipForWord(word);
+  }
+
+  function handleMouseOut(event) {
+    if (state.settings?.tooltipMode !== "hover") {
+      return;
+    }
+
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const word = target.closest(`.${extension.constants.classes.word}`);
+    if (!word) {
+      return;
+    }
+
+    if (event.relatedTarget instanceof Element) {
+      if (word.contains(event.relatedTarget)) {
+        return;
+      }
+      if (extension.tooltip.isTooltipElement(event.relatedTarget)) {
+        return;
+      }
+    }
+
+    scheduleHideTooltip();
+  }
+
+  function handleTooltipMouseEnter() {
+    cancelHideTooltip();
+  }
+
+  function handleTooltipMouseLeave() {
+    scheduleHideTooltip();
   }
 
   function handleFocusIn(event) {
@@ -241,12 +316,14 @@
 
     const word = target.closest(`.${extension.constants.classes.word}`);
     if (word) {
+      cancelHideTooltip();
       showTooltipForWord(word);
     }
   }
 
   function handleKeyDown(event) {
     if (event.key === "Escape") {
+      cancelHideTooltip();
       extension.tooltip.hideTooltip();
     }
   }
@@ -310,8 +387,13 @@
     }
 
     document.addEventListener("click", handleDocumentClick, true);
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
     document.addEventListener("focusin", handleFocusIn, true);
     document.addEventListener("keydown", handleKeyDown, true);
+
+    extension.tooltip.onMouseEnter = handleTooltipMouseEnter;
+    extension.tooltip.onMouseLeave = handleTooltipMouseLeave;
 
     extension.storage.onSettingsChanged((settings) => {
       state.settings = settings;
