@@ -10,7 +10,8 @@
       showPhonetic: false,
       minTibetanFontSize: 16,
       enabledDictionaries: ["botok-core", "hopkins", "jim-valby", "ives-waldo", "tsepak-rigdzin", "84000"],
-      tokenizerMode: "botok-general"
+      tokenizerMode: "botok-general",
+      colorByPos: false
     }
   };
 })();

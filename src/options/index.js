@@ -57,6 +57,7 @@
       tooltipMode: ui.tooltipMode.value,
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
+      colorByPos: ui.colorByPos.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
       enabledDictionaries:
         enabledDictionaries.length > 0

@@ -18,6 +18,7 @@
 
   function createWordElement(token) {
     const element = document.createElement("span");
+    const posClass = state.settings?.colorByPos && token.pos ? `tibetan-extension-word--${token.pos}` : '';
     element.className = [
       extension.constants.classes.word,
       token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched
