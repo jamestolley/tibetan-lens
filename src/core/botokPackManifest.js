@@ -53,6 +53,11 @@
           {
             path: "data/dialect_packs/botok_general/dictionary/words/84000.tsv",
             dictionaryId: "84000"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/actib_pos.tsv",
+            dictionaryLabel: "ACTib POS lexicon",
+            posOnly: true
           }
         ],
         words_non_inflected: [

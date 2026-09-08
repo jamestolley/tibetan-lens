@@ -151,6 +151,7 @@
         category,
         dictionaryId: fileDescriptor.dictionaryId || null,
         dictionaryLabel: fileDescriptor.dictionaryLabel || null,
+        posOnly: Boolean(fileDescriptor.posOnly),
         sourcePath: fileDescriptor.path
       }));
   }
@@ -672,6 +673,7 @@
             affixed: Boolean(affixData),
             dictionaryId: entry.dictionaryId,
             dictionaryLabel: entry.dictionaryLabel,
+            posOnly: entry.posOnly,
             sourcePath: entry.sourcePath
           }).filter(([, value]) => value !== null && value !== undefined && value !== "")
         );
@@ -1056,6 +1058,10 @@
       Object.values(componentEntries || {}).forEach((entries) => {
         (entries || []).forEach((entry) => {
           if (entry.dictionaryId && !enabledDictionaryIds.has(entry.dictionaryId)) {
+            return;
+          }
+
+          if (entry.posOnly) {
             return;
           }
 
