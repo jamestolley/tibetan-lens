@@ -20,7 +20,6 @@
     showWylie: "Show Wylie",
     showPhonetic: "Show phonetic",
     colorByPos: "Color words by part of speech",
-    showTseg: "Show tseg (་) after each word",
     colorCoding: "Color coding",
     colorCodingHint: "Highlight words by part of speech and choose a color theme.",
     posColorTheme: "Part-of-speech color theme",

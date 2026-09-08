@@ -13,7 +13,6 @@
       tokenizerMode: "botok-general",
       colorByPos: false,
       posColorTheme: "vivid",
-      showTseg: false,
       linkClickPrompt: true
     }
   };

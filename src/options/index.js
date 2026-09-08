@@ -12,7 +12,6 @@
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
     ui.colorByPos = document.getElementById("colorByPos");
-    ui.showTseg = document.getElementById("showTseg");
     ui.posColorTheme = document.getElementById("posColorTheme");
     ui.linkClickPrompt = document.getElementById("linkClickPrompt");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
@@ -62,7 +61,6 @@
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
       colorByPos: ui.colorByPos.checked,
-      showTseg: ui.showTseg.checked,
       posColorTheme: ui.posColorTheme.value,
       linkClickPrompt: ui.linkClickPrompt.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
@@ -99,7 +97,6 @@
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
     ui.colorByPos.checked = settings.colorByPos;
-    ui.showTseg.checked = settings.showTseg;
     ui.posColorTheme.value = settings.posColorTheme;
     ui.linkClickPrompt.checked = settings.linkClickPrompt;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
@@ -113,7 +110,6 @@
     ui.showWylie.addEventListener("change", saveSettings);
     ui.showPhonetic.addEventListener("change", saveSettings);
     ui.colorByPos.addEventListener("change", saveSettings);
-    ui.showTseg.addEventListener("change", saveSettings);
     ui.posColorTheme.addEventListener("change", saveSettings);
     ui.linkClickPrompt.addEventListener("change", saveSettings);
     ui.minTibetanFontSize.addEventListener("change", saveSettings);
@@ -125,7 +121,6 @@
       ui.showWylie.checked = settings.showWylie;
       ui.showPhonetic.checked = settings.showPhonetic;
       ui.colorByPos.checked = settings.colorByPos;
-      ui.showTseg.checked = settings.showTseg;
       ui.posColorTheme.value = settings.posColorTheme;
       ui.linkClickPrompt.checked = settings.linkClickPrompt;
       ui.minTibetanFontSize.value = settings.minTibetanFontSize;

@@ -62,7 +62,7 @@
 
     const TSEK = "་";
     element.textContent =
-      state.settings?.showTseg && token.text && !/[\u0f0b-\u0f14]$/.test(token.text)
+      token.text && !/[\u0f0b-\u0f14]$/.test(token.text)
         ? token.text + TSEK
         : token.text;
 

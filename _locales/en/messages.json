@@ -63,10 +63,6 @@
     "message": "Color words by part of speech",
     "description": "Color by POS toggle label"
   },
-  "showTseg": {
-    "message": "Show tseg (་) after each word",
-    "description": "Show tseg toggle label"
-  },
   "colorCoding": {
     "message": "Color coding",
     "description": "Color coding section heading"
