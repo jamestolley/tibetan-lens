@@ -18,6 +18,34 @@
     }
   };
 
+  function extensionContextValid() {
+    try {
+      return Boolean(chrome?.runtime?.id);
+    } catch (_error) {
+      return false;
+    }
+  }
+
+  function teardownIfInvalidated() {
+    if (extensionContextValid()) {
+      return false;
+    }
+
+    if (state.observer) {
+      state.observer.disconnect();
+      state.observer = null;
+    }
+
+    if (state.refreshTimer) {
+      window.clearTimeout(state.refreshTimer);
+      state.refreshTimer = null;
+    }
+
+    state.initialized = false;
+    console.warn("[TibetanLens] Extension context invalidated (extension was reloaded/updated). Reload this page to re-enable Tibetan Lens.");
+    return true;
+  }
+
   function createWordElement(token) {
     const element = document.createElement("span");
     const posClass = state.settings?.colorByPos && token.pos ? `tibetan-extension-word--${token.pos}` : "";
@@ -142,6 +170,10 @@
   }
 
   async function refreshAnnotations() {
+    if (teardownIfInvalidated()) {
+      return state.stats;
+    }
+
     if (state.isRendering) {
       console.log('[TibetanLens] refreshAnnotations skipped — already rendering');
       return state.stats;
@@ -420,6 +452,10 @@
     }
 
     state.observer = new MutationObserver((mutations) => {
+      if (teardownIfInvalidated()) {
+        return;
+      }
+
       if (state.isRendering || !state.settings?.extensionEnabled) {
         return;
       }

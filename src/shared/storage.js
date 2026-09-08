@@ -43,6 +43,14 @@
           return;
         }
 
+        try {
+          if (!chrome?.runtime?.id) {
+            return;
+          }
+        } catch (_error) {
+          return;
+        }
+
         listener(await this.getSettings());
       };
 
