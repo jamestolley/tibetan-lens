@@ -176,13 +176,17 @@
   letter-spacing: 0.03em;
 }
 
+.tibetan-extension-tooltip-wylie,
+.tibetan-extension-tooltip-phonetic {
+  font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 .tibetan-extension-tooltip-wylie {
-  color: rgba(122, 47, 42, 0.9);
-  font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  color: #6b1f1a;
 }
 
 .tibetan-extension-tooltip-phonetic {
-  color: rgba(190, 134, 30, 0.95);
+  color: #7a4d00;
   font-style: italic;
 }
 

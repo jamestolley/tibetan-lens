@@ -57,7 +57,7 @@
   function getWylie(term) {
     const jsEWTS = globalThis.jsEWTS;
     if (jsEWTS && typeof jsEWTS.toWylie === "function") {
-      return jsEWTS.toWylie(term).trim();
+      return jsEWTS.toWylie(term).trim().normalize("NFC");
     }
     return "";
   }
@@ -66,7 +66,10 @@
     const converter = globalThis.TibetanConverter;
     if (converter && typeof converter.get_phonetics === "function") {
       try {
-        return converter.get_phonetics({ style: "thl", lang: "en" }).phonetics(term, { autosplit: true });
+        return converter
+          .get_phonetics({ style: "thl", lang: "en" })
+          .phonetics(term, { autosplit: true })
+          .normalize("NFC");
       } catch (_e) {
         return "";
       }
