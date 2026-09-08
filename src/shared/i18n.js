@@ -20,6 +20,7 @@
     showWylie: "Show Wylie",
     showPhonetic: "Show phonetic",
     colorByPos: "Color words by part of speech",
+    linkClickPrompt: "When clicking a linked Tibetan word, ask: follow link or show translation",
     minTibetanFontSize: "Minimum Tibetan font size",
     dictionaries: "Dictionaries",
     dictionariesHint: "Enabled dictionaries drive tooltip results and the tokenizer lexicon.",
@@ -33,7 +34,11 @@
     refreshPage: "Refresh page",
     insertTestText: "Insert sample text",
     options: "Options",
-    brandTibetan: "བོད་ཡིག་མིག་ཤེལ།"
+    brandTibetan: "བོད་ཡིག་མིག་ཤེལ།",
+    followLink: "Follow link",
+    showTranslation: "Show translation",
+    pageNotReachable: "Couldn't reach this page — reload the tab or open the Sample page.",
+    samplePage: "Sample page"
   };
 
   extension.i18n = {

@@ -12,6 +12,7 @@
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
     ui.colorByPos = document.getElementById("colorByPos");
+    ui.linkClickPrompt = document.getElementById("linkClickPrompt");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
@@ -59,6 +60,7 @@
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
       colorByPos: ui.colorByPos.checked,
+      linkClickPrompt: ui.linkClickPrompt.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
       enabledDictionaries:
         enabledDictionaries.length > 0
@@ -93,6 +95,7 @@
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
     ui.colorByPos.checked = settings.colorByPos;
+    ui.linkClickPrompt.checked = settings.linkClickPrompt;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
     renderDictionaryList(settings);
   }
@@ -104,6 +107,7 @@
     ui.showWylie.addEventListener("change", saveSettings);
     ui.showPhonetic.addEventListener("change", saveSettings);
     ui.colorByPos.addEventListener("change", saveSettings);
+    ui.linkClickPrompt.addEventListener("change", saveSettings);
     ui.minTibetanFontSize.addEventListener("change", saveSettings);
 
     extension.storage.onSettingsChanged((settings) => {
@@ -113,6 +117,7 @@
       ui.showWylie.checked = settings.showWylie;
       ui.showPhonetic.checked = settings.showPhonetic;
       ui.colorByPos.checked = settings.colorByPos;
+      ui.linkClickPrompt.checked = settings.linkClickPrompt;
       ui.minTibetanFontSize.value = settings.minTibetanFontSize;
       renderDictionaryList(settings);
     });

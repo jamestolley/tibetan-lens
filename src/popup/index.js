@@ -5,23 +5,39 @@
 
   function getControls() {
     ui.insertSpaces = document.getElementById("insertSpaces");
+    ui.colorByPos = document.getElementById("colorByPos");
     ui.tooltipMode = document.getElementById("tooltipMode");
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.refreshPage = document.getElementById("refreshPage");
     ui.insertTestText = document.getElementById("insertTestText");
+    ui.samplePage = document.getElementById("samplePage");
     ui.openOptions = document.getElementById("openOptions");
+    ui.popupStatus = document.getElementById("popupStatus");
   }
 
   function readSettingsFromControls() {
     return {
       insertSpaces: ui.insertSpaces.checked,
+      colorByPos: ui.colorByPos.checked,
       tooltipMode: ui.tooltipMode.value,
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16
     };
+  }
+
+  function showStatus(message) {
+    if (ui.popupStatus) {
+      ui.popupStatus.textContent = message;
+    }
+  }
+
+  function clearStatus() {
+    if (ui.popupStatus) {
+      ui.popupStatus.textContent = "";
+    }
   }
 
   async function getActiveTab() {
@@ -30,21 +46,32 @@
   }
 
   async function sendPageMessage(type) {
+    clearStatus();
+
     try {
       const tab = await getActiveTab();
       if (!tab?.id) {
-        return null;
+        showStatus(extension.i18n.getMessage("pageNotReachable"));
+        return false;
       }
 
-      return await chrome.tabs.sendMessage(tab.id, { type });
+      const result = await chrome.tabs.sendMessage(tab.id, { type });
+      if (!result) {
+        showStatus(extension.i18n.getMessage("pageNotReachable"));
+        return false;
+      }
+
+      return true;
     } catch (_error) {
-      return null;
+      showStatus(extension.i18n.getMessage("pageNotReachable"));
+      return false;
     }
   }
 
   async function loadSettings() {
     const settings = await extension.storage.getSettings();
     ui.insertSpaces.checked = settings.insertSpaces;
+    ui.colorByPos.checked = settings.colorByPos;
     ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
@@ -58,6 +85,7 @@
 
   function bindEvents() {
     ui.insertSpaces.addEventListener("change", saveSettingsAndRefresh);
+    ui.colorByPos.addEventListener("change", saveSettingsAndRefresh);
     ui.tooltipMode.addEventListener("change", saveSettingsAndRefresh);
     ui.showWylie.addEventListener("change", saveSettingsAndRefresh);
     ui.showPhonetic.addEventListener("change", saveSettingsAndRefresh);
@@ -69,6 +97,10 @@
 
     ui.insertTestText.addEventListener("click", async () => {
       await sendPageMessage(extension.constants.messages.insertTestText);
+    });
+
+    ui.samplePage.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("demo/index.html") });
     });
 
     ui.openOptions.addEventListener("click", () => {

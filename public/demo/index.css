@@ -1,0 +1,59 @@
+:root {
+  --demo-ink: #1f2937;
+  --demo-muted: #6b7280;
+  --demo-bg: #ffffff;
+  --demo-line: rgba(31, 41, 55, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  background: var(--demo-bg);
+  color: var(--demo-ink);
+  font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.demo {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.demo h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.demo .intro,
+.demo .note {
+  color: var(--demo-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.demo .note {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--demo-line);
+}
+
+.demo article {
+  margin-top: 1.5rem;
+  font-size: 1.35rem;
+  line-height: 1.9;
+  font-family: "Tibetan Machine Uni", "Noto Sans Tibetan", "Kailasa", "Microsoft Himalaya", sans-serif;
+}
+
+.demo article p {
+  margin: 0 0 1.25rem;
+}
+
+.demo .linked a {
+  color: #3d4c5c;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

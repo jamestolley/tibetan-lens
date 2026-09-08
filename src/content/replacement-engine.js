@@ -1,6 +1,6 @@
 (() => {
   const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
-  const { processedNode, tooltip } = extension.constants.classes;
+  const { processedNode, tooltip, linkChoice } = extension.constants.classes;
   const SKIP_TAGS = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT", "SELECT", "OPTION", "CODE", "PRE"]);
 
   function shouldSkipTextNode(node) {
@@ -14,7 +14,7 @@
       return true;
     }
 
-    if (parent.closest(`.${processedNode}`) || parent.closest(`#${tooltip}`)) {
+    if (parent.closest(`.${processedNode}, #${tooltip}, .${linkChoice}, #${linkChoice}`)) {
       return true;
     }
 

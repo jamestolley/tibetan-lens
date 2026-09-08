@@ -11,7 +11,8 @@
       minTibetanFontSize: 16,
       enabledDictionaries: ["84000", "hopkins"],
       tokenizerMode: "botok-general",
-      colorByPos: false
+      colorByPos: false,
+      linkClickPrompt: true
     }
   };
 })();

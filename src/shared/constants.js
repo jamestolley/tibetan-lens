@@ -8,7 +8,8 @@
       wordMatched: "is-matched",
       wordUnmatched: "is-unmatched",
       tooltip: "tibetan-extension-tooltip",
-      tooltipVisible: "is-visible"
+      tooltipVisible: "is-visible",
+      linkChoice: "tibetan-extension-link-choice"
     },
     messages: {
       refreshAnnotations: "refresh-annotations",

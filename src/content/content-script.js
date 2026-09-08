@@ -8,6 +8,8 @@
     observer: null,
     refreshTimer: null,
     tooltipHideTimer: null,
+    linkChoiceWord: null,
+    linkChoiceAnchor: null,
     settings: null,
     spinner: null,
     stats: {
@@ -236,27 +238,42 @@
       return;
     }
 
+    if (target.closest(`#${extension.constants.classes.linkChoice}`)) {
+      return;
+    }
+
     if (state.settings?.tooltipMode !== "click") {
+      hideLinkChoice();
       return;
     }
 
     const word = target.closest(`.${extension.constants.classes.word}`);
-    if (word) {
-      cancelHideTooltip();
-      showTooltipForWord(word);
+    if (!word) {
+      if (!extension.tooltip.isTooltipElement(target)) {
+        extension.tooltip.hideTooltip();
+      }
+      hideLinkChoice();
       return;
     }
 
-    if (!extension.tooltip.isTooltipElement(target)) {
-      extension.tooltip.hideTooltip();
+    const anchor = word.closest("a");
+    if (anchor) {
+      if (state.settings?.linkClickPrompt) {
+        event.preventDefault();
+        event.stopPropagation();
+        showLinkChoice(word, anchor);
+      } else {
+        hideLinkChoice();
+        // Let the click follow the link normally. Hover still shows the tooltip (3a).
+      }
+      return;
     }
+
+    hideLinkChoice();
+    cancelHideTooltip();
+    showTooltipForWord(word);
   }
-
   function handleMouseOver(event) {
-    if (state.settings?.tooltipMode !== "hover") {
-      return;
-    }
-
     const target = event.target;
     if (!(target instanceof Element)) {
       return;
@@ -264,6 +281,26 @@
 
     const word = target.closest(`.${extension.constants.classes.word}`);
     if (!word) {
+      return;
+    }
+
+    const inAnchor = word.closest("a");
+
+    if (state.settings?.tooltipMode === "click") {
+      if (!inAnchor) {
+        return;
+      }
+
+      if (event.relatedTarget instanceof Element && word.contains(event.relatedTarget)) {
+        return;
+      }
+
+      cancelHideTooltip();
+      showTooltipForWord(word);
+      return;
+    }
+
+    if (state.settings?.tooltipMode !== "hover") {
       return;
     }
 
@@ -274,12 +311,7 @@
     cancelHideTooltip();
     showTooltipForWord(word);
   }
-
   function handleMouseOut(event) {
-    if (state.settings?.tooltipMode !== "hover") {
-      return;
-    }
-
     const target = event.target;
     if (!(target instanceof Element)) {
       return;
@@ -287,6 +319,31 @@
 
     const word = target.closest(`.${extension.constants.classes.word}`);
     if (!word) {
+      return;
+    }
+
+    if (state.settings?.tooltipMode === "click") {
+      if (!word.closest("a")) {
+        return;
+      }
+
+      if (event.relatedTarget instanceof Element) {
+        if (word.contains(event.relatedTarget)) {
+          return;
+        }
+        if (extension.tooltip.isTooltipElement(event.relatedTarget)) {
+          return;
+        }
+        if (event.relatedTarget.closest(`#${extension.constants.classes.linkChoice}`)) {
+          return;
+        }
+      }
+
+      scheduleHideTooltip();
+      return;
+    }
+
+    if (state.settings?.tooltipMode !== "hover") {
       return;
     }
 
@@ -301,7 +358,6 @@
 
     scheduleHideTooltip();
   }
-
   function handleTooltipMouseEnter() {
     cancelHideTooltip();
   }
@@ -327,13 +383,15 @@
     if (event.key === "Escape") {
       cancelHideTooltip();
       extension.tooltip.hideTooltip();
+      hideLinkChoice();
     }
   }
-
   function shouldRefreshForMutation(mutation) {
+    const ignoreSelector = `.${extension.constants.classes.processedNode}, #${extension.constants.classes.tooltip}, .${extension.constants.classes.linkChoice}, #${extension.constants.classes.linkChoice}`;
+
     if (mutation.type === "characterData") {
       const parent = mutation.target.parentElement;
-      if (parent?.closest(`.${extension.constants.classes.processedNode}, #${extension.constants.classes.tooltip}`)) {
+      if (parent?.closest(ignoreSelector)) {
         return false;
       }
 
@@ -342,7 +400,7 @@
 
     return Array.from(mutation.addedNodes).some((node) => {
       if (node instanceof Element) {
-        if (node.closest(`.${extension.constants.classes.processedNode}, #${extension.constants.classes.tooltip}`)) {
+        if (node.closest(ignoreSelector)) {
           return false;
         }
 
@@ -356,7 +414,6 @@
       return false;
     });
   }
-
   function observeDocument() {
     if (state.observer) {
       return;
@@ -381,6 +438,106 @@
       subtree: true,
       characterData: true
     });
+  }
+
+    function ensureLinkChoice() {
+    let node = document.getElementById(extension.constants.classes.linkChoice);
+    if (node) {
+      return node;
+    }
+
+    node = document.createElement("div");
+    node.id = extension.constants.classes.linkChoice;
+    node.className = extension.constants.classes.linkChoice;
+    node.setAttribute("role", "dialog");
+    node.setAttribute("aria-live", "polite");
+
+    const followBtn = document.createElement("button");
+    followBtn.type = "button";
+    followBtn.className = "tibetan-extension-link-choice__primary";
+    followBtn.dataset.action = "follow";
+
+    const showBtn = document.createElement("button");
+    showBtn.type = "button";
+    showBtn.className = "tibetan-extension-link-choice__secondary";
+    showBtn.dataset.action = "show";
+
+    node.appendChild(followBtn);
+    node.appendChild(showBtn);
+    node.addEventListener("click", handleLinkChoiceClick);
+
+    (document.body || document.documentElement).appendChild(node);
+    return node;
+  }
+
+  function positionLinkChoice(anchor) {
+    const node = ensureLinkChoice();
+    const rect = anchor.getBoundingClientRect();
+    const viewportLeft = window.scrollX + 12;
+    const viewportRight = window.scrollX + window.innerWidth - 12;
+    const bottomAlignedTop = window.scrollY + rect.bottom + 8;
+    const topAlignedTop = window.scrollY + rect.top - node.offsetHeight - 8;
+    const top =
+      bottomAlignedTop + node.offsetHeight > window.scrollY + window.innerHeight - 12
+        ? Math.max(window.scrollY + 12, topAlignedTop)
+        : bottomAlignedTop;
+
+    const unclampedLeft = window.scrollX + rect.left;
+    const left = Math.min(Math.max(unclampedLeft, viewportLeft), viewportRight - node.offsetWidth);
+
+    node.style.top = `${top}px`;
+    node.style.left = `${left}px`;
+  }
+
+  function showLinkChoice(word, anchor) {
+    extension.tooltip.hideTooltip();
+    cancelHideTooltip();
+    hideLinkChoice();
+
+    const node = ensureLinkChoice();
+    state.linkChoiceWord = word;
+    state.linkChoiceAnchor = anchor;
+
+    node.querySelector('[data-action="follow"]').textContent = extension.i18n.getMessage("followLink");
+    node.querySelector('[data-action="show"]').textContent = extension.i18n.getMessage("showTranslation");
+
+    node.classList.add("is-visible");
+    positionLinkChoice(word);
+  }
+
+  function hideLinkChoice() {
+    const node = document.getElementById(extension.constants.classes.linkChoice);
+    if (node) {
+      node.classList.remove("is-visible");
+    }
+
+    state.linkChoiceWord = null;
+    state.linkChoiceAnchor = null;
+  }
+
+  function handleLinkChoiceClick(event) {
+    const button = event.target.closest("button[data-action]");
+    if (!button) {
+      return;
+    }
+
+    event.stopPropagation();
+
+    const word = state.linkChoiceWord;
+    const anchor = state.linkChoiceAnchor;
+
+    if (button.dataset.action === "follow" && anchor) {
+      if (anchor.target === "_blank") {
+        window.open(anchor.href, "_blank");
+      } else {
+        window.location.assign(anchor.href);
+      }
+    } else if (button.dataset.action === "show" && word) {
+      cancelHideTooltip();
+      showTooltipForWord(word);
+    }
+
+    hideLinkChoice();
   }
 
   function bindEvents() {

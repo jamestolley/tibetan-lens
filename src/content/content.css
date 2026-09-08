@@ -201,3 +201,46 @@
     transform: rotate(360deg);
   }
 }
+
+/* Link choice popover for linked Tibetan words in click mode */
+.tibetan-extension-link-choice {
+  position: absolute;
+  z-index: 2147483646;
+  display: none;
+  min-width: 12rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(44, 33, 23, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(44, 33, 23, 0.15);
+  font: 13px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.tibetan-extension-link-choice.is-visible {
+  display: block;
+}
+
+.tibetan-extension-link-choice button {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(44, 33, 23, 0.16);
+  border-radius: 6px;
+  background: #fff;
+  color: #2c2117;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tibetan-extension-link-choice button + button {
+  margin-left: 0.5rem;
+}
+
+.tibetan-extension-link-choice__primary {
+  background: #3d4c5c !important;
+  color: #fff !important;
+  border-color: #3d4c5c !important;
+}
+
+.tibetan-extension-link-choice__secondary {
+  background: #f8f8f8 !important;
+}

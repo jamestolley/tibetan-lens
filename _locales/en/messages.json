@@ -63,6 +63,10 @@
     "message": "Color words by part of speech",
     "description": "Color by POS toggle label"
   },
+  "linkClickPrompt": {
+    "message": "When clicking a linked Tibetan word, ask: follow link or show translation",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
   "minTibetanFontSize": {
     "message": "Minimum Tibetan font size",
     "description": "Minimum font size label"
@@ -118,5 +122,21 @@
   "brandTibetan": {
     "message": "བོད་ཡིག་མིག་ཤེལ།",
     "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Follow link",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Show translation",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Couldn't reach this page — reload the tab or open the Sample page.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Sample page",
+    "description": "Popup button to open the bundled demo page"
   }
 }
