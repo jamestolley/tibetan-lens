@@ -213,8 +213,15 @@
       console.log('[TibetanLens] scanDocument complete:', stats);
       return stats;
     } catch (err) {
+      if (err && err.contextInvalidated) {
+        teardownIfInvalidated();
+        return state.stats;
+      }
+      if (teardownIfInvalidated()) {
+        return state.stats;
+      }
       console.error('[TibetanLens] refreshAnnotations ERROR:', err);
-      throw err;
+      return state.stats;
     } finally {
       hideSpinner();
       state.isRendering = false;
