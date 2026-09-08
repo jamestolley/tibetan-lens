@@ -15,6 +15,14 @@
 
     if (!Array.isArray(merged.enabledDictionaries) || !merged.enabledDictionaries.length) {
       merged.enabledDictionaries = [...defaults.enabledDictionaries];
+    } else {
+      const catalog = extension.botokPackManifest?.dictionaryCatalog;
+      if (catalog) {
+        merged.enabledDictionaries = merged.enabledDictionaries.filter((id) => id in catalog);
+        if (!merged.enabledDictionaries.length) {
+          merged.enabledDictionaries = [...defaults.enabledDictionaries];
+        }
+      }
     }
 
     if (merged.tokenizerMode !== defaults.tokenizerMode) {
