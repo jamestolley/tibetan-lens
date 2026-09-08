@@ -843,11 +843,60 @@
     };
   }
 
+  function isTibetanDigitRun(text) {
+    return /^[\u0f20-\u0f29]+$/u.test(text || "");
+  }
+
+  function tibetanDigitsToArabic(text) {
+    return (text || "").replace(/[\u0f20-\u0f29]/gu, (char) =>
+      String(char.charCodeAt(0) - 0x0f20)
+    );
+  }
+
+  function createNumberToken(syllables) {
+    const surfaceText = joinSurfaceSyllables(syllables);
+    const digitText = syllables.map((syllable) => syllable.cleanText).join("");
+    const arabic = tibetanDigitsToArabic(digitText);
+
+    return {
+      type: "word",
+      text: digitText,
+      surfaceText,
+      lookupKey: digitText,
+      matched: true,
+      start: syllables[0].start,
+      end: syllables[syllables.length - 1].end,
+      lemma: digitText,
+      pos: "NUM",
+      senses: [
+        {
+          sense: `${arabic} (Tibetan numeral ${digitText})`,
+          pos: "NUM",
+          dictionaryId: "tibetan-numerals",
+          dictionaryLabel: "Tibetan numerals"
+        }
+      ]
+    };
+  }
+
   function tokenizeSyllableGroup(syllables, trie) {
     const tokens = [];
     let index = 0;
 
     while (index < syllables.length) {
+      if (isTibetanDigitRun(syllables[index].cleanText)) {
+        let endIndex = index;
+        while (
+          endIndex < syllables.length &&
+          isTibetanDigitRun(syllables[endIndex].cleanText)
+        ) {
+          endIndex += 1;
+        }
+        tokens.push(createNumberToken(syllables.slice(index, endIndex)));
+        index = endIndex;
+        continue;
+      }
+
       const match = findLongestMatch(syllables, index, trie);
 
       if (match) {
@@ -983,6 +1032,20 @@
   function lookupFromPack(term, settings) {
     if (!runtime.pack) {
       return [];
+    }
+
+    const digitText = (term || "").replace(/[\u0f0b\s]/gu, "");
+    if (isTibetanDigitRun(digitText)) {
+      const arabic = tibetanDigitsToArabic(digitText);
+      return [
+        {
+          dictionaryId: "tibetan-numerals",
+          dictionaryLabel: "Tibetan numerals",
+          headword: digitText,
+          glosses: [`${arabic} — Tibetan numeral`],
+          notes: `Each digit maps ༠–༩ to 0–9; this reads as the number ${arabic}.`
+        }
+      ];
     }
 
     const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
