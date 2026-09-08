@@ -112,6 +112,15 @@
   font: 14px/1.45 Georgia, "Palatino Linotype", serif !important;
 }
 
+/* Page stylesheets can force their own fonts (e.g. a Tibetan webfont lacking
+   Latin diacritics) onto tooltip children — pin every descendant to our stack
+   so headings, glosses, and notes don't mix fonts mid-word. */
+.tibetan-extension-tooltip,
+.tibetan-extension-tooltip * {
+  font-family: Georgia, "Palatino Linotype", "Noto Serif Tibetan",
+    "Tibetan Machine Uni", "Microsoft Himalaya", serif !important;
+}
+
 .tibetan-extension-tooltip.is-visible {
   display: block;
 }

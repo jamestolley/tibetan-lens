@@ -600,6 +600,11 @@
     }
 
     addEntry(entry, category) {
+      if (entry.posOnly) {
+        this.inflectAndAddData(entry, category !== "words_non_inflected");
+        return;
+      }
+
       if (category === "words") {
         this.inflectAndModify(entry.form);
         this.inflectAndAddData(entry);
@@ -1121,12 +1126,16 @@
 
           const glosses = splitGlosses(entry.sense);
           const dictionaryId = entry.dictionaryId || "pack-grammar";
-          const notes = joinNotes([
-            entry.lemma && normalizeForm(entry.lemma) !== headword ? `Lemma: ${normalizeForm(entry.lemma)}` : "",
-            entry.pos ? `POS: ${entry.pos}` : ""
-          ]);
+          const lemmaNote =
+            entry.lemma && normalizeForm(entry.lemma) !== headword
+              ? `Lemma: ${normalizeForm(entry.lemma)}`
+              : "";
+          const notes = joinNotes([lemmaNote, entry.pos ? `POS: ${entry.pos}` : ""]);
 
-          if (!glosses.length && !notes) {
+          // Gloss-less rows (wordlists, POS/frequency lists) only echo the
+          // headword back — not a definition. Keep them for POS data, but
+          // don't show them as dictionary entries.
+          if (!glosses.length && !lemmaNote) {
             return;
           }
 
@@ -1134,7 +1143,7 @@
             dictionaryId,
             dictionaryLabel: getDictionaryLabel(entry),
             headword,
-            glosses: glosses.length ? glosses : [normalizeForm(entry.lemma || entry.form)],
+            glosses: glosses.length ? glosses : [normalizeForm(entry.lemma)],
             notes
           };
           const key = JSON.stringify(normalizedEntry);

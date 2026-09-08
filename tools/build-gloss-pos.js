@@ -48,7 +48,7 @@ function normalizeForm(word) {
 }
 
 function main() {
-  const kept = new Map(); // normalized form -> { word, tags: Set }
+  const kept = new Map(); // normalized form -> { word, tags: Set, hasPlainGloss: bool }
   let scanned = 0;
   let inferred = 0;
 
@@ -64,15 +64,29 @@ function main() {
       scanned += 1;
       if (pos && pos.trim()) continue; // explicit POS already present
 
+      const key = normalizeForm(form);
+      if (!kept.has(key)) {
+        kept.set(key, { word: form.trim(), tags: new Set(), hasPlainGloss: false });
+      }
+      const record = kept.get(key);
+
+      // A gloss without a <person>/<place>/... marker means the form is
+      // defined as a common word somewhere; in that case a name-marked
+      // sense elsewhere must not label the whole word a proper noun.
+      if (sense && sense.trim() && !PROPN_MARK.test(sense)) {
+        record.hasPlainGloss = true;
+      }
+
       const tag = inferPos(sense);
       if (!tag) continue;
       inferred += 1;
+      record.tags.add(tag);
+    }
+  }
 
-      const key = normalizeForm(form);
-      if (!kept.has(key)) {
-        kept.set(key, { word: form.trim(), tags: new Set() });
-      }
-      kept.get(key).tags.add(tag);
+  for (const record of kept.values()) {
+    if (record.hasPlainGloss) {
+      record.tags.delete("PROPN");
     }
   }
 
