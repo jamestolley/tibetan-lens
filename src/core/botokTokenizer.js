@@ -838,7 +838,7 @@
       start: syllables[0].start,
       end: syllables[syllables.length - 1].end,
       lemma: defaultSense?.lemma || null,
-      pos: defaultSense?.pos || null,
+      pos: defaultSense?.pos || senses.find((sense) => sense.pos)?.pos || null,
       senses
     };
   }
