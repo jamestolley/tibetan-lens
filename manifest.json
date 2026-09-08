@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Tibetan Lens",
-  "version": "0.50.12",
+  "version": "0.50.13",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "default_locale": "en",
   "permissions": [

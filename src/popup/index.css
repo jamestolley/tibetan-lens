@@ -79,7 +79,12 @@ select {
   border: 1px solid var(--secondary-border);
   border-radius: 6px;
   background: #fff;
-  text-align: right;
+  text-align: center;
+  text-align-last: center;
+}
+
+.field option {
+  text-align: center;
 }
 
 .actions {

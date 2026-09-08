@@ -113,7 +113,12 @@ select {
   border: 1px solid rgba(40, 31, 23, 0.16);
   border-radius: 999px;
   background: #fff;
-  text-align: right;
+  text-align: center;
+  text-align-last: center;
+}
+
+.field option {
+  text-align: center;
 }
 
 .dictionary-list {
