@@ -45,6 +45,7 @@
 .tibetan-extension-word.tibetan-extension-word--SCONJ { background-color: rgba(244, 63, 94, 0.40); }
 .tibetan-extension-word.tibetan-extension-word--OTHER,
 .tibetan-extension-word.tibetan-extension-word--X     { background-color: rgba(148, 163, 184, 0.35); }
+.tibetan-extension-word.tibetan-extension-word--UNKNOWN { background-color: rgba(148, 163, 184, 0.18); }
 
 /* "soft" theme — original pastel palette */
 [data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PROPN { background-color: rgba(255, 223, 186, 0.5); }
@@ -64,6 +65,7 @@
 [data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--SCONJ { background-color: rgba(255, 214, 223, 0.5); }
 [data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--OTHER,
 [data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--X     { background-color: rgba(230, 230, 230, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--UNKNOWN { background-color: rgba(230, 230, 230, 0.3); }
 
 /* "underline" theme — colored underline instead of background */
 [data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word[class*="tibetan-extension-word--"] {
@@ -87,6 +89,7 @@
 [data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--SCONJ { color: #be123c; }
 [data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--OTHER,
 [data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--X     { color: #64748b; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--UNKNOWN { color: #94a3b8; }
 
 .tibetan-extension-word:hover,
 .tibetan-extension-word:focus-visible {
@@ -106,7 +109,7 @@
   background: linear-gradient(180deg, #fff9ef 0%, #f5ead0 100%);
   color: var(--tibetan-extension-ink);
   box-shadow: 0 16px 40px var(--tibetan-extension-shadow);
-  font: 14px/1.45 Georgia, "Palatino Linotype", serif;
+  font: 14px/1.45 Georgia, "Palatino Linotype", serif !important;
 }
 
 .tibetan-extension-tooltip.is-visible {
@@ -178,7 +181,7 @@
 
 .tibetan-extension-tooltip-wylie,
 .tibetan-extension-tooltip-phonetic {
-  font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
 }
 
 .tibetan-extension-tooltip-wylie {

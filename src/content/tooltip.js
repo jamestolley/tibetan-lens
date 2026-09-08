@@ -20,7 +20,7 @@
 
   function friendlyPos(pos) {
     if (!pos) {
-      return "";
+      return extension.i18n.getMessage("posUnknown") || "Unknown";
     }
     return POS_LABELS[pos] || pos;
   }

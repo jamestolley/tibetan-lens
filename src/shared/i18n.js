@@ -37,6 +37,7 @@
     loadingDictionaries: "Loading dictionaries…",
     loadingDefault: "Loading…",
     noEnabledDictionary: "No enabled dictionary has a definition for this term yet.",
+    posUnknown: "Unknown",
     refreshPage: "Refresh page",
     insertTestText: "Insert sample text",
     options: "Options",

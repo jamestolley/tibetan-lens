@@ -127,6 +127,10 @@
     "message": "Loading…",
     "description": "Generic loading spinner text"
   },
+  "posUnknown": {
+    "message": "Unknown",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
   "noEnabledDictionary": {
     "message": "No enabled dictionary has a definition for this term yet.",
     "description": "Tooltip empty state"
