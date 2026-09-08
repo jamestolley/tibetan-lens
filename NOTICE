@@ -24,6 +24,13 @@ Third-party data and assets included in this extension:
   https://doi.org/10.5281/zenodo.822537
   https://github.com/Esukhia/bo-pos
 
+- Part-of-speech lexicon derived from the SOAS POS-tagged corpus of
+  Classical Tibetan (SOAS, University of London; AHRC grant AH/J00152X/1),
+  via Esukhia's bo-pos resource collection, used under the Creative
+  Commons Attribution 4.0 International License (CC BY 4.0).
+  https://doi.org/10.5281/zenodo.574878
+  https://github.com/Esukhia/bo-pos
+
 - The extension icon uses the Tibetan letter "ཨ" rendered in the Jomolhari
   font, which is licensed under the SIL Open Font License 1.1.
   https://github.com/google/fonts/tree/main/ofl/jomolhari

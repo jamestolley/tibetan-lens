@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Tibetan Lens",
-  "version": "0.50.10",
+  "version": "0.50.12",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "default_locale": "en",
   "permissions": [
@@ -30,6 +30,9 @@
         "public/data/dialect_packs/botok_general/dictionary/words/dagdra.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/hopkins.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/84000.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/pos_overrides.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/gloss_pos_inferred.tsv",
+        "public/data/dialect_packs/botok_general/dictionary/words/soas_pos.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words/actib_pos.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],

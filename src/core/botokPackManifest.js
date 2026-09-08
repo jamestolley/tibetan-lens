@@ -55,9 +55,28 @@
             dictionaryId: "84000"
           },
           {
+            path: "data/dialect_packs/botok_general/dictionary/words/pos_overrides.tsv",
+            dictionaryLabel: "Curated POS overrides",
+            posOnly: true,
+            posSource: "override"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/gloss_pos_inferred.tsv",
+            dictionaryLabel: "Gloss-inferred POS",
+            posOnly: true,
+            posSource: "gloss"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/soas_pos.tsv",
+            dictionaryLabel: "SOAS POS lexicon",
+            posOnly: true,
+            posSource: "soas"
+          },
+          {
             path: "data/dialect_packs/botok_general/dictionary/words/actib_pos.tsv",
             dictionaryLabel: "ACTib POS lexicon",
-            posOnly: true
+            posOnly: true,
+            posSource: "corpus"
           }
         ],
         words_non_inflected: [

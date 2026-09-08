@@ -135,6 +135,14 @@
     "message": "No enabled dictionary has a definition for this term yet.",
     "description": "Tooltip empty state"
   },
+  "noDefinitionWithPos": {
+    "message": "No definition yet — this word isn't in the bundled dictionaries.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "likely (corpus-derived)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
   "refreshPage": {
     "message": "Refresh page",
     "description": "Popup refresh button"

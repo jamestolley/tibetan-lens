@@ -14,8 +14,12 @@
     PART: "Particle",
     NUM: "Number",
     CONJ: "Conjunction",
+    SCONJ: "Subordinator",
     INTJ: "Interjection",
-    PUNCT: "Punctuation"
+    PUNCT: "Punctuation",
+    AUX: "Auxiliary",
+    OTHER: "Other",
+    X: "Unknown"
   };
 
   function friendlyPos(pos) {
@@ -88,7 +92,7 @@
   }
 
   function renderTooltipContent(payload) {
-    const { term, pos, entries, settings } = payload;
+    const { term, pos, posList, posInferred, entries, settings } = payload;
     const fragment = document.createDocumentFragment();
 
     const heading = document.createElement("div");
@@ -99,12 +103,20 @@
     const extras = document.createElement("div");
     extras.className = "tibetan-extension-tooltip-extras";
 
-    const friendlyPartOfSpeech = friendlyPos(pos);
-    if (friendlyPartOfSpeech) {
+    const tags = Array.isArray(posList) && posList.length ? posList : pos ? [pos] : [];
+    if (tags.length) {
       const posTag = document.createElement("span");
       posTag.className = "tibetan-extension-tooltip-pos";
-      posTag.textContent = friendlyPartOfSpeech;
+      posTag.textContent = tags.map(friendlyPos).join(" · ");
       extras.appendChild(posTag);
+
+      if (posInferred) {
+        const likelyTag = document.createElement("span");
+        likelyTag.className = "tibetan-extension-tooltip-pos-inferred";
+        likelyTag.textContent =
+          extension.i18n.getMessage("posInferred") || "likely";
+        extras.appendChild(likelyTag);
+      }
     }
 
     if (settings?.showWylie) {
@@ -145,7 +157,9 @@
     if (!uniqueGlosses.length) {
       const emptyState = document.createElement("div");
       emptyState.className = "tibetan-extension-tooltip-empty";
-      emptyState.textContent = extension.i18n.getMessage("noEnabledDictionary");
+      emptyState.textContent = extension.i18n.getMessage(
+        tags.length ? "noDefinitionWithPos" : "noEnabledDictionary"
+      );
       fragment.appendChild(emptyState);
       return fragment;
     }

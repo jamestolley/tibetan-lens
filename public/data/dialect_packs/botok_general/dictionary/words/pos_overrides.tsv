@@ -1,0 +1,5 @@
+# Hand-curated POS overrides — highest-priority part-of-speech source.
+# Add rows here (one per form/tag) when corpus tags are wrong for a word.
+# format: form<TAB>pos<TAB>lemma<TAB>sense<TAB>freq
+དཀར་	ADJ			
+དཀར་	NOUN			

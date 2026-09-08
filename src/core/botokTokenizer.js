@@ -152,6 +152,9 @@
         dictionaryId: fileDescriptor.dictionaryId || null,
         dictionaryLabel: fileDescriptor.dictionaryLabel || null,
         posOnly: Boolean(fileDescriptor.posOnly),
+        posSource: fileDescriptor.posOnly
+          ? fileDescriptor.posSource || "corpus"
+          : null,
         sourcePath: fileDescriptor.path
       }));
   }
@@ -674,6 +677,7 @@
             dictionaryId: entry.dictionaryId,
             dictionaryLabel: entry.dictionaryLabel,
             posOnly: entry.posOnly,
+            posSource: entry.posSource,
             sourcePath: entry.sourcePath
           }).filter(([, value]) => value !== null && value !== undefined && value !== "")
         );
@@ -824,12 +828,53 @@
     return [...group].sort((left, right) => Object.keys(right).length - Object.keys(left).length)[0];
   }
 
+  const POS_SOURCE_RANK = {
+    override: 0,
+    gloss: 2,
+    soas: 3,
+    corpus: 4
+  };
+
+  function sensePosRank(sense) {
+    if (sense.posSource === "override") {
+      return POS_SOURCE_RANK.override;
+    }
+    if (!sense.posOnly) {
+      return 1; // explicit dictionary tag
+    }
+    return POS_SOURCE_RANK[sense.posSource] ?? 5;
+  }
+
+  function collectPosInfo(senses) {
+    const ranked = [];
+    senses.forEach((sense, index) => {
+      if (sense.pos) {
+        ranked.push({ pos: sense.pos, rank: sensePosRank(sense), index });
+      }
+    });
+    ranked.sort((a, b) => a.rank - b.rank || a.index - b.index);
+
+    const posList = [];
+    for (const item of ranked) {
+      if (!posList.includes(item.pos)) {
+        posList.push(item.pos);
+      }
+    }
+
+    return {
+      pos: posList[0] || null,
+      posList,
+      posInferred: ranked.length > 0 && ranked[0].rank > 1
+    };
+  }
+
   function createWordToken(syllables, match) {
     const surfaceText = joinSurfaceSyllables(syllables);
     const formKey = normalizeForm(surfaceText);
     const trieData = match?.node?.data ? structuredClone(match.node.data) : { _: {} };
     const senses = Array.isArray(trieData.senses) ? trieData.senses : [];
     const defaultSense = chooseDefaultSense(senses);
+    const posInfo = collectPosInfo(senses);
 
     return {
       type: "word",
@@ -840,7 +885,9 @@
       start: syllables[0].start,
       end: syllables[syllables.length - 1].end,
       lemma: defaultSense?.lemma || null,
-      pos: defaultSense?.pos || senses.find((sense) => sense.pos)?.pos || null,
+      pos: posInfo.pos,
+      posList: posInfo.posList,
+      posInferred: posInfo.posInferred,
       senses
     };
   }
@@ -870,6 +917,8 @@
       end: syllables[syllables.length - 1].end,
       lemma: digitText,
       pos: "NUM",
+      posList: ["NUM"],
+      posInferred: false,
       senses: [
         {
           sense: `${arabic} (Tibetan numeral ${digitText})`,

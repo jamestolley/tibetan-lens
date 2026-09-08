@@ -61,6 +61,8 @@
     element.dataset.term = token.text;
     element.dataset.lookupKey = token.lookupKey || token.text;
     element.dataset.pos = token.pos || "";
+    element.dataset.posList = (token.posList || []).join("|");
+    element.dataset.posInferred = token.posInferred ? "1" : "";
 
     const TSEK = "་";
     element.textContent =
@@ -257,6 +259,8 @@
     extension.tooltip.showTooltip(wordElement, {
       term: wordElement.dataset.term || wordElement.textContent || "",
       pos: wordElement.dataset.pos || "",
+      posList: (wordElement.dataset.posList || "").split("|").filter(Boolean),
+      posInferred: wordElement.dataset.posInferred === "1",
       entries,
       settings: state.settings
     });

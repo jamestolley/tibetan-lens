@@ -179,6 +179,12 @@
   letter-spacing: 0.03em;
 }
 
+.tibetan-extension-tooltip-pos-inferred {
+  color: rgba(122, 47, 42, 0.6);
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
 .tibetan-extension-tooltip-wylie,
 .tibetan-extension-tooltip-phonetic {
   font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
