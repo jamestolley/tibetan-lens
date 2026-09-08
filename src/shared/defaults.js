@@ -12,6 +12,8 @@
       enabledDictionaries: ["84000", "hopkins"],
       tokenizerMode: "botok-general",
       colorByPos: false,
+      posColorTheme: "vivid",
+      showTseg: false,
       linkClickPrompt: true
     }
   };

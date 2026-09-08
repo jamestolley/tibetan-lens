@@ -27,45 +27,66 @@
   opacity: 0.84;
 }
 
-.tibetan-extension-word.tibetan-extension-word--PROPN {
-  background-color: rgba(255, 223, 186, 0.5);
+/* POS coloring — "vivid" theme (default) */
+.tibetan-extension-word.tibetan-extension-word--PROPN { background-color: rgba(245, 158, 11, 0.55); }
+.tibetan-extension-word.tibetan-extension-word--NOUN  { background-color: rgba(59, 130, 246, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--VERB  { background-color: rgba(34, 197, 94, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--ADJ   { background-color: rgba(249, 115, 22, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--ADV   { background-color: rgba(168, 85, 247, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--PRON  { background-color: rgba(234, 179, 8, 0.55); }
+.tibetan-extension-word.tibetan-extension-word--DET   { background-color: rgba(6, 182, 212, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--ADP   { background-color: rgba(236, 72, 153, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--PART  { background-color: rgba(132, 204, 22, 0.50); }
+.tibetan-extension-word.tibetan-extension-word--NUM   { background-color: rgba(20, 184, 166, 0.50); }
+.tibetan-extension-word.tibetan-extension-word--CONJ  { background-color: rgba(239, 68, 68, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--INTJ  { background-color: rgba(99, 102, 241, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--PUNCT { background-color: rgba(107, 114, 128, 0.35); }
+.tibetan-extension-word.tibetan-extension-word--AUX   { background-color: rgba(139, 92, 246, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--SCONJ { background-color: rgba(244, 63, 94, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--OTHER,
+.tibetan-extension-word.tibetan-extension-word--X     { background-color: rgba(148, 163, 184, 0.35); }
+
+/* "soft" theme — original pastel palette */
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PROPN { background-color: rgba(255, 223, 186, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--NOUN  { background-color: rgba(186, 255, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--VERB  { background-color: rgba(186, 223, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--ADJ   { background-color: rgba(223, 186, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--ADV   { background-color: rgba(255, 186, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PRON  { background-color: rgba(255, 255, 186, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--DET   { background-color: rgba(186, 255, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--ADP   { background-color: rgba(255, 186, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PART  { background-color: rgba(223, 255, 186, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--NUM   { background-color: rgba(186, 223, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--CONJ  { background-color: rgba(255, 223, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--INTJ  { background-color: rgba(223, 255, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PUNCT { background-color: rgba(223, 223, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--AUX   { background-color: rgba(230, 214, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--SCONJ { background-color: rgba(255, 214, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--OTHER,
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--X     { background-color: rgba(230, 230, 230, 0.5); }
+
+/* "underline" theme — colored underline instead of background */
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word[class*="tibetan-extension-word--"] {
+  background-color: transparent;
+  border-bottom: 3px solid currentColor;
 }
-.tibetan-extension-word.tibetan-extension-word--NOUN {
-  background-color: rgba(186, 255, 223, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--VERB {
-  background-color: rgba(186, 223, 255, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--ADJ {
-  background-color: rgba(223, 186, 255, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--ADV {
-  background-color: rgba(255, 186, 223, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--PRON {
-  background-color: rgba(255, 255, 186, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--DET {
-  background-color: rgba(186, 255, 255, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--ADP {
-  background-color: rgba(255, 186, 255, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--PART {
-  background-color: rgba(223, 255, 186, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--NUM {
-  background-color: rgba(186, 223, 255, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--CONJ {
-  background-color: rgba(255, 223, 223, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--INTJ {
-  background-color: rgba(223, 255, 223, 0.5);
-}
-.tibetan-extension-word.tibetan-extension-word--PUNCT {
-  background-color: rgba(223, 223, 255, 0.5);
-}
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PROPN { color: #b45309; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--NOUN  { color: #1d4ed8; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--VERB  { color: #15803d; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--ADJ   { color: #c2410c; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--ADV   { color: #7e22ce; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PRON  { color: #a16207; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--DET   { color: #0e7490; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--ADP   { color: #be185d; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PART  { color: #4d7c0f; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--NUM   { color: #0f766e; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--CONJ  { color: #b91c1c; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--INTJ  { color: #4338ca; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PUNCT { color: #4b5563; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--AUX   { color: #6d28d9; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--SCONJ { color: #be123c; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--OTHER,
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--X     { color: #64748b; }
 
 .tibetan-extension-word:hover,
 .tibetan-extension-word:focus-visible {

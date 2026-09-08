@@ -59,7 +59,12 @@
     element.dataset.term = token.text;
     element.dataset.lookupKey = token.lookupKey || token.text;
     element.dataset.pos = token.pos || "";
-    element.textContent = token.text;
+
+    const TSEK = "་";
+    element.textContent =
+      state.settings?.showTseg && token.text && !/[\u0f0b-\u0f14]$/.test(token.text)
+        ? token.text + TSEK
+        : token.text;
 
     if (state.settings?.minTibetanFontSize) {
       element.style.fontSize = `max(1em, ${state.settings.minTibetanFontSize}px)`;
@@ -125,6 +130,11 @@
       console.warn('[TibetanLens] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
       return state.stats;
     }
+
+    document.documentElement.setAttribute(
+      "data-tibetan-extension-pos-theme",
+      state.settings.posColorTheme || "vivid"
+    );
 
     const root = document.body || document.documentElement;
     const nodes = extension.replacementEngine.collectTextNodes(root);

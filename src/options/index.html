@@ -46,9 +46,9 @@
             <input id="showWylie" type="checkbox" />
           </label>
 
-          <label class="toggle-row" for="colorByPos">
-            <span data-i18n="colorByPos">Color words by part of speech</span>
-            <input id="colorByPos" type="checkbox" />
+          <label class="toggle-row" for="showTseg">
+            <span data-i18n="showTseg">Show tseg (་) after each word</span>
+            <input id="showTseg" type="checkbox" />
           </label>
 
           <label class="toggle-row" for="linkClickPrompt">
@@ -64,6 +64,29 @@
           <label class="field" for="minTibetanFontSize">
             <span data-i18n="minTibetanFontSize">Minimum Tibetan font size</span>
             <input id="minTibetanFontSize" type="number" min="10" max="72" value="16" />
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="colorCoding">Color coding</h2>
+          <p data-i18n="colorCodingHint">Highlight words by part of speech and choose a color theme.</p>
+        </div>
+
+        <div class="settings-grid">
+          <label class="toggle-row" for="colorByPos">
+            <span data-i18n="colorByPos">Color words by part of speech</span>
+            <input id="colorByPos" type="checkbox" />
+          </label>
+
+          <label class="field" for="posColorTheme">
+            <span data-i18n="posColorTheme">Part-of-speech color theme</span>
+            <select id="posColorTheme">
+              <option value="vivid" data-i18n="posThemeVivid">Vivid</option>
+              <option value="soft" data-i18n="posThemeSoft">Soft</option>
+              <option value="underline" data-i18n="posThemeUnderline">Underline only</option>
+            </select>
           </label>
         </div>
       </section>

@@ -63,6 +63,34 @@
     "message": "Color words by part of speech",
     "description": "Color by POS toggle label"
   },
+  "showTseg": {
+    "message": "Show tseg (་) after each word",
+    "description": "Show tseg toggle label"
+  },
+  "colorCoding": {
+    "message": "Color coding",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Highlight words by part of speech and choose a color theme.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Part-of-speech color theme",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Vivid",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Soft",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Underline only",
+    "description": "POS color theme option"
+  },
   "linkClickPrompt": {
     "message": "When clicking a linked Tibetan word, ask: follow link or show translation",
     "description": "Linked Tibetan word click behavior toggle label"

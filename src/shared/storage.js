@@ -29,6 +29,10 @@
       merged.tokenizerMode = defaults.tokenizerMode;
     }
 
+    if (!["vivid", "soft", "underline"].includes(merged.posColorTheme)) {
+      merged.posColorTheme = defaults.posColorTheme;
+    }
+
     return merged;
   }
 

@@ -6,6 +6,7 @@
   function getControls() {
     ui.insertSpaces = document.getElementById("insertSpaces");
     ui.colorByPos = document.getElementById("colorByPos");
+    ui.showTseg = document.getElementById("showTseg");
     ui.tooltipMode = document.getElementById("tooltipMode");
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
@@ -21,6 +22,7 @@
     return {
       insertSpaces: ui.insertSpaces.checked,
       colorByPos: ui.colorByPos.checked,
+      showTseg: ui.showTseg.checked,
       tooltipMode: ui.tooltipMode.value,
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
@@ -72,6 +74,7 @@
     const settings = await extension.storage.getSettings();
     ui.insertSpaces.checked = settings.insertSpaces;
     ui.colorByPos.checked = settings.colorByPos;
+    ui.showTseg.checked = settings.showTseg;
     ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
@@ -86,6 +89,7 @@
   function bindEvents() {
     ui.insertSpaces.addEventListener("change", saveSettingsAndRefresh);
     ui.colorByPos.addEventListener("change", saveSettingsAndRefresh);
+    ui.showTseg.addEventListener("change", saveSettingsAndRefresh);
     ui.tooltipMode.addEventListener("change", saveSettingsAndRefresh);
     ui.showWylie.addEventListener("change", saveSettingsAndRefresh);
     ui.showPhonetic.addEventListener("change", saveSettingsAndRefresh);
