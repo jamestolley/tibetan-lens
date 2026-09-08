@@ -21,6 +21,11 @@
         id: "84000",
         label: "84000 Dictionary",
         description: "Glossary from 84000: Translating the Words of the Buddha (~25K entries). Buddhist canonical terminology. CC BY 4.0."
+      },
+      "curated": {
+        id: "curated",
+        label: "Tibetan Lens Curated",
+        description: "Hand-curated Tibetan Lens entries for compounds and common words missing from the bundled dictionaries."
       }
     },
     files: {
@@ -53,6 +58,10 @@
           {
             path: "data/dialect_packs/botok_general/dictionary/words/84000.tsv",
             dictionaryId: "84000"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/curated_glosses.tsv",
+            dictionaryId: "curated"
           },
           {
             path: "data/dialect_packs/botok_general/dictionary/words/pos_overrides.tsv",

@@ -143,6 +143,10 @@
     "message": "likely (corpus-derived)",
     "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
   },
+  "wordParts": {
+    "message": "Word parts",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
   "refreshPage": {
     "message": "Refresh page",
     "description": "Popup refresh button"

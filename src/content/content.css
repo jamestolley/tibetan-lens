@@ -158,6 +158,11 @@
   font-size: 0.96rem;
 }
 
+.tibetan-extension-tooltip-parts {
+  font-size: 0.92rem;
+  white-space: pre-line;
+}
+
 .tibetan-extension-tooltip-notes {
   margin-top: 0.25rem;
   color: rgba(44, 33, 23, 0.72);

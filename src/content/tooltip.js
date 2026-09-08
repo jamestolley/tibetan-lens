@@ -92,7 +92,7 @@
   }
 
   function renderTooltipContent(payload) {
-    const { term, pos, posList, posInferred, entries, settings } = payload;
+    const { term, pos, posList, posInferred, entries, parts, settings } = payload;
     const fragment = document.createDocumentFragment();
 
     const heading = document.createElement("div");
@@ -155,12 +155,27 @@
     const uniqueNotes = [...new Set(allNotes)].filter(Boolean);
 
     if (!uniqueGlosses.length) {
-      const emptyState = document.createElement("div");
-      emptyState.className = "tibetan-extension-tooltip-empty";
-      emptyState.textContent = extension.i18n.getMessage(
-        tags.length ? "noDefinitionWithPos" : "noEnabledDictionary"
-      );
-      fragment.appendChild(emptyState);
+      if (Array.isArray(parts) && parts.length) {
+        const partsLabel = document.createElement("div");
+        partsLabel.className = "tibetan-extension-tooltip-label";
+        partsLabel.textContent =
+          extension.i18n.getMessage("wordParts") || "Word parts";
+        fragment.appendChild(partsLabel);
+
+        const partsList = document.createElement("div");
+        partsList.className = "tibetan-extension-tooltip-parts";
+        partsList.textContent = parts
+          .map((item) => `${item.part}་ — ${item.gloss}`)
+          .join("\n");
+        fragment.appendChild(partsList);
+      } else {
+        const emptyState = document.createElement("div");
+        emptyState.className = "tibetan-extension-tooltip-empty";
+        emptyState.textContent = extension.i18n.getMessage(
+          tags.length ? "noDefinitionWithPos" : "noEnabledDictionary"
+        );
+        fragment.appendChild(emptyState);
+      }
       return fragment;
     }
 

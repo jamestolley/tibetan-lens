@@ -9,7 +9,7 @@
       showWylie: true,
       showPhonetic: false,
       minTibetanFontSize: 16,
-      enabledDictionaries: ["botok-core", "84000", "hopkins"],
+      enabledDictionaries: ["botok-core", "curated", "84000", "hopkins"],
       tokenizerMode: "botok-general",
       colorByPos: false,
       posColorTheme: "vivid",

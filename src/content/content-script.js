@@ -247,21 +247,53 @@
     });
   }
 
-  function showTooltipForWord(wordElement) {
-    const lookupTerm = wordElement.dataset.lookupKey || wordElement.dataset.term || "";
-    const entries = mergeTooltipEntries(
-      extension.dictionary.lookup(lookupTerm, state.settings),
+  function lookupWord(term) {
+    return mergeTooltipEntries(
+      extension.dictionary.lookup(term, state.settings),
       typeof extension.botokLookup?.lookup === "function"
-        ? extension.botokLookup.lookup(lookupTerm, state.settings)
+        ? extension.botokLookup.lookup(term, state.settings)
         : []
     );
+  }
+
+  // When a multi-syllable word has no definition, gloss its component
+  // syllables so compounds like རྒྱལ་སྤྱི still teach the reader something.
+  function lookupParts(term) {
+    const parts = (term || "")
+      .split("་")
+      .map((part) => part.trim())
+      .filter((part) => part && /[\u0f20-\u0fbc]/u.test(part));
+
+    if (parts.length < 2) {
+      return [];
+    }
+
+    const results = [];
+    parts.forEach((part) => {
+      const gloss = lookupWord(part)
+        .flatMap((entry) => entry.glosses || [])
+        .find((text) => text && text !== part);
+      if (gloss) {
+        results.push({ part, gloss });
+      }
+    });
+    return results;
+  }
+
+  function showTooltipForWord(wordElement) {
+    const term = wordElement.dataset.term || wordElement.textContent || "";
+    const lookupTerm = wordElement.dataset.lookupKey || term;
+    const entries = lookupWord(lookupTerm);
+    const hasGlosses = entries.some((entry) => (entry.glosses || []).length > 0);
+    const parts = hasGlosses ? [] : lookupParts(term);
 
     extension.tooltip.showTooltip(wordElement, {
-      term: wordElement.dataset.term || wordElement.textContent || "",
+      term,
       pos: wordElement.dataset.pos || "",
       posList: (wordElement.dataset.posList || "").split("|").filter(Boolean),
       posInferred: wordElement.dataset.posInferred === "1",
       entries,
+      parts,
       settings: state.settings
     });
   }
