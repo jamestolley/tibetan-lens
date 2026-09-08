@@ -1895,3 +1895,7 @@ function exportJsEWTS(global) {
 };
 
 exportJsEWTS(this);
+
+// Extension.js bundles this file inside a module wrapper, so the
+// exports/window branches above never reach the real global object.
+globalThis.jsEWTS = { fromWylie: fromWylie, toWylie: toWylie };

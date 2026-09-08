@@ -55,16 +55,18 @@
   }
 
   function getWylie(term) {
-    if (typeof window !== "undefined" && window.jsEWTS && typeof window.jsEWTS.toWylie === "function") {
-      return window.jsEWTS.toWylie(term).trim();
+    const jsEWTS = globalThis.jsEWTS;
+    if (jsEWTS && typeof jsEWTS.toWylie === "function") {
+      return jsEWTS.toWylie(term).trim();
     }
     return "";
   }
 
   function getPhonetic(term) {
-    if (typeof window !== "undefined" && window.TibetanConverter && typeof window.TibetanConverter.get_phonetics === "function") {
+    const converter = globalThis.TibetanConverter;
+    if (converter && typeof converter.get_phonetics === "function") {
       try {
-        return window.TibetanConverter.get_phonetics({ style: "thl", lang: "en" }).phonetics(term, { autosplit: true });
+        return converter.get_phonetics({ style: "thl", lang: "en" }).phonetics(term, { autosplit: true });
       } catch (_e) {
         return "";
       }

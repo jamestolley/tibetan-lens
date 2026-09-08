@@ -2129,3 +2129,7 @@ var TibetanConverter = (() => {
   }
   return __toCommonJS(index_exports);
 })();
+
+// Extension.js bundles this file inside a module wrapper; expose the
+// converter on the real global so the tooltip can find it.
+globalThis.TibetanConverter = TibetanConverter;
