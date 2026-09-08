@@ -1,10 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Tibetan Lens",
-  "version": "0.50.0",
+  "version": "0.50.2",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "default_locale": "en",
-  "permissions": ["storage", "activeTab"],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
   "icons": {
     "16": "public/icons/icon16.png",
     "48": "public/icons/icon48.png",
@@ -29,12 +32,16 @@
         "public/data/dialect_packs/botok_general/dictionary/words/84000.tsv",
         "public/data/dialect_packs/botok_general/dictionary/words_non_inflected/particles.tsv"
       ],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "<all_urls>"
+      ],
       "js": [
         "src/shared/constants.js",
         "src/shared/i18n.js",
@@ -50,7 +57,9 @@
         "src/content/tooltip.js",
         "src/content/content-script.js"
       ],
-      "css": ["src/content/content.css"],
+      "css": [
+        "src/content/content.css"
+      ],
       "run_at": "document_idle"
     }
   ]
