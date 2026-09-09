@@ -1,6 +1,6 @@
 {
   "name": "tibetan-lens",
-  "version": "0.50.19",
+  "version": "0.50.20",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "start": "extension start --no-telemetry",
     "preview": "extension preview --no-telemetry",
     "publish:init": "publish-extension init",
-    "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.19.zip --edge-zip dist/edge/tibetan-lens-0.50.19.zip --firefox-zip dist/firefox/tibetan-lens-0.50.19.zip"
+    "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.20.zip --edge-zip dist/edge/tibetan-lens-0.50.20.zip --firefox-zip dist/firefox/tibetan-lens-0.50.20.zip"
   },
   "devDependencies": {
     "extension": "3.18.2",
