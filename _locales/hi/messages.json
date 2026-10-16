@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia तिब्बती",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia तिब्बती: शब्दकोश और अध्ययन साथी",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "वेब पेजों पर तिब्बती पाठ को शब्दों में बाँटता है, रिक्त स्थान जोड़ता है और शब्दकोश पॉपअप दिखाता है।",

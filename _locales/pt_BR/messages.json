@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia Tibetano",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia Tibetano: dicionário e companheiro de estudos",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "Segmenta textos em tibetano em páginas da web, insere espaços e mostra janelas de dicionário.",

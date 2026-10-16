@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia Tibetaans",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia Tibetaans: woordenboek en leermaatje",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "Segmenteert Tibetaanse tekst op webpagina's, voegt spaties in en toont woordenboekpop-ups.",

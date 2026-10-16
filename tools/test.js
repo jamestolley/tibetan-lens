@@ -147,8 +147,10 @@ for (const locale of fs.readdirSync(localesDir)) {
   if (missing.length) errors.push(`_locales/${locale} is missing keys: ${missing.join(", ")}`);
   if (extra.length) errors.push(`_locales/${locale} has keys not in en: ${extra.join(", ")}`);
   if (empty.length) errors.push(`_locales/${locale} has empty messages: ${empty.join(", ")}`);
-  if ((messages.extensionName?.message || "").length > 75) {
-    errors.push(`_locales/${locale} extensionName exceeds 75 characters`);
+  for (const key of ["extensionName", "extensionFullName"]) {
+    if ((messages[key]?.message || "").length > 75) {
+      errors.push(`_locales/${locale} ${key} exceeds 75 characters`);
+    }
   }
   if ((messages.extensionDescription?.message || "").length > 132) {
     errors.push(`_locales/${locale} extensionDescription exceeds 132 characters`);

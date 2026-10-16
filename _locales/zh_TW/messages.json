@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia 藏文",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia 藏文：詞典與學習夥伴",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "在網頁上為藏文斷詞、插入空格，並顯示字典彈出視窗。",

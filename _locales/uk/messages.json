@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia Тибетська",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia Тибетська: словник і супутник у навчанні",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "Розбиває тибетський текст на вебсторінках на слова, вставляє пробіли та показує словникові підказки.",

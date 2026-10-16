@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia 티베트어",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia 티베트어: 사전 및 학습 동반자",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "웹페이지의 티베트어 텍스트를 단어로 나누고, 띄어쓰기를 넣고, 사전 팝업을 표시합니다.",

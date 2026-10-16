@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia Tibetisch",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia Tibetisch: Wörterbuch & Lernbegleiter",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "Segmentiert tibetischen Text auf Webseiten, fügt Leerzeichen ein und zeigt Wörterbuch-Popups an.",

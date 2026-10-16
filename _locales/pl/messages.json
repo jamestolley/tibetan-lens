@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia Tybetański",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia Tybetański: słownik i towarzysz nauki",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "Dzieli tekst tybetański na stronach internetowych na słowa, wstawia odstępy i wyświetla okienka słownika.",

@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia チベット語",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia チベット語：辞書と学習パートナー",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "ウェブページ上のチベット語テキストを単語に分割し、スペースを挿入して、辞書ポップアップを表示します。",

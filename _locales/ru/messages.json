@@ -1,7 +1,11 @@
 {
   "extensionName": {
     "message": "Marginalia Тибетский",
-    "description": "Extension name"
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Marginalia Тибетский: словарь и спутник в изучении",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
     "message": "Разбивает тибетский текст на веб-страницах на слова, вставляет пробелы и показывает словарные подсказки.",

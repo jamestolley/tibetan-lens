@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "__MSG_extensionName__",
-  "version": "0.50.24",
+  "name": "__MSG_extensionFullName__",
+  "short_name": "__MSG_extensionName__",
+  "version": "0.50.25",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
