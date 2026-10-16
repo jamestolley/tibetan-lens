@@ -27,10 +27,6 @@ const OUT = path.join(
   ROOT,
   "public/data/dialect_packs/botok_general/dictionary/words/actib_pos.tsv"
 );
-const WORDLIST_GLOB = path.join(
-  ROOT,
-  "public/data/dialect_packs/botok_general/dictionary/words*/*.tsv"
-);
 const RAW_URL =
   "https://raw.githubusercontent.com/Esukhia/bo-pos/master/rc/ACTib-one-tag.txt";
 
@@ -65,7 +61,7 @@ function main() {
         .readFileSync(path.join(dirPath, file), "utf8")
         .split("\n")) {
         if (!line || line.startsWith("#")) continue;
-        const form = line.split("\t")[0].trim().replace(/^﻿/, "");
+        const form = line.split("\t")[0].trim().replace(/^\uFEFF/, "");
         if (form) ours.add(normalizeForm(form));
       }
     }

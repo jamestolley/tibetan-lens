@@ -1,11 +1,12 @@
 {
   "name": "tibetan-lens",
-  "version": "0.50.20",
+  "version": "0.50.21",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "license": "MIT",
   "scripts": {
     "test": "node tools/test.js",
+    "lint": "eslint .",
     "build:dictionaries": "node tools/build-dictionaries.js",
     "build:hopkins": "node tools/build-hopkins.js",
     "dev": "extension dev --browser=chrome --no-telemetry",
@@ -13,10 +14,13 @@
     "start": "extension start --no-telemetry",
     "preview": "extension preview --no-telemetry",
     "publish:init": "publish-extension init",
-    "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.20.zip --edge-zip dist/edge/tibetan-lens-0.50.20.zip --firefox-zip dist/firefox/tibetan-lens-0.50.20.zip"
+    "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.21.zip --edge-zip dist/edge/tibetan-lens-0.50.21.zip --firefox-zip dist/firefox/tibetan-lens-0.50.21.zip"
   },
   "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "eslint": "9.39.5",
     "extension": "3.18.2",
+    "globals": "16.5.0",
     "jsewts": "^1.0.4",
     "publish-browser-extension": "6.1.1"
   }

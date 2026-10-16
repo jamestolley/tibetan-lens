@@ -57,7 +57,7 @@ function main() {
     if (!fs.existsSync(filePath)) continue;
 
     for (const line of fs.readFileSync(filePath, "utf8").split("\n")) {
-      const trimmed = line.replace(/^﻿/, "").trim();
+      const trimmed = line.replace(/^\uFEFF/, "").trim();
       if (!trimmed || trimmed.startsWith("#")) continue;
       const [form, pos, , sense] = trimmed.split("\t");
       if (!form) continue;
