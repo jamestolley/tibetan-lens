@@ -2,7 +2,7 @@
 /**
  * Convert the Dharma Drum Buddhist College digital edition of
  * Jeffrey Hopkins' Tibetan-Sanskrit-English Dictionary (CC BY-SA 3.0)
- * into a botok-style TSV for Marginalia Tibetan.
+ * into a botok-style TSV for Teahouse Tibetan.
  *
  * Source PDF: https://glossaries.dila.edu.tw/data/hopkins.dila.pdf
  * License of source and derived data: Creative Commons Attribution-ShareAlike 3.0

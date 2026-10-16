@@ -213,7 +213,7 @@
   font-style: italic;
 }
 
-.marginalia-tibetan-loading {
+.teahouse-tibetan-loading {
   position: fixed;
   right: 18px;
   bottom: 18px;
@@ -231,20 +231,20 @@
   pointer-events: none;
 }
 
-.marginalia-tibetan-loading.is-visible {
+.teahouse-tibetan-loading.is-visible {
   display: flex;
 }
 
-.marginalia-tibetan-spinner {
+.teahouse-tibetan-spinner {
   width: 18px;
   height: 18px;
   border: 3px solid rgba(190, 134, 30, 0.3);
   border-top-color: #bf8520;
   border-radius: 50%;
-  animation: marginalia-tibetan-spin 0.9s linear infinite;
+  animation: teahouse-tibetan-spin 0.9s linear infinite;
 }
 
-@keyframes marginalia-tibetan-spin {
+@keyframes teahouse-tibetan-spin {
   to {
     transform: rotate(360deg);
   }

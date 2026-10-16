@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build dictionary TSV files from source data for the Marginalia Tibetan extension.
+ * Build dictionary TSV files from source data for the Teahouse Tibetan extension.
  *
  * This script only copies the botok-data general pack (tokenization wordlists).
  * Definition dictionaries from individual authors require explicit redistribution
@@ -53,7 +53,7 @@ function copyBotokGeneralPack() {
 }
 
 // Main
-console.log("Building dictionary files for Marginalia Tibetan...\n");
+console.log("Building dictionary files for Teahouse Tibetan...\n");
 console.log("Copying botok-data general pack (tokenization wordlists):");
 copyBotokGeneralPack();
 console.log(`\nDone. Output directory: ${OUTPUT_DIR}`);

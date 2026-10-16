@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Marginalia Tibetaans",
+    "message": "Teahouse Tibetaans",
     "description": "Short extension name (toolbar, popup header)"
   },
   "extensionFullName": {
-    "message": "Marginalia Tibetaans: woordenboek en leermaatje",
+    "message": "Teahouse Tibetaans: woordenboek en leermaatje",
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
@@ -12,7 +12,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Marginalia Tibetaans",
+    "message": "Teahouse Tibetaans",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -20,7 +20,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Marginalia Tibetaans",
+    "message": "Teahouse Tibetaans",
     "description": "Popup title"
   },
   "popupIntro": {
@@ -164,7 +164,7 @@
     "description": "Popup options button"
   },
   "brandTibetan": {
-    "message": "བོད་ཡིག་མཆན་བུ།",
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
     "description": "Tibetan script brand name"
   },
   "followLink": {
@@ -188,11 +188,11 @@
     "description": "Options note that dictionary definitions are English-only for now"
   },
   "loadingAria": {
-    "message": "Marginalia Tibetaans wordt geladen",
+    "message": "Teahouse Tibetaans wordt geladen",
     "description": "Accessible label for the in-page loading indicator"
   },
   "testTextHeading": {
-    "message": "Testtekst van Marginalia Tibetaans",
+    "message": "Testtekst van Teahouse Tibetaans",
     "description": "Heading above the sample Tibetan text inserted into a page"
   },
   "pos_PROPN": {
@@ -276,7 +276,7 @@
     "description": "Options page description of the 84000 glossary"
   },
   "dictDesc_curated": {
-    "message": "Handmatig samengestelde Marginalia-items voor samenstellingen en veelvoorkomende woorden die in de meegeleverde woordenboeken ontbreken.",
-    "description": "Options page description of the curated Marginalia entries"
+    "message": "Handmatig samengestelde Teahouse-items voor samenstellingen en veelvoorkomende woorden die in de meegeleverde woordenboeken ontbreken.",
+    "description": "Options page description of the curated Teahouse entries"
   }
 }

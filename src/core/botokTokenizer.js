@@ -109,7 +109,7 @@
   }
 
   function contextInvalidatedError() {
-    const err = new Error('Extension context invalidated — reload this page to re-enable Marginalia Tibetan.');
+    const err = new Error('Extension context invalidated — reload this page to re-enable Teahouse Tibetan.');
     err.contextInvalidated = true;
     return err;
   }
@@ -124,7 +124,7 @@
 
   async function fetchText(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[Marginalia:tokenizer] fetching:', path, '->', url);
+    console.log('[Teahouse:tokenizer] fetching:', path, '->', url);
     let response;
     try {
       response = await fetch(url);
@@ -132,23 +132,23 @@
       if (!isContextValid()) {
         throw contextInvalidatedError();
       }
-      console.error('[Marginalia:tokenizer] fetch threw for:', path, err);
+      console.error('[Teahouse:tokenizer] fetch threw for:', path, err);
       throw new Error(`Failed to fetch extension resource: ${path} (${err.message})`);
     }
 
     if (!response.ok) {
-      console.error('[Marginalia:tokenizer] FAILED to load:', path, 'status:', response.status);
+      console.error('[Teahouse:tokenizer] FAILED to load:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
     const text = await response.text();
-    console.log('[Marginalia:tokenizer] loaded:', path, '(' + text.length + ' chars)');
+    console.log('[Teahouse:tokenizer] loaded:', path, '(' + text.length + ' chars)');
     return text;
   }
 
   async function fetchJson(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[Marginalia:tokenizer] fetching JSON:', path, '->', url);
+    console.log('[Teahouse:tokenizer] fetching JSON:', path, '->', url);
     let response;
     try {
       response = await fetch(url);
@@ -156,12 +156,12 @@
       if (!isContextValid()) {
         throw contextInvalidatedError();
       }
-      console.error('[Marginalia:tokenizer] fetch JSON threw for:', path, err);
+      console.error('[Teahouse:tokenizer] fetch JSON threw for:', path, err);
       throw new Error(`Failed to fetch extension resource: ${path} (${err.message})`);
     }
 
     if (!response.ok) {
-      console.error('[Marginalia:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
+      console.error('[Teahouse:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
@@ -169,10 +169,10 @@
   }
 
   async function loadFileEntries(fileDescriptor, component, category) {
-    console.log('[Marginalia:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
+    console.log('[Teahouse:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
     const text = await fetchText(fileDescriptor.path);
     const rows = cleanDataLines(text);
-    console.log('[Marginalia:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
+    console.log('[Teahouse:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
 
     return rows
       .map((line) => (category === "remove" ? parseRemoveRow(line) : parseWordRow(line)))

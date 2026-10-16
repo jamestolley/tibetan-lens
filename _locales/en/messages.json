@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Marginalia Tibetan",
+    "message": "Teahouse Tibetan",
     "description": "Short extension name (toolbar, popup header)"
   },
   "extensionFullName": {
-    "message": "Marginalia Tibetan: Dictionary & Learning Companion",
+    "message": "Teahouse Tibetan: Dictionary & Learning Companion",
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
@@ -12,7 +12,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Marginalia Tibetan",
+    "message": "Teahouse Tibetan",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -20,7 +20,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Marginalia Tibetan",
+    "message": "Teahouse Tibetan",
     "description": "Popup title"
   },
   "popupIntro": {
@@ -164,7 +164,7 @@
     "description": "Popup options button"
   },
   "brandTibetan": {
-    "message": "བོད་ཡིག་མཆན་བུ།",
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
     "description": "Tibetan script brand name"
   },
   "followLink": {
@@ -188,11 +188,11 @@
     "description": "Options note that dictionary definitions are English-only for now"
   },
   "loadingAria": {
-    "message": "Marginalia Tibetan is loading",
+    "message": "Teahouse Tibetan is loading",
     "description": "Accessible label for the in-page loading indicator"
   },
   "testTextHeading": {
-    "message": "Marginalia Tibetan test text",
+    "message": "Teahouse Tibetan test text",
     "description": "Heading above the sample Tibetan text inserted into a page"
   },
   "pos_PROPN": {
@@ -276,7 +276,7 @@
     "description": "Options page description of the 84000 glossary"
   },
   "dictDesc_curated": {
-    "message": "Hand-curated Marginalia entries for compounds and common words missing from the bundled dictionaries.",
-    "description": "Options page description of the curated Marginalia entries"
+    "message": "Hand-curated Teahouse entries for compounds and common words missing from the bundled dictionaries.",
+    "description": "Options page description of the curated Teahouse entries"
   }
 }

@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Marginalia Тибетська",
+    "message": "Teahouse Тибетська",
     "description": "Short extension name (toolbar, popup header)"
   },
   "extensionFullName": {
-    "message": "Marginalia Тибетська: словник і супутник у навчанні",
+    "message": "Teahouse Тибетська: словник і супутник у навчанні",
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
@@ -12,7 +12,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Marginalia Тибетська",
+    "message": "Teahouse Тибетська",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -20,7 +20,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Marginalia Тибетська",
+    "message": "Teahouse Тибетська",
     "description": "Popup title"
   },
   "popupIntro": {
@@ -164,7 +164,7 @@
     "description": "Popup options button"
   },
   "brandTibetan": {
-    "message": "བོད་ཡིག་མཆན་བུ།",
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
     "description": "Tibetan script brand name"
   },
   "followLink": {
@@ -188,11 +188,11 @@
     "description": "Options note that dictionary definitions are English-only for now"
   },
   "loadingAria": {
-    "message": "Завантаження Marginalia Тибетська",
+    "message": "Завантаження Teahouse Тибетська",
     "description": "Accessible label for the in-page loading indicator"
   },
   "testTextHeading": {
-    "message": "Тестовий текст Marginalia Тибетська",
+    "message": "Тестовий текст Teahouse Тибетська",
     "description": "Heading above the sample Tibetan text inserted into a page"
   },
   "pos_PROPN": {
@@ -276,7 +276,7 @@
     "description": "Options page description of the 84000 glossary"
   },
   "dictDesc_curated": {
-    "message": "Дібрані вручну статті Marginalia для складених і поширених слів, яких немає у вбудованих словниках.",
-    "description": "Options page description of the curated Marginalia entries"
+    "message": "Дібрані вручну статті Teahouse для складених і поширених слів, яких немає у вбудованих словниках.",
+    "description": "Options page description of the curated Teahouse entries"
   }
 }

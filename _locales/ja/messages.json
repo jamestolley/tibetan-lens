@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Marginalia チベット語",
+    "message": "Teahouse チベット語",
     "description": "Short extension name (toolbar, popup header)"
   },
   "extensionFullName": {
-    "message": "Marginalia チベット語：辞書と学習パートナー",
+    "message": "Teahouse チベット語：辞書と学習パートナー",
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
@@ -12,7 +12,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Marginalia チベット語",
+    "message": "Teahouse チベット語",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -20,7 +20,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Marginalia チベット語",
+    "message": "Teahouse チベット語",
     "description": "Popup title"
   },
   "popupIntro": {
@@ -164,7 +164,7 @@
     "description": "Popup options button"
   },
   "brandTibetan": {
-    "message": "བོད་ཡིག་མཆན་བུ།",
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
     "description": "Tibetan script brand name"
   },
   "followLink": {
@@ -188,11 +188,11 @@
     "description": "Options note that dictionary definitions are English-only for now"
   },
   "loadingAria": {
-    "message": "Marginalia チベット語を読み込み中",
+    "message": "Teahouse チベット語を読み込み中",
     "description": "Accessible label for the in-page loading indicator"
   },
   "testTextHeading": {
-    "message": "Marginalia チベット語のテストテキスト",
+    "message": "Teahouse チベット語のテストテキスト",
     "description": "Heading above the sample Tibetan text inserted into a page"
   },
   "pos_PROPN": {
@@ -276,7 +276,7 @@
     "description": "Options page description of the 84000 glossary"
   },
   "dictDesc_curated": {
-    "message": "同梱の辞書にない複合語やよく使われる語のために、Marginalia が手作業で編集した項目。",
-    "description": "Options page description of the curated Marginalia entries"
+    "message": "同梱の辞書にない複合語やよく使われる語のために、Teahouse が手作業で編集した項目。",
+    "description": "Options page description of the curated Teahouse entries"
   }
 }

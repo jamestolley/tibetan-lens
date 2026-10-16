@@ -1,4 +1,4 @@
-# Marginalia Tibetan — Agent Notes
+# Teahouse Tibetan — Agent Notes
 
 ## Development workflow
 

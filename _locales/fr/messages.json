@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Marginalia Tibétain",
+    "message": "Teahouse Tibétain",
     "description": "Short extension name (toolbar, popup header)"
   },
   "extensionFullName": {
-    "message": "Marginalia Tibétain : dictionnaire et compagnon d'apprentissage",
+    "message": "Teahouse Tibétain : dictionnaire et compagnon d'apprentissage",
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
@@ -12,7 +12,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Marginalia Tibétain",
+    "message": "Teahouse Tibétain",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -20,7 +20,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Marginalia Tibétain",
+    "message": "Teahouse Tibétain",
     "description": "Popup title"
   },
   "popupIntro": {
@@ -164,7 +164,7 @@
     "description": "Popup options button"
   },
   "brandTibetan": {
-    "message": "བོད་ཡིག་མཆན་བུ།",
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
     "description": "Tibetan script brand name"
   },
   "followLink": {
@@ -188,11 +188,11 @@
     "description": "Options note that dictionary definitions are English-only for now"
   },
   "loadingAria": {
-    "message": "Chargement de Marginalia Tibétain",
+    "message": "Chargement de Teahouse Tibétain",
     "description": "Accessible label for the in-page loading indicator"
   },
   "testTextHeading": {
-    "message": "Texte de test de Marginalia Tibétain",
+    "message": "Texte de test de Teahouse Tibétain",
     "description": "Heading above the sample Tibetan text inserted into a page"
   },
   "pos_PROPN": {
@@ -276,7 +276,7 @@
     "description": "Options page description of the 84000 glossary"
   },
   "dictDesc_curated": {
-    "message": "Entrées Marginalia sélectionnées à la main pour des mots composés et des mots courants absents des dictionnaires inclus.",
-    "description": "Options page description of the curated Marginalia entries"
+    "message": "Entrées Teahouse sélectionnées à la main pour des mots composés et des mots courants absents des dictionnaires inclus.",
+    "description": "Options page description of the curated Teahouse entries"
   }
 }

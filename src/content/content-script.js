@@ -42,7 +42,7 @@
     }
 
     state.initialized = false;
-    console.warn("[Marginalia] Extension context invalidated (extension was reloaded/updated). Reload this page to re-enable Marginalia Tibetan.");
+    console.warn("[Teahouse] Extension context invalidated (extension was reloaded/updated). Reload this page to re-enable Teahouse Tibetan.");
     return true;
   }
 
@@ -125,13 +125,13 @@
   }
 
   function scanDocument() {
-    console.log('[Marginalia] scanDocument starting...');
+    console.log('[Teahouse] scanDocument starting...');
     extension.replacementEngine.restoreProcessedNodes(document);
     extension.tooltip.hideTooltip();
     resetStats();
 
     if (!state.settings || !state.settings.extensionEnabled) {
-      console.warn('[Marginalia] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
+      console.warn('[Teahouse] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
       return state.stats;
     }
 
@@ -142,14 +142,14 @@
 
     const root = document.body || document.documentElement;
     const nodes = extension.replacementEngine.collectTextNodes(root);
-    console.log('[Marginalia] found', nodes.length, 'text nodes to process');
+    console.log('[Teahouse] found', nodes.length, 'text nodes to process');
 
     nodes.forEach((textNode) => {
       state.stats.processedNodes += 1;
       state.stats.annotatedWords += renderTextNode(textNode);
     });
 
-    console.log('[Marginalia] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
+    console.log('[Teahouse] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
     state.ignoreMutationsUntil = Date.now() + 250;
     return state.stats;
   }
@@ -160,11 +160,11 @@
     }
 
     const node = document.createElement("div");
-    node.id = "marginalia-tibetan-loading";
-    node.className = "marginalia-tibetan-loading";
+    node.id = "teahouse-tibetan-loading";
+    node.className = "teahouse-tibetan-loading";
     node.setAttribute("aria-live", "polite");
     node.setAttribute("aria-label", extension.i18n.getMessage("loadingAria"));
-    node.innerHTML = `<div class="marginalia-tibetan-spinner" role="status" aria-hidden="true"></div><span class="marginalia-tibetan-loading-text">${extension.i18n.getMessage("loadingDefault")}</span>`;
+    node.innerHTML = `<div class="teahouse-tibetan-spinner" role="status" aria-hidden="true"></div><span class="teahouse-tibetan-loading-text">${extension.i18n.getMessage("loadingDefault")}</span>`;
     (document.body || document.documentElement).appendChild(node);
     state.spinner = node;
     return node;
@@ -172,7 +172,7 @@
 
   function showSpinner(message) {
     const node = ensureSpinner();
-    const text = node.querySelector(".marginalia-tibetan-loading-text");
+    const text = node.querySelector(".teahouse-tibetan-loading-text");
     if (text) text.textContent = message || extension.i18n.getMessage("loadingDefault");
     node.classList.add("is-visible");
   }
@@ -189,28 +189,28 @@
     }
 
     if (state.isRendering) {
-      console.log('[Marginalia] refreshAnnotations skipped — already rendering');
+      console.log('[Teahouse] refreshAnnotations skipped — already rendering');
       return state.stats;
     }
 
     state.isRendering = true;
     showSpinner(extension.i18n.getMessage('loadingDictionaries'));
-    console.log('[Marginalia] refreshAnnotations starting...');
+    console.log('[Teahouse] refreshAnnotations starting...');
 
     try {
       state.settings = await extension.storage.getSettings();
-      console.log('[Marginalia] settings loaded:', JSON.stringify(state.settings, null, 2));
+      console.log('[Teahouse] settings loaded:', JSON.stringify(state.settings, null, 2));
 
       if (typeof extension.tokenizer.ensureReady === "function") {
-        console.log('[Marginalia] loading tokenizer pack...');
+        console.log('[Teahouse] loading tokenizer pack...');
         await extension.tokenizer.ensureReady(state.settings);
-        console.log('[Marginalia] tokenizer pack loaded successfully');
+        console.log('[Teahouse] tokenizer pack loaded successfully');
       } else {
-        console.warn('[Marginalia] extension.tokenizer.ensureReady is not a function!');
+        console.warn('[Teahouse] extension.tokenizer.ensureReady is not a function!');
       }
 
       const stats = scanDocument();
-      console.log('[Marginalia] scanDocument complete:', stats);
+      console.log('[Teahouse] scanDocument complete:', stats);
       return stats;
     } catch (err) {
       if (err && err.contextInvalidated) {
@@ -220,7 +220,7 @@
       if (teardownIfInvalidated()) {
         return state.stats;
       }
-      console.error('[Marginalia] refreshAnnotations ERROR:', err);
+      console.error('[Teahouse] refreshAnnotations ERROR:', err);
       return state.stats;
     } finally {
       hideSpinner();
@@ -651,7 +651,7 @@
     });
 
     function insertTestText() {
-      const id = "marginalia-tibetan-test-sample";
+      const id = "teahouse-tibetan-test-sample";
       const existing = document.getElementById(id);
       if (existing) {
         existing.remove();
@@ -662,14 +662,14 @@
       container.lang = "bo";
       container.style.cssText = "margin:1rem;padding:1rem;border-radius:12px;background:#fff7e8;color:#2c2117;font:18px/1.6 Georgia,\"Palatino Linotype\",serif;";
       container.innerHTML = `
-        <p class="marginalia-tibetan-test-heading" style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;"></p>
+        <p class="teahouse-tibetan-test-heading" style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;"></p>
         <p>བོད་སྐད་ཡིག་ལ་མི་མང་པོས་དགའ་པོ་བྱེད།</p>
         <p>ཆོས་དང་ཞི་བདེ་ནི་གལ་ཆེན་པོ་རེད།</p>
         <p>དགེ་རྒན་ཞིག་གིས་བོད་སྐད་བསླབས།</p>
         <p>ཨོཾ་ག་ཏེ་ག་ཏེ་པཱ་ར་ག་ཏེ་པཱ་ར་སཾ་ག་ཏེ་བོ་དྷི་སྭཱ་ཧཱ།</p>
       `;
 
-      container.querySelector(".marginalia-tibetan-test-heading").textContent =
+      container.querySelector(".teahouse-tibetan-test-heading").textContent =
         extension.i18n.getMessage("testTextHeading");
 
       const target = document.body || document.documentElement;
@@ -711,28 +711,28 @@
   }
 
   async function bootstrap() {
-    console.log('[Marginalia] bootstrap starting...');
-    console.log('[Marginalia] extension object keys:', Object.keys(extension));
-    console.log('[Marginalia] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
-    console.log('[Marginalia] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
-    console.log('[Marginalia] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
-    console.log('[Marginalia] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
-    console.log('[Marginalia] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
-    console.log('[Marginalia] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
-    console.log('[Marginalia] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
-    console.log('[Marginalia] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
-    console.log('[Marginalia] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
+    console.log('[Teahouse] bootstrap starting...');
+    console.log('[Teahouse] extension object keys:', Object.keys(extension));
+    console.log('[Teahouse] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
+    console.log('[Teahouse] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
+    console.log('[Teahouse] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
+    console.log('[Teahouse] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
+    console.log('[Teahouse] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
+    console.log('[Teahouse] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
+    console.log('[Teahouse] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
+    console.log('[Teahouse] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
+    console.log('[Teahouse] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
     bindEvents();
     observeDocument();
     await refreshAnnotations();
-    console.log('[Marginalia] bootstrap complete');
+    console.log('[Teahouse] bootstrap complete');
   }
 
   if (document.readyState === "loading") {
-    console.log('[Marginalia] waiting for DOMContentLoaded...');
+    console.log('[Teahouse] waiting for DOMContentLoaded...');
     document.addEventListener("DOMContentLoaded", bootstrap, { once: true });
   } else {
-    console.log('[Marginalia] document already ready, bootstrapping now');
+    console.log('[Teahouse] document already ready, bootstrapping now');
     bootstrap();
   }
 })();

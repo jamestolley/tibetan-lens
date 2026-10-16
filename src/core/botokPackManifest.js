@@ -24,8 +24,8 @@
       },
       "curated": {
         id: "curated",
-        label: "Marginalia Curated",
-        description: "Hand-curated Marginalia entries for compounds and common words missing from the bundled dictionaries."
+        label: "Teahouse Curated",
+        description: "Hand-curated Teahouse entries for compounds and common words missing from the bundled dictionaries."
       }
     },
     files: {

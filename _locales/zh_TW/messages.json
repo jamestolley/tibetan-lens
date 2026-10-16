@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Marginalia 藏文",
+    "message": "Teahouse 藏文",
     "description": "Short extension name (toolbar, popup header)"
   },
   "extensionFullName": {
-    "message": "Marginalia 藏文：詞典與學習夥伴",
+    "message": "Teahouse 藏文：詞典與學習夥伴",
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
@@ -12,7 +12,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Marginalia 藏文",
+    "message": "Teahouse 藏文",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -20,7 +20,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Marginalia 藏文",
+    "message": "Teahouse 藏文",
     "description": "Popup title"
   },
   "popupIntro": {
@@ -164,7 +164,7 @@
     "description": "Popup options button"
   },
   "brandTibetan": {
-    "message": "བོད་ཡིག་མཆན་བུ།",
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
     "description": "Tibetan script brand name"
   },
   "followLink": {
@@ -188,11 +188,11 @@
     "description": "Options note that dictionary definitions are English-only for now"
   },
   "loadingAria": {
-    "message": "Marginalia 藏文正在載入",
+    "message": "Teahouse 藏文正在載入",
     "description": "Accessible label for the in-page loading indicator"
   },
   "testTextHeading": {
-    "message": "Marginalia 藏文測試文字",
+    "message": "Teahouse 藏文測試文字",
     "description": "Heading above the sample Tibetan text inserted into a page"
   },
   "pos_PROPN": {
@@ -276,7 +276,7 @@
     "description": "Options page description of the 84000 glossary"
   },
   "dictDesc_curated": {
-    "message": "Marginalia 人工整理的詞條，收錄隨附字典中缺少的複合詞與常用詞。",
-    "description": "Options page description of the curated Marginalia entries"
+    "message": "Teahouse 人工整理的詞條，收錄隨附字典中缺少的複合詞與常用詞。",
+    "description": "Options page description of the curated Teahouse entries"
   }
 }

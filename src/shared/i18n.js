@@ -4,11 +4,11 @@
   // Fallback strings used when the browser's i18n API is unavailable
   // (for example, during tests or in content contexts without _locales loaded).
   const FALLBACK_MESSAGES = {
-    extensionName: "Marginalia Tibetan",
+    extensionName: "Teahouse Tibetan",
     extensionDescription: "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
-    settingsTitle: "Marginalia Tibetan",
+    settingsTitle: "Teahouse Tibetan",
     settingsIntro: "Control how Tibetan text is segmented, displayed, and translated.",
-    popupTitle: "Marginalia Tibetan",
+    popupTitle: "Teahouse Tibetan",
     popupIntro: "Segment Tibetan text and click or hover tokens for definitions.",
     readingExperience: "Reading experience",
     readingExperienceHint: "Control what happens when Tibetan text is detected on a page.",
@@ -45,13 +45,13 @@
     refreshPage: "Refresh page",
     insertTestText: "Insert sample text",
     options: "Options",
-    brandTibetan: "བོད་ཡིག་མཆན་བུ།",
+    brandTibetan: "བོད་ཡིག་ཇ་ཁང་།",
     followLink: "Follow link",
     showTranslation: "Show translation",
     pageNotReachable: "Couldn't reach this page — reload the tab or open the Sample page.",
     samplePage: "Sample page",
-    loadingAria: "Marginalia Tibetan is loading",
-    testTextHeading: "Marginalia Tibetan test text"
+    loadingAria: "Teahouse Tibetan is loading",
+    testTextHeading: "Teahouse Tibetan test text"
   };
 
   extension.i18n = {
