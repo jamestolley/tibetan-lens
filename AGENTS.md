@@ -6,11 +6,18 @@
 - Do **not** run a full production build (`npm run build`) after every change.
 - To test manually, run `npm run build` for a one-time `dist/chrome/` build or `npm run dev` for dev-mode builds.
 - Production builds for Edge, Firefox, and store zips are done only when the extension is ready to launch.
+- **Commit after every feature change or addition** — one focused commit per feature/fix, rather than batching unrelated work.
+
+## Linting
+
+- ESLint 9 (flat config in `eslint.config.js`) lints `src/` and `tools/`; run it with `npm run lint`.
+- Vendored bundles `src/shared/jsewts.js` and `src/shared/ewts-converter.js` are ignored.
+- The pre-commit hook runs `npm run lint` first and aborts the commit on any error. Fix lint errors rather than bypassing the hook with `--no-verify`.
 
 ## Versioning
 
 - The patch version is auto-incremented on every commit by `tools/bump-version.js`.
-- The local pre-commit hook (`.git/hooks/pre-commit`) runs the bump and stages `package.json`, `package-lock.json`, and `manifest.json`.
+- The local pre-commit hook (`.git/hooks/pre-commit`) runs lint, then the bump, and stages `package.json`, `package-lock.json`, and `manifest.json`.
 - Do not manually edit version strings; let the hook handle it to avoid double-bumps.
 
 ## Build notes
