@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia Tibetano",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Segmenta textos em tibetano em páginas da web, insere espaços e mostra janelas de dicionário.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia Tibetano",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Controle como o texto em tibetano é segmentado, exibido e traduzido.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia Tibetano",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Segmente textos em tibetano e clique ou passe o mouse sobre as palavras para ver as definições.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Experiência de leitura",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Controle o que acontece quando um texto em tibetano é detectado em uma página.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Extensão ativada",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Inserir espaços entre as palavras",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Mostrar traduções ao",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Passar o mouse",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Clicar",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Mostrar Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Mostrar fonética",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Colorir palavras por classe gramatical",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Codificação por cores",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Destaque palavras por classe gramatical e escolha um tema de cores.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Tema de cores das classes gramaticais",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Vibrante",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Suave",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Somente sublinhado",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "Ao clicar em uma palavra tibetana com link, perguntar: seguir o link ou mostrar a tradução",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Tamanho mínimo da fonte tibetana",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Dicionários",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Os dicionários ativados definem os resultados das janelas e o léxico de segmentação.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Fontes dos dicionários",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Os dados incluídos continuam sob sua licença original. Veja o arquivo NOTICE incluído para a atribuição completa.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "As configurações são sincronizadas automaticamente.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Salvo no armazenamento sincronizado do Chrome.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Carregando dicionários…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Carregando…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Desconhecido",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Nenhum dicionário ativado tem ainda uma definição para este termo.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Ainda sem definição — esta palavra não está nos dicionários incluídos.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "provável (com base no corpus)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Partes da palavra",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Atualizar página",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Inserir texto de exemplo",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Opções",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Seguir link",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Mostrar tradução",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Não foi possível acessar esta página — recarregue a guia ou abra a página de exemplo.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Página de exemplo",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Por enquanto, as definições estão disponíveis apenas em inglês.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Carregando o Marginalia Tibetano",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Texto de teste do Marginalia Tibetano",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Nome próprio",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Substantivo",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Verbo",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Adjetivo",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Advérbio",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Pronome",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Determinante",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Adposição",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Partícula",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Número",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Conjunção",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Subordinador",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Interjeição",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Pontuação",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Auxiliar",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Outro",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Desconhecido",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Dicionário principal de segmentação de palavras tibetanas do botok-data (~31 mil entradas).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Dicionário tibetano-inglês de Jeffrey Hopkins (~18 mil entradas).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Glossário do 84000: Translating the Words of the Buddha (~25 mil entradas).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Entradas do Marginalia selecionadas manualmente para compostos e palavras comuns ausentes dos dicionários incluídos.",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

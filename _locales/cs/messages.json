@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia Tibetština",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Rozděluje tibetský text na webových stránkách na slova, vkládá mezery a zobrazuje slovníková okna.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia Tibetština",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Nastavte, jak se tibetský text rozděluje na slova, zobrazuje a překládá.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia Tibetština",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Rozdělujte tibetský text na slova a klikněte na slova nebo na ně najeďte myší pro zobrazení definic.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Čtení",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Nastavte, co se stane, když je na stránce rozpoznán tibetský text.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Rozšíření zapnuto",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Vkládat mezery mezi slova",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Zobrazit překlady při",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Najetí myší",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Kliknutí",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Zobrazit Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Zobrazit výslovnost",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Obarvit slova podle slovního druhu",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Barevné odlišení",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Zvýrazněte slova podle slovního druhu a vyberte barevný motiv.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Barevný motiv slovních druhů",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Výrazný",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Jemný",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Pouze podtržení",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "Po kliknutí na tibetské slovo s odkazem se zeptat: otevřít odkaz, nebo zobrazit překlad",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Minimální velikost tibetského písma",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Slovníky",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Zapnuté slovníky určují výsledky v oknech a lexikon pro dělení na slova.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Zdroje slovníků",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Přiložená data zůstávají pod svou původní licencí. Úplné uvedení autorů najdete v přiloženém souboru NOTICE.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Nastavení se synchronizuje automaticky.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Uloženo do synchronizovaného úložiště Chrome.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Načítání slovníků…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Načítání…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Neznámé",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Žádný zapnutý slovník zatím pro tento výraz neobsahuje definici.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Zatím bez definice — toto slovo v přiložených slovnících není.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "pravděpodobně (podle korpusu)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Části slova",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Obnovit stránku",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Vložit ukázkový text",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Možnosti",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Otevřít odkaz",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Zobrazit překlad",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Tuto stránku nelze zastihnout — obnovte kartu nebo otevřete ukázkovou stránku.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Ukázková stránka",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Definice jsou zatím k dispozici pouze v angličtině.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Načítání Marginalia Tibetština",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Testovací text Marginalia Tibetština",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Vlastní jméno",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Podstatné jméno",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Sloveso",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Přídavné jméno",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Příslovce",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Zájmeno",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Determinátor",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Předložka/záložka",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Částice",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Číslovka",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Spojka",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Podřadicí spojka",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Citoslovce",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Interpunkce",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Pomocné sloveso",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Jiné",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Neznámé",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Základní slovník pro dělení tibetského textu na slova z botok-data (~31 000 hesel).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Tibetsko-anglický slovník Jeffreyho Hopkinse (~18 000 hesel).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Glosář projektu 84000: Translating the Words of the Buddha (~25 000 hesel).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Ručně vybraná hesla Marginalia pro složeniny a běžná slova, která v přiložených slovnících chybí.",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

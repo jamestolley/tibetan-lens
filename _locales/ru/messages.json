@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia Тибетский",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Разбивает тибетский текст на веб-страницах на слова, вставляет пробелы и показывает словарные подсказки.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia Тибетский",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Настройте, как тибетский текст разбивается на слова, отображается и переводится.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia Тибетский",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Разбивайте тибетский текст на слова и нажимайте на слова или наводите на них курсор, чтобы увидеть определения.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Чтение",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Настройте, что происходит, когда на странице обнаружен тибетский текст.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Расширение включено",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Вставлять пробелы между словами",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Показывать перевод по",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Наведению",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Нажатию",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Показывать Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Показывать транскрипцию",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Выделять слова цветом по части речи",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Цветовая разметка",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Выделяйте слова по части речи и выберите цветовую тему.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Цветовая тема частей речи",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Яркая",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Мягкая",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Только подчёркивание",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "При нажатии на тибетское слово-ссылку спрашивать: перейти по ссылке или показать перевод",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Минимальный размер тибетского шрифта",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Словари",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Включённые словари определяют результаты подсказок и лексикон для разбиения на слова.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Источники словарей",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Включённые данные распространяются на условиях своих исходных лицензий. Полные сведения об авторстве — в прилагаемом файле NOTICE.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Настройки синхронизируются автоматически.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Сохранено в синхронизируемом хранилище Chrome.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Загрузка словарей…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Загрузка…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Неизвестно",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Ни в одном из включённых словарей пока нет определения этого термина.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Определения пока нет — этого слова нет во встроенных словарях.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "вероятно (по данным корпуса)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Части слова",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Обновить страницу",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Вставить пример текста",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Настройки",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Перейти по ссылке",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Показать перевод",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Не удаётся связаться с этой страницей — перезагрузите вкладку или откройте страницу с примером.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Страница с примером",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Пока определения доступны только на английском языке.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Загрузка Marginalia Тибетский",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Тестовый текст Marginalia Тибетский",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Имя собственное",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Существительное",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Глагол",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Прилагательное",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Наречие",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Местоимение",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Определитель",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Предлог/послелог",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Частица",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Числительное",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Союз",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Подчинительный союз",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Междометие",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Пунктуация",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Вспомогательный глагол",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Другое",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Неизвестно",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Основной словарь для разбиения тибетского текста на слова из botok-data (~31 тыс. статей).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Тибетско-английский словарь Джеффри Хопкинса (~18 тыс. статей).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Глоссарий 84000: Translating the Words of the Buddha (~25 тыс. статей).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Подобранные вручную статьи Marginalia для составных и частых слов, которых нет во встроенных словарях.",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

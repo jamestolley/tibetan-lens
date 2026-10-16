@@ -163,7 +163,7 @@
     node.id = "marginalia-tibetan-loading";
     node.className = "marginalia-tibetan-loading";
     node.setAttribute("aria-live", "polite");
-    node.setAttribute("aria-label", "Marginalia Tibetan is loading");
+    node.setAttribute("aria-label", extension.i18n.getMessage("loadingAria"));
     node.innerHTML = `<div class="marginalia-tibetan-spinner" role="status" aria-hidden="true"></div><span class="marginalia-tibetan-loading-text">${extension.i18n.getMessage("loadingDefault")}</span>`;
     (document.body || document.documentElement).appendChild(node);
     state.spinner = node;
@@ -662,12 +662,15 @@
       container.lang = "bo";
       container.style.cssText = "margin:1rem;padding:1rem;border-radius:12px;background:#fff7e8;color:#2c2117;font:18px/1.6 Georgia,\"Palatino Linotype\",serif;";
       container.innerHTML = `
-        <p style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;">Marginalia Tibetan test text</p>
+        <p class="marginalia-tibetan-test-heading" style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;"></p>
         <p>བོད་སྐད་ཡིག་ལ་མི་མང་པོས་དགའ་པོ་བྱེད།</p>
         <p>ཆོས་དང་ཞི་བདེ་ནི་གལ་ཆེན་པོ་རེད།</p>
         <p>དགེ་རྒན་ཞིག་གིས་བོད་སྐད་བསླབས།</p>
         <p>ཨོཾ་ག་ཏེ་ག་ཏེ་པཱ་ར་ག་ཏེ་པཱ་ར་སཾ་ག་ཏེ་བོ་དྷི་སྭཱ་ཧཱ།</p>
       `;
+
+      container.querySelector(".marginalia-tibetan-test-heading").textContent =
+        extension.i18n.getMessage("testTextHeading");
 
       const target = document.body || document.documentElement;
       target.insertBefore(container, target.firstChild);

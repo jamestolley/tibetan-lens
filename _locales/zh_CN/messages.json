@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia 藏文",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "在网页上为藏文分词、插入空格，并显示词典弹窗。",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia 藏文",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "设置藏文的分词、显示和翻译方式。",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia 藏文",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "为藏文分词，点击或悬停在词语上即可查看释义。",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "阅读体验",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "设置在页面上检测到藏文时的行为。",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "启用扩展",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "在词语之间插入空格",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "显示翻译的方式",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "悬停",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "点击",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "显示 Wylie 转写",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "显示读音",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "按词性为词语着色",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "颜色标注",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "按词性突出显示词语，并选择配色主题。",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "词性配色主题",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "鲜艳",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "柔和",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "仅下划线",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "点击带链接的藏文词语时询问：打开链接还是显示翻译",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "藏文最小字号",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "词典",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "已启用的词典决定弹窗结果和分词词库。",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "词典来源",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "随附数据仍遵循其原始许可。完整署名请参阅随附的 NOTICE 文件。",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "设置会自动同步。",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "已保存到 Chrome 同步存储。",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "正在加载词典…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "正在加载…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "未知",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "已启用的词典中暂无此词条的释义。",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "暂无释义——此词不在随附词典中。",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "可能（基于语料库）",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "词语构成",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "刷新页面",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "插入示例文本",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "选项",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "打开链接",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "显示翻译",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "无法连接此页面——请重新加载标签页或打开示例页面。",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "示例页面",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "目前释义仅提供英文版本。",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Marginalia 藏文正在加载",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Marginalia 藏文测试文本",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "专有名词",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "名词",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "动词",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "形容词",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "副词",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "代词",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "限定词",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "介词",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "助词",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "数词",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "连词",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "从属连词",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "叹词",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "标点",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "助动词",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "其他",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "未知",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "来自 botok-data 的核心藏文分词词典（约 3.1 万条）。",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Jeffrey Hopkins 的藏英词典（约 1.8 万条）。",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000（Translating the Words of the Buddha）词汇表（约 2.5 万条）。",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Marginalia 人工整理的词条，收录随附词典中缺少的复合词和常用词。",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

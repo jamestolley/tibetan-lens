@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia Tibetaans",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Segmenteert Tibetaanse tekst op webpagina's, voegt spaties in en toont woordenboekpop-ups.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia Tibetaans",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Bepaal hoe Tibetaanse tekst wordt gesegmenteerd, weergegeven en vertaald.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia Tibetaans",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Segmenteer Tibetaanse tekst en klik op woorden of wijs ze aan voor definities.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Leeservaring",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Bepaal wat er gebeurt wanneer Tibetaanse tekst op een pagina wordt gevonden.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Extensie ingeschakeld",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Spaties tussen woorden invoegen",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Vertalingen tonen bij",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Aanwijzen",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Klikken",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie tonen",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Fonetiek tonen",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Woorden kleuren op woordsoort",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Kleurcodering",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Markeer woorden op woordsoort en kies een kleurthema.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Kleurthema voor woordsoorten",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Fel",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Zacht",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Alleen onderstrepen",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "Bij klikken op een gelinkt Tibetaans woord vragen: link volgen of vertaling tonen",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Minimale Tibetaanse lettergrootte",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Woordenboeken",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Ingeschakelde woordenboeken bepalen de pop-upresultaten en het lexicon voor segmentatie.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Bronnen van woordenboeken",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Meegeleverde gegevens vallen onder hun oorspronkelijke licentie. Zie het meegeleverde NOTICE-bestand voor de volledige bronvermelding.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Instellingen worden automatisch gesynchroniseerd.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Opgeslagen in de Chrome-synchronisatieopslag.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Woordenboeken laden…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Laden…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Onbekend",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Geen ingeschakeld woordenboek heeft al een definitie voor deze term.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Nog geen definitie — dit woord staat niet in de meegeleverde woordenboeken.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "waarschijnlijk (op basis van corpus)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Woorddelen",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Pagina vernieuwen",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Voorbeeldtekst invoegen",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Opties",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Link volgen",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Vertaling tonen",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Kan deze pagina niet bereiken — laad het tabblad opnieuw of open de voorbeeldpagina.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Voorbeeldpagina",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Definities zijn voorlopig alleen in het Engels beschikbaar.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Marginalia Tibetaans wordt geladen",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Testtekst van Marginalia Tibetaans",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Eigennaam",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Zelfstandig naamwoord",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Werkwoord",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Bijvoeglijk naamwoord",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Bijwoord",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Voornaamwoord",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Determinator",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Adpositie",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Partikel",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Getal",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Voegwoord",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Onderschikkend voegwoord",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Tussenwerpsel",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Leesteken",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Hulpwerkwoord",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Overig",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Onbekend",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Kernwoordenboek voor Tibetaanse woordsegmentatie uit botok-data (~31.000 items).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Tibetaans-Engels woordenboek van Jeffrey Hopkins (~18.000 items).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Woordenlijst van 84000: Translating the Words of the Buddha (~25.000 items).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Handmatig samengestelde Marginalia-items voor samenstellingen en veelvoorkomende woorden die in de meegeleverde woordenboeken ontbreken.",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

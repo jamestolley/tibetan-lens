@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia 藏文",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "在網頁上為藏文斷詞、插入空格，並顯示字典彈出視窗。",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia 藏文",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "設定藏文的斷詞、顯示和翻譯方式。",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia 藏文",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "為藏文斷詞，點擊或將游標停留在詞語上即可查看釋義。",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "閱讀體驗",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "設定在頁面上偵測到藏文時的行為。",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "啟用擴充功能",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "在詞語之間插入空格",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "顯示翻譯的方式",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "游標停留",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "點擊",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "顯示 Wylie 轉寫",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "顯示讀音",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "依詞性為詞語上色",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "顏色標示",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "依詞性醒目標示詞語，並選擇配色主題。",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "詞性配色主題",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "鮮豔",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "柔和",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "僅底線",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "點擊帶連結的藏文詞語時詢問：開啟連結還是顯示翻譯",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "藏文最小字型大小",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "字典",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "已啟用的字典決定彈出視窗的結果與斷詞詞庫。",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "字典來源",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "隨附資料仍適用其原始授權。完整署名請參閱隨附的 NOTICE 檔案。",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "設定會自動同步。",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "已儲存至 Chrome 同步儲存空間。",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "正在載入字典…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "正在載入…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "未知",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "已啟用的字典中尚無此詞條的釋義。",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "尚無釋義——此詞不在隨附字典中。",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "可能（依據語料庫）",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "詞語組成",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "重新整理頁面",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "插入範例文字",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "選項",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "開啟連結",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "顯示翻譯",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "無法連線至此頁面——請重新載入分頁或開啟範例頁面。",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "範例頁面",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "目前釋義僅提供英文版本。",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Marginalia 藏文正在載入",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Marginalia 藏文測試文字",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "專有名詞",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "名詞",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "動詞",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "形容詞",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "副詞",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "代名詞",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "限定詞",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "介詞",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "助詞",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "數詞",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "連接詞",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "從屬連接詞",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "感嘆詞",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "標點",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "助動詞",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "其他",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "未知",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "來自 botok-data 的核心藏文斷詞字典（約 3.1 萬條）。",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Jeffrey Hopkins 的藏英字典（約 1.8 萬條）。",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000（Translating the Words of the Buddha）詞彙表（約 2.5 萬條）。",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Marginalia 人工整理的詞條，收錄隨附字典中缺少的複合詞與常用詞。",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

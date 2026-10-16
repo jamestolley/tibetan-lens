@@ -128,6 +128,33 @@ for (const file of jsFiles) {
   }
 }
 
+// Every locale must define exactly the English keys, with non-empty messages
+// that fit Chrome Web Store limits for the localized name and description.
+const localesDir = path.join(root, "_locales");
+for (const locale of fs.readdirSync(localesDir)) {
+  const file = path.join(localesDir, locale, "messages.json");
+  let messages;
+  try {
+    messages = JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch (error) {
+    errors.push(`Could not parse _locales/${locale}/messages.json: ${error.message}`);
+    continue;
+  }
+  const keys = new Set(Object.keys(messages));
+  const missing = [...messageKeys].filter((key) => !keys.has(key));
+  const extra = [...keys].filter((key) => !messageKeys.has(key));
+  const empty = [...keys].filter((key) => !messages[key]?.message?.trim());
+  if (missing.length) errors.push(`_locales/${locale} is missing keys: ${missing.join(", ")}`);
+  if (extra.length) errors.push(`_locales/${locale} has keys not in en: ${extra.join(", ")}`);
+  if (empty.length) errors.push(`_locales/${locale} has empty messages: ${empty.join(", ")}`);
+  if ((messages.extensionName?.message || "").length > 75) {
+    errors.push(`_locales/${locale} extensionName exceeds 75 characters`);
+  }
+  if ((messages.extensionDescription?.message || "").length > 132) {
+    errors.push(`_locales/${locale} extensionDescription exceeds 132 characters`);
+  }
+}
+
 const manifestPath = path.join(root, "manifest.json");
 if (fs.existsSync(manifestPath)) {
   const manifest = fs.readFileSync(manifestPath, "utf8");

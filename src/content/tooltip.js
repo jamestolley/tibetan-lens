@@ -26,7 +26,7 @@
     if (!pos) {
       return extension.i18n.getMessage("posUnknown") || "Unknown";
     }
-    return POS_LABELS[pos] || pos;
+    return extension.i18n.getMessage(`pos_${pos}`, POS_LABELS[pos] || pos);
   }
 
   function ensureTooltip() {

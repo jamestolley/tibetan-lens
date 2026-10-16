@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia तिब्बती",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "वेब पेजों पर तिब्बती पाठ को शब्दों में बाँटता है, रिक्त स्थान जोड़ता है और शब्दकोश पॉपअप दिखाता है।",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia तिब्बती",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "तय करें कि तिब्बती पाठ को कैसे बाँटा, दिखाया और अनुवादित किया जाए।",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia तिब्बती",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "तिब्बती पाठ को शब्दों में बाँटें और परिभाषाएँ देखने के लिए शब्दों पर क्लिक करें या माउस ले जाएँ।",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "पढ़ने का अनुभव",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "तय करें कि किसी पेज पर तिब्बती पाठ मिलने पर क्या हो।",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "एक्सटेंशन चालू",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "शब्दों के बीच रिक्त स्थान जोड़ें",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "अनुवाद कब दिखाएँ",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "माउस ले जाने पर",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "क्लिक करने पर",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie दिखाएँ",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "उच्चारण दिखाएँ",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "शब्दभेद के अनुसार शब्दों को रंगें",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "रंग कोडिंग",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "शब्दभेद के अनुसार शब्दों को हाइलाइट करें और रंग थीम चुनें।",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "शब्दभेद रंग थीम",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "चटकीला",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "हल्का",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "केवल रेखांकन",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "लिंक वाले तिब्बती शब्द पर क्लिक करने पर पूछें: लिंक खोलें या अनुवाद दिखाएँ",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "तिब्बती फ़ॉन्ट का न्यूनतम आकार",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "शब्दकोश",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "चालू शब्दकोश पॉपअप के परिणाम और शब्द-विभाजन की शब्दावली तय करते हैं।",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "शब्दकोश स्रोत",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "शामिल डेटा अपने मूल लाइसेंस के अधीन रहता है। पूरा श्रेय देखने के लिए साथ दी गई NOTICE फ़ाइल देखें।",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "सेटिंग अपने-आप सिंक होती हैं।",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Chrome सिंक स्टोरेज में सहेजा गया।",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "शब्दकोश लोड हो रहे हैं…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "लोड हो रहा है…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "अज्ञात",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "किसी भी चालू शब्दकोश में अभी इस शब्द की परिभाषा नहीं है।",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "अभी कोई परिभाषा नहीं — यह शब्द शामिल शब्दकोशों में नहीं है।",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "संभावित (कॉर्पस के आधार पर)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "शब्द के भाग",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "पेज रीफ़्रेश करें",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "नमूना पाठ जोड़ें",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "विकल्प",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "लिंक खोलें",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "अनुवाद दिखाएँ",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "यह पेज उपलब्ध नहीं है — टैब को फिर से लोड करें या नमूना पेज खोलें।",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "नमूना पेज",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "फ़िलहाल परिभाषाएँ केवल अंग्रेज़ी में उपलब्ध हैं।",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Marginalia तिब्बती लोड हो रहा है",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Marginalia तिब्बती परीक्षण पाठ",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "व्यक्तिवाचक संज्ञा",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "संज्ञा",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "क्रिया",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "विशेषण",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "क्रियाविशेषण",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "सर्वनाम",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "निर्धारक",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "संबंधबोधक",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "निपात",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "संख्या",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "समुच्चयबोधक",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "अधीनस्थ समुच्चयबोधक",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "विस्मयादिबोधक",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "विराम चिह्न",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "सहायक क्रिया",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "अन्य",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "अज्ञात",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "botok-data से मुख्य तिब्बती शब्द-विभाजन शब्दकोश (~31,000 प्रविष्टियाँ)।",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "जेफ़्री हॉपकिंस का तिब्बती-अंग्रेज़ी शब्दकोश (~18,000 प्रविष्टियाँ)।",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000: Translating the Words of the Buddha की शब्दावली (~25,000 प्रविष्टियाँ)।",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "शामिल शब्दकोशों में न मिलने वाले समास और आम शब्दों के लिए Marginalia की हाथ से चुनी गई प्रविष्टियाँ।",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

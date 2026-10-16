@@ -1,0 +1,278 @@
+{
+  "extensionName": {
+    "message": "Marginalia チベット語",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "ウェブページ上のチベット語テキストを単語に分割し、スペースを挿入して、辞書ポップアップを表示します。",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Marginalia チベット語",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "チベット語テキストの分割・表示・翻訳の方法を設定します。",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Marginalia チベット語",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "チベット語テキストを単語に分割し、単語をクリックまたはホバーすると意味を表示します。",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "読書設定",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "ページ上でチベット語テキストが検出されたときの動作を設定します。",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "拡張機能を有効にする",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "単語の間にスペースを挿入",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "翻訳を表示するタイミング",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "ホバー",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "クリック",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie 転写を表示",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "発音を表示",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "品詞ごとに単語を色分け",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "色分け",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "品詞ごとに単語を強調表示し、配色テーマを選択します。",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "品詞の配色テーマ",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "鮮やか",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "控えめ",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "下線のみ",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "リンク付きのチベット語単語をクリックしたとき、リンクを開くか翻訳を表示するかを確認する",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "チベット語の最小フォントサイズ",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "辞書",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "有効な辞書がポップアップの結果と単語分割用の語彙を決定します。",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "辞書の出典",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "同梱データは元のライセンスに従います。詳しい帰属表示は同梱の NOTICE ファイルをご覧ください。",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "設定は自動的に同期されます。",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Chrome の同期ストレージに保存しました。",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "辞書を読み込み中…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "読み込み中…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "不明",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "有効な辞書には、この語の定義がまだありません。",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "定義はまだありません — この語は同梱の辞書に含まれていません。",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "推定（コーパスに基づく）",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "語の構成要素",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "ページを更新",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "サンプルテキストを挿入",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "オプション",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་མཆན་བུ།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "リンクを開く",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "翻訳を表示",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "このページに接続できません — タブを再読み込みするか、サンプルページを開いてください。",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "サンプルページ",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "現在、語義は英語でのみ提供されています。",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Marginalia チベット語を読み込み中",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Marginalia チベット語のテストテキスト",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "固有名詞",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "名詞",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "動詞",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "形容詞",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "副詞",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "代名詞",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "限定詞",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "接置詞",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "助詞",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "数詞",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "接続詞",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "従属接続詞",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "間投詞",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "句読点",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "助動詞",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "その他",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "不明",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "botok-data の基本チベット語単語分割辞書（約 31,000 語）。",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Jeffrey Hopkins によるチベット語–英語辞典（約 18,000 語）。",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000: Translating the Words of the Buddha の用語集（約 25,000 語）。",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "同梱の辞書にない複合語やよく使われる語のために、Marginalia が手作業で編集した項目。",
+    "description": "Options page description of the curated Marginalia entries"
+  }
+}

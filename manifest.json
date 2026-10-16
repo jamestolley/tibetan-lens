@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Marginalia Tibetan",
-  "version": "0.50.23",
-  "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
+  "name": "__MSG_extensionName__",
+  "version": "0.50.24",
+  "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
     "storage",
@@ -14,7 +14,7 @@
     "128": "public/icons/icon128.png"
   },
   "action": {
-    "default_title": "Marginalia Tibetan",
+    "default_title": "__MSG_extensionName__",
     "default_icon": "public/icons/icon48.png",
     "default_popup": "src/popup/index.html"
   },

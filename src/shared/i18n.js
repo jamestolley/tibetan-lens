@@ -30,6 +30,7 @@
     minTibetanFontSize: "Minimum Tibetan font size",
     dictionaries: "Dictionaries",
     dictionariesHint: "Enabled dictionaries drive tooltip results and the tokenizer lexicon.",
+    definitionsInEnglish: "Definitions are currently available in English only.",
     dictionarySources: "Dictionary sources",
     dictionarySourcesNote: "Bundled data remains under its original license. See the included NOTICE file for full attribution.",
     settingsSyncMessage: "Settings sync automatically.",
@@ -48,21 +49,26 @@
     followLink: "Follow link",
     showTranslation: "Show translation",
     pageNotReachable: "Couldn't reach this page — reload the tab or open the Sample page.",
-    samplePage: "Sample page"
+    samplePage: "Sample page",
+    loadingAria: "Marginalia Tibetan is loading",
+    testTextHeading: "Marginalia Tibetan test text"
   };
 
   extension.i18n = {
-    getMessage(key) {
+    getMessage(key, fallback) {
       if (typeof chrome !== "undefined" && chrome.i18n && typeof chrome.i18n.getMessage === "function") {
         const value = chrome.i18n.getMessage(key);
         if (value) {
           return value;
         }
       }
-      return FALLBACK_MESSAGES[key] || key;
+      return FALLBACK_MESSAGES[key] || fallback || key;
     },
 
     localizePage(root = document) {
+      if (root === document && typeof chrome !== "undefined" && chrome.i18n?.getUILanguage) {
+        document.documentElement.lang = chrome.i18n.getUILanguage();
+      }
       const elements = root.querySelectorAll("[data-i18n]");
       elements.forEach((el) => {
         const key = el.getAttribute("data-i18n");

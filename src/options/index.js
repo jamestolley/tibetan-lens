@@ -34,7 +34,10 @@
       copy.appendChild(name);
 
       const description = document.createElement("span");
-      description.textContent = dictionary.description;
+      description.textContent = extension.i18n.getMessage(
+        `dictDesc_${dictionary.id.replace(/\W/g, "_")}`,
+        dictionary.description
+      );
       copy.appendChild(description);
 
       const input = document.createElement("input");
