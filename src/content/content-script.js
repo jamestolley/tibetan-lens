@@ -42,7 +42,7 @@
     }
 
     state.initialized = false;
-    console.warn("[TibetanLens] Extension context invalidated (extension was reloaded/updated). Reload this page to re-enable Tibetan Lens.");
+    console.warn("[Marginalia] Extension context invalidated (extension was reloaded/updated). Reload this page to re-enable Marginalia Tibetan.");
     return true;
   }
 
@@ -125,13 +125,13 @@
   }
 
   function scanDocument() {
-    console.log('[TibetanLens] scanDocument starting...');
+    console.log('[Marginalia] scanDocument starting...');
     extension.replacementEngine.restoreProcessedNodes(document);
     extension.tooltip.hideTooltip();
     resetStats();
 
     if (!state.settings || !state.settings.extensionEnabled) {
-      console.warn('[TibetanLens] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
+      console.warn('[Marginalia] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
       return state.stats;
     }
 
@@ -142,14 +142,14 @@
 
     const root = document.body || document.documentElement;
     const nodes = extension.replacementEngine.collectTextNodes(root);
-    console.log('[TibetanLens] found', nodes.length, 'text nodes to process');
+    console.log('[Marginalia] found', nodes.length, 'text nodes to process');
 
     nodes.forEach((textNode) => {
       state.stats.processedNodes += 1;
       state.stats.annotatedWords += renderTextNode(textNode);
     });
 
-    console.log('[TibetanLens] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
+    console.log('[Marginalia] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
     state.ignoreMutationsUntil = Date.now() + 250;
     return state.stats;
   }
@@ -160,11 +160,11 @@
     }
 
     const node = document.createElement("div");
-    node.id = "tibetan-lens-loading";
-    node.className = "tibetan-lens-loading";
+    node.id = "marginalia-tibetan-loading";
+    node.className = "marginalia-tibetan-loading";
     node.setAttribute("aria-live", "polite");
-    node.setAttribute("aria-label", "Tibetan Lens is loading");
-    node.innerHTML = `<div class="tibetan-lens-spinner" role="status" aria-hidden="true"></div><span class="tibetan-lens-loading-text">${extension.i18n.getMessage("loadingDefault")}</span>`;
+    node.setAttribute("aria-label", "Marginalia Tibetan is loading");
+    node.innerHTML = `<div class="marginalia-tibetan-spinner" role="status" aria-hidden="true"></div><span class="marginalia-tibetan-loading-text">${extension.i18n.getMessage("loadingDefault")}</span>`;
     (document.body || document.documentElement).appendChild(node);
     state.spinner = node;
     return node;
@@ -172,7 +172,7 @@
 
   function showSpinner(message) {
     const node = ensureSpinner();
-    const text = node.querySelector(".tibetan-lens-loading-text");
+    const text = node.querySelector(".marginalia-tibetan-loading-text");
     if (text) text.textContent = message || extension.i18n.getMessage("loadingDefault");
     node.classList.add("is-visible");
   }
@@ -189,28 +189,28 @@
     }
 
     if (state.isRendering) {
-      console.log('[TibetanLens] refreshAnnotations skipped — already rendering');
+      console.log('[Marginalia] refreshAnnotations skipped — already rendering');
       return state.stats;
     }
 
     state.isRendering = true;
     showSpinner(extension.i18n.getMessage('loadingDictionaries'));
-    console.log('[TibetanLens] refreshAnnotations starting...');
+    console.log('[Marginalia] refreshAnnotations starting...');
 
     try {
       state.settings = await extension.storage.getSettings();
-      console.log('[TibetanLens] settings loaded:', JSON.stringify(state.settings, null, 2));
+      console.log('[Marginalia] settings loaded:', JSON.stringify(state.settings, null, 2));
 
       if (typeof extension.tokenizer.ensureReady === "function") {
-        console.log('[TibetanLens] loading tokenizer pack...');
+        console.log('[Marginalia] loading tokenizer pack...');
         await extension.tokenizer.ensureReady(state.settings);
-        console.log('[TibetanLens] tokenizer pack loaded successfully');
+        console.log('[Marginalia] tokenizer pack loaded successfully');
       } else {
-        console.warn('[TibetanLens] extension.tokenizer.ensureReady is not a function!');
+        console.warn('[Marginalia] extension.tokenizer.ensureReady is not a function!');
       }
 
       const stats = scanDocument();
-      console.log('[TibetanLens] scanDocument complete:', stats);
+      console.log('[Marginalia] scanDocument complete:', stats);
       return stats;
     } catch (err) {
       if (err && err.contextInvalidated) {
@@ -220,7 +220,7 @@
       if (teardownIfInvalidated()) {
         return state.stats;
       }
-      console.error('[TibetanLens] refreshAnnotations ERROR:', err);
+      console.error('[Marginalia] refreshAnnotations ERROR:', err);
       return state.stats;
     } finally {
       hideSpinner();
@@ -651,7 +651,7 @@
     });
 
     function insertTestText() {
-      const id = "tibetan-lens-test-sample";
+      const id = "marginalia-tibetan-test-sample";
       const existing = document.getElementById(id);
       if (existing) {
         existing.remove();
@@ -662,7 +662,7 @@
       container.lang = "bo";
       container.style.cssText = "margin:1rem;padding:1rem;border-radius:12px;background:#fff7e8;color:#2c2117;font:18px/1.6 Georgia,\"Palatino Linotype\",serif;";
       container.innerHTML = `
-        <p style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;">Tibetan Lens test text</p>
+        <p style="margin:0 0 .5rem;color:#7a2f2a;font-weight:700;">Marginalia Tibetan test text</p>
         <p>བོད་སྐད་ཡིག་ལ་མི་མང་པོས་དགའ་པོ་བྱེད།</p>
         <p>ཆོས་དང་ཞི་བདེ་ནི་གལ་ཆེན་པོ་རེད།</p>
         <p>དགེ་རྒན་ཞིག་གིས་བོད་སྐད་བསླབས།</p>
@@ -708,28 +708,28 @@
   }
 
   async function bootstrap() {
-    console.log('[TibetanLens] bootstrap starting...');
-    console.log('[TibetanLens] extension object keys:', Object.keys(extension));
-    console.log('[TibetanLens] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
-    console.log('[TibetanLens] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
-    console.log('[TibetanLens] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
-    console.log('[TibetanLens] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
-    console.log('[TibetanLens] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
-    console.log('[TibetanLens] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
-    console.log('[TibetanLens] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
-    console.log('[TibetanLens] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
-    console.log('[TibetanLens] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
+    console.log('[Marginalia] bootstrap starting...');
+    console.log('[Marginalia] extension object keys:', Object.keys(extension));
+    console.log('[Marginalia] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
+    console.log('[Marginalia] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
+    console.log('[Marginalia] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
+    console.log('[Marginalia] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
+    console.log('[Marginalia] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
+    console.log('[Marginalia] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
+    console.log('[Marginalia] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
+    console.log('[Marginalia] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
+    console.log('[Marginalia] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
     bindEvents();
     observeDocument();
     await refreshAnnotations();
-    console.log('[TibetanLens] bootstrap complete');
+    console.log('[Marginalia] bootstrap complete');
   }
 
   if (document.readyState === "loading") {
-    console.log('[TibetanLens] waiting for DOMContentLoaded...');
+    console.log('[Marginalia] waiting for DOMContentLoaded...');
     document.addEventListener("DOMContentLoaded", bootstrap, { once: true });
   } else {
-    console.log('[TibetanLens] document already ready, bootstrapping now');
+    console.log('[Marginalia] document already ready, bootstrapping now');
     bootstrap();
   }
 })();

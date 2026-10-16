@@ -1,6 +1,6 @@
 {
-  "name": "tibetan-lens",
-  "version": "0.50.22",
+  "name": "marginalia-tibetan",
+  "version": "0.50.23",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "start": "extension start --no-telemetry",
     "preview": "extension preview --no-telemetry",
     "publish:init": "publish-extension init",
-    "publish:stores": "publish-extension --chrome-zip dist/chrome/tibetan-lens-0.50.22.zip --edge-zip dist/edge/tibetan-lens-0.50.22.zip --firefox-zip dist/firefox/tibetan-lens-0.50.22.zip"
+    "publish:stores": "publish-extension --chrome-zip dist/chrome/marginalia-tibetan-0.50.23.zip --edge-zip dist/edge/marginalia-tibetan-0.50.23.zip --firefox-zip dist/firefox/marginalia-tibetan-0.50.23.zip"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",

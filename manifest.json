@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Tibetan Lens",
-  "version": "0.50.22",
+  "name": "Marginalia Tibetan",
+  "version": "0.50.23",
   "description": "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
   "default_locale": "en",
   "permissions": [
@@ -14,7 +14,7 @@
     "128": "public/icons/icon128.png"
   },
   "action": {
-    "default_title": "Tibetan Lens",
+    "default_title": "Marginalia Tibetan",
     "default_icon": "public/icons/icon48.png",
     "default_popup": "src/popup/index.html"
   },

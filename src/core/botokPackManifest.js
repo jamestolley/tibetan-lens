@@ -24,8 +24,8 @@
       },
       "curated": {
         id: "curated",
-        label: "Tibetan Lens Curated",
-        description: "Hand-curated Tibetan Lens entries for compounds and common words missing from the bundled dictionaries."
+        label: "Marginalia Curated",
+        description: "Hand-curated Marginalia entries for compounds and common words missing from the bundled dictionaries."
       }
     },
     files: {

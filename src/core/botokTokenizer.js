@@ -109,7 +109,7 @@
   }
 
   function contextInvalidatedError() {
-    const err = new Error('Extension context invalidated — reload this page to re-enable Tibetan Lens.');
+    const err = new Error('Extension context invalidated — reload this page to re-enable Marginalia Tibetan.');
     err.contextInvalidated = true;
     return err;
   }
@@ -124,7 +124,7 @@
 
   async function fetchText(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[TibetanLens:tokenizer] fetching:', path, '->', url);
+    console.log('[Marginalia:tokenizer] fetching:', path, '->', url);
     let response;
     try {
       response = await fetch(url);
@@ -132,23 +132,23 @@
       if (!isContextValid()) {
         throw contextInvalidatedError();
       }
-      console.error('[TibetanLens:tokenizer] fetch threw for:', path, err);
+      console.error('[Marginalia:tokenizer] fetch threw for:', path, err);
       throw new Error(`Failed to fetch extension resource: ${path} (${err.message})`);
     }
 
     if (!response.ok) {
-      console.error('[TibetanLens:tokenizer] FAILED to load:', path, 'status:', response.status);
+      console.error('[Marginalia:tokenizer] FAILED to load:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
     const text = await response.text();
-    console.log('[TibetanLens:tokenizer] loaded:', path, '(' + text.length + ' chars)');
+    console.log('[Marginalia:tokenizer] loaded:', path, '(' + text.length + ' chars)');
     return text;
   }
 
   async function fetchJson(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[TibetanLens:tokenizer] fetching JSON:', path, '->', url);
+    console.log('[Marginalia:tokenizer] fetching JSON:', path, '->', url);
     let response;
     try {
       response = await fetch(url);
@@ -156,12 +156,12 @@
       if (!isContextValid()) {
         throw contextInvalidatedError();
       }
-      console.error('[TibetanLens:tokenizer] fetch JSON threw for:', path, err);
+      console.error('[Marginalia:tokenizer] fetch JSON threw for:', path, err);
       throw new Error(`Failed to fetch extension resource: ${path} (${err.message})`);
     }
 
     if (!response.ok) {
-      console.error('[TibetanLens:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
+      console.error('[Marginalia:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
@@ -169,10 +169,10 @@
   }
 
   async function loadFileEntries(fileDescriptor, component, category) {
-    console.log('[TibetanLens:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
+    console.log('[Marginalia:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
     const text = await fetchText(fileDescriptor.path);
     const rows = cleanDataLines(text);
-    console.log('[TibetanLens:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
+    console.log('[Marginalia:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
 
     return rows
       .map((line) => (category === "remove" ? parseRemoveRow(line) : parseWordRow(line)))

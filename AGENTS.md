@@ -1,4 +1,4 @@
-# Tibetan Lens — Agent Notes
+# Marginalia Tibetan — Agent Notes
 
 ## Development workflow
 

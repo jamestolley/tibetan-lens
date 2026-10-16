@@ -26,8 +26,8 @@ const next = bump(pkg.version);
 pkg.version = next;
 if (pkg.scripts && pkg.scripts["publish:stores"]) {
   pkg.scripts["publish:stores"] = pkg.scripts["publish:stores"].replace(
-    /tibetan-lens-\d+\.\d+\.\d+\.zip/g,
-    `tibetan-lens-${next}.zip`
+    /marginalia-tibetan-\d+\.\d+\.\d+\.zip/g,
+    `marginalia-tibetan-${next}.zip`
   );
 }
 fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");

@@ -4,11 +4,11 @@
   // Fallback strings used when the browser's i18n API is unavailable
   // (for example, during tests or in content contexts without _locales loaded).
   const FALLBACK_MESSAGES = {
-    extensionName: "Tibetan Lens",
+    extensionName: "Marginalia Tibetan",
     extensionDescription: "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
-    settingsTitle: "Tibetan Lens",
+    settingsTitle: "Marginalia Tibetan",
     settingsIntro: "Control how Tibetan text is segmented, displayed, and translated.",
-    popupTitle: "Tibetan Lens",
+    popupTitle: "Marginalia Tibetan",
     popupIntro: "Segment Tibetan text and click or hover tokens for definitions.",
     readingExperience: "Reading experience",
     readingExperienceHint: "Control what happens when Tibetan text is detected on a page.",
@@ -44,7 +44,7 @@
     refreshPage: "Refresh page",
     insertTestText: "Insert sample text",
     options: "Options",
-    brandTibetan: "བོད་ཡིག་མིག་ཤེལ།",
+    brandTibetan: "བོད་ཡིག་མཆན་བུ།",
     followLink: "Follow link",
     showTranslation: "Show translation",
     pageNotReachable: "Couldn't reach this page — reload the tab or open the Sample page.",

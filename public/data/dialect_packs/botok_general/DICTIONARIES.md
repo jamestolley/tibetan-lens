@@ -1,6 +1,6 @@
 # Dictionary Sources
 
-The `botok_general` dialect pack bundled with Tibetan Lens contains only data
+The `botok_general` dialect pack bundled with Marginalia Tibetan contains only data
 whose redistribution is explicitly permitted. Please do not re-add material
 from commercial or all-rights-reserved dictionaries without written permission.
 
@@ -79,7 +79,7 @@ gloss-inferred > SOAS > ACTib.
 
 ## Dictionaries that are NOT bundled
 
-Tibetan Lens does **not** ship the following popular dictionaries unless and
+Marginalia Tibetan does **not** ship the following popular dictionaries unless and
 until their authors or publishers grant explicit redistribution permission or
 release them under an open license:
 
@@ -88,7 +88,7 @@ release them under an open license:
 - Tsepak Rigdzin's *Tibetan-English Dictionary of Buddhist Terms*
 
 These works are copyrighted by their respective authors. Several existing apps
-have obtained individual permission; Tibetan Lens must do the same before
+have obtained individual permission; Marginalia Tibetan must do the same before
 including them.
 
 ## Rebuilding

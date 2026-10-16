@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "Tibetan Lens",
+    "message": "Marginalia Tibetan",
     "description": "Extension name"
   },
   "extensionDescription": {
@@ -8,7 +8,7 @@
     "description": "Extension description"
   },
   "settingsTitle": {
-    "message": "Tibetan Lens",
+    "message": "Marginalia Tibetan",
     "description": "Options page title"
   },
   "settingsIntro": {
@@ -16,7 +16,7 @@
     "description": "Options page intro"
   },
   "popupTitle": {
-    "message": "Tibetan Lens",
+    "message": "Marginalia Tibetan",
     "description": "Popup title"
   },
   "popupIntro": {
