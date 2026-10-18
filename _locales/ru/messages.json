@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "Источник:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Повторить",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Практиковать все",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Показать ответ",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Снова",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Трудно",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Хорошо",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Легко",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Завершить повторение",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Пока всё повторено.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Практика завершена.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Клавиатура: пробел показывает ответ, 1–4 — оценка.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Режим практики — расписание повторений не изменится.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Назад к моим словам",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

@@ -1,9 +1,15 @@
 (() => {
   const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
 
+  const MINUTE = 60 * 1000;
+  const DAY = 24 * 60 * MINUTE;
+  const GRADE_KEYS = { 1: "again", 2: "hard", 3: "good", 4: "easy" };
+
   const ui = {};
   const state = {
-    words: []
+    words: [],
+    // Active flashcard session: { practice, queue, total, done, current, revealed }
+    review: null
   };
 
   function getControls() {
@@ -13,6 +19,25 @@
     ui.count = document.getElementById("wordsCountValue");
     ui.status = document.getElementById("wordsStatus");
     ui.list = document.getElementById("wordsList");
+    ui.listView = document.getElementById("listView");
+    ui.startReview = document.getElementById("startReview");
+    ui.reviewView = document.getElementById("reviewView");
+    ui.reviewProgress = document.getElementById("reviewProgress");
+    ui.reviewEnd = document.getElementById("reviewEnd");
+    ui.reviewPracticeNote = document.getElementById("reviewPracticeNote");
+    ui.reviewSession = document.getElementById("reviewSession");
+    ui.reviewCard = document.getElementById("reviewCard");
+    ui.reviewHeadword = document.getElementById("reviewHeadword");
+    ui.reviewAnswer = document.getElementById("reviewAnswer");
+    ui.reviewRomanization = document.getElementById("reviewRomanization");
+    ui.reviewGloss = document.getElementById("reviewGloss");
+    ui.reviewShow = document.getElementById("reviewShow");
+    ui.reviewGrades = document.getElementById("reviewGrades");
+    ui.gradeButtons = [...ui.reviewGrades.querySelectorAll("[data-grade]")];
+    ui.reviewDone = document.getElementById("reviewDone");
+    ui.reviewDoneMessage = document.getElementById("reviewDoneMessage");
+    ui.reviewNextDue = document.getElementById("reviewNextDue");
+    ui.reviewBack = document.getElementById("reviewBack");
   }
 
   function createElement(tag, className, text) {
@@ -36,6 +61,23 @@
 
   function formatDate(timestamp) {
     return new Intl.DateTimeFormat(uiLanguage(), { dateStyle: "medium" }).format(new Date(timestamp));
+  }
+
+  // Dates less than a day away also show the time (e.g. a card failed with
+  // "Again" comes back in ten minutes).
+  function formatDueDate(timestamp) {
+    const options = timestamp - Date.now() < DAY ? { dateStyle: "medium", timeStyle: "short" } : { dateStyle: "medium" };
+    return new Intl.DateTimeFormat(uiLanguage(), options).format(new Date(timestamp));
+  }
+
+  function formatInterval(ms) {
+    const minutes = Math.round(ms / MINUTE);
+    const [value, unit] = minutes < 24 * 60 ? [Math.max(1, minutes), "minute"] : [Math.round(ms / DAY), "day"];
+    return new Intl.NumberFormat(uiLanguage(), { style: "unit", unit, unitDisplay: "short" }).format(value);
+  }
+
+  function isDue(word, now = Date.now()) {
+    return (word.review?.due ?? 0) <= now;
   }
 
   function dictionaryUrl(headword) {
@@ -135,6 +177,12 @@
 
     ui.count.textContent = String(state.words.length);
     ui.exportButton.disabled = !state.words.length;
+
+    const dueCount = state.words.filter((word) => isDue(word)).length;
+    ui.startReview.hidden = !state.words.length;
+    ui.startReview.textContent = dueCount
+      ? `${extension.i18n.getMessage("wordsReview")} (${dueCount})`
+      : extension.i18n.getMessage("wordsPractice");
     ui.list.replaceChildren(...visible.map(renderWord));
 
     if (!state.words.length) {
@@ -184,10 +232,167 @@
     window.setTimeout(() => URL.revokeObjectURL(link.href), 0);
   }
 
+  function shuffle(items) {
+    const copy = [...items];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  // Review the words that are due, oldest due first. With nothing due, offer
+  // a practice round over every word that leaves the schedule untouched.
+  function startReview() {
+    const now = Date.now();
+    const due = state.words.filter((word) => isDue(word, now)).sort((a, b) => a.review.due - b.review.due);
+    const practice = due.length === 0;
+    const cards = practice ? shuffle(state.words) : due;
+    if (!cards.length) {
+      return;
+    }
+
+    state.review = { practice, queue: cards.map((word) => word.headword), total: cards.length, done: 0, current: null, revealed: false };
+    ui.listView.hidden = true;
+    ui.reviewView.hidden = false;
+    ui.reviewSession.hidden = false;
+    ui.reviewDone.hidden = true;
+    ui.reviewPracticeNote.hidden = !practice;
+    showNextCard();
+  }
+
+  function showNextCard() {
+    const session = state.review;
+    let word = null;
+    // Skip words removed (e.g. in another tab) since the session started.
+    while (session.queue.length && !word) {
+      const headword = session.queue.shift();
+      word = state.words.find((item) => item.headword === headword) || null;
+    }
+    if (!word) {
+      finishReview();
+      return;
+    }
+
+    session.current = word;
+    session.revealed = false;
+    ui.reviewProgress.textContent = `${session.done + 1} / ${session.total}`;
+    ui.reviewHeadword.textContent = word.headword;
+    ui.reviewHeadword.href = dictionaryUrl(word.headword);
+    ui.reviewAnswer.hidden = true;
+    ui.reviewShow.hidden = false;
+    ui.reviewGrades.hidden = true;
+    ui.reviewShow.focus();
+  }
+
+  function revealAnswer() {
+    const session = state.review;
+    if (!session?.current || session.revealed) {
+      return;
+    }
+
+    const word = session.current;
+    session.revealed = true;
+    ui.reviewRomanization.textContent = [extension.tibetan.toWylie(word.headword), extension.tibetan.toPhonetic(word.headword)]
+      .filter(Boolean)
+      .join(" · ");
+    ui.reviewGloss.textContent = word.gloss || "";
+    ui.reviewAnswer.hidden = false;
+    ui.reviewShow.hidden = true;
+    ui.reviewGrades.hidden = false;
+
+    const now = Date.now();
+    const { schedule, GRADES } = extension.wordList;
+    ui.gradeButtons.forEach((button) => {
+      button.querySelector("small").textContent = session.practice
+        ? ""
+        : formatInterval(schedule(word.review, GRADES[button.dataset.grade], now).due - now);
+    });
+    // Park focus on the card so the Space keyup that revealed the answer
+    // doesn't also press whichever grade button would have taken focus.
+    ui.reviewCard.focus();
+  }
+
+  async function gradeCard(gradeName) {
+    const session = state.review;
+    if (!session?.revealed) {
+      return;
+    }
+
+    const grade = extension.wordList.GRADES[gradeName];
+    const word = session.current;
+    session.revealed = false;
+    if (!session.practice) {
+      const updated = await extension.wordList.recordReview(word.headword, grade);
+      const index = state.words.findIndex((item) => item.headword === word.headword);
+      if (updated && index >= 0) {
+        state.words[index] = updated;
+      }
+    }
+
+    if (grade === extension.wordList.GRADES.again) {
+      session.queue.push(word.headword);
+    } else {
+      session.done += 1;
+    }
+    showNextCard();
+  }
+
+  function finishReview() {
+    const session = state.review;
+    ui.reviewSession.hidden = true;
+    ui.reviewPracticeNote.hidden = true;
+    ui.reviewDone.hidden = false;
+    ui.reviewProgress.textContent = "";
+    ui.reviewDoneMessage.textContent = extension.i18n.getMessage(session.practice ? "reviewPracticeDone" : "reviewDone");
+
+    const nextDue = Math.min(...state.words.map((word) => word.review?.due ?? Infinity));
+    ui.reviewNextDue.textContent = Number.isFinite(nextDue)
+      ? `${extension.i18n.getMessage("wordsNextReview")} ${
+          nextDue <= Date.now() ? extension.i18n.getMessage("wordsDueNow") : formatDueDate(nextDue)
+        }`
+      : "";
+    session.current = null;
+    ui.reviewBack.focus();
+  }
+
+  function endReview() {
+    state.review = null;
+    ui.reviewView.hidden = true;
+    ui.listView.hidden = false;
+    render();
+    ui.startReview.focus();
+  }
+
+  function handleReviewKeys(event) {
+    if (!state.review?.current || event.repeat || event.altKey || event.ctrlKey || event.metaKey) {
+      return;
+    }
+    if (event.target instanceof Element && event.target.closest("input, select, textarea")) {
+      return;
+    }
+
+    if (!state.review.revealed && (event.key === " " || event.key === "Enter")) {
+      event.preventDefault();
+      revealAnswer();
+    } else if (state.review.revealed && GRADE_KEYS[event.key]) {
+      event.preventDefault();
+      gradeCard(GRADE_KEYS[event.key]);
+    }
+  }
+
   function bindEvents() {
     ui.filter.addEventListener("input", render);
     ui.sort.addEventListener("change", render);
     ui.exportButton.addEventListener("click", exportCsv);
+    ui.startReview.addEventListener("click", startReview);
+    ui.reviewShow.addEventListener("click", revealAnswer);
+    ui.gradeButtons.forEach((button) => {
+      button.addEventListener("click", () => gradeCard(button.dataset.grade));
+    });
+    ui.reviewEnd.addEventListener("click", endReview);
+    ui.reviewBack.addEventListener("click", endReview);
+    document.addEventListener("keydown", handleReviewKeys);
     extension.wordList.onChanged((words) => {
       state.words = words;
       render();

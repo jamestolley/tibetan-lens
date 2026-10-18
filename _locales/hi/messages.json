@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "स्रोत:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "दोहराएँ",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "सबका अभ्यास करें",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "उत्तर दिखाएँ",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "फिर से",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "कठिन",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "ठीक",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "आसान",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "दोहराई समाप्त करें",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "अभी के लिए सब दोहरा लिया।",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "अभ्यास दौर पूरा हुआ।",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "कीबोर्ड: स्पेस से उत्तर दिखाएँ, 1–4 से आँकें।",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "अभ्यास मोड — आपकी दोहराई की समय-सारणी नहीं बदलेगी।",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "मेरे शब्दों पर लौटें",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

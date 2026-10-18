@@ -20,6 +20,7 @@
 
       <section id="listView">
         <div class="words-toolbar">
+          <button id="startReview" class="words-button is-primary" type="button"></button>
           <label class="visually-hidden" for="wordsFilter" data-i18n="wordsFilterLabel">Filter my words</label>
           <input
             id="wordsFilter"
@@ -43,6 +44,41 @@
         <p class="words-count"><span data-i18n="wordsCount">Saved words:</span> <strong id="wordsCountValue">0</strong></p>
         <p id="wordsStatus" class="status-line" role="status" aria-live="polite"></p>
         <div id="wordsList" class="results"></div>
+      </section>
+
+      <section id="reviewView" class="review" hidden>
+        <div class="review-bar">
+          <span id="reviewProgress" class="review-progress"></span>
+          <button id="reviewEnd" class="words-link-button" type="button" data-i18n="reviewEnd">End review</button>
+        </div>
+        <p id="reviewPracticeNote" class="review-note" data-i18n="reviewPracticeNote" hidden>Practice mode — your review schedule won't change.</p>
+
+        <div id="reviewSession">
+          <article id="reviewCard" class="review-card" tabindex="-1">
+            <a id="reviewHeadword" class="review-headword" lang="bo" target="_blank"></a>
+            <div id="reviewAnswer" class="review-answer" hidden>
+              <p id="reviewRomanization" class="review-romanization"></p>
+              <p id="reviewGloss" class="review-gloss"></p>
+            </div>
+          </article>
+
+          <div class="review-actions">
+            <button id="reviewShow" class="words-button is-primary review-show" type="button" data-i18n="reviewShowAnswer">Show answer</button>
+            <div id="reviewGrades" class="review-grades" hidden>
+              <button class="review-grade is-again" type="button" data-grade="again"><span data-i18n="reviewAgain">Again</span><small></small></button>
+              <button class="review-grade is-hard" type="button" data-grade="hard"><span data-i18n="reviewHard">Hard</span><small></small></button>
+              <button class="review-grade is-good" type="button" data-grade="good"><span data-i18n="reviewGood">Good</span><small></small></button>
+              <button class="review-grade is-easy" type="button" data-grade="easy"><span data-i18n="reviewEasy">Easy</span><small></small></button>
+            </div>
+          </div>
+          <p class="review-hint" data-i18n="reviewKeyboardHint">Keyboard: Space shows the answer, 1–4 grade it.</p>
+        </div>
+
+        <div id="reviewDone" class="review-done" hidden>
+          <p id="reviewDoneMessage" class="review-done-message"></p>
+          <p id="reviewNextDue" class="review-note"></p>
+          <button id="reviewBack" class="words-button is-primary" type="button" data-i18n="reviewBack">Back to my words</button>
+        </div>
       </section>
     </main>
 

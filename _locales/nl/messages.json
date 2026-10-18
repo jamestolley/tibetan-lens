@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "Van:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Herhalen",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Alles oefenen",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Antwoord tonen",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Opnieuw",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Moeilijk",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Goed",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Makkelijk",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Herhaling stoppen",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Voorlopig alles herhaald.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Oefenronde voltooid.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Toetsenbord: spatie toont het antwoord, 1–4 om te beoordelen.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Oefenmodus — je herhaalschema verandert niet.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Terug naar mijn woorden",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

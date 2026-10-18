@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "Źródło:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Powtórz",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Ćwicz wszystkie",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Pokaż odpowiedź",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Jeszcze raz",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Trudne",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Dobrze",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Łatwe",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Zakończ powtórkę",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Na razie wszystko powtórzone.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Runda ćwiczeń zakończona.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Klawiatura: spacja pokazuje odpowiedź, 1–4 ocenia.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Tryb ćwiczeń — harmonogram powtórek się nie zmieni.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Wróć do moich słów",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

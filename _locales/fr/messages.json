@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "Source :",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Réviser",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Tout pratiquer",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Afficher la réponse",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "À revoir",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Difficile",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Bien",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Facile",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Terminer la révision",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Tout est à jour pour l'instant.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Séance d'entraînement terminée.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Clavier : Espace affiche la réponse, 1–4 pour évaluer.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Mode entraînement — votre calendrier de révision ne change pas.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Retour à mes mots",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

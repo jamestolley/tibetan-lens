@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "출처:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "복습",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "모두 연습",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "정답 보기",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "다시",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "어려움",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "알맞음",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "쉬움",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "복습 종료",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "지금은 복습할 단어가 없습니다.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "연습을 마쳤습니다.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "키보드: 스페이스로 정답 보기, 1–4로 평가.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "연습 모드 — 복습 일정은 바뀌지 않습니다.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "내 단어로 돌아가기",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

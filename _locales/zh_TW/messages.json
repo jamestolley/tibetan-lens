@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "來源：",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "複習",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "全部練習",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "顯示答案",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "重來",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "困難",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "良好",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "簡單",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "結束複習",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "暫時都複習完了。",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "練習完成。",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "鍵盤：空白鍵顯示答案，1–4 評分。",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "練習模式——不會改變你的複習排程。",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "返回我的生詞",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

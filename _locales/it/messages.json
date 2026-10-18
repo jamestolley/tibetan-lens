@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "Da:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Ripassa",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Esercitati su tutte",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Mostra risposta",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Di nuovo",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Difficile",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Bene",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Facile",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Termina ripasso",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Tutto in pari per ora.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Esercitazione completata.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Tastiera: Spazio mostra la risposta, 1–4 per valutare.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Modalità esercizio: il calendario dei ripassi non cambia.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Torna alle mie parole",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

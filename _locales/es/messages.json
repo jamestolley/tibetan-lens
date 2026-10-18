@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "Desde:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Repasar",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Practicar todas",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Mostrar respuesta",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Otra vez",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Difícil",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Bien",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Fácil",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Terminar repaso",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Todo al día por ahora.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Ronda de práctica completada.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Teclado: Espacio muestra la respuesta, 1–4 la califican.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Modo práctica: tu calendario de repaso no cambiará.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Volver a mis palabras",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

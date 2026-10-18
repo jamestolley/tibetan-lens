@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "De:",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Revisar",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Praticar todas",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Mostrar resposta",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "De novo",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Difícil",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Bom",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Fácil",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Encerrar revisão",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Tudo em dia por enquanto.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Rodada de prática concluída.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Teclado: Espaço mostra a resposta, 1–4 avaliam.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Modo prática — seu cronograma de revisão não muda.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Voltar às minhas palavras",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

@@ -122,3 +122,169 @@ a.result-headword {
   margin-top: 24px;
   color: var(--ink-soft);
 }
+
+/* Flashcard review */
+
+.review {
+  margin-top: 8px;
+}
+
+.review-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink-soft);
+}
+
+.review-progress {
+  font-variant-numeric: tabular-nums;
+}
+
+.review-note {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  margin-top: 14px;
+  padding: 32px 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 251, 243, 0.95);
+  box-shadow: 0 10px 30px rgba(40, 31, 23, 0.08);
+  text-align: center;
+}
+
+.review-card:focus {
+  outline: none;
+}
+
+.review-headword {
+  color: var(--ink);
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.review-headword:hover {
+  color: var(--clay);
+}
+
+.review-answer {
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+
+.review-romanization {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.review-gloss {
+  margin: 8px 0 0;
+  font-size: 1.2rem;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.review-show {
+  min-width: 220px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+}
+
+.review-grades {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.review-grades[hidden],
+.review-show[hidden] {
+  display: none;
+}
+
+.review-grade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 8px;
+  border: 1px solid rgba(40, 31, 23, 0.2);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.review-grade small {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.review-grade:hover,
+.review-grade:focus-visible {
+  border-color: currentColor;
+}
+
+.review-grade.is-again {
+  color: #9b2c22;
+}
+
+.review-grade.is-hard {
+  color: #8a5a00;
+}
+
+.review-grade.is-good {
+  color: #2f6b3a;
+}
+
+.review-grade.is-easy {
+  color: #285a8a;
+}
+
+.review-hint {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.review-done {
+  margin-top: 24px;
+  padding: 32px 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 251, 243, 0.95);
+  text-align: center;
+}
+
+.review-done-message {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.review-done .words-button {
+  margin-top: 18px;
+}
+
+@media (max-width: 640px) {
+  .review-grades {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

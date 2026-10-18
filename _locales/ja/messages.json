@@ -418,5 +418,57 @@
   "wordsFrom": {
     "message": "出典：",
     "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "復習",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "すべて練習",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "答えを表示",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "もう一度",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "難しい",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "正解",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "簡単",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "復習を終了",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "今のところ復習はすべて完了です。",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "練習ラウンド完了。",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "キーボード：スペースで答えを表示、1〜4 で評価。",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "練習モード — 復習スケジュールは変わりません。",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "単語帳に戻る",
+    "description": "Button that returns from the finished review to the word list"
   }
 }

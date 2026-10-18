@@ -86,7 +86,20 @@
     wordsSavedOn: "Saved:",
     wordsNextReview: "Next review:",
     wordsDueNow: "due now",
-    wordsFrom: "From:"
+    wordsFrom: "From:",
+    wordsReview: "Review",
+    wordsPractice: "Practice all",
+    reviewShowAnswer: "Show answer",
+    reviewAgain: "Again",
+    reviewHard: "Hard",
+    reviewGood: "Good",
+    reviewEasy: "Easy",
+    reviewEnd: "End review",
+    reviewDone: "All caught up for now.",
+    reviewPracticeDone: "Practice round complete.",
+    reviewKeyboardHint: "Keyboard: Space shows the answer, 1–4 grade it.",
+    reviewPracticeNote: "Practice mode — your review schedule won't change.",
+    reviewBack: "Back to my words"
   };
 
   extension.i18n = {
