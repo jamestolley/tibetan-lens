@@ -1117,6 +1117,181 @@
     return "Botok Demo Pack";
   }
 
+  // Headword index shared by tooltip lookups and the dictionary page.
+  // Built lazily on first use: entries are grouped under both their form and
+  // their lemma (preserving pack order), and every gloss is flattened into a
+  // lowercase list for English reverse search.
+  function getSearchIndex() {
+    if (runtime.searchIndex?.pack === runtime.pack) {
+      return runtime.searchIndex;
+    }
+
+    const byKey = new Map();
+    const byForm = new Map();
+    const glosses = [];
+
+    function push(map, key, entry) {
+      if (!map.has(key)) {
+        map.set(key, []);
+      }
+      const list = map.get(key);
+      if (list[list.length - 1] !== entry) {
+        list.push(entry);
+      }
+    }
+
+    [runtime.pack.dictionary, runtime.pack.adjustments].forEach((componentEntries) => {
+      Object.entries(componentEntries || {}).forEach(([category, entries]) => {
+        if (category === "remove") {
+          return;
+        }
+
+        (entries || []).forEach((entry) => {
+          push(byForm, entry.formKey, entry);
+          push(byKey, entry.formKey, entry);
+          const lemmaKey = normalizeForm(entry.lemma || "");
+          if (lemmaKey) {
+            push(byKey, lemmaKey, entry);
+          }
+
+          if (!entry.posOnly) {
+            splitGlosses(entry.sense).forEach((gloss) => {
+              glosses.push({ headword: entry.formKey, dictionaryId: entry.dictionaryId, text: gloss.toLowerCase() });
+            });
+          }
+        });
+      });
+    });
+
+    runtime.searchIndex = {
+      pack: runtime.pack,
+      byKey,
+      byForm,
+      headwords: [...byForm.keys()].sort(),
+      glosses
+    };
+    return runtime.searchIndex;
+  }
+
+  function isEnabledEntry(entry, enabledDictionaryIds) {
+    return !entry.dictionaryId || enabledDictionaryIds.has(entry.dictionaryId);
+  }
+
+  function headwordFreq(headword, enabledDictionaryIds) {
+    const entries = getSearchIndex().byForm.get(headword) || [];
+    return entries.reduce(
+      (max, entry) => (isEnabledEntry(entry, enabledDictionaryIds) && entry.freq > max ? entry.freq : max),
+      0
+    );
+  }
+
+  function describeHeadword(headword, settings) {
+    const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
+    const forms = (getSearchIndex().byForm.get(headword) || []).filter((entry) =>
+      isEnabledEntry(entry, enabledDictionaryIds)
+    );
+
+    return {
+      headword,
+      entries: lookupFromPack(headword, settings),
+      ...collectPosInfo(forms)
+    };
+  }
+
+  function searchTibetan(term, settings, limit = 40) {
+    if (!runtime.pack) {
+      return [];
+    }
+
+    const key = normalizeForm(term);
+    if (!key) {
+      return [];
+    }
+
+    const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
+    const { headwords } = getSearchIndex();
+    const prefix = key + TSEK;
+    let low = 0;
+    let high = headwords.length;
+    while (low < high) {
+      const mid = (low + high) >> 1;
+      if (headwords[mid] < prefix) {
+        low = mid + 1;
+      } else {
+        high = mid;
+      }
+    }
+
+    const candidates = [];
+    for (let i = low; i < headwords.length && candidates.length < 3000 && headwords[i].startsWith(prefix); i += 1) {
+      candidates.push(headwords[i]);
+    }
+
+    const ranked = candidates
+      .map((headword) => ({
+        headword,
+        syllables: headword.split(TSEK).length,
+        freq: headwordFreq(headword, enabledDictionaryIds)
+      }))
+      .sort((a, b) => a.syllables - b.syllables || b.freq - a.freq || a.headword.localeCompare(b.headword));
+
+    const results = [];
+    for (const headword of [key, ...ranked.map((item) => item.headword)]) {
+      if (results.length >= limit) {
+        break;
+      }
+      const result = describeHeadword(headword, settings);
+      if (result.entries.length) {
+        results.push(result);
+      }
+    }
+    return results;
+  }
+
+  function escapeRegExp(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  // Rank English glosses: an exact gloss ("compassion", "to see") beats one
+  // that starts with the query, which beats one merely containing it as a word.
+  function searchEnglish(text, settings, limit = 40) {
+    if (!runtime.pack) {
+      return [];
+    }
+
+    const query = (text || "").trim().toLowerCase().replace(/\s+/g, " ");
+    if (query.length < 2) {
+      return [];
+    }
+
+    const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
+    const wordPattern = new RegExp(`(^|[^\\p{L}])${escapeRegExp(query)}($|[^\\p{L}])`, "u");
+    const best = new Map();
+
+    getSearchIndex().glosses.forEach((gloss) => {
+      if (!gloss.text.includes(query) || !isEnabledEntry(gloss, enabledDictionaryIds)) {
+        return;
+      }
+      if (!wordPattern.test(gloss.text)) {
+        return;
+      }
+
+      const core = gloss.text.replace(/^(to|a|an|the)\s+/, "").replace(/[\s.,;:!?]+$/, "");
+      const score = core === query || gloss.text === query ? 0 : core.startsWith(query) ? 1 : 2;
+      const previous = best.get(gloss.headword);
+      if (!previous || score < previous.score || (score === previous.score && gloss.text.length < previous.length)) {
+        best.set(gloss.headword, { score, length: gloss.text.length });
+      }
+    });
+
+    return [...best.entries()]
+      .map(([headword, match]) => ({ headword, ...match, freq: headwordFreq(headword, enabledDictionaryIds) }))
+      .sort((a, b) => a.score - b.score || b.freq - a.freq || a.length - b.length)
+      .slice(0, limit)
+      .map((match) => describeHeadword(match.headword, settings))
+      .filter((result) => result.entries.length);
+  }
+
   function lookupFromPack(term, settings) {
     if (!runtime.pack) {
       return [];
@@ -1140,48 +1315,44 @@
     const headword = normalizeForm(term);
     const unique = new Map();
 
-    [runtime.pack.dictionary, runtime.pack.adjustments].forEach((componentEntries) => {
-      Object.values(componentEntries || {}).forEach((entries) => {
-        (entries || []).forEach((entry) => {
-          if (entry.dictionaryId && !enabledDictionaryIds.has(entry.dictionaryId)) {
-            return;
-          }
+    (getSearchIndex().byKey.get(headword) || []).forEach((entry) => {
+      if (entry.dictionaryId && !enabledDictionaryIds.has(entry.dictionaryId)) {
+        return;
+      }
 
-          if (entry.posOnly) {
-            return;
-          }
+      if (entry.posOnly) {
+        return;
+      }
 
-          const matchTargets = [entry.formKey, normalizeForm(entry.lemma || "")].filter(Boolean);
-          if (!matchTargets.includes(headword)) {
-            return;
-          }
+      const matchTargets = [entry.formKey, normalizeForm(entry.lemma || "")].filter(Boolean);
+      if (!matchTargets.includes(headword)) {
+        return;
+      }
 
-          const glosses = splitGlosses(entry.sense);
-          const dictionaryId = entry.dictionaryId || "pack-grammar";
-          const lemmaNote =
-            entry.lemma && normalizeForm(entry.lemma) !== headword
-              ? `Lemma: ${normalizeForm(entry.lemma)}`
-              : "";
-          const notes = joinNotes([lemmaNote, entry.pos ? `POS: ${entry.pos}` : ""]);
+      const glosses = splitGlosses(entry.sense);
+      const dictionaryId = entry.dictionaryId || "pack-grammar";
+      const lemmaNote =
+        entry.lemma && normalizeForm(entry.lemma) !== headword
+          ? `Lemma: ${normalizeForm(entry.lemma)}`
+          : "";
+      const notes = joinNotes([lemmaNote, entry.pos ? `POS: ${entry.pos}` : ""]);
 
-          // Gloss-less rows (wordlists, POS/frequency lists) only echo the
-          // headword back — not a definition. Keep them for POS data, but
-          // don't show them as dictionary entries.
-          if (!glosses.length && !lemmaNote) {
-            return;
-          }
+      // Gloss-less rows (wordlists, POS/frequency lists) only echo the
+      // headword back — not a definition. Keep them for POS data, but
+      // don't show them as dictionary entries.
+      if (!glosses.length && !lemmaNote) {
+        return;
+      }
 
-          const normalizedEntry = {
-            dictionaryId,
-            dictionaryLabel: getDictionaryLabel(entry),
-            headword,
-            glosses: glosses.length ? glosses : [normalizeForm(entry.lemma)],
-            notes
-          };
-          const key = JSON.stringify(normalizedEntry);
-          unique.set(key, normalizedEntry);
-        });
-      });
+      const normalizedEntry = {
+        dictionaryId,
+        dictionaryLabel: getDictionaryLabel(entry),
+        headword,
+        glosses: glosses.length ? glosses : [normalizeForm(entry.lemma)],
+        notes
+      };
+      const key = JSON.stringify(normalizedEntry);
+      unique.set(key, normalizedEntry);
     });
 
     return [...unique.values()];
@@ -1191,7 +1362,9 @@
     ensureReady,
     lookup(term, settings) {
       return lookupFromPack(term, settings);
-    }
+    },
+    searchTibetan,
+    searchEnglish
   };
 
   extension.tokenizer = {

@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "Ręcznie opracowane hasła Teahouse dla złożeń i popularnych słów, których brakuje w dołączonych słownikach.",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Słownik",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Słownik Teahouse Tybetański",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Słownik",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Wyszukaj słowo w piśmie tybetańskim, w transliteracji Wylie lub po angielsku.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Szukaj w słowniku",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Słowa tybetańskie",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Słowa tybetańskie z Wylie",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Znaczenia angielskie",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Brak wyników. Spróbuj innej pisowni, mniejszej liczby sylab lub Wylie.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Wpisz słowo, aby je wyszukać.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Nie udało się wczytać słowników. Odśwież stronę, aby spróbować ponownie.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Wyszukaj to słowo",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

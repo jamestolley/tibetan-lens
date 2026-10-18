@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "Teahouse 人工整理的词条，收录随附词典中缺少的复合词和常用词。",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "词典",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse 藏文词典",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "词典",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "用藏文、威利转写或英文查词。",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "搜索词典",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "藏文词语",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "威利转写对应的藏文词语",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "英文释义",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "没有结果。请尝试其他拼写、更少的音节或威利转写。",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "输入一个词开始查询。",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "无法加载词典。请重新加载此页面后再试。",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "查询这个词",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

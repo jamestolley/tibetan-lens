@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "Von Hand kuratierte Teahouse-Einträge für Komposita und häufige Wörter, die in den mitgelieferten Wörterbüchern fehlen.",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Wörterbuch",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse Tibetisch – Wörterbuch",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Wörterbuch",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Schlagen Sie ein Wort in tibetischer Schrift, in Wylie oder auf Englisch nach.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Wörterbuch durchsuchen",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Tibetische Wörter",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Tibetische Wörter aus Wylie",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Englische Bedeutungen",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Keine Treffer. Versuchen Sie eine andere Schreibweise, weniger Silben oder Wylie.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Geben Sie ein Wort ein, um es nachzuschlagen.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Die Wörterbücher konnten nicht geladen werden. Laden Sie die Seite neu, um es erneut zu versuchen.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Dieses Wort nachschlagen",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

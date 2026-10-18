@@ -51,10 +51,18 @@ function extractReferencedIds(js) {
   return ids;
 }
 
-for (const subdir of ["options", "popup"]) {
-  const htmlPath = path.join(root, "src", subdir, "index.html");
-  const jsPath = path.join(root, "src", subdir, "index.js");
+// Extension pages: each HTML file and the script that drives it.
+const pages = [
+  { html: "src/options/index.html", js: "src/options/index.js" },
+  { html: "src/popup/index.html", js: "src/popup/index.js" },
+  { html: "pages/dictionary.html", js: "src/dictionary/index.js" }
+];
+
+for (const page of pages) {
+  const htmlPath = path.join(root, page.html);
+  const jsPath = path.join(root, page.js);
   if (!fs.existsSync(htmlPath) || !fs.existsSync(jsPath)) {
+    errors.push(`Missing extension page file: ${page.html} or ${page.js}`);
     continue;
   }
   const html = fs.readFileSync(htmlPath, "utf8");
@@ -63,7 +71,7 @@ for (const subdir of ["options", "popup"]) {
   const referencedIds = extractReferencedIds(js);
   const missing = [...referencedIds].filter((id) => !htmlIds.has(id));
   if (missing.length) {
-    errors.push(`${subdir}/index.js references IDs missing from ${subdir}/index.html: ${missing.join(", ")}`);
+    errors.push(`${page.js} references IDs missing from ${page.html}: ${missing.join(", ")}`);
   }
 }
 
@@ -100,8 +108,8 @@ if (fs.existsSync(messagesPath)) {
   errors.push("Missing _locales/en/messages.json");
 }
 
-for (const subdir of ["options", "popup"]) {
-  const htmlPath = path.join(root, "src", subdir, "index.html");
+for (const page of pages) {
+  const htmlPath = path.join(root, page.html);
   if (!fs.existsSync(htmlPath)) {
     continue;
   }
@@ -109,10 +117,10 @@ for (const subdir of ["options", "popup"]) {
   const htmlKeys = extractI18nKeysFromHtml(html);
   const missing = [...htmlKeys].filter((key) => !messageKeys.has(key));
   if (missing.length) {
-    errors.push(`Missing i18n message keys for ${subdir}/index.html [data-i18n]: ${missing.join(", ")}`);
+    errors.push(`Missing i18n message keys for ${page.html} [data-i18n]: ${missing.join(", ")}`);
   }
-  if (!html.includes("src=\"../shared/i18n.js\"")) {
-    errors.push(`${subdir}/index.html does not load ../shared/i18n.js`);
+  if (!/src="[^"]*shared\/i18n\.js"/.test(html)) {
+    errors.push(`${page.html} does not load shared/i18n.js`);
   }
 }
 

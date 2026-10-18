@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "शामिल शब्दकोशों में न मिलने वाले समास और आम शब्दों के लिए Teahouse की हाथ से चुनी गई प्रविष्टियाँ।",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "शब्दकोश",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse तिब्बती शब्दकोश",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "शब्दकोश",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "तिब्बती लिपि, वायली या अंग्रेज़ी में कोई शब्द खोजें।",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "शब्दकोश में खोजें",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "तिब्बती शब्द",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "वायली से तिब्बती शब्द",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "अंग्रेज़ी अर्थ",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "कोई परिणाम नहीं। दूसरी वर्तनी, कम अक्षर या वायली आज़माएँ।",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "खोजने के लिए कोई शब्द लिखें।",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "शब्दकोश लोड नहीं हो सके। फिर से कोशिश करने के लिए पेज को रीलोड करें।",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "यह शब्द खोजें",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

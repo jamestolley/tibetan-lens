@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "同梱の辞書にない複合語やよく使われる語のために、Teahouse が手作業で編集した項目。",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "辞書",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse チベット語辞書",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "辞書",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "チベット文字、ワイリー方式、または英語で単語を調べます。",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "辞書を検索",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "チベット語の単語",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "ワイリー方式から変換したチベット語の単語",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "英語の意味",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "見つかりませんでした。別の綴り、少ない音節、またはワイリー方式をお試しください。",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "単語を入力して調べてください。",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "辞書を読み込めませんでした。ページを再読み込みしてもう一度お試しください。",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "この単語を調べる",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

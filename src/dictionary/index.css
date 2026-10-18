@@ -1,0 +1,247 @@
+:root {
+  color-scheme: light;
+  --ink: #281f17;
+  --ink-soft: rgba(40, 31, 23, 0.72);
+  --paper: #f8f0de;
+  --paper-deep: #e8d8b0;
+  --clay: #7a302a;
+  --saffron: #bf8520;
+  --line: rgba(40, 31, 23, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(191, 133, 32, 0.18), transparent 36%),
+    linear-gradient(180deg, #fbf6ec 0%, var(--paper) 62%, var(--paper-deep) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font: 16px/1.55 Georgia, "Palatino Linotype", serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+[lang="bo"] {
+  font-family: "Noto Serif Tibetan", "Jomolhari", "Microsoft Himalaya", "Kailasa", serif;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.dictionary-shell {
+  width: min(860px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.hero {
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--clay);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow [lang="bo"] {
+  margin-left: 0.4em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.intro {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+}
+
+.search-panel {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 -12px;
+  padding: 12px;
+  background: linear-gradient(180deg, #fbf6ec 70%, rgba(251, 246, 236, 0));
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1px solid rgba(40, 31, 23, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 1.25rem;
+  box-shadow: 0 6px 20px rgba(40, 31, 23, 0.08);
+}
+
+.search-input:focus {
+  outline: 2px solid var(--saffron);
+  outline-offset: 2px;
+}
+
+.search-note {
+  margin: 8px 20px 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.status-line {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+}
+
+.status-line:empty {
+  display: none;
+}
+
+.result-section {
+  margin-top: 22px;
+}
+
+.result-section h2 {
+  margin: 0 0 10px;
+  color: var(--clay);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.result-section-sub {
+  margin-left: 0.6em;
+  color: var(--ink);
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.result-card {
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 251, 243, 0.9);
+}
+
+.result-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+
+.result-headword {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 1.9rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.result-headword:hover,
+.result-headword:focus-visible {
+  color: var(--clay);
+}
+
+.result-headword.is-small {
+  font-size: 1.4rem;
+}
+
+.result-extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  color: var(--ink-soft);
+}
+
+.result-pos {
+  padding: 1px 10px;
+  border-radius: 999px;
+  background: rgba(191, 133, 32, 0.16);
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+
+.result-wylie {
+  font-style: italic;
+}
+
+.result-definitions {
+  display: grid;
+  grid-template-columns: minmax(120px, max-content) 1fr;
+  gap: 6px 16px;
+  margin: 10px 0 0;
+}
+
+.result-definitions dt {
+  padding-top: 0.15em;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.result-definitions dd {
+  margin: 0;
+}
+
+.result-definitions mark {
+  padding: 0 2px;
+  border-radius: 3px;
+  background: rgba(191, 133, 32, 0.32);
+  color: inherit;
+}
+
+.result-notes {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.word-parts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.word-parts li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 640px) {
+  .dictionary-shell {
+    width: calc(100% - 32px);
+    padding-top: 20px;
+  }
+
+  .result-definitions {
+    grid-template-columns: 1fr;
+  }
+
+  .result-definitions dd {
+    margin-bottom: 6px;
+  }
+}

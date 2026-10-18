@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "포함된 사전에 없는 복합어와 일반 단어를 위해 Teahouse가 직접 정리한 항목.",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "사전",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse 티베트어 사전",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "사전",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "티베트 문자, 와일리 표기 또는 영어로 단어를 찾아보세요.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "사전 검색",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "티베트어 단어",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "와일리 표기에서 변환한 티베트어 단어",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "영어 뜻",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "결과가 없습니다. 다른 철자, 더 적은 음절 또는 와일리 표기로 시도해 보세요.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "찾아볼 단어를 입력하세요.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "사전을 불러오지 못했습니다. 페이지를 새로고침한 후 다시 시도하세요.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "이 단어 찾아보기",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "Ručně vybraná hesla Teahouse pro složeniny a běžná slova, která v přiložených slovnících chybí.",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Slovník",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Slovník Teahouse Tibetština",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Slovník",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Vyhledejte slovo v tibetském písmu, ve Wylieho přepisu nebo anglicky.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Hledat ve slovníku",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Tibetská slova",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Tibetská slova z Wylieho přepisu",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Anglické významy",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Nic nenalezeno. Zkuste jiný pravopis, méně slabik nebo Wylieho přepis.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Napište slovo, které chcete vyhledat.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Slovníky se nepodařilo načíst. Obnovte stránku a zkuste to znovu.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Vyhledat toto slovo",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

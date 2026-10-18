@@ -278,5 +278,53 @@
   "dictDesc_curated": {
     "message": "Entradas do Teahouse selecionadas manualmente para compostos e palavras comuns ausentes dos dicionários incluídos.",
     "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Dicionário",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Dicionário Teahouse Tibetano",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Dicionário",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Procure uma palavra em escrita tibetana, em Wylie ou em inglês.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Pesquisar no dicionário",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Palavras tibetanas",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Palavras tibetanas a partir do Wylie",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Significados em inglês",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Nenhum resultado. Tente outra grafia, menos sílabas ou Wylie.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Digite uma palavra para pesquisá-la.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Não foi possível carregar os dicionários. Recarregue a página para tentar novamente.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Pesquisar esta palavra",
+    "description": "Tooltip on a headword button that searches for that word"
   }
 }

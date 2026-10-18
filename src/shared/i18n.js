@@ -51,7 +51,19 @@
     pageNotReachable: "Couldn't reach this page — reload the tab or open the Sample page.",
     samplePage: "Sample page",
     loadingAria: "Teahouse Tibetan is loading",
-    testTextHeading: "Teahouse Tibetan test text"
+    testTextHeading: "Teahouse Tibetan test text",
+    dictionaryButton: "Dictionary",
+    dictionaryPageTitle: "Teahouse Tibetan Dictionary",
+    dictionaryHeading: "Dictionary",
+    dictionaryIntro: "Look up a word in Tibetan script, Wylie, or English.",
+    dictionarySearchLabel: "Search the dictionary",
+    dictionaryResultsTibetan: "Tibetan words",
+    dictionaryResultsWylie: "Tibetan words from Wylie",
+    dictionaryResultsEnglish: "English meanings",
+    dictionaryNoResults: "No matches. Try another spelling, fewer syllables, or Wylie.",
+    dictionaryEmpty: "Type a word to look it up.",
+    dictionaryLoadError: "Couldn't load the dictionaries. Reload this page to try again.",
+    dictionaryLookUpWord: "Look up this word"
   };
 
   extension.i18n = {

@@ -14,6 +14,7 @@
     ui.insertTestText = document.getElementById("insertTestText");
     ui.samplePage = document.getElementById("samplePage");
     ui.openOptions = document.getElementById("openOptions");
+    ui.openDictionary = document.getElementById("openDictionary");
     ui.popupStatus = document.getElementById("popupStatus");
   }
 
@@ -101,6 +102,10 @@
 
     ui.samplePage.addEventListener("click", () => {
       chrome.tabs.create({ url: chrome.runtime.getURL("demo/index.html") });
+    });
+
+    ui.openDictionary.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("pages/dictionary.html") });
     });
 
     ui.openOptions.addEventListener("click", () => {
