@@ -24,41 +24,6 @@
     ui.status.textContent = message || "";
   }
 
-  function getWylie(term) {
-    const jsEWTS = globalThis.jsEWTS;
-    if (jsEWTS && typeof jsEWTS.toWylie === "function") {
-      return jsEWTS.toWylie(term).trim().normalize("NFC");
-    }
-    return "";
-  }
-
-  function fromWylie(text) {
-    const jsEWTS = globalThis.jsEWTS;
-    if (jsEWTS && typeof jsEWTS.fromWylie === "function") {
-      try {
-        return jsEWTS.fromWylie(text, null, []).normalize("NFC");
-      } catch (_e) {
-        return "";
-      }
-    }
-    return "";
-  }
-
-  function getPhonetic(term) {
-    const converter = globalThis.TibetanConverter;
-    if (converter && typeof converter.get_phonetics === "function") {
-      try {
-        return converter
-          .get_phonetics({ style: "thl", lang: "en" })
-          .phonetics(term, { autosplit: true })
-          .normalize("NFC");
-      } catch (_e) {
-        return "";
-      }
-    }
-    return "";
-  }
-
   function friendlyPos(pos) {
     return extension.i18n.getMessage(`pos_${pos}`, pos);
   }
@@ -150,11 +115,11 @@
     (result.posList || []).forEach((pos) => {
       extras.appendChild(createElement("span", "result-pos", friendlyPos(pos)));
     });
-    const wylie = getWylie(result.headword);
+    const wylie = extension.tibetan.toWylie(result.headword);
     if (wylie) {
       extras.appendChild(createElement("span", "result-wylie", wylie));
     }
-    const phonetic = getPhonetic(result.headword);
+    const phonetic = extension.tibetan.toPhonetic(result.headword);
     if (phonetic) {
       extras.appendChild(createElement("span", "result-phonetic", phonetic));
     }
@@ -288,7 +253,7 @@
       // Latin input may be Wylie or English, so try both. Wylie results only
       // appear when the converted text is a real headword, because the
       // converter turns any Latin string into (often meaningless) Tibetan.
-      const tibetan = fromWylie(query);
+      const tibetan = extension.tibetan.fromWylie(query);
       const wylieResults = tibetan ? lookup.searchTibetan(tibetan, state.settings, RESULT_LIMIT) : [];
       const englishResults = lookup.searchEnglish(query, state.settings, RESULT_LIMIT);
       const wylieSection = wylieResults.length

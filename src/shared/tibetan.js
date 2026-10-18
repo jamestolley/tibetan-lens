@@ -32,7 +32,48 @@
     return trimmed.replace(/་{2,}/gu, "་").replace(/་$/u, "");
   }
 
+  // Romanizations use the vendored converters (jsewts.js, ewts-converter.js)
+  // when the page has loaded them, and return "" otherwise.
+  function toWylie(term) {
+    const jsEWTS = globalThis.jsEWTS;
+    if (jsEWTS && typeof jsEWTS.toWylie === "function") {
+      return jsEWTS.toWylie(term).trim().normalize("NFC");
+    }
+    return "";
+  }
+
+  function fromWylie(text) {
+    const jsEWTS = globalThis.jsEWTS;
+    if (jsEWTS && typeof jsEWTS.fromWylie === "function") {
+      try {
+        return jsEWTS.fromWylie(text, null, []).normalize("NFC");
+      } catch (_e) {
+        return "";
+      }
+    }
+    return "";
+  }
+
+  function toPhonetic(term) {
+    const converter = globalThis.TibetanConverter;
+    if (converter && typeof converter.get_phonetics === "function") {
+      try {
+        return converter
+          .get_phonetics({ style: "thl", lang: "en" })
+          .phonetics(term, { autosplit: true })
+          .normalize("NFC");
+      } catch (_e) {
+        return "";
+      }
+    }
+    return "";
+  }
+
   extension.tibetan = {
+    toWylie,
+    fromWylie,
+    toPhonetic,
+
     containsTibetan(text) {
       return TIBETAN_CHAR_PATTERN.test(text);
     },

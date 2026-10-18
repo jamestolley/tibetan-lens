@@ -58,29 +58,6 @@
     return node;
   }
 
-  function getWylie(term) {
-    const jsEWTS = globalThis.jsEWTS;
-    if (jsEWTS && typeof jsEWTS.toWylie === "function") {
-      return jsEWTS.toWylie(term).trim().normalize("NFC");
-    }
-    return "";
-  }
-
-  function getPhonetic(term) {
-    const converter = globalThis.TibetanConverter;
-    if (converter && typeof converter.get_phonetics === "function") {
-      try {
-        return converter
-          .get_phonetics({ style: "thl", lang: "en" })
-          .phonetics(term, { autosplit: true })
-          .normalize("NFC");
-      } catch (_e) {
-        return "";
-      }
-    }
-    return "";
-  }
-
   function cleanNotes(notesString) {
     if (!notesString) {
       return "";
@@ -172,7 +149,7 @@
     }
 
     if (settings?.showWylie) {
-      const wylie = getWylie(term);
+      const wylie = extension.tibetan.toWylie(term);
       if (wylie) {
         const wylieEl = document.createElement("span");
         wylieEl.className = "tibetan-extension-tooltip-wylie";
@@ -182,7 +159,7 @@
     }
 
     if (settings?.showPhonetic) {
-      const phonetic = getPhonetic(term);
+      const phonetic = extension.tibetan.toPhonetic(term);
       if (phonetic) {
         const phoneticEl = document.createElement("span");
         phoneticEl.className = "tibetan-extension-tooltip-phonetic";
