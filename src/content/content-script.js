@@ -296,6 +296,7 @@
 
     extension.tooltip.showTooltip(wordElement, {
       term,
+      lookupTerm,
       pos: wordElement.dataset.pos || "",
       posList: (wordElement.dataset.posList || "").split("|").filter(Boolean),
       posInferred: wordElement.dataset.posInferred === "1",

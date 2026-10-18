@@ -326,5 +326,13 @@
   "dictionaryLookUpWord": {
     "message": "Знайти це слово",
     "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Зберегти до моїх слів",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Збережено в моїх словах — натисніть, щоб видалити",
+    "description": "Label of the filled star button on a word that is already saved"
   }
 }

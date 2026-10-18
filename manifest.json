@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionFullName__",
   "short_name": "__MSG_extensionName__",
-  "version": "0.50.27",
+  "version": "0.50.28",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -54,6 +54,7 @@
         "src/shared/defaults.js",
         "src/shared/storage.js",
         "src/shared/tibetan.js",
+        "src/shared/wordList.js",
         "src/shared/jsewts.js",
         "src/shared/ewts-converter.js",
         "src/core/botokPackManifest.js",

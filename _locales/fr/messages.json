@@ -326,5 +326,13 @@
   "dictionaryLookUpWord": {
     "message": "Chercher ce mot",
     "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Ajouter à mes mots",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Enregistré dans mes mots — cliquez pour retirer",
+    "description": "Label of the filled star button on a word that is already saved"
   }
 }

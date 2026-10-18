@@ -63,7 +63,9 @@
     dictionaryNoResults: "No matches. Try another spelling, fewer syllables, or Wylie.",
     dictionaryEmpty: "Type a word to look it up.",
     dictionaryLoadError: "Couldn't load the dictionaries. Reload this page to try again.",
-    dictionaryLookUpWord: "Look up this word"
+    dictionaryLookUpWord: "Look up this word",
+    saveWord: "Save to my words",
+    savedWord: "Saved to my words — click to remove"
   };
 
   extension.i18n = {

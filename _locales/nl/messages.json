@@ -326,5 +326,13 @@
   "dictionaryLookUpWord": {
     "message": "Dit woord opzoeken",
     "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Opslaan in mijn woorden",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Opgeslagen in mijn woorden — klik om te verwijderen",
+    "description": "Label of the filled star button on a word that is already saved"
   }
 }

@@ -179,6 +179,22 @@ button {
   color: var(--ink-soft);
 }
 
+.result-save {
+  margin-left: auto;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--saffron);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.result-save:hover,
+.result-save:focus-visible {
+  color: var(--clay);
+}
+
 .result-pos {
   padding: 1px 10px;
   border-radius: 999px;

@@ -9,7 +9,8 @@
   const state = {
     settings: null,
     ready: false,
-    searchTimer: null
+    searchTimer: null,
+    saved: new Set()
   };
 
   function getControls() {
@@ -103,6 +104,37 @@
     }
   }
 
+  function setSaveState(button, saved) {
+    const label = extension.i18n.getMessage(saved ? "savedWord" : "saveWord");
+    button.textContent = saved ? "★" : "☆";
+    button.title = label;
+    button.setAttribute("aria-label", label);
+    button.setAttribute("aria-pressed", String(saved));
+  }
+
+  function createSaveButton(result) {
+    const button = createElement("button", "result-save");
+    button.type = "button";
+    button.dataset.headword = result.headword;
+    setSaveState(button, state.saved.has(result.headword));
+    button.addEventListener("click", async () => {
+      const saved = await extension.wordList.toggle({
+        headword: result.headword,
+        glosses: result.entries.flatMap((entry) => entry.glosses || [])
+      });
+      setSaveState(button, saved);
+    });
+    return button;
+  }
+
+  // Keep stars in sync when words are saved or removed elsewhere (other tabs,
+  // page tooltips, the word list page).
+  function refreshSaveButtons() {
+    ui.results.querySelectorAll(".result-save").forEach((button) => {
+      setSaveState(button, state.saved.has(button.dataset.headword));
+    });
+  }
+
   function renderResult(result, highlight) {
     const card = createElement("article", "result-card");
 
@@ -127,6 +159,7 @@
       extras.appendChild(createElement("span", "result-phonetic", phonetic));
     }
     head.appendChild(extras);
+    head.appendChild(createSaveButton(result));
     card.appendChild(head);
 
     const definitions = createElement("dl", "result-definitions");
@@ -297,6 +330,10 @@
       state.settings = settings;
       runSearch(ui.search.value);
     });
+    extension.wordList.onChanged((words) => {
+      state.saved = new Set(words.map((word) => word.headword));
+      refreshSaveButtons();
+    });
   }
 
   async function init() {
@@ -309,6 +346,7 @@
 
     try {
       state.settings = await extension.storage.getSettings();
+      state.saved = new Set((await extension.wordList.getAll()).map((word) => word.headword));
       await extension.botokLookup.ensureReady();
     } catch (error) {
       console.error("[Teahouse:dictionary] failed to load dictionaries", error);

@@ -326,5 +326,13 @@
   "dictionaryLookUpWord": {
     "message": "Vyhledat toto slovo",
     "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Uložit do mých slov",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Uloženo v mých slovech – kliknutím odeberete",
+    "description": "Label of the filled star button on a word that is already saved"
   }
 }

@@ -91,13 +91,65 @@
       .join(" | ");
   }
 
+  function setSaveState(button, saved) {
+    const label = extension.i18n.getMessage(saved ? "savedWord" : "saveWord");
+    button.textContent = saved ? "★" : "☆";
+    button.title = label;
+    button.setAttribute("aria-label", label);
+    button.setAttribute("aria-pressed", String(saved));
+  }
+
+  // Star toggle that adds the word to (or removes it from) the saved word list.
+  function createSaveButton(headword, glosses) {
+    if (!extension.wordList || !headword) {
+      return null;
+    }
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "tibetan-extension-tooltip-save";
+    setSaveState(button, false);
+
+    extension.wordList
+      .has(headword)
+      .then((saved) => setSaveState(button, saved))
+      .catch(() => button.remove());
+
+    button.addEventListener("click", async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      try {
+        const saved = await extension.wordList.toggle({
+          headword,
+          glosses,
+          source: { url: window.location.href, title: document.title }
+        });
+        setSaveState(button, saved);
+      } catch (_error) {
+        // Storage is unavailable once the extension reloads under this page.
+        button.remove();
+      }
+    });
+
+    return button;
+  }
+
   function renderTooltipContent(payload) {
-    const { term, pos, posList, posInferred, entries, parts, settings } = payload;
+    const { term, lookupTerm, pos, posList, posInferred, entries, parts, settings } = payload;
     const fragment = document.createDocumentFragment();
 
     const heading = document.createElement("div");
     heading.className = "tibetan-extension-tooltip-heading";
-    heading.textContent = term;
+    const headingText = document.createElement("span");
+    headingText.textContent = term;
+    heading.appendChild(headingText);
+    const savedGlosses = entries.length
+      ? entries.flatMap((entry) => entry.glosses || [])
+      : (parts || []).map((item) => `${item.part}་ ${item.gloss}`);
+    const saveButton = createSaveButton(lookupTerm || term, savedGlosses);
+    if (saveButton) {
+      heading.appendChild(saveButton);
+    }
     fragment.appendChild(heading);
 
     const extras = document.createElement("div");

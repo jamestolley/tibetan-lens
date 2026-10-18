@@ -175,6 +175,42 @@ if (fs.existsSync(manifestPath)) {
   errors.push("Missing manifest.json");
 }
 
+// Spaced-repetition scheduler in src/shared/wordList.js.
+{
+  const vm = require("vm");
+  const context = { console };
+  context.globalThis = context;
+  vm.createContext(context);
+  vm.runInContext(fs.readFileSync(path.join(root, "src/shared/wordList.js"), "utf8"), context);
+  const { schedule, GRADES } = context.TibetanExtension.wordList;
+  const DAY = 24 * 60 * 60 * 1000;
+  const now = Date.UTC(2026, 0, 1);
+  const fresh = { due: now, interval: 0, ease: 2.5, reps: 0, lapses: 0, last: null };
+
+  const expectations = [];
+  const good1 = schedule(fresh, GRADES.good, now);
+  expectations.push(["first 'good' waits 1 day", good1.interval === 1 && good1.due === now + DAY]);
+  const good2 = schedule(good1, GRADES.good, good1.due);
+  expectations.push(["second 'good' waits 3 days", good2.interval === 3]);
+  const good3 = schedule(good2, GRADES.good, good2.due);
+  expectations.push(["third 'good' grows by ease (3 × 2.5 → 8 days)", good3.interval === 8]);
+  const again = schedule(good3, GRADES.again, good3.due);
+  expectations.push([
+    "'again' resets the streak and returns in 10 minutes",
+    again.reps === 0 && again.lapses === 1 && again.due === good3.due + 10 * 60 * 1000 && again.ease < good3.ease
+  ]);
+  expectations.push(["first 'easy' waits 4 days", schedule(fresh, GRADES.easy, now).interval === 4]);
+  let hardEase = fresh;
+  for (let i = 0; i < 20; i += 1) {
+    hardEase = schedule(hardEase, GRADES.hard, now);
+  }
+  expectations.push(["ease never drops below 1.3", hardEase.ease >= 1.3]);
+
+  expectations
+    .filter(([, passed]) => !passed)
+    .forEach(([name]) => errors.push(`wordList.schedule: expected ${name}`));
+}
+
 if (errors.length) {
   console.error("Tests failed:");
   for (const error of errors) {

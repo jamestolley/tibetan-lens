@@ -326,5 +326,13 @@
   "dictionaryLookUpWord": {
     "message": "この単語を調べる",
     "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "単語帳に保存",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "単語帳に保存済み — クリックで削除",
+    "description": "Label of the filled star button on a word that is already saved"
   }
 }

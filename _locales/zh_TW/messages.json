@@ -326,5 +326,13 @@
   "dictionaryLookUpWord": {
     "message": "查詢這個詞",
     "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "儲存到我的生詞",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "已儲存到我的生詞——點擊移除",
+    "description": "Label of the filled star button on a word that is already saved"
   }
 }

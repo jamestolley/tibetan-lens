@@ -126,10 +126,31 @@
 }
 
 .tibetan-extension-tooltip-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 0.2rem;
   color: var(--tibetan-extension-clay);
   font-size: 1.05rem;
   font-weight: 700;
+}
+
+.tibetan-extension-tooltip-save {
+  flex: none;
+  margin: -0.15rem -0.3rem 0 0;
+  padding: 0 0.3rem;
+  border: 0;
+  background: none;
+  color: #bf8520;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.tibetan-extension-tooltip-save:hover,
+.tibetan-extension-tooltip-save:focus-visible {
+  color: var(--tibetan-extension-clay);
 }
 
 .tibetan-extension-tooltip-subheading {
