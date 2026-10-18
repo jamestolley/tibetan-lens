@@ -77,6 +77,15 @@ button {
   color: var(--ink-soft);
 }
 
+.page-nav {
+  margin-top: 10px;
+}
+
+.page-nav a {
+  color: var(--clay);
+  font-weight: 700;
+}
+
 .search-panel {
   position: sticky;
   top: 0;

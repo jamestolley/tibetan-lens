@@ -50,6 +50,10 @@
       <div class="actions">
         <button id="refreshPage" class="primary" type="button" data-i18n="refreshPage">Refresh page</button>
         <button id="openDictionary" class="secondary" type="button" data-i18n="dictionaryButton">Dictionary</button>
+        <button id="openWords" class="secondary" type="button">
+          <span data-i18n="myWordsButton">My words</span>
+          <span id="wordsDueBadge" class="badge" data-i18n-title="wordsDueBadgeTitle" hidden></span>
+        </button>
         <button id="insertTestText" class="secondary" type="button" data-i18n="insertTestText">Insert sample text</button>
         <button id="samplePage" class="secondary" type="button" data-i18n="samplePage">Sample page</button>
         <button id="openOptions" class="secondary" type="button" data-i18n="options">Options</button>
@@ -62,6 +66,7 @@
     <script src="../shared/i18n.js"></script>
     <script src="../shared/defaults.js"></script>
     <script src="../shared/storage.js"></script>
+    <script src="../shared/wordList.js"></script>
     <script src="../core/mockDictionary.js"></script>
     <script src="./index.js"></script>
   </body>

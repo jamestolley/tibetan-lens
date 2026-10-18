@@ -15,6 +15,8 @@
     ui.samplePage = document.getElementById("samplePage");
     ui.openOptions = document.getElementById("openOptions");
     ui.openDictionary = document.getElementById("openDictionary");
+    ui.openWords = document.getElementById("openWords");
+    ui.wordsDueBadge = document.getElementById("wordsDueBadge");
     ui.popupStatus = document.getElementById("popupStatus");
   }
 
@@ -108,6 +110,10 @@
       chrome.tabs.create({ url: chrome.runtime.getURL("pages/dictionary.html") });
     });
 
+    ui.openWords.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("pages/words.html") });
+    });
+
     ui.openOptions.addEventListener("click", () => {
       chrome.runtime.openOptionsPage();
     });
@@ -119,11 +125,18 @@
     });
   }
 
+  async function showDueCount() {
+    const due = await extension.wordList.getDue();
+    ui.wordsDueBadge.textContent = String(due.length);
+    ui.wordsDueBadge.hidden = due.length === 0;
+  }
+
   async function init() {
     getControls();
     extension.i18n.localizePage();
     bindEvents();
     await loadSettings();
+    await showDueCount();
   }
 
   document.addEventListener("DOMContentLoaded", init, { once: true });

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="wordsPageTitle">My words — Teahouse Tibetan</title>
+    <link rel="stylesheet" href="../src/dictionary/index.css" />
+    <link rel="stylesheet" href="../src/words/index.css" />
+  </head>
+  <body>
+    <main class="dictionary-shell">
+      <header class="hero">
+        <p class="eyebrow"><span data-i18n="extensionName">Teahouse Tibetan</span> <span lang="bo">བོད་ཡིག་ཇ་ཁང་།</span></p>
+        <h1 data-i18n="wordsHeading">My words</h1>
+        <p class="intro" data-i18n="wordsIntro">Words you've starred while reading or in the dictionary.</p>
+        <nav class="page-nav">
+          <a href="dictionary.html" data-i18n="dictionaryButton">Dictionary</a>
+        </nav>
+      </header>
+
+      <section id="listView">
+        <div class="words-toolbar">
+          <label class="visually-hidden" for="wordsFilter" data-i18n="wordsFilterLabel">Filter my words</label>
+          <input
+            id="wordsFilter"
+            class="search-input words-filter"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            data-i18n-placeholder="wordsFilterLabel"
+          />
+          <label class="words-sort">
+            <span data-i18n="wordsSort">Sort</span>
+            <select id="wordsSort">
+              <option value="newest" data-i18n="wordsSortNewest">Newest first</option>
+              <option value="oldest" data-i18n="wordsSortOldest">Oldest first</option>
+              <option value="due" data-i18n="wordsSortDue">Next review</option>
+            </select>
+          </label>
+          <button id="wordsExport" class="words-button" type="button" data-i18n="wordsExport">Export CSV</button>
+        </div>
+
+        <p class="words-count"><span data-i18n="wordsCount">Saved words:</span> <strong id="wordsCountValue">0</strong></p>
+        <p id="wordsStatus" class="status-line" role="status" aria-live="polite"></p>
+        <div id="wordsList" class="results"></div>
+      </section>
+    </main>
+
+    <script src="../src/shared/constants.js"></script>
+    <script src="../src/shared/i18n.js"></script>
+    <script src="../src/shared/tibetan.js"></script>
+    <script src="../src/shared/wordList.js"></script>
+    <script src="../src/shared/jsewts.js"></script>
+    <script src="../src/shared/ewts-converter.js"></script>
+    <script src="../src/words/index.js"></script>
+  </body>
+</html>

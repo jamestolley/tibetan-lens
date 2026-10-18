@@ -334,5 +334,89 @@
   "savedWord": {
     "message": "मेरे शब्दों में सहेजा गया — हटाने के लिए क्लिक करें",
     "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "मेरे शब्द",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "दोहराने के लिए शब्द",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "मेरे शब्द — Teahouse तिब्बती",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "मेरे शब्द",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "पढ़ते समय या शब्दकोश में आपने जिन शब्दों पर तारा लगाया।",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "मेरे शब्द छाँटें",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "क्रम",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "नए पहले",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "पुराने पहले",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "अगली दोहराई",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "CSV निर्यात करें",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "सहेजे गए शब्द:",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "अभी कोई शब्द सहेजा नहीं गया। किसी शब्द के पॉप-अप या शब्दकोश में ☆ पर क्लिक करके उसे यहाँ सहेजें।",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "इस फ़िल्टर से कोई सहेजा गया शब्द मेल नहीं खाता।",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "हटाएँ",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "शब्द हटाया गया।",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "पूर्ववत करें",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "सहेजा गया:",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "अगली दोहराई:",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "अभी दोहराएँ",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "स्रोत:",
+    "description": "Label before a link to the page where the word was saved"
   }
 }

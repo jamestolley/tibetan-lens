@@ -55,7 +55,8 @@ function extractReferencedIds(js) {
 const pages = [
   { html: "src/options/index.html", js: "src/options/index.js" },
   { html: "src/popup/index.html", js: "src/popup/index.js" },
-  { html: "pages/dictionary.html", js: "src/dictionary/index.js" }
+  { html: "pages/dictionary.html", js: "src/dictionary/index.js" },
+  { html: "pages/words.html", js: "src/words/index.js" }
 ];
 
 for (const page of pages) {
@@ -77,7 +78,7 @@ for (const page of pages) {
 
 function extractI18nKeysFromHtml(html) {
   const keys = new Set();
-  const regex = /data-i18n=["']([^"']+)["']/g;
+  const regex = /data-i18n(?:-title|-placeholder)?=["']([^"']+)["']/g;
   let match;
   while ((match = regex.exec(html)) !== null) {
     keys.add(match[1]);

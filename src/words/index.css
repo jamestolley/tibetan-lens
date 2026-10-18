@@ -1,0 +1,124 @@
+/* Builds on ../dictionary/index.css (tokens, hero, result cards). */
+
+.words-link-button {
+  color: var(--clay);
+  font-weight: 700;
+}
+
+.words-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 8px;
+}
+
+.words-filter {
+  flex: 1 1 260px;
+  font-size: 1.05rem;
+  padding: 10px 18px;
+}
+
+.words-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+}
+
+.words-sort select,
+.words-button {
+  padding: 9px 14px;
+  border: 1px solid rgba(40, 31, 23, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.words-button {
+  cursor: pointer;
+}
+
+.words-button:hover:not(:disabled) {
+  border-color: var(--clay);
+  color: var(--clay);
+}
+
+.words-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.words-button.is-primary {
+  border-color: var(--clay);
+  background: var(--clay);
+  color: #fff;
+}
+
+.words-button.is-primary:hover:not(:disabled) {
+  background: #5f241f;
+  color: #fff;
+}
+
+.words-count {
+  margin: 16px 0 0;
+  color: var(--ink-soft);
+}
+
+.words-link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.result-headword {
+  text-decoration: none;
+}
+
+.word-remove {
+  margin-left: auto;
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.word-remove:hover,
+.word-remove:focus-visible {
+  background: rgba(122, 48, 42, 0.1);
+  color: var(--clay);
+}
+
+.word-gloss {
+  margin: 8px 0 0;
+}
+
+.word-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.word-meta a {
+  color: inherit;
+}
+
+.word-meta .is-due {
+  color: var(--clay);
+  font-weight: 700;
+}
+
+.words-empty {
+  margin-top: 24px;
+  color: var(--ink-soft);
+}

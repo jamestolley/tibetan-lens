@@ -105,6 +105,13 @@
       return words[headword];
     },
 
+    // Puts back a full record (e.g. to undo a removal), keeping its review history.
+    async restore(record) {
+      const words = await readAll();
+      words[record.headword] = record;
+      await writeAll(words);
+    },
+
     async remove(headword) {
       const words = await readAll();
       delete words[normalizeHeadword(headword)];

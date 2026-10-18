@@ -334,5 +334,89 @@
   "savedWord": {
     "message": "已保存到我的生词——点击移除",
     "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "我的生词",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "待复习的生词",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "我的生词 — Teahouse 藏文",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "我的生词",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "你在阅读或词典中加星标的词语。",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "筛选我的生词",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "排序",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "最新优先",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "最早优先",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "下次复习",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "导出 CSV",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "已保存的词：",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "还没有保存的词。在词语弹窗或词典中点击 ☆ 即可保存到这里。",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "没有符合此筛选条件的生词。",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "移除",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "已移除该词。",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "撤销",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "保存于：",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "下次复习：",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "现在复习",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "来源：",
+    "description": "Label before a link to the page where the word was saved"
   }
 }

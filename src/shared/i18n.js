@@ -65,7 +65,28 @@
     dictionaryLoadError: "Couldn't load the dictionaries. Reload this page to try again.",
     dictionaryLookUpWord: "Look up this word",
     saveWord: "Save to my words",
-    savedWord: "Saved to my words — click to remove"
+    savedWord: "Saved to my words — click to remove",
+    myWordsButton: "My words",
+    wordsDueBadgeTitle: "Words due for review",
+    wordsPageTitle: "My words — Teahouse Tibetan",
+    wordsHeading: "My words",
+    wordsIntro: "Words you've starred while reading or in the dictionary.",
+    wordsFilterLabel: "Filter my words",
+    wordsSort: "Sort",
+    wordsSortNewest: "Newest first",
+    wordsSortOldest: "Oldest first",
+    wordsSortDue: "Next review",
+    wordsExport: "Export CSV",
+    wordsCount: "Saved words:",
+    wordsEmpty: "No saved words yet. Click the ☆ in a word's pop-up or in the dictionary to save it here.",
+    wordsNoMatches: "No saved words match this filter.",
+    wordsRemove: "Remove",
+    wordsRemoved: "Word removed.",
+    wordsUndo: "Undo",
+    wordsSavedOn: "Saved:",
+    wordsNextReview: "Next review:",
+    wordsDueNow: "due now",
+    wordsFrom: "From:"
   };
 
   extension.i18n = {
@@ -83,7 +104,7 @@
       if (root === document && typeof chrome !== "undefined" && chrome.i18n?.getUILanguage) {
         document.documentElement.lang = chrome.i18n.getUILanguage();
       }
-      const elements = root.querySelectorAll("[data-i18n]");
+      const elements = root.querySelectorAll("[data-i18n], [data-i18n-title], [data-i18n-placeholder]");
       elements.forEach((el) => {
         const key = el.getAttribute("data-i18n");
         if (key) {
@@ -92,6 +113,10 @@
         const titleKey = el.getAttribute("data-i18n-title");
         if (titleKey) {
           el.title = this.getMessage(titleKey);
+        }
+        const placeholderKey = el.getAttribute("data-i18n-placeholder");
+        if (placeholderKey) {
+          el.placeholder = this.getMessage(placeholderKey);
         }
       });
     }
