@@ -301,6 +301,11 @@
     }
   }
 
+  function pageHasTibetan() {
+    const root = document.body || document.documentElement;
+    return Boolean(root) && extension.tibetan.containsTibetan(root.textContent || "");
+  }
+
   async function refreshAnnotations() {
     if (teardownIfInvalidated()) {
       return state.stats;
@@ -312,13 +317,19 @@
     }
 
     state.isRendering = true;
-    showSpinner(extension.i18n.getMessage('loadingDictionaries'));
     console.log('[Teahouse] refreshAnnotations starting...');
 
     try {
       state.settings = await extension.storage.getSettings();
       console.log('[Teahouse] settings loaded:', JSON.stringify(state.settings, null, 2));
 
+      // Most pages have no Tibetan: skip the dictionary download there. The
+      // mutation observer calls back here if Tibetan text appears later.
+      if (!state.settings.extensionEnabled || !pageHasTibetan()) {
+        return scanDocument();
+      }
+
+      showSpinner(extension.i18n.getMessage('loadingDictionaries'));
       if (typeof extension.tokenizer.ensureReady === "function") {
         console.log('[Teahouse] loading tokenizer pack...');
         await extension.tokenizer.ensureReady(state.settings);
