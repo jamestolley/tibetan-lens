@@ -618,5 +618,33 @@
   "importNoWords": {
     "message": "このファイルにチベット語の単語が見つかりませんでした。",
     "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "ヘルプとフィードバック",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "質問やご意見、不具合などがあればお知らせください。すべてのメッセージに目を通しています。",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "ヘルプとよくある質問",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "不具合を報告",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "定義を提案",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "プライバシーポリシー",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "バージョン",
+    "description": "Label before the extension version number"
   }
 }

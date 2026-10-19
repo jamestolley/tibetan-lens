@@ -618,5 +618,33 @@
   "importNoWords": {
     "message": "V tomto souboru nebyla nalezena žádná tibetská slova.",
     "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "Nápověda a zpětná vazba",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "Máte otázku, nápad nebo něco nefunguje? Čteme každou zprávu.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "Nápověda a časté dotazy",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "Nahlásit chybu",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "Navrhnout definici",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "Zásady ochrany soukromí",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "Verze",
+    "description": "Label before the extension version number"
   }
 }

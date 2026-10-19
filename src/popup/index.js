@@ -139,6 +139,7 @@
   async function init() {
     getControls();
     extension.i18n.localizePage();
+    document.getElementById("extensionVersion").textContent = chrome.runtime.getManifest().version;
     bindEvents();
     await loadSettings();
     await showDueCount();

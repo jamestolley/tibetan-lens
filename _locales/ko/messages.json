@@ -618,5 +618,33 @@
   "importNoWords": {
     "message": "이 파일에서 티베트어 단어를 찾지 못했습니다.",
     "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "도움말 및 의견",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "질문이나 아이디어가 있거나 문제가 있나요? 모든 메시지를 읽습니다.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "도움말 및 FAQ",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "버그 신고",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "정의 제안",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "개인정보 처리방침",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "버전",
+    "description": "Label before the extension version number"
   }
 }

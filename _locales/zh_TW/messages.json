@@ -618,5 +618,33 @@
   "importNoWords": {
     "message": "此檔案中找不到藏文詞語。",
     "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "說明與意見回饋",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "有問題、想法或遇到故障?我們會閱讀每一則訊息。",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "說明與常見問題",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "回報問題",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "建議釋義",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "隱私權政策",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "版本",
+    "description": "Label before the extension version number"
   }
 }

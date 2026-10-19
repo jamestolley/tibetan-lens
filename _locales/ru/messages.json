@@ -618,5 +618,33 @@
   "importNoWords": {
     "message": "В этом файле не найдено тибетских слов.",
     "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "Помощь и отзывы",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "Вопросы, идеи или что-то не работает? Мы читаем каждое сообщение.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "Помощь и FAQ",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "Сообщить об ошибке",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "Предложить определение",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "Политика конфиденциальности",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "Версия",
+    "description": "Label before the extension version number"
   }
 }

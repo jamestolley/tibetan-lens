@@ -618,5 +618,33 @@
   "importNoWords": {
     "message": "इस फ़ाइल में कोई तिब्बती शब्द नहीं मिला।",
     "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "सहायता और सुझाव",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "कोई प्रश्न, सुझाव या कुछ काम नहीं कर रहा? हम हर संदेश पढ़ते हैं।",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "सहायता और सामान्य प्रश्न",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "बग की रिपोर्ट करें",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "परिभाषा सुझाएँ",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "गोपनीयता नीति",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "संस्करण",
+    "description": "Label before the extension version number"
   }
 }
