@@ -18,6 +18,10 @@ module.exports = [
         ...globals.webextensions,
         TibetanConverter: "readonly"
       }
+    },
+    rules: {
+      // Content scripts run on every site; keep its console clean.
+      "no-console": ["error", { allow: ["warn", "error"] }]
     }
   },
   {

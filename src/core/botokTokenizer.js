@@ -124,7 +124,6 @@
 
   async function fetchText(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[Teahouse:tokenizer] fetching:', path, '->', url);
     let response;
     try {
       response = await fetch(url);
@@ -142,13 +141,11 @@
     }
 
     const text = await response.text();
-    console.log('[Teahouse:tokenizer] loaded:', path, '(' + text.length + ' chars)');
     return text;
   }
 
   async function fetchJson(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[Teahouse:tokenizer] fetching JSON:', path, '->', url);
     let response;
     try {
       response = await fetch(url);
@@ -169,10 +166,8 @@
   }
 
   async function loadFileEntries(fileDescriptor, component, category) {
-    console.log('[Teahouse:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
     const text = await fetchText(fileDescriptor.path);
     const rows = cleanDataLines(text);
-    console.log('[Teahouse:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
 
     return rows
       .map((line) => (category === "remove" ? parseRemoveRow(line) : parseWordRow(line)))

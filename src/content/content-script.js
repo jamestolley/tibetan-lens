@@ -243,13 +243,11 @@
   }
 
   function scanDocument() {
-    console.log('[Teahouse] scanDocument starting...');
     extension.replacementEngine.restoreProcessedNodes(document);
     extension.tooltip.hideTooltip();
     resetStats();
 
     if (!state.settings || !state.settings.extensionEnabled) {
-      console.warn('[Teahouse] scanDocument aborted — extensionEnabled:', state.settings?.extensionEnabled, 'settings:', !!state.settings);
       return state.stats;
     }
 
@@ -260,14 +258,12 @@
 
     const root = document.body || document.documentElement;
     const nodes = extension.replacementEngine.collectTextNodes(root);
-    console.log('[Teahouse] found', nodes.length, 'text nodes to process');
 
     nodes.forEach((textNode) => {
       state.stats.processedNodes += 1;
       state.stats.annotatedWords += renderTextNode(textNode);
     });
 
-    console.log('[Teahouse] scanDocument done — processed:', state.stats.processedNodes, 'annotated:', state.stats.annotatedWords);
     state.ignoreMutationsUntil = Date.now() + 250;
     return state.stats;
   }
@@ -312,16 +308,13 @@
     }
 
     if (state.isRendering) {
-      console.log('[Teahouse] refreshAnnotations skipped — already rendering');
       return state.stats;
     }
 
     state.isRendering = true;
-    console.log('[Teahouse] refreshAnnotations starting...');
 
     try {
       state.settings = await extension.storage.getSettings();
-      console.log('[Teahouse] settings loaded:', JSON.stringify(state.settings, null, 2));
 
       // Most pages have no Tibetan: skip the dictionary download there. The
       // mutation observer calls back here if Tibetan text appears later.
@@ -331,16 +324,13 @@
 
       showSpinner(extension.i18n.getMessage('loadingDictionaries'));
       if (typeof extension.tokenizer.ensureReady === "function") {
-        console.log('[Teahouse] loading tokenizer pack...');
         await extension.tokenizer.ensureReady(state.settings);
-        console.log('[Teahouse] tokenizer pack loaded successfully');
       } else {
         console.warn('[Teahouse] extension.tokenizer.ensureReady is not a function!');
       }
 
       await loadKnowledge();
       const stats = scanDocument();
-      console.log('[Teahouse] scanDocument complete:', stats);
       return stats;
     } catch (err) {
       if (err && err.contextInvalidated) {
@@ -881,28 +871,14 @@
   }
 
   async function bootstrap() {
-    console.log('[Teahouse] bootstrap starting...');
-    console.log('[Teahouse] extension object keys:', Object.keys(extension));
-    console.log('[Teahouse] tokenizer:', typeof extension.tokenizer, extension.tokenizer ? Object.keys(extension.tokenizer) : 'MISSING');
-    console.log('[Teahouse] dictionary:', typeof extension.dictionary, extension.dictionary ? Object.keys(extension.dictionary) : 'MISSING');
-    console.log('[Teahouse] botokLookup:', typeof extension.botokLookup, extension.botokLookup ? Object.keys(extension.botokLookup) : 'MISSING');
-    console.log('[Teahouse] replacementEngine:', typeof extension.replacementEngine, extension.replacementEngine ? Object.keys(extension.replacementEngine) : 'MISSING');
-    console.log('[Teahouse] tibetan:', typeof extension.tibetan, extension.tibetan ? Object.keys(extension.tibetan) : 'MISSING');
-    console.log('[Teahouse] storage:', typeof extension.storage, extension.storage ? Object.keys(extension.storage) : 'MISSING');
-    console.log('[Teahouse] tooltip:', typeof extension.tooltip, extension.tooltip ? Object.keys(extension.tooltip) : 'MISSING');
-    console.log('[Teahouse] botokPackManifest:', typeof extension.botokPackManifest, extension.botokPackManifest ? 'present' : 'MISSING');
-    console.log('[Teahouse] defaults:', typeof extension.defaults, extension.defaults ? JSON.stringify(extension.defaults).slice(0, 200) : 'MISSING');
     bindEvents();
     observeDocument();
     await refreshAnnotations();
-    console.log('[Teahouse] bootstrap complete');
   }
 
   if (document.readyState === "loading") {
-    console.log('[Teahouse] waiting for DOMContentLoaded...');
     document.addEventListener("DOMContentLoaded", bootstrap, { once: true });
   } else {
-    console.log('[Teahouse] document already ready, bootstrapping now');
     bootstrap();
   }
 })();
