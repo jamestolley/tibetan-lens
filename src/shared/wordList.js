@@ -122,6 +122,95 @@
     );
   }
 
+  // A word counts as mastered once its review interval reaches three weeks.
+  const MASTERED_DAYS = 21;
+  // New words pause when this many reviews per daily new word are waiting…
+  const BACKLOG_PER_NEW_WORD = 10;
+  // …or when this many in-progress words per daily new word are active.
+  // At steady state roughly 13 days' worth of new words are in progress, so
+  // this only bites when someone falls well behind.
+  const ACTIVE_PER_NEW_WORD = 15;
+
+  function stageOf(word) {
+    const review = migrateReview(word.review);
+    if (review.state === STATES.new) {
+      return "new";
+    }
+    if (review.state === STATES.review) {
+      return review.scheduled_days >= MASTERED_DAYS ? "mastered" : "reviewing";
+    }
+    return "learning";
+  }
+
+  function startOfDay(now) {
+    const date = new Date(now);
+    date.setHours(0, 0, 0, 0);
+    return date.getTime();
+  }
+
+  // What to study now. Reviews that are due always come first. New words are
+  // introduced up to the daily allowance, and pause when reviews pile up or
+  // too many words are still in progress (mastering words frees room). The
+  // total number of saved words is never limited.
+  function getStudyQueue(words, settings = {}, now = Date.now()) {
+    const perDay = Math.max(1, settings.newWordsPerDay || 10);
+    const reviews = [];
+    const waiting = [];
+    let active = 0;
+    let introducedToday = 0;
+    const today = startOfDay(now);
+
+    words.forEach((word) => {
+      const stage = stageOf(word);
+      if (word.firstReviewedAt >= today) {
+        introducedToday += 1;
+      }
+      if (stage === "new") {
+        waiting.push(word);
+        return;
+      }
+      if (stage === "learning" || stage === "reviewing") {
+        active += 1;
+      }
+      if ((word.review?.due ?? 0) <= now) {
+        reviews.push(word);
+      }
+    });
+
+    reviews.sort((a, b) => a.review.due - b.review.due);
+    waiting.sort((a, b) => a.savedAt - b.savedAt);
+
+    let allowance = Math.max(0, perDay - introducedToday);
+    let limitReason = null;
+    if (reviews.length >= perDay * BACKLOG_PER_NEW_WORD) {
+      allowance = 0;
+      limitReason = "backlog";
+    } else if (active >= perDay * ACTIVE_PER_NEW_WORD) {
+      allowance = 0;
+      limitReason = "active";
+    } else if (waiting.length > allowance) {
+      limitReason = "daily";
+    }
+
+    return {
+      reviews,
+      newWords: waiting.slice(0, allowance),
+      waiting: waiting.length,
+      active,
+      activeLimit: perDay * ACTIVE_PER_NEW_WORD,
+      introducedToday,
+      limitReason: waiting.length ? limitReason : null
+    };
+  }
+
+  // Applies a new review state, noting when a word first leaves "new".
+  function applyReview(word, review, now) {
+    if (!word.firstReviewedAt && migrateReview(word.review).state === STATES.new && review.state !== STATES.new) {
+      word.firstReviewedAt = now;
+    }
+    word.review = review;
+  }
+
   function normalizeHeadword(headword) {
     return extension.tibetan ? extension.tibetan.normalizeLookupKey(headword || "") : (headword || "").trim();
   }
@@ -148,6 +237,9 @@
     previewSchedule,
     migrateReview,
     snapshotGloss,
+    stageOf,
+    getStudyQueue,
+    MASTERED_DAYS,
 
     // All saved words, newest first.
     async getAll() {
@@ -205,9 +297,9 @@
       return true;
     },
 
-    async getDue(now = Date.now()) {
-      const words = await this.getAll();
-      return words.filter((word) => (word.review?.due ?? 0) <= now).sort((a, b) => a.review.due - b.review.due);
+    // getStudyQueue() over the stored words.
+    async studyQueue(settings, now = Date.now()) {
+      return getStudyQueue(await this.getAll(), settings, now);
     },
 
     // Stores an already-computed review state (e.g. one shown in a preview).
@@ -217,7 +309,7 @@
       if (!word) {
         return null;
       }
-      word.review = review;
+      applyReview(word, review, Date.now());
       await writeAll(words);
       return word;
     },
@@ -228,7 +320,7 @@
       if (!word) {
         return null;
       }
-      word.review = schedule(word.review, grade, now, options);
+      applyReview(word, schedule(word.review, grade, now, options), now);
       await writeAll(words);
       return word;
     },

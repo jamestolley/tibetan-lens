@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Terug naar mijn woorden",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Alle",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nieuw",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Leren",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Herhalen",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Beheerst",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Studie-instellingen",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nieuwe woorden per dag",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Geschatte herhalingen per dag op termijn:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Doelgeheugen",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — minder herhalingen",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — aanbevolen",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — meer herhalingen",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Opgeslagen woorden wachten in Nieuw tot er ruimte is, dus je kunt er zoveel opslaan als je wilt. Beheerste woorden maken ruimte vrij.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "Bezig:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Je bent begonnen aan de nieuwe woorden van vandaag. Morgen starten er meer; de rest wacht in Nieuw.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Nieuwe woorden zijn gepauzeerd tot je je herhalingen hebt ingehaald.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Nieuwe woorden zijn gepauzeerd zolang veel woorden nog bezig zijn. Woorden beheersen maakt ruimte vrij.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

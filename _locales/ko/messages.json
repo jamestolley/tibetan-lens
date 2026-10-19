@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "내 단어로 돌아가기",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "전체",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "새 단어",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "학습 중",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "복습 중",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "숙달",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "학습 설정",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "하루 새 단어 수",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "안정 후 예상 하루 복습 수:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "목표 기억률",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — 복습 적게",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — 권장",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — 복습 많이",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "저장한 단어는 자리가 날 때까지 '새 단어'에서 기다리므로 원하는 만큼 저장할 수 있습니다. 숙달한 단어가 자리를 만듭니다.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "진행 중:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "오늘의 새 단어를 시작했습니다. 내일 더 시작되며 나머지는 '새 단어'에서 기다립니다.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "복습을 따라잡을 때까지 새 단어가 일시 중지됩니다.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "진행 중인 단어가 많아 새 단어가 일시 중지되었습니다. 단어를 숙달하면 자리가 생깁니다.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

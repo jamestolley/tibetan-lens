@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Назад к моим словам",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Все",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Новые",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Изучаются",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Повторяются",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Освоены",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Настройки занятий",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Новых слов в день",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Примерно повторений в день со временем:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Целевая память",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — меньше повторений",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — рекомендуется",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — больше повторений",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Сохранённые слова ждут в «Новых», пока не освободится место, так что сохранять можно сколько угодно. Освоенные слова освобождают место.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "В процессе:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Новые слова на сегодня начаты. Завтра начнутся ещё; остальные ждут в «Новых».",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Новые слова приостановлены, пока вы не наверстаете повторения.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Новые слова приостановлены, пока много слов в процессе. Освоение слов освобождает место.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

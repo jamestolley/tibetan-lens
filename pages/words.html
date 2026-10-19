@@ -41,7 +41,35 @@
           <button id="wordsExport" class="words-button" type="button" data-i18n="wordsExport">Export CSV</button>
         </div>
 
+        <div id="stageFilter" class="stage-filter">
+          <button type="button" data-stage="all"><span data-i18n="stageAll">All</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="new"><span data-i18n="stageNew">New</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="learning"><span data-i18n="stageLearning">Learning</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="reviewing"><span data-i18n="stageReviewing">Reviewing</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="mastered"><span data-i18n="stageMastered">Mastered</span> <span class="stage-count"></span></button>
+        </div>
+
         <p class="words-count"><span data-i18n="wordsCount">Saved words:</span> <strong id="wordsCountValue">0</strong></p>
+        <p id="studyNote" class="study-note" hidden></p>
+
+        <details class="study-settings">
+          <summary data-i18n="studySettings">Study settings</summary>
+          <label class="study-field" for="newWordsPerDay">
+            <span data-i18n="newWordsPerDay">New words per day</span>
+            <input id="newWordsPerDay" type="number" min="1" max="50" />
+          </label>
+          <p class="study-hint"><span data-i18n="workloadEstimate">Estimated daily reviews once settled:</span> <strong id="workloadValue"></strong></p>
+          <label class="study-field" for="targetRetention">
+            <span data-i18n="targetRetention">Target memory</span>
+            <select id="targetRetention">
+              <option value="0.85" data-i18n="retention85">85% — fewer reviews</option>
+              <option value="0.9" data-i18n="retention90">90% — recommended</option>
+              <option value="0.95" data-i18n="retention95">95% — more reviews</option>
+            </select>
+          </label>
+          <p class="study-hint" data-i18n="newWordsHint">Saved words wait in New until there's room, so you can save as many as you like. Mastered words free up room.</p>
+          <p class="study-hint"><span data-i18n="inProgress">In progress:</span> <strong id="activeValue"></strong></p>
+        </details>
         <p id="wordsStatus" class="status-line" role="status" aria-live="polite"></p>
         <div id="wordsList" class="results"></div>
       </section>
@@ -84,6 +112,8 @@
 
     <script src="../src/shared/constants.js"></script>
     <script src="../src/shared/i18n.js"></script>
+    <script src="../src/shared/defaults.js"></script>
+    <script src="../src/shared/storage.js"></script>
     <script src="../src/shared/tibetan.js"></script>
     <script src="../src/shared/ts-fsrs.js"></script>
     <script src="../src/shared/wordList.js"></script>

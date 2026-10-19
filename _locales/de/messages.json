@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Zurück zu meinen Wörtern",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Alle",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Neu",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Lernen",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Wiederholen",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Gemeistert",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Lerneinstellungen",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Neue Wörter pro Tag",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Geschätzte tägliche Wiederholungen (eingependelt):",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Zielgedächtnis",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85 % – weniger Wiederholungen",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90 % – empfohlen",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95 % – mehr Wiederholungen",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Gespeicherte Wörter warten unter „Neu“, bis Platz ist – Sie können also beliebig viele speichern. Gemeisterte Wörter schaffen Platz.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "In Arbeit:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Die neuen Wörter für heute sind gestartet. Morgen kommen weitere; der Rest wartet unter „Neu“.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Neue Wörter pausieren, bis Sie Ihre Wiederholungen aufgeholt haben.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Neue Wörter pausieren, solange viele Wörter in Arbeit sind. Gemeisterte Wörter schaffen Platz.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

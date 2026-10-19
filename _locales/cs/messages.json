@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Zpět na moje slova",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Vše",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nová",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Učím se",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Opakuji",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Zvládnutá",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Nastavení studia",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nových slov denně",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Odhad denních opakování po ustálení:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Cílová paměť",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85 % — méně opakování",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90 % — doporučeno",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95 % — více opakování",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Uložená slova čekají v Nových, dokud není místo, takže jich můžete uložit kolik chcete. Zvládnutá slova uvolňují místo.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "Rozpracováno:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Dnešní nová slova jsou zahájena. Zítra začnou další; zbytek čeká v Nových.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Nová slova jsou pozastavena, dokud nedoženete opakování.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Nová slova jsou pozastavena, dokud je mnoho slov rozpracováno. Zvládnutí slov uvolňuje místo.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

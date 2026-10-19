@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Назад до моїх слів",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Усі",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Нові",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Вивчаються",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Повторюються",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Опановані",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Налаштування навчання",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Нових слів на день",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Приблизно повторень на день згодом:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Цільова пам'ять",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — менше повторень",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — рекомендовано",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — більше повторень",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Збережені слова чекають у «Нових», доки не звільниться місце, тож зберігати можна скільки завгодно. Опановані слова звільняють місце.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "У процесі:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Нові слова на сьогодні розпочато. Завтра почнуться ще; решта чекає в «Нових».",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Нові слова призупинено, доки ви не надолужите повторення.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Нові слова призупинено, поки багато слів у процесі. Опанування слів звільняє місце.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

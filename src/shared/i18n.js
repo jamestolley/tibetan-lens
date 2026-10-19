@@ -99,7 +99,24 @@
     reviewPracticeDone: "Practice round complete.",
     reviewKeyboardHint: "Keyboard: Space shows the answer, 1–4 grade it.",
     reviewPracticeNote: "Practice mode — your review schedule won't change.",
-    reviewBack: "Back to my words"
+    reviewBack: "Back to my words",
+    stageAll: "All",
+    stageNew: "New",
+    stageLearning: "Learning",
+    stageReviewing: "Reviewing",
+    stageMastered: "Mastered",
+    studySettings: "Study settings",
+    newWordsPerDay: "New words per day",
+    workloadEstimate: "Estimated daily reviews once settled:",
+    targetRetention: "Target memory",
+    retention85: "85% — fewer reviews",
+    retention90: "90% — recommended",
+    retention95: "95% — more reviews",
+    newWordsHint: "Saved words wait in New until there's room, so you can save as many as you like. Mastered words free up room.",
+    inProgress: "In progress:",
+    limitDaily: "You've started today's new words. More start tomorrow; the rest wait in New.",
+    limitBacklog: "New words are paused until you catch up on your reviews.",
+    limitActive: "New words are paused while many words are still in progress. Mastering words frees up room."
   };
 
   extension.i18n = {

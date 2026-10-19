@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "返回我的生词",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "全部",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "新词",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "学习中",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "复习中",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "已掌握",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "学习设置",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "每天新词数",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "稳定后的预计每日复习量：",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "目标记忆率",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — 复习较少",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — 推荐",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — 复习较多",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "保存的词会在“新词”中等待，有空位时才开始学习，所以想存多少都可以。掌握的词会腾出空位。",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "进行中：",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "今天的新词已经开始。明天会开始更多；其余的在“新词”中等待。",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "新词已暂停，等你补完复习后继续。",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "进行中的词较多，新词已暂停。掌握词语会腾出空位。",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

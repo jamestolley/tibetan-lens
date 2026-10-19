@@ -126,9 +126,10 @@
   }
 
   async function showDueCount() {
-    const due = await extension.wordList.getDue();
-    ui.wordsDueBadge.textContent = String(due.length);
-    ui.wordsDueBadge.hidden = due.length === 0;
+    const queue = await extension.wordList.studyQueue(await extension.storage.getSettings());
+    const count = queue.reviews.length + queue.newWords.length;
+    ui.wordsDueBadge.textContent = String(count);
+    ui.wordsDueBadge.hidden = count === 0;
   }
 
   async function init() {

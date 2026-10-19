@@ -232,9 +232,46 @@ if (fs.existsSync(manifestPath)) {
   const legacyNext = schedule(legacy, GRADES.good, legacy.due, exact);
   expectations.push(["migrated records keep scheduling forward", legacyNext.due > legacy.due && legacyNext.scheduled_days >= 8]);
 
+  // Stages and the study queue.
+  const { stageOf, getStudyQueue } = context.TibetanExtension.wordList;
+  const reviewCard = (days, dueOffset) => ({ ...card, scheduled_days: days, due: now + dueOffset });
+  const word = (id, review, extra = {}) => ({ headword: `w${id}`, savedAt: now - id * MINUTE, review, ...extra });
+  expectations.push(["unstudied words are 'new'", stageOf(word(1, fresh)) === "new"]);
+  expectations.push(["learning-step words are 'learning'", stageOf(word(1, learning)) === "learning"]);
+  expectations.push(["short review intervals are 'reviewing'", stageOf(word(1, reviewCard(10, DAY))) === "reviewing"]);
+  expectations.push(["intervals of 21+ days are 'mastered'", stageOf(word(1, reviewCard(21, DAY))) === "mastered"]);
+
+  const savedOnly = Array.from({ length: 30 }, (_, i) => word(i, fresh));
+  const firstDay = getStudyQueue(savedOnly, { newWordsPerDay: 10 }, now);
+  expectations.push([
+    "new words are introduced up to the daily allowance, oldest saved first",
+    firstDay.newWords.length === 10 && firstDay.newWords[0].headword === "w29" && firstDay.limitReason === "daily" && firstDay.waiting === 30
+  ]);
+  const introduced = savedOnly.map((w, i) => (i < 4 ? { ...w, review: learning, firstReviewedAt: now } : w));
+  expectations.push([
+    "words started today use up the allowance",
+    getStudyQueue(introduced, { newWordsPerDay: 10 }, now).newWords.length === 6
+  ]);
+  const backlog = [...Array.from({ length: 100 }, (_, i) => word(100 + i, reviewCard(5, -DAY))), ...savedOnly];
+  const paused = getStudyQueue(backlog, { newWordsPerDay: 10 }, now);
+  expectations.push([
+    "a review backlog pauses new words but keeps reviews",
+    paused.newWords.length === 0 && paused.limitReason === "backlog" && paused.reviews.length === 100
+  ]);
+  const busy = [...Array.from({ length: 150 }, (_, i) => word(300 + i, reviewCard(5, DAY))), ...savedOnly];
+  expectations.push([
+    "too many words in progress pauses new words",
+    getStudyQueue(busy, { newWordsPerDay: 10 }, now).limitReason === "active"
+  ]);
+  const mastered = [...Array.from({ length: 500 }, (_, i) => word(600 + i, reviewCard(40, DAY))), ...savedOnly];
+  expectations.push([
+    "mastered words never block new ones (no cap on total words)",
+    getStudyQueue(mastered, { newWordsPerDay: 10 }, now).newWords.length === 10
+  ]);
+
   expectations
     .filter(([, passed]) => !passed)
-    .forEach(([name]) => errors.push(`wordList.schedule: expected ${name}`));
+    .forEach(([name]) => errors.push(`wordList: expected ${name}`));
 }
 
 if (errors.length) {

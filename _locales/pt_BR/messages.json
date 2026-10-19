@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Voltar às minhas palavras",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Todas",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Novas",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Aprendendo",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Revisando",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Dominadas",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Configurações de estudo",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Palavras novas por dia",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Revisões diárias estimadas a longo prazo:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Memória-alvo",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — menos revisões",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — recomendado",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — mais revisões",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "As palavras salvas esperam em Novas até haver espaço, então você pode salvar quantas quiser. Palavras dominadas liberam espaço.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "Em andamento:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Você começou as palavras novas de hoje. Mais começam amanhã; o restante espera em Novas.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "As palavras novas estão pausadas até você colocar as revisões em dia.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "As palavras novas estão pausadas enquanto muitas ainda estão em andamento. Dominar palavras libera espaço.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Wróć do moich słów",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Wszystkie",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nowe",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "W nauce",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "W powtórkach",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Opanowane",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Ustawienia nauki",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nowe słowa dziennie",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Szacowane powtórki dziennie po ustabilizowaniu:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Docelowa pamięć",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — mniej powtórek",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — zalecane",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — więcej powtórek",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Zapisane słowa czekają w Nowych, aż będzie miejsce, więc możesz zapisać ich dowolnie wiele. Opanowane słowa zwalniają miejsce.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "W toku:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Dzisiejsze nowe słowa zostały rozpoczęte. Jutro zaczną się kolejne; reszta czeka w Nowych.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Nowe słowa są wstrzymane, dopóki nie nadrobisz powtórek.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Nowe słowa są wstrzymane, póki wiele słów jest w toku. Opanowanie słów zwalnia miejsce.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

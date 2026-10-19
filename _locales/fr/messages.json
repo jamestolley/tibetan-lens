@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Retour à mes mots",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Tous",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nouveaux",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "En apprentissage",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "En révision",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Maîtrisés",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Réglages d'étude",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nouveaux mots par jour",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Révisions quotidiennes estimées à terme :",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Mémoire visée",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85 % — moins de révisions",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90 % — recommandé",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95 % — plus de révisions",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Les mots enregistrés attendent dans « Nouveaux » qu'il y ait de la place : vous pouvez donc en enregistrer autant que vous voulez. Les mots maîtrisés libèrent de la place.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "En cours :",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Vous avez commencé les nouveaux mots du jour. D'autres commenceront demain ; les autres attendent dans « Nouveaux ».",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Les nouveaux mots sont en pause jusqu'à ce que vous ayez rattrapé vos révisions.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Les nouveaux mots sont en pause tant que beaucoup de mots sont en cours. Maîtriser des mots libère de la place.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

@@ -33,6 +33,16 @@
       merged.posColorTheme = defaults.posColorTheme;
     }
 
+    const newWordsPerDay = Math.round(Number(merged.newWordsPerDay));
+    merged.newWordsPerDay = Number.isFinite(newWordsPerDay)
+      ? Math.min(50, Math.max(1, newWordsPerDay))
+      : defaults.newWordsPerDay;
+
+    if (![0.85, 0.9, 0.95].includes(Number(merged.targetRetention))) {
+      merged.targetRetention = defaults.targetRetention;
+    }
+    merged.targetRetention = Number(merged.targetRetention);
+
     return merged;
   }
 

@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "Back to my words",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "All",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "New",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Learning",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Reviewing",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Mastered",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Study settings",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "New words per day",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Estimated daily reviews once settled:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Target memory",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — fewer reviews",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — recommended",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — more reviews",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Saved words wait in New until there's room, so you can save as many as you like. Mastered words free up room.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "In progress:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "You've started today's new words. More start tomorrow; the rest wait in New.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "New words are paused until you catch up on your reviews.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "New words are paused while many words are still in progress. Mastering words frees up room.",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

@@ -8,9 +8,21 @@
   const IN_SESSION_WINDOW = 20 * MINUTE;
 
   const ui = {};
+  const STAGE_KEYS = {
+    new: "stageNew",
+    learning: "stageLearning",
+    reviewing: "stageReviewing",
+    mastered: "stageMastered"
+  };
+  // Rough steady-state reviews per day for each new word per day, by target
+  // retention (higher targets mean shorter intervals and more reviews).
+  const WORKLOAD_FACTOR = { 0.85: 5, 0.9: 7, 0.95: 12 };
+
   const state = {
     words: [],
-    // Active flashcard session: { practice, queue, total, done, current, revealed }
+    settings: null,
+    stage: "all",
+    // Active flashcard session: { practice, queue, total, done, current, revealed, preview }
     review: null
   };
 
@@ -18,6 +30,12 @@
     ui.filter = document.getElementById("wordsFilter");
     ui.sort = document.getElementById("wordsSort");
     ui.exportButton = document.getElementById("wordsExport");
+    ui.stageButtons = [...document.querySelectorAll("#stageFilter [data-stage]")];
+    ui.studyNote = document.getElementById("studyNote");
+    ui.newWordsPerDay = document.getElementById("newWordsPerDay");
+    ui.targetRetention = document.getElementById("targetRetention");
+    ui.workloadValue = document.getElementById("workloadValue");
+    ui.activeValue = document.getElementById("activeValue");
     ui.count = document.getElementById("wordsCountValue");
     ui.status = document.getElementById("wordsStatus");
     ui.list = document.getElementById("wordsList");
@@ -78,10 +96,6 @@
     return new Intl.NumberFormat(uiLanguage(), { style: "unit", unit, unitDisplay: "short" }).format(value);
   }
 
-  function isDue(word, now = Date.now()) {
-    return (word.review?.due ?? 0) <= now;
-  }
-
   function dictionaryUrl(headword) {
     return `dictionary.html?q=${encodeURIComponent(headword)}`;
   }
@@ -109,21 +123,26 @@
 
   function renderMeta(word) {
     const meta = createElement("p", "word-meta");
+    const stage = extension.wordList.stageOf(word);
+    meta.appendChild(createElement("span", `word-stage is-${stage}`, extension.i18n.getMessage(STAGE_KEYS[stage])));
     meta.appendChild(
       createElement("span", "", `${extension.i18n.getMessage("wordsSavedOn")} ${formatDate(word.savedAt)}`)
     );
 
-    const due = word.review?.due ?? 0;
-    const isDue = due <= Date.now();
-    meta.appendChild(
-      createElement(
-        "span",
-        isDue ? "is-due" : "",
-        `${extension.i18n.getMessage("wordsNextReview")} ${
-          isDue ? extension.i18n.getMessage("wordsDueNow") : formatDate(due)
-        }`
-      )
-    );
+    // New words have no review date yet; they wait for room in the daily allowance.
+    if (stage !== "new") {
+      const due = word.review?.due ?? 0;
+      const isDue = due <= Date.now();
+      meta.appendChild(
+        createElement(
+          "span",
+          isDue ? "is-due" : "",
+          `${extension.i18n.getMessage("wordsNextReview")} ${
+            isDue ? extension.i18n.getMessage("wordsDueNow") : formatDueDate(due)
+          }`
+        )
+      );
+    }
 
     if (word.source?.url) {
       const from = createElement("span", "", `${extension.i18n.getMessage("wordsFrom")} `);
@@ -173,18 +192,51 @@
     return card;
   }
 
+  function studyQueue() {
+    return extension.wordList.getStudyQueue(state.words, state.settings);
+  }
+
+  function renderStageFilter() {
+    const counts = { all: state.words.length, new: 0, learning: 0, reviewing: 0, mastered: 0 };
+    state.words.forEach((word) => {
+      counts[extension.wordList.stageOf(word)] += 1;
+    });
+    ui.stageButtons.forEach((button) => {
+      button.querySelector(".stage-count").textContent = String(counts[button.dataset.stage]);
+      button.setAttribute("aria-pressed", String(button.dataset.stage === state.stage));
+    });
+  }
+
+  function renderStudyStatus(queue) {
+    const count = queue.reviews.length + queue.newWords.length;
+    ui.startReview.hidden = !state.words.length;
+    ui.startReview.textContent = count
+      ? `${extension.i18n.getMessage("wordsReview")} (${count})`
+      : extension.i18n.getMessage("wordsPractice");
+
+    const notes = { daily: "limitDaily", backlog: "limitBacklog", active: "limitActive" };
+    const showNote = queue.limitReason && !queue.newWords.length;
+    ui.studyNote.hidden = !showNote;
+    ui.studyNote.textContent = showNote ? extension.i18n.getMessage(notes[queue.limitReason]) : "";
+
+    const perDay = state.settings.newWordsPerDay;
+    ui.newWordsPerDay.value = String(perDay);
+    ui.targetRetention.value = String(state.settings.targetRetention);
+    ui.workloadValue.textContent = `≈ ${perDay * (WORKLOAD_FACTOR[state.settings.targetRetention] || 7)}`;
+    ui.activeValue.textContent = `${queue.active} / ${queue.activeLimit}`;
+  }
+
   function render() {
     const query = ui.filter.value.trim().toLowerCase();
-    const visible = sortWords(state.words).filter((word) => matchesFilter(word, query));
+    const visible = sortWords(state.words).filter(
+      (word) =>
+        matchesFilter(word, query) && (state.stage === "all" || extension.wordList.stageOf(word) === state.stage)
+    );
 
     ui.count.textContent = String(state.words.length);
     ui.exportButton.disabled = !state.words.length;
-
-    const dueCount = state.words.filter((word) => isDue(word)).length;
-    ui.startReview.hidden = !state.words.length;
-    ui.startReview.textContent = dueCount
-      ? `${extension.i18n.getMessage("wordsReview")} (${dueCount})`
-      : extension.i18n.getMessage("wordsPractice");
+    renderStageFilter();
+    renderStudyStatus(studyQueue());
     ui.list.replaceChildren(...visible.map(renderWord));
 
     if (!state.words.length) {
@@ -243,11 +295,11 @@
     return copy;
   }
 
-  // Review the words that are due, oldest due first. With nothing due, offer
-  // a practice round over every word that leaves the schedule untouched.
+  // Review due words first, then today's new words. With nothing to study,
+  // offer a practice round over every word that leaves the schedule untouched.
   function startReview() {
-    const now = Date.now();
-    const due = state.words.filter((word) => isDue(word, now)).sort((a, b) => a.review.due - b.review.due);
+    const queue = studyQueue();
+    const due = [...queue.reviews, ...queue.newWords];
     const practice = due.length === 0;
     const cards = practice ? shuffle(state.words) : due;
     if (!cards.length) {
@@ -306,7 +358,9 @@
     // Compute every grade's outcome once, so the interval shown on each button
     // is exactly what gets stored (FSRS fuzzes intervals slightly).
     const now = Date.now();
-    session.preview = session.practice ? null : extension.wordList.previewSchedule(word.review, now);
+    session.preview = session.practice
+      ? null
+      : extension.wordList.previewSchedule(word.review, now, { retention: state.settings.targetRetention });
     ui.gradeButtons.forEach((button) => {
       button.querySelector("small").textContent = session.preview
         ? formatInterval(session.preview[button.dataset.grade].due - now)
@@ -393,6 +447,24 @@
     ui.sort.addEventListener("change", render);
     ui.exportButton.addEventListener("click", exportCsv);
     ui.startReview.addEventListener("click", startReview);
+    ui.stageButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        state.stage = button.dataset.stage;
+        render();
+      });
+    });
+    ui.newWordsPerDay.addEventListener("change", () => {
+      extension.storage.setSettings({ newWordsPerDay: Number(ui.newWordsPerDay.value) });
+    });
+    ui.targetRetention.addEventListener("change", () => {
+      extension.storage.setSettings({ targetRetention: Number(ui.targetRetention.value) });
+    });
+    extension.storage.onSettingsChanged((settings) => {
+      state.settings = settings;
+      if (!state.review) {
+        render();
+      }
+    });
     ui.reviewShow.addEventListener("click", revealAnswer);
     ui.gradeButtons.forEach((button) => {
       button.addEventListener("click", () => gradeCard(button.dataset.grade));
@@ -410,6 +482,7 @@
     getControls();
     extension.i18n.localizePage();
     bindEvents();
+    state.settings = await extension.storage.getSettings();
     state.words = await extension.wordList.getAll();
     render();
   }

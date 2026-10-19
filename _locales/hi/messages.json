@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "मेरे शब्दों पर लौटें",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "सभी",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "नए",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "सीख रहे",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "दोहरा रहे",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "महारत",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "अध्ययन सेटिंग",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "प्रतिदिन नए शब्द",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "स्थिर होने पर अनुमानित दैनिक दोहराई:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "लक्ष्य स्मृति",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — कम दोहराई",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — सुझाया गया",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — अधिक दोहराई",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "सहेजे गए शब्द जगह होने तक 'नए' में रहते हैं, इसलिए आप जितने चाहें सहेज सकते हैं। महारत वाले शब्द जगह खाली करते हैं।",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "प्रगति में:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "आज के नए शब्द शुरू हो गए। कल और शुरू होंगे; बाकी 'नए' में इंतज़ार करते हैं।",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "जब तक आप दोहराई पूरी नहीं कर लेते, नए शब्द रुके हुए हैं।",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "कई शब्द प्रगति में हैं, इसलिए नए शब्द रुके हुए हैं। शब्दों में महारत से जगह खाली होती है।",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

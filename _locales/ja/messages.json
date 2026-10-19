@@ -470,5 +470,73 @@
   "reviewBack": {
     "message": "単語帳に戻る",
     "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "すべて",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "新規",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "学習中",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "復習中",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "習得済み",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "学習設定",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "1 日の新しい単語数",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "安定後の 1 日の復習数（目安）：",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "目標記憶率",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — 復習が少なめ",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — おすすめ",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — 復習が多め",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "保存した単語は空きができるまで「新規」で待つので、いくつでも保存できます。習得した単語が空きを作ります。",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "進行中：",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "今日の新しい単語を始めました。明日また始まります。残りは「新規」で待機中です。",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "復習が追いつくまで新しい単語は一時停止中です。",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "進行中の単語が多いため、新しい単語は一時停止中です。単語を習得すると空きができます。",
+    "description": "Shown when new words pause because many words are still in progress"
   }
 }

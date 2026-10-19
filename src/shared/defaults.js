@@ -13,7 +13,9 @@
       tokenizerMode: "botok-general",
       colorByPos: false,
       posColorTheme: "vivid",
-      linkClickPrompt: true
+      linkClickPrompt: true,
+      newWordsPerDay: 10,
+      targetRetention: 0.9
     }
   };
 })();
