@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "वेब पेजों पर तिब्बती पाठ को शब्दों में बाँटता है, रिक्त स्थान जोड़ता है और शब्दकोश पॉपअप दिखाता है।",
+    "message": "किसी भी वेब पेज पर तिब्बती पढ़ें: शब्दों में अंतर, तुरंत परिभाषाएँ, शब्दकोश, और अंतराल दोहराव के साथ सहेजे शब्द।",
     "description": "Extension description"
   },
   "settingsTitle": {

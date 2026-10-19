@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "在網頁上為藏文斷詞、插入空格，並顯示字典彈出視窗。",
+    "message": "在任何網頁上閱讀藏文:自動分詞、即時釋義、詞典,以及具間隔重複複習的生詞本。",
     "description": "Extension description"
   },
   "settingsTitle": {

@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "웹페이지의 티베트어 텍스트를 단어로 나누고, 띄어쓰기를 넣고, 사전 팝업을 표시합니다.",
+    "message": "모든 웹 페이지에서 티베트어 읽기: 단어 띄어쓰기, 즉시 뜻 보기, 사전, 간격 반복 복습이 되는 단어장.",
     "description": "Extension description"
   },
   "settingsTitle": {

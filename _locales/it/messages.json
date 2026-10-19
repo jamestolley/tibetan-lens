@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "Segmenta il testo tibetano nelle pagine web, inserisce spazi e mostra finestre di dizionario.",
+    "message": "Leggi il tibetano su ogni pagina web: parole spaziate, definizioni immediate, dizionario e parole salvate con ripasso dilazionato.",
     "description": "Extension description"
   },
   "settingsTitle": {

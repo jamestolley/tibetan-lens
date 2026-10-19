@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "Segmenteert Tibetaanse tekst op webpagina's, voegt spaties in en toont woordenboekpop-ups.",
+    "message": "Lees Tibetaans op elke webpagina: woordafstand, directe definities, een woordenboek en bewaarde woorden met gespreide herhaling.",
     "description": "Extension description"
   },
   "settingsTitle": {

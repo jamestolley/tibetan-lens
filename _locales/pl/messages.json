@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "Dzieli tekst tybetański na stronach internetowych na słowa, wstawia odstępy i wyświetla okienka słownika.",
+    "message": "Czytaj po tybetańsku na każdej stronie: odstępy między słowami, natychmiastowe definicje, słownik i zapisane słowa z powtórkami.",
     "description": "Extension description"
   },
   "settingsTitle": {

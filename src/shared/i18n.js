@@ -5,7 +5,7 @@
   // (for example, during tests or in content contexts without _locales loaded).
   const FALLBACK_MESSAGES = {
     extensionName: "Teahouse Tibetan",
-    extensionDescription: "Segments Tibetan text on web pages, inserts spacing, and shows dictionary popups.",
+    extensionDescription: "Read Tibetan on any web page: word spacing, instant definitions, a dictionary, and saved words with spaced-repetition review.",
     settingsTitle: "Teahouse Tibetan",
     settingsIntro: "Control how Tibetan text is segmented, displayed, and translated.",
     popupTitle: "Teahouse Tibetan",

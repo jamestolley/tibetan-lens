@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "ウェブページ上のチベット語テキストを単語に分割し、スペースを挿入して、辞書ポップアップを表示します。",
+    "message": "どのウェブページでもチベット語を読める:単語の分かち書き、即時の定義表示、辞書、間隔反復で復習できる単語帳。",
     "description": "Extension description"
   },
   "settingsTitle": {

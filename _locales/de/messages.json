@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "Segmentiert tibetischen Text auf Webseiten, fügt Leerzeichen ein und zeigt Wörterbuch-Popups an.",
+    "message": "Tibetisch auf jeder Webseite lesen: Wortabstände, sofortige Definitionen, ein Wörterbuch und gespeicherte Wörter mit Wiederholung.",
     "description": "Extension description"
   },
   "settingsTitle": {

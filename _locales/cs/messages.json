@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "Rozděluje tibetský text na webových stránkách na slova, vkládá mezery a zobrazuje slovníková okna.",
+    "message": "Čtěte tibetštinu na každém webu: mezery mezi slovy, okamžité definice, slovník a uložená slova s opakováním v intervalech.",
     "description": "Extension description"
   },
   "settingsTitle": {

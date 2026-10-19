@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "Разбивает тибетский текст на веб-страницах на слова, вставляет пробелы и показывает словарные подсказки.",
+    "message": "Читайте по-тибетски на любом сайте: пробелы между словами, мгновенные определения, словарь и сохранённые слова с повторением.",
     "description": "Extension description"
   },
   "settingsTitle": {

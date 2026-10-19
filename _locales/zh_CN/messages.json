@@ -8,7 +8,7 @@
     "description": "Full extension name shown in the Chrome Web Store and extensions page"
   },
   "extensionDescription": {
-    "message": "在网页上为藏文分词、插入空格，并显示词典弹窗。",
+    "message": "在任何网页上阅读藏文:自动分词、即时释义、词典,以及带间隔重复复习的生词本。",
     "description": "Extension description"
   },
   "settingsTitle": {

@@ -33,6 +33,7 @@
 
 - `site/` holds two static brochure sites: `teahouselanguages.com/` (umbrella) and `tibetan.teahouselanguages.com/` (one subdomain per language). There's no build step. Setup for hosting (Cloudflare Pages), email (Cloudflare Email Routing) and the Google Forms is in `site/README.md`.
 - `style.css` and `icon.png` are duplicated in each site folder; keep the copies identical.
+- Store listing copy, permission justifications and privacy answers live in `docs/chrome-web-store-listing.md`; keep it in step with features and permissions.
 - The Chrome Web Store privacy policy URL is `https://tibetan.teahouselanguages.com/privacy.html`; update that page when the extension's data handling changes.
 
 ## Recent changes
