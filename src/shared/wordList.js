@@ -6,46 +6,120 @@
   // holding a map of headword -> record.
   const STORAGE_KEY = "savedWords";
   const GLOSS_SNAPSHOT_LENGTH = 160;
-  const MINUTE = 60 * 1000;
-  const DAY = 24 * 60 * MINUTE;
+  const DAY = 24 * 60 * 60 * 1000;
 
-  // Review grades, in button order.
+  // Review grades, in button order, and their FSRS ratings (Again=1 … Easy=4).
   const GRADES = { again: 0, hard: 1, good: 2, easy: 3 };
+  const FSRS_RATINGS = [1, 2, 3, 4];
+  // FSRS card states.
+  const STATES = { new: 0, learning: 1, review: 2, relearning: 3 };
 
-  function newReviewState(now) {
-    return { due: now, interval: 0, ease: 2.5, reps: 0, lapses: 0, last: null };
+  const DEFAULT_RETENTION = 0.9;
+  const MAXIMUM_INTERVAL_DAYS = 3650;
+
+  const schedulers = new Map();
+
+  // Scheduling uses ts-fsrs (src/shared/ts-fsrs.js), loaded only by pages
+  // that review cards; saving words works without it.
+  function getScheduler({ retention = DEFAULT_RETENTION, fuzz = true } = {}) {
+    const FSRS = globalThis.FSRS;
+    if (!FSRS) {
+      throw new Error("ts-fsrs is not loaded on this page.");
+    }
+    const key = `${retention}|${fuzz}`;
+    if (!schedulers.has(key)) {
+      schedulers.set(
+        key,
+        FSRS.fsrs(
+          FSRS.generatorParameters({
+            request_retention: retention,
+            maximum_interval: MAXIMUM_INTERVAL_DAYS,
+            enable_fuzz: fuzz
+          })
+        )
+      );
+    }
+    return schedulers.get(key);
   }
 
-  // A small SM-2 variant. `interval` is in days; "again" re-queues the card
-  // ten minutes out and restarts its streak.
-  function schedule(review, grade, now = Date.now()) {
-    const current = { ...newReviewState(now), ...review };
-    const next = { ...current, last: now };
+  function newReviewState(now) {
+    return {
+      due: now,
+      stability: 0,
+      difficulty: 0,
+      elapsed_days: 0,
+      scheduled_days: 0,
+      reps: 0,
+      lapses: 0,
+      learning_steps: 0,
+      state: STATES.new,
+      last_review: null
+    };
+  }
 
-    if (grade === GRADES.again) {
-      next.reps = 0;
-      next.lapses = current.lapses + 1;
-      next.ease = Math.max(1.3, current.ease - 0.2);
-      next.interval = 0;
-      next.due = now + 10 * MINUTE;
-      return next;
+  // Records saved before FSRS used an SM-2 variant ({ due, interval, ease,
+  // reps, lapses, last }). Convert them, keeping each word's due date and
+  // treating its interval as memory stability.
+  function migrateReview(review, now = Date.now()) {
+    if (!review) {
+      return newReviewState(now);
+    }
+    if ("stability" in review) {
+      return { ...newReviewState(now), ...review };
     }
 
-    let interval;
-    if (grade === GRADES.hard) {
-      interval = current.reps === 0 ? 1 : Math.max(1, current.interval * 1.2);
-      next.ease = Math.max(1.3, current.ease - 0.15);
-    } else if (grade === GRADES.easy) {
-      interval = current.reps === 0 ? 4 : Math.max(current.interval + 1, current.interval * current.ease * 1.3);
-      next.ease = current.ease + 0.15;
-    } else {
-      interval = current.reps === 0 ? 1 : current.reps === 1 ? 3 : Math.max(current.interval + 1, current.interval * current.ease);
-    }
+    const reviewed = review.reps > 0;
+    const interval = Math.max(0, review.interval || 0);
+    const ease = review.ease || 2.5;
+    return {
+      ...newReviewState(now),
+      due: review.due ?? now,
+      stability: reviewed ? Math.max(interval, 0.5) : 0,
+      difficulty: reviewed ? Math.min(10, Math.max(1, 5 - (ease - 2.5) * 4)) : 0,
+      scheduled_days: interval,
+      reps: review.reps || 0,
+      lapses: review.lapses || 0,
+      state: reviewed ? STATES.review : STATES.new,
+      last_review: reviewed ? review.last ?? (review.due ?? now) - interval * DAY : null
+    };
+  }
 
-    next.reps = current.reps + 1;
-    next.interval = Math.round(interval);
-    next.due = now + next.interval * DAY;
-    return next;
+  function toCard(review, now) {
+    const state = migrateReview(review, now);
+    return {
+      ...state,
+      due: new Date(state.due),
+      last_review: state.last_review ? new Date(state.last_review) : undefined
+    };
+  }
+
+  function fromCard(card) {
+    return {
+      due: card.due.getTime(),
+      stability: card.stability,
+      difficulty: card.difficulty,
+      elapsed_days: card.elapsed_days,
+      scheduled_days: card.scheduled_days,
+      reps: card.reps,
+      lapses: card.lapses,
+      learning_steps: card.learning_steps,
+      state: card.state,
+      last_review: card.last_review ? card.last_review.getTime() : null
+    };
+  }
+
+  // Next review state after answering with `grade`. options: { retention, fuzz }.
+  function schedule(review, grade, now = Date.now(), options) {
+    const result = getScheduler(options).next(toCard(review, now), new Date(now), FSRS_RATINGS[grade]);
+    return fromCard(result.card);
+  }
+
+  // The review state each grade would produce, as { again, hard, good, easy }.
+  function previewSchedule(review, now = Date.now(), options) {
+    const outcomes = getScheduler(options).repeat(toCard(review, now), new Date(now));
+    return Object.fromEntries(
+      Object.entries(GRADES).map(([name, grade]) => [name, fromCard(outcomes[FSRS_RATINGS[grade]].card)])
+    );
   }
 
   function normalizeHeadword(headword) {
@@ -69,7 +143,10 @@
 
   extension.wordList = {
     GRADES,
+    STATES,
     schedule,
+    previewSchedule,
+    migrateReview,
     snapshotGloss,
 
     // All saved words, newest first.
@@ -133,13 +210,25 @@
       return words.filter((word) => (word.review?.due ?? 0) <= now).sort((a, b) => a.review.due - b.review.due);
     },
 
-    async recordReview(headword, grade, now = Date.now()) {
+    // Stores an already-computed review state (e.g. one shown in a preview).
+    async setReview(headword, review) {
       const words = await readAll();
       const word = words[normalizeHeadword(headword)];
       if (!word) {
         return null;
       }
-      word.review = schedule(word.review, grade, now);
+      word.review = review;
+      await writeAll(words);
+      return word;
+    },
+
+    async recordReview(headword, grade, now = Date.now(), options) {
+      const words = await readAll();
+      const word = words[normalizeHeadword(headword)];
+      if (!word) {
+        return null;
+      }
+      word.review = schedule(word.review, grade, now, options);
       await writeAll(words);
       return word;
     },

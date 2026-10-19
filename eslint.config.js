@@ -4,7 +4,7 @@ const globals = require("globals");
 module.exports = [
   {
     // Vendored third-party bundles and generated output.
-    ignores: ["dist/**", "node_modules/**", "src/shared/jsewts.js", "src/shared/ewts-converter.js"]
+    ignores: ["dist/**", "node_modules/**", "src/shared/jsewts.js", "src/shared/ewts-converter.js", "src/shared/ts-fsrs.js"]
   },
   js.configs.recommended,
   {

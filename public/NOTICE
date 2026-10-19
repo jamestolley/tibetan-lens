@@ -18,6 +18,23 @@ Third-party data and assets included in this extension:
   Attribution-ShareAlike 3.0 Unported License (CC BY-SA 3.0).
   https://glossaries.dila.edu.tw/data/hopkins.dila.pdf
 
+- Part-of-speech lexicon derived from the Annotated Corpus of Classical
+  Tibetan (ACTib II), via Esukhia's bo-pos resource collection, used under
+  the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+  https://doi.org/10.5281/zenodo.822537
+  https://github.com/Esukhia/bo-pos
+
+- Part-of-speech lexicon derived from the SOAS POS-tagged corpus of
+  Classical Tibetan (SOAS, University of London; AHRC grant AH/J00152X/1),
+  via Esukhia's bo-pos resource collection, used under the Creative
+  Commons Attribution 4.0 International License (CC BY 4.0).
+  https://doi.org/10.5281/zenodo.574878
+  https://github.com/Esukhia/bo-pos
+
+- Spaced-repetition scheduling uses ts-fsrs (src/shared/ts-fsrs.js) by
+  Open Spaced Repetition, used under the MIT License.
+  https://github.com/open-spaced-repetition/ts-fsrs
+
 - The extension icon uses the Tibetan letter "ཨ" rendered in the Jomolhari
   font, which is licensed under the SIL Open Font License 1.1.
   https://github.com/google/fonts/tree/main/ofl/jomolhari

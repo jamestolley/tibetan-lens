@@ -176,36 +176,61 @@ if (fs.existsSync(manifestPath)) {
   errors.push("Missing manifest.json");
 }
 
-// Spaced-repetition scheduler in src/shared/wordList.js.
+// Spaced-repetition scheduler in src/shared/wordList.js (FSRS via ts-fsrs).
 {
   const vm = require("vm");
-  const context = { console };
+  const context = { console, Date, Math };
   context.globalThis = context;
+  context.self = context;
   vm.createContext(context);
-  vm.runInContext(fs.readFileSync(path.join(root, "src/shared/wordList.js"), "utf8"), context);
-  const { schedule, GRADES } = context.TibetanExtension.wordList;
-  const DAY = 24 * 60 * 60 * 1000;
+  for (const file of ["src/shared/ts-fsrs.js", "src/shared/wordList.js"]) {
+    vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), context);
+  }
+  const { schedule, previewSchedule, migrateReview, GRADES, STATES } = context.TibetanExtension.wordList;
+  const MINUTE = 60 * 1000;
+  const DAY = 24 * 60 * MINUTE;
   const now = Date.UTC(2026, 0, 1);
-  const fresh = { due: now, interval: 0, ease: 2.5, reps: 0, lapses: 0, last: null };
+  const exact = { fuzz: false };
+  const fresh = migrateReview(null, now);
 
   const expectations = [];
-  const good1 = schedule(fresh, GRADES.good, now);
-  expectations.push(["first 'good' waits 1 day", good1.interval === 1 && good1.due === now + DAY]);
-  const good2 = schedule(good1, GRADES.good, good1.due);
-  expectations.push(["second 'good' waits 3 days", good2.interval === 3]);
-  const good3 = schedule(good2, GRADES.good, good2.due);
-  expectations.push(["third 'good' grows by ease (3 × 2.5 → 8 days)", good3.interval === 8]);
-  const again = schedule(good3, GRADES.again, good3.due);
-  expectations.push([
-    "'again' resets the streak and returns in 10 minutes",
-    again.reps === 0 && again.lapses === 1 && again.due === good3.due + 10 * 60 * 1000 && again.ease < good3.ease
-  ]);
-  expectations.push(["first 'easy' waits 4 days", schedule(fresh, GRADES.easy, now).interval === 4]);
-  let hardEase = fresh;
-  for (let i = 0; i < 20; i += 1) {
-    hardEase = schedule(hardEase, GRADES.hard, now);
+  const learning = schedule(fresh, GRADES.good, now, exact);
+  expectations.push(["a new card graded 'good' enters a short learning step", learning.state === STATES.learning && learning.due - now <= 10 * MINUTE]);
+
+  let card = learning;
+  let at = learning.due;
+  const intervals = [];
+  for (let i = 0; i < 4; i += 1) {
+    card = schedule(card, GRADES.good, at, exact);
+    intervals.push(card.scheduled_days);
+    at = card.due;
   }
-  expectations.push(["ease never drops below 1.3", hardEase.ease >= 1.3]);
+  expectations.push(["repeated 'good' answers graduate the card to review", card.state === STATES.review]);
+  expectations.push(["review intervals keep growing", intervals.every((days, i) => i === 0 || days > intervals[i - 1])]);
+
+  const lapse = schedule(card, GRADES.again, at, exact);
+  expectations.push([
+    "'again' on a review card counts a lapse and relearns within minutes",
+    lapse.lapses === 1 && lapse.state === STATES.relearning && lapse.due - at < 30 * MINUTE
+  ]);
+
+  const preview = previewSchedule(card, at, exact);
+  expectations.push([
+    "preview orders intervals again < hard < good < easy",
+    preview.again.due < preview.hard.due && preview.hard.due < preview.good.due && preview.good.due < preview.easy.due
+  ]);
+  expectations.push(["preview matches schedule()", preview.good.due === schedule(card, GRADES.good, at, exact).due]);
+
+  const strict = schedule(card, GRADES.good, at, { fuzz: false, retention: 0.95 });
+  expectations.push(["a higher target retention gives shorter intervals", strict.scheduled_days < preview.good.scheduled_days]);
+
+  const legacy = migrateReview({ due: now + 5 * DAY, interval: 8, ease: 2.5, reps: 3, lapses: 1, last: now - 3 * DAY }, now);
+  expectations.push([
+    "SM-2 records migrate to FSRS review state, keeping due date and history",
+    legacy.state === STATES.review && legacy.due === now + 5 * DAY && legacy.stability === 8 && legacy.lapses === 1 && legacy.reps === 3
+  ]);
+  const legacyNext = schedule(legacy, GRADES.good, legacy.due, exact);
+  expectations.push(["migrated records keep scheduling forward", legacyNext.due > legacy.due && legacyNext.scheduled_days >= 8]);
 
   expectations
     .filter(([, passed]) => !passed)

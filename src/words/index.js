@@ -4,6 +4,8 @@
   const MINUTE = 60 * 1000;
   const DAY = 24 * 60 * MINUTE;
   const GRADE_KEYS = { 1: "again", 2: "hard", 3: "good", 4: "easy" };
+  // Cards whose next review falls within this window return later in the same session.
+  const IN_SESSION_WINDOW = 20 * MINUTE;
 
   const ui = {};
   const state = {
@@ -301,12 +303,14 @@
     ui.reviewShow.hidden = true;
     ui.reviewGrades.hidden = false;
 
+    // Compute every grade's outcome once, so the interval shown on each button
+    // is exactly what gets stored (FSRS fuzzes intervals slightly).
     const now = Date.now();
-    const { schedule, GRADES } = extension.wordList;
+    session.preview = session.practice ? null : extension.wordList.previewSchedule(word.review, now);
     ui.gradeButtons.forEach((button) => {
-      button.querySelector("small").textContent = session.practice
-        ? ""
-        : formatInterval(schedule(word.review, GRADES[button.dataset.grade], now).due - now);
+      button.querySelector("small").textContent = session.preview
+        ? formatInterval(session.preview[button.dataset.grade].due - now)
+        : "";
     });
     // Park focus on the card so the Space keyup that revealed the answer
     // doesn't also press whichever grade button would have taken focus.
@@ -319,18 +323,21 @@
       return;
     }
 
-    const grade = extension.wordList.GRADES[gradeName];
     const word = session.current;
     session.revealed = false;
-    if (!session.practice) {
-      const updated = await extension.wordList.recordReview(word.headword, grade);
+    let comesBackSoon = gradeName === "again";
+    if (session.preview) {
+      const next = session.preview[gradeName];
+      const updated = await extension.wordList.setReview(word.headword, next);
       const index = state.words.findIndex((item) => item.headword === word.headword);
       if (updated && index >= 0) {
         state.words[index] = updated;
       }
+      // FSRS learning steps are minutes long; keep those cards in this session.
+      comesBackSoon = next.due - Date.now() < IN_SESSION_WINDOW;
     }
 
-    if (grade === extension.wordList.GRADES.again) {
+    if (comesBackSoon) {
       session.queue.push(word.headword);
     } else {
       session.done += 1;
