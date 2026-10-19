@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "संस्करण",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "इस साइट पर रोकें",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "रोकी गई साइटें",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "इन साइटों पर Teahouse बंद रहता है। किसी साइट को रोकने के लिए, उस पर रहते हुए एक्सटेंशन आइकन पर क्लिक करें।",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "कोई साइट रोकी नहीं गई है।",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "फिर से चालू करें",
+    "description": "Button: turn the extension back on for this site"
   }
 }

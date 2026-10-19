@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "版本",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "在此网站暂停",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "已暂停的网站",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Teahouse 在这些网站上保持关闭。要暂停某个网站,请在该网站上点击扩展图标。",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "没有已暂停的网站。",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "恢复",
+    "description": "Button: turn the extension back on for this site"
   }
 }

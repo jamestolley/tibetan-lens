@@ -247,7 +247,7 @@
     extension.tooltip.hideTooltip();
     resetStats();
 
-    if (!state.settings || !state.settings.extensionEnabled) {
+    if (!activeOnThisPage()) {
       return state.stats;
     }
 
@@ -297,6 +297,11 @@
     }
   }
 
+  // Off everywhere when disabled in Options, or on sites paused from the popup.
+  function activeOnThisPage() {
+    return Boolean(state.settings?.extensionEnabled) && !state.settings.pausedSites?.includes(location.hostname);
+  }
+
   function pageHasTibetan() {
     const root = document.body || document.documentElement;
     return Boolean(root) && extension.tibetan.containsTibetan(root.textContent || "");
@@ -318,7 +323,7 @@
 
       // Most pages have no Tibetan: skip the dictionary download there. The
       // mutation observer calls back here if Tibetan text appears later.
-      if (!state.settings.extensionEnabled || !pageHasTibetan()) {
+      if (!activeOnThisPage() || !pageHasTibetan()) {
         return scanDocument();
       }
 
@@ -663,7 +668,7 @@
         return;
       }
 
-      if (state.isRendering || !state.settings?.extensionEnabled) {
+      if (state.isRendering || !activeOnThisPage()) {
         return;
       }
 

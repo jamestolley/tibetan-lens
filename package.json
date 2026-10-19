@@ -1,6 +1,6 @@
 {
   "name": "teahouse-tibetan",
-  "version": "0.50.42",
+  "version": "0.50.43",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "start": "extension start --no-telemetry",
     "preview": "extension preview --no-telemetry",
     "publish:init": "publish-extension init",
-    "publish:stores": "publish-extension --chrome-zip dist/chrome/teahouse-tibetan-0.50.42.zip --edge-zip dist/edge/teahouse-tibetan-0.50.42.zip --firefox-zip dist/firefox/teahouse-tibetan-0.50.42.zip"
+    "publish:stores": "publish-extension --chrome-zip dist/chrome/teahouse-tibetan-0.50.43.zip --edge-zip dist/edge/teahouse-tibetan-0.50.43.zip --firefox-zip dist/firefox/teahouse-tibetan-0.50.43.zip"
   },
   "devDependencies": {
     "@eslint/js": "9.39.5",

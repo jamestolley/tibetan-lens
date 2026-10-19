@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "バージョン",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "このサイトで一時停止",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "一時停止中のサイト",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "これらのサイトでは Teahouse はオフのままです。サイトを一時停止するには、そのサイトを開いた状態で拡張機能のアイコンをクリックします。",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "一時停止中のサイトはありません。",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "再開",
+    "description": "Button: turn the extension back on for this site"
   }
 }

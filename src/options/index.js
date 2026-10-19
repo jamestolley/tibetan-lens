@@ -18,6 +18,7 @@
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
+    ui.pausedSitesList = document.getElementById("pausedSitesList");
   }
 
   function renderDictionaryList(settings) {
@@ -54,6 +55,30 @@
       label.appendChild(input);
       ui.dictionaryList.appendChild(label);
     });
+  }
+
+  function renderPausedSites(settings) {
+    const items = settings.pausedSites.map((site) => {
+      const item = document.createElement("li");
+      const name = document.createElement("span");
+      name.textContent = site;
+      const resume = document.createElement("button");
+      resume.type = "button";
+      resume.textContent = extension.i18n.getMessage("resumeSite");
+      resume.addEventListener("click", async () => {
+        const { pausedSites } = await extension.storage.getSettings();
+        await extension.storage.setSettings({ pausedSites: pausedSites.filter((paused) => paused !== site) });
+      });
+      item.append(name, resume);
+      return item;
+    });
+    if (!items.length) {
+      const empty = document.createElement("li");
+      empty.className = "is-empty";
+      empty.textContent = extension.i18n.getMessage("pausedSitesEmpty");
+      items.push(empty);
+    }
+    ui.pausedSitesList.replaceChildren(...items);
   }
 
   function readSettingsFromControls() {
@@ -110,6 +135,7 @@
     ui.highlightKnowledge.checked = settings.highlightKnowledge;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
     renderDictionaryList(settings);
+    renderPausedSites(settings);
   }
 
   function bindEvents() {
@@ -136,6 +162,7 @@
       ui.highlightKnowledge.checked = settings.highlightKnowledge;
       ui.minTibetanFontSize.value = settings.minTibetanFontSize;
       renderDictionaryList(settings);
+      renderPausedSites(settings);
     });
   }
 

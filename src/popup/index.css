@@ -130,6 +130,17 @@ select {
   display: none;
 }
 
+.pause-row[hidden] {
+  display: none;
+}
+
+.pause-host {
+  display: block;
+  color: var(--status);
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
 .popup-footer {
   display: flex;
   justify-content: space-between;

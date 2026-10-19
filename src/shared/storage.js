@@ -1,6 +1,8 @@
 (() => {
   const extension = globalThis.TibetanExtension || (globalThis.TibetanExtension = {});
 
+  const MAX_PAUSED_SITES = 200;
+
   function normalizeSettings(raw) {
     const defaults = extension.defaults.settings;
     const merged = { ...defaults, ...raw };
@@ -42,6 +44,11 @@
       merged.targetRetention = defaults.targetRetention;
     }
     merged.targetRetention = Number(merged.targetRetention);
+
+    // chrome.storage.sync caps each item at 8 KB, so keep the list bounded.
+    merged.pausedSites = Array.isArray(merged.pausedSites)
+      ? [...new Set(merged.pausedSites.filter((site) => typeof site === "string" && site))].slice(-MAX_PAUSED_SITES)
+      : [];
 
     return merged;
   }

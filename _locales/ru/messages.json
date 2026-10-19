@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "Версия",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Приостановить на этом сайте",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Приостановленные сайты",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "На этих сайтах Teahouse остаётся выключенным. Чтобы приостановить сайт, нажмите значок расширения, находясь на нём.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Нет приостановленных сайтов.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Возобновить",
+    "description": "Button: turn the extension back on for this site"
   }
 }

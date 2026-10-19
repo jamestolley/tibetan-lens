@@ -13,6 +13,11 @@
       </header>
 
       <section class="card">
+        <label id="pauseSiteRow" class="toggle-row pause-row" for="pauseSite" hidden>
+          <span><span data-i18n="pauseOnSite">Pause on this site</span> <small id="pauseSiteHost" class="pause-host"></small></span>
+          <input id="pauseSite" type="checkbox" />
+        </label>
+
         <label class="toggle-row" for="insertSpaces">
           <span data-i18n="insertSpaces">Insert spaces between tokens</span>
           <input id="insertSpaces" type="checkbox" />

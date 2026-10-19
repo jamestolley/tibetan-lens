@@ -19,6 +19,9 @@
     ui.openWords = document.getElementById("openWords");
     ui.wordsDueBadge = document.getElementById("wordsDueBadge");
     ui.popupStatus = document.getElementById("popupStatus");
+    ui.pauseSiteRow = document.getElementById("pauseSiteRow");
+    ui.pauseSite = document.getElementById("pauseSite");
+    ui.pauseSiteHost = document.getElementById("pauseSiteHost");
   }
 
   function readSettingsFromControls() {
@@ -82,6 +85,38 @@
     ui.showPhonetic.checked = settings.showPhonetic;
     ui.highlightKnowledge.checked = settings.highlightKnowledge;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
+    await loadPauseState(settings);
+  }
+
+  // The hostname of the active tab, or "" for pages the extension can't run
+  // on (browser pages, the Web Store, extension pages).
+  async function activeSite() {
+    try {
+      const url = new URL((await getActiveTab())?.url || "");
+      return /^https?:$/.test(url.protocol) ? url.hostname : "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  async function loadPauseState(settings) {
+    const site = await activeSite();
+    ui.pauseSiteRow.hidden = !site;
+    ui.pauseSiteHost.textContent = site;
+    ui.pauseSite.checked = Boolean(site) && settings.pausedSites.includes(site);
+  }
+
+  // The content script listens for settings changes, so the page updates itself.
+  async function togglePauseSite() {
+    const site = await activeSite();
+    if (!site) {
+      return;
+    }
+    const { pausedSites } = await extension.storage.getSettings();
+    const next = ui.pauseSite.checked
+      ? [...pausedSites, site]
+      : pausedSites.filter((paused) => paused !== site);
+    await extension.storage.setSettings({ pausedSites: next });
   }
 
   async function saveSettingsAndRefresh() {
@@ -97,6 +132,7 @@
     ui.showPhonetic.addEventListener("change", saveSettingsAndRefresh);
     ui.highlightKnowledge.addEventListener("change", saveSettingsAndRefresh);
     ui.minTibetanFontSize.addEventListener("change", saveSettingsAndRefresh);
+    ui.pauseSite.addEventListener("change", togglePauseSite);
 
     ui.refreshPage.addEventListener("click", async () => {
       await sendPageMessage(extension.constants.messages.refreshAnnotations);

@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "Verze",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Pozastavit na tomto webu",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Pozastavené weby",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Na těchto webech zůstane Teahouse vypnutý. Web pozastavíte kliknutím na ikonu rozšíření, když jste na něm.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Žádné pozastavené weby.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Obnovit",
+    "description": "Button: turn the extension back on for this site"
   }
 }

@@ -16,7 +16,9 @@
       linkClickPrompt: true,
       highlightKnowledge: true,
       newWordsPerDay: 10,
-      targetRetention: 0.9
+      targetRetention: 0.9,
+      // Hostnames where the user paused the extension from the popup.
+      pausedSites: []
     }
   };
 })();

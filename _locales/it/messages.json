@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "Versione",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Metti in pausa su questo sito",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Siti in pausa",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Su questi siti Teahouse resta disattivato. Per mettere in pausa un sito, fai clic sull'icona dell'estensione mentre lo visiti.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Nessun sito in pausa.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Riprendi",
+    "description": "Button: turn the extension back on for this site"
   }
 }

@@ -646,5 +646,25 @@
   "versionLabel": {
     "message": "버전",
     "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "이 사이트에서 일시 중지",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "일시 중지된 사이트",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "이 사이트에서는 Teahouse가 꺼져 있습니다. 사이트를 일시 중지하려면 해당 사이트에서 확장 프로그램 아이콘을 클릭하세요.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "일시 중지된 사이트가 없습니다.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "다시 사용",
+    "description": "Button: turn the extension back on for this site"
   }
 }
