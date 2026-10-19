@@ -23,7 +23,10 @@
   function renderDictionaryList(settings) {
     ui.dictionaryList.innerHTML = "";
 
-    extension.dictionary.getDictionaryCatalog().forEach((dictionary) => {
+    const catalog = Object.values(extension.botokPackManifest.dictionaryCatalog)
+      .sort((left, right) => left.label.localeCompare(right.label));
+
+    catalog.forEach((dictionary) => {
       const label = document.createElement("label");
       label.className = "dictionary-item";
 

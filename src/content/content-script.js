@@ -359,10 +359,10 @@
     }, 180);
   }
 
-  function mergeTooltipEntries(primaryEntries, fallbackEntries) {
+  function uniqueEntries(entries) {
     const seen = new Set();
 
-    return [...primaryEntries, ...fallbackEntries].filter((entry) => {
+    return entries.filter((entry) => {
       const key = JSON.stringify(entry);
 
       if (seen.has(key)) {
@@ -375,12 +375,9 @@
   }
 
   function lookupWord(term) {
-    return mergeTooltipEntries(
-      extension.dictionary.lookup(term, state.settings),
-      typeof extension.botokLookup?.lookup === "function"
-        ? extension.botokLookup.lookup(term, state.settings)
-        : []
-    );
+    return typeof extension.botokLookup?.lookup === "function"
+      ? uniqueEntries(extension.botokLookup.lookup(term, state.settings))
+      : [];
   }
 
   // When a multi-syllable word has no definition, gloss its component
