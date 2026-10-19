@@ -38,7 +38,6 @@
               <option value="due" data-i18n="wordsSortDue">Next review</option>
             </select>
           </label>
-          <button id="wordsExport" class="words-button" type="button" data-i18n="wordsExport">Export CSV</button>
         </div>
 
         <div id="stageFilter" class="stage-filter">
@@ -70,6 +69,19 @@
           </label>
           <p class="study-hint" data-i18n="newWordsHint">Saved words wait in New until there's room, so you can save as many as you like. Mastered words free up room.</p>
           <p class="study-hint"><span data-i18n="inProgress">In progress:</span> <strong id="activeValue"></strong></p>
+        </details>
+
+        <details id="backupPanel" class="study-settings">
+          <summary data-i18n="backupHeading">Backup &amp; import</summary>
+          <p class="study-hint" data-i18n="backupIntro">Your words are stored only in this browser. Download a backup now and then, and before changing computers, so you never lose your progress.</p>
+          <div class="backup-actions">
+            <button id="backupDownload" class="words-button is-primary" type="button" data-i18n="backupDownload">Download backup</button>
+            <button id="wordsExport" class="words-button" type="button" data-i18n="wordsExport">Export CSV</button>
+            <button id="importButton" class="words-button" type="button" data-i18n="importButton">Import a file…</button>
+            <input id="importFile" type="file" accept=".json,.csv,.tsv,.txt,application/json,text/csv,text/plain" hidden />
+          </div>
+          <p class="study-hint"><span data-i18n="backupLast">Last backup:</span> <strong id="backupLastValue"></strong></p>
+          <p class="study-hint" data-i18n="importHint">Import accepts Teahouse backups (.json), our CSV export, Anki text exports and plain lists of Tibetan words. Words you already have keep their progress.</p>
         </details>
         <p id="wordsStatus" class="status-line" role="status" aria-live="polite"></p>
         <div id="wordsList" class="results"></div>

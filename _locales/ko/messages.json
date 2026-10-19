@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "Google 번역에서 열기",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "백업 및 가져오기",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "단어는 이 브라우저에만 저장됩니다. 진행 상황을 잃지 않도록 가끔, 그리고 컴퓨터를 바꾸기 전에 백업을 내려받으세요.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "백업 내려받기",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "파일 가져오기…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "마지막 백업:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "없음",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Teahouse 백업(.json), 저희 CSV 내보내기, Anki 텍스트 내보내기, 티베트어 단어 목록을 가져올 수 있습니다. 이미 저장된 단어는 진행 상황이 유지됩니다.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "가져오기 완료",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "추가됨:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "업데이트됨:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "이미 저장됨:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "건너뜀:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "이 백업 파일을 읽을 수 없습니다. Teahouse 백업이 맞나요?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "이 파일에서 티베트어 단어를 찾지 못했습니다.",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }

@@ -233,6 +233,197 @@
     return text.length > GLOSS_SNAPSHOT_LENGTH ? `${text.slice(0, GLOSS_SNAPSHOT_LENGTH - 1).trimEnd()}…` : text;
   }
 
+  // Backups and imports. A backup is JSON holding full records (review
+  // history included); imports also accept CSV/TSV/plain-text word lists,
+  // such as our own CSV export or an Anki "Notes in plain text" export.
+  const BACKUP_FORMAT = "teahouse-saved-words";
+  const BACKUP_VERSION = 1;
+  const TIBETAN_TEXT = /[ༀ-࿿]/u;
+  const HEADWORD_COLUMNS = ["tibetan", "headword", "word", "term", "front", "བོད་ཡིག"];
+  const GLOSS_COLUMNS = ["definition", "gloss", "english", "meaning", "translation", "back"];
+
+  function createBackup(words, now = Date.now()) {
+    return {
+      format: BACKUP_FORMAT,
+      version: BACKUP_VERSION,
+      exportedAt: new Date(now).toISOString(),
+      words: Object.values(words)
+    };
+  }
+
+  // Splits delimited text into rows of cells, honouring double-quoted cells.
+  function parseDelimited(text, delimiter) {
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let quoted = false;
+    for (let i = 0; i < text.length; i += 1) {
+      const char = text[i];
+      if (quoted) {
+        if (char === '"' && text[i + 1] === '"') {
+          cell += '"';
+          i += 1;
+        } else if (char === '"') {
+          quoted = false;
+        } else {
+          cell += char;
+        }
+      } else if (char === '"' && cell === "") {
+        quoted = true;
+      } else if (char === delimiter) {
+        row.push(cell);
+        cell = "";
+      } else if (char === "\n" || char === "\r") {
+        if (char === "\r" && text[i + 1] === "\n") {
+          i += 1;
+        }
+        row.push(cell);
+        rows.push(row);
+        row = [];
+        cell = "";
+      } else {
+        cell += char;
+      }
+    }
+    if (cell !== "" || row.length) {
+      row.push(cell);
+      rows.push(row);
+    }
+    return rows;
+  }
+
+  // Anki fields can hold HTML; keep only the text.
+  function plainText(value) {
+    return String(value || "")
+      .replace(/<br\s*\/?>/gi, "; ")
+      .replace(/<[^>]*>/g, "")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .trim();
+  }
+
+  function parseWordList(text) {
+    const lines = text.split(/\r?\n/).filter((line) => line.trim() && !line.startsWith("#"));
+    const body = lines.join("\n");
+    const delimiter = body.includes("\t") ? "\t" : body.includes(",") ? "," : body.includes(";") ? ";" : "\t";
+    const rows = parseDelimited(body, delimiter).map((row) => row.map(plainText));
+    if (!rows.length) {
+      return [];
+    }
+
+    const header = rows[0].map((cell) => cell.toLowerCase());
+    let headwordColumn = header.findIndex((cell) => HEADWORD_COLUMNS.includes(cell));
+    let glossColumn = header.findIndex((cell) => GLOSS_COLUMNS.includes(cell));
+    const hasHeader = headwordColumn !== -1;
+    const dataRows = hasHeader ? rows.slice(1) : rows;
+
+    return dataRows
+      .map((row) => {
+        let headwordIndex = headwordColumn;
+        if (!hasHeader) {
+          headwordIndex = row.findIndex((cell) => TIBETAN_TEXT.test(cell));
+        }
+        const headword = row[headwordIndex] || "";
+        if (!TIBETAN_TEXT.test(headword)) {
+          return null;
+        }
+        let gloss = glossColumn !== -1 ? row[glossColumn] : "";
+        if (glossColumn === -1) {
+          gloss = row.find((cell, index) => index !== headwordIndex && cell && !TIBETAN_TEXT.test(cell)) || "";
+        }
+        return { headword, gloss: gloss || "" };
+      })
+      .filter(Boolean);
+  }
+
+  // Returns { kind: "backup" | "list", words } or throws when nothing usable is found.
+  function parseImport(text) {
+    const source = String(text || "").replace(/^\uFEFF/, "");
+    const trimmed = source.trim();
+    if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+      let data;
+      try {
+        data = JSON.parse(trimmed);
+      } catch (_error) {
+        throw new Error("invalid-json");
+      }
+      const words = Array.isArray(data) ? data : data?.words;
+      if (!Array.isArray(words)) {
+        throw new Error("no-words");
+      }
+      return { kind: "backup", words };
+    }
+    const words = parseWordList(source);
+    if (!words.length) {
+      throw new Error("no-words");
+    }
+    return { kind: "list", words };
+  }
+
+  function cleanRecord(record, now) {
+    const headword = normalizeHeadword(String(record?.headword || ""));
+    if (!headword || !TIBETAN_TEXT.test(headword)) {
+      return null;
+    }
+    const clean = {
+      headword,
+      gloss: String(record.gloss || "").slice(0, GLOSS_SNAPSHOT_LENGTH * 4),
+      source:
+        record.source && typeof record.source.url === "string"
+          ? { url: record.source.url, title: String(record.source.title || "") }
+          : null,
+      savedAt: Number.isFinite(record.savedAt) ? record.savedAt : now,
+      review: migrateReview(record.review && typeof record.review === "object" ? record.review : null, now)
+    };
+    if (record.known) {
+      clean.known = true;
+    }
+    if (Number.isFinite(record.firstReviewedAt)) {
+      clean.firstReviewedAt = record.firstReviewedAt;
+    }
+    return clean;
+  }
+
+  function progressOf(record) {
+    return [record.review?.reps || 0, record.review?.last_review || 0];
+  }
+
+  // Merges imported records into the stored map without losing progress:
+  // new words are added; for words already saved, the record with more
+  // review history wins and an empty definition is filled in.
+  function mergeImport(words, incoming, now = Date.now()) {
+    const merged = { ...words };
+    const counts = { added: 0, updated: 0, unchanged: 0, skipped: 0 };
+    incoming.forEach((raw) => {
+      const record = cleanRecord(raw, now);
+      if (!record) {
+        counts.skipped += 1;
+        return;
+      }
+      const existing = merged[record.headword];
+      if (!existing) {
+        merged[record.headword] = record;
+        counts.added += 1;
+        return;
+      }
+      const [existingReps, existingLast] = progressOf(existing);
+      const [reps, last] = progressOf(record);
+      if (reps > existingReps || (reps === existingReps && last > existingLast)) {
+        merged[record.headword] = { ...record, gloss: record.gloss || existing.gloss };
+        counts.updated += 1;
+      } else if (!existing.gloss && record.gloss) {
+        merged[record.headword] = { ...existing, gloss: record.gloss };
+        counts.updated += 1;
+      } else {
+        counts.unchanged += 1;
+      }
+    });
+    return { words: merged, counts };
+  }
+
   async function readAll() {
     const stored = await chrome.storage.local.get(STORAGE_KEY);
     const words = stored[STORAGE_KEY];
@@ -254,6 +445,21 @@
     getStudyQueue,
     MASTERED_DAYS,
     KNOWN_CHECK_IN_DAYS,
+    parseImport,
+    mergeImport,
+
+    // A JSON backup of every saved word, review history included.
+    async backup(now = Date.now()) {
+      return createBackup(await readAll(), now);
+    },
+
+    // Imports a backup or word list (see parseImport); resolves to the counts.
+    async importText(text, now = Date.now()) {
+      const parsed = parseImport(text);
+      const { words, counts } = mergeImport(await readAll(), parsed.words, now);
+      await writeAll(words);
+      return { kind: parsed.kind, ...counts };
+    },
 
     async get(headword) {
       const words = await readAll();

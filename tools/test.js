@@ -183,7 +183,7 @@ if (fs.existsSync(manifestPath)) {
   context.globalThis = context;
   context.self = context;
   vm.createContext(context);
-  for (const file of ["src/shared/ts-fsrs.js", "src/shared/wordList.js"]) {
+  for (const file of ["src/shared/ts-fsrs.js", "src/shared/tibetan.js", "src/shared/wordList.js"]) {
     vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), context);
   }
   const { schedule, previewSchedule, migrateReview, GRADES, STATES } = context.TibetanExtension.wordList;
@@ -277,6 +277,47 @@ if (fs.existsSync(manifestPath)) {
     "known words skip review until their check-in is due, and never count as in progress",
     withKnown.reviews.length === 1 && withKnown.reviews[0] === knownDue && withKnown.active === 0
   ]);
+
+  // Backups and imports.
+  const { parseImport, mergeImport } = context.TibetanExtension.wordList;
+  const ownCsv = '\uFEFFTibetan,Wylie,Phonetic,Definition,Saved,Source\r\nསྙིང་རྗེ,snying rje,nyingjé,"compassion, love",2026-01-01,\r\nཆོས,chos,chö,dharma,2026-01-01,';
+  const csvWords = parseImport(ownCsv);
+  expectations.push([
+    "our CSV export imports with headwords and definitions (quoted commas kept)",
+    csvWords.kind === "list" && csvWords.words.length === 2 && csvWords.words[0].gloss === "compassion, love"
+  ]);
+  const anki = "#separator:tab\n#html:true\nབླ་མ\t<b>teacher</b><br>guru\nhello\tnot tibetan\n";
+  const ankiWords = parseImport(anki).words;
+  expectations.push([
+    "Anki tab exports import, skipping comment lines, HTML and non-Tibetan rows",
+    ankiWords.length === 1 && ankiWords[0].headword === "བླ་མ" && ankiWords[0].gloss === "teacher; guru"
+  ]);
+  const reversed = parseImport("lama,བླ་མ།\nmind,སེམས་").words;
+  expectations.push([
+    "headerless lists find the Tibetan column wherever it is",
+    reversed.length === 2 && reversed[1].headword === "སེམས་" && reversed[0].gloss === "lama"
+  ]);
+  let rejected = false;
+  try {
+    parseImport("just some english\nwords");
+  } catch (error) {
+    rejected = error.message === "no-words";
+  }
+  expectations.push(["files with no Tibetan words are rejected", rejected]);
+
+  const studied = { headword: "སེམས", gloss: "", savedAt: now - DAY, review: card };
+  const stored = { "སེམས": { headword: "སེམས", gloss: "mind", savedAt: now, review: fresh } };
+  const merged = mergeImport(stored, [studied, { headword: "བླ་མ།", gloss: "teacher" }, { headword: "xyz" }], now);
+  expectations.push([
+    "imports add new words (normalized), skip invalid ones and keep the record with more progress",
+    merged.counts.added === 1 && merged.counts.updated === 1 && merged.counts.skipped === 1 &&
+      merged.words["བླ་མ"]?.review.state === STATES.new &&
+      merged.words["སེམས"].review.reps === card.reps && merged.words["སེམས"].gloss === "mind"
+  ]);
+  const again = mergeImport(merged.words, [studied], now);
+  expectations.push(["re-importing the same backup changes nothing", again.counts.unchanged === 1 && again.counts.added === 0]);
+  const roundTrip = parseImport(JSON.stringify({ format: "teahouse-saved-words", version: 1, words: Object.values(merged.words) }));
+  expectations.push(["JSON backups parse back to full records", roundTrip.kind === "backup" && roundTrip.words.length === 2]);
 
   expectations
     .filter(([, passed]) => !passed)

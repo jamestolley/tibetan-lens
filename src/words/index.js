@@ -17,6 +17,7 @@
   };
   // Rough steady-state reviews per day for each new word per day, by target
   // retention (higher targets mean shorter intervals and more reviews).
+  const LAST_BACKUP_KEY = "lastBackupAt";
   const WORKLOAD_FACTOR = { 0.85: 5, 0.9: 7, 0.95: 12 };
 
   const state = {
@@ -31,6 +32,10 @@
     ui.filter = document.getElementById("wordsFilter");
     ui.sort = document.getElementById("wordsSort");
     ui.exportButton = document.getElementById("wordsExport");
+    ui.backupDownload = document.getElementById("backupDownload");
+    ui.backupLastValue = document.getElementById("backupLastValue");
+    ui.importButton = document.getElementById("importButton");
+    ui.importFile = document.getElementById("importFile");
     ui.stageButtons = [...document.querySelectorAll("#stageFilter [data-stage]")];
     ui.studyNote = document.getElementById("studyNote");
     ui.newWordsPerDay = document.getElementById("newWordsPerDay");
@@ -246,6 +251,7 @@
 
     ui.count.textContent = String(state.words.length);
     ui.exportButton.disabled = !state.words.length;
+    ui.backupDownload.disabled = !state.words.length;
     renderStageFilter();
     renderStudyStatus(studyQueue());
     ui.list.replaceChildren(...visible.map(renderWord));
@@ -289,12 +295,61 @@
       word.source?.url || ""
     ]);
     const csv = [header, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
-    const blob = new Blob(["﻿", csv], { type: "text/csv;charset=utf-8" });
+    download(["﻿", csv], "text/csv;charset=utf-8", `teahouse-tibetan-words-${localDateStamp()}.csv`);
+  }
+
+  // YYYY-MM-DD in the user's time zone, for file names.
+  function localDateStamp(date = new Date()) {
+    const pad = (value) => String(value).padStart(2, "0");
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+  }
+
+  function download(parts, type, filename) {
     const link = createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `teahouse-tibetan-words-${new Date().toISOString().slice(0, 10)}.csv`;
+    link.href = URL.createObjectURL(new Blob(parts, { type }));
+    link.download = filename;
     link.click();
     window.setTimeout(() => URL.revokeObjectURL(link.href), 0);
+  }
+
+  // The backup keeps full records (review history included), so importing it
+  // on another computer or after reinstalling restores everything.
+  async function downloadBackup() {
+    const backup = await extension.wordList.backup();
+    download(
+      [JSON.stringify(backup, null, 2)],
+      "application/json",
+      `teahouse-tibetan-backup-${localDateStamp()}.json`
+    );
+    await chrome.storage.local.set({ [LAST_BACKUP_KEY]: Date.now() });
+    renderLastBackup();
+  }
+
+  async function renderLastBackup() {
+    const stored = await chrome.storage.local.get(LAST_BACKUP_KEY);
+    const at = stored[LAST_BACKUP_KEY];
+    ui.backupLastValue.textContent = at ? formatDate(at) : extension.i18n.getMessage("backupNever");
+  }
+
+  async function importFile() {
+    const file = ui.importFile.files[0];
+    ui.importFile.value = "";
+    if (!file) {
+      return;
+    }
+    const message = extension.i18n.getMessage.bind(extension.i18n);
+    try {
+      const result = await extension.wordList.importText(await file.text());
+      ui.status.textContent = [
+        message("importDone"),
+        `${message("importAdded")} ${result.added}`,
+        `${message("importUpdated")} ${result.updated}`,
+        `${message("importUnchanged")} ${result.unchanged}`,
+        `${message("importSkipped")} ${result.skipped}`
+      ].join(" · ");
+    } catch (error) {
+      ui.status.textContent = message(error.message === "invalid-json" ? "importInvalid" : "importNoWords");
+    }
   }
 
   function shuffle(items) {
@@ -467,6 +522,9 @@
     ui.filter.addEventListener("input", render);
     ui.sort.addEventListener("change", render);
     ui.exportButton.addEventListener("click", exportCsv);
+    ui.backupDownload.addEventListener("click", downloadBackup);
+    ui.importButton.addEventListener("click", () => ui.importFile.click());
+    ui.importFile.addEventListener("change", importFile);
     ui.startReview.addEventListener("click", startReview);
     ui.stageButtons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -506,6 +564,7 @@
     state.settings = await extension.storage.getSettings();
     state.words = await extension.wordList.getAll();
     render();
+    renderLastBackup();
   }
 
   document.addEventListener("DOMContentLoaded", init, { once: true });

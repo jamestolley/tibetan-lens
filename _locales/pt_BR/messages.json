@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "Abrir no Google Tradutor",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Backup e importação",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Suas palavras ficam salvas apenas neste navegador. Baixe um backup de vez em quando, e antes de trocar de computador, para nunca perder seu progresso.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Baixar backup",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Importar um arquivo…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Último backup:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "nunca",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "A importação aceita backups do Teahouse (.json), nossa exportação CSV, exportações de texto do Anki e listas simples de palavras tibetanas. As palavras que você já tem mantêm o progresso.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Importação concluída",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Adicionadas:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Atualizadas:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Já salvas:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Ignoradas:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Não foi possível ler esse arquivo de backup. É um backup do Teahouse?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "Nenhuma palavra tibetana foi encontrada nesse arquivo.",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }

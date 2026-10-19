@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "Openen in Google Translate",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Back-up en import",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Je woorden worden alleen in deze browser bewaard. Download af en toe een back-up, en vóór je van computer wisselt, zodat je je voortgang nooit kwijtraakt.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Back-up downloaden",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Bestand importeren…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Laatste back-up:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "nooit",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Je kunt Teahouse-back-ups (.json), onze CSV-export, Anki-tekstexports en gewone lijsten met Tibetaanse woorden importeren. Woorden die je al hebt, behouden hun voortgang.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Import voltooid",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Toegevoegd:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Bijgewerkt:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Al bewaard:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Overgeslagen:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Dit back-upbestand kan niet worden gelezen. Is het een Teahouse-back-up?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "Er zijn geen Tibetaanse woorden in dit bestand gevonden.",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }

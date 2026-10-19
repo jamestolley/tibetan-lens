@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "Google 翻訳で開く",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "バックアップとインポート",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "単語はこのブラウザーにのみ保存されます。進捗を失わないよう、ときどき、またパソコンを替える前にバックアップをダウンロードしてください。",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "バックアップをダウンロード",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "ファイルをインポート…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "前回のバックアップ:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "なし",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Teahouse のバックアップ (.json)、当拡張機能の CSV、Anki のテキスト書き出し、チベット語の単語リストをインポートできます。保存済みの単語の進捗はそのまま残ります。",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "インポート完了",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "追加:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "更新:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "保存済み:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "スキップ:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "このバックアップファイルを読み込めませんでした。Teahouse のバックアップですか?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "このファイルにチベット語の単語が見つかりませんでした。",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }

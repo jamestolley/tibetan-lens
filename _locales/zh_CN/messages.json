@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "在 Google 翻译中打开",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "备份与导入",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "你的词语只保存在此浏览器中。请不时下载备份,换电脑前也请备份,以免丢失学习进度。",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "下载备份",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "导入文件…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "上次备份:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "从未",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "可导入 Teahouse 备份 (.json)、本扩展导出的 CSV、Anki 文本导出以及藏文词语列表。已有词语会保留学习进度。",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "导入完成",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "新增:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "已更新:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "已保存:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "已跳过:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "无法读取该备份文件。它是 Teahouse 备份吗?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "该文件中没有找到藏文词语。",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }

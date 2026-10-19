@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "Otevřít v Překladači Google",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Záloha a import",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Vaše slova jsou uložena pouze v tomto prohlížeči. Občas, a také před změnou počítače, si stáhněte zálohu, abyste nikdy nepřišli o svůj pokrok.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Stáhnout zálohu",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Importovat soubor…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Poslední záloha:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "nikdy",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Importovat lze zálohy Teahouse (.json), náš export CSV, textové exporty z Anki a prosté seznamy tibetských slov. Slova, která už máte, si ponechají svůj pokrok.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Import dokončen",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Přidáno:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Aktualizováno:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Již uloženo:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Přeskočeno:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Tento soubor zálohy nelze přečíst. Je to záloha Teahouse?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "V tomto souboru nebyla nalezena žádná tibetská slova.",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }

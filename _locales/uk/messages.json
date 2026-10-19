@@ -562,5 +562,61 @@
   "openInGoogleTranslate": {
     "message": "Відкрити в Google Перекладачі",
     "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Резервна копія та імпорт",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Ваші слова зберігаються лише в цьому браузері. Час від часу, а також перед зміною комп'ютера, завантажуйте резервну копію, щоб не втратити прогрес.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Завантажити копію",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Імпортувати файл…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Остання копія:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "ніколи",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Можна імпортувати копії Teahouse (.json), наш експорт CSV, текстові експорти Anki та прості списки тибетських слів. Уже збережені слова зберігають свій прогрес.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Імпорт завершено",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Додано:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Оновлено:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Уже збережені:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Пропущено:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Не вдалося прочитати цей файл копії. Це копія Teahouse?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "У цьому файлі не знайдено тибетських слів.",
+    "description": "Error: no Tibetan words found in the chosen file"
   }
 }
