@@ -12,7 +12,8 @@
     new: "stageNew",
     learning: "stageLearning",
     reviewing: "stageReviewing",
-    mastered: "stageMastered"
+    mastered: "stageMastered",
+    known: "stageKnown"
   };
   // Rough steady-state reviews per day for each new word per day, by target
   // retention (higher targets mean shorter intervals and more reviews).
@@ -177,12 +178,22 @@
     }
     head.appendChild(extras);
 
+    const actions = createElement("div", "word-actions");
+    const known = createElement("button", "word-known", "✓");
+    known.type = "button";
+    known.setAttribute("aria-pressed", String(Boolean(word.known)));
+    known.title = extension.i18n.getMessage(word.known ? "unmarkKnown" : "markKnown");
+    known.setAttribute("aria-label", `${known.title}: ${word.headword}`);
+    known.addEventListener("click", () => extension.wordList.setKnown(word, !word.known));
+    actions.appendChild(known);
+
     const remove = createElement("button", "word-remove", "✕");
     remove.type = "button";
     remove.title = extension.i18n.getMessage("wordsRemove");
     remove.setAttribute("aria-label", `${extension.i18n.getMessage("wordsRemove")}: ${word.headword}`);
     remove.addEventListener("click", () => removeWord(word));
-    head.appendChild(remove);
+    actions.appendChild(remove);
+    head.appendChild(actions);
     card.appendChild(head);
 
     if (word.gloss) {
@@ -197,7 +208,7 @@
   }
 
   function renderStageFilter() {
-    const counts = { all: state.words.length, new: 0, learning: 0, reviewing: 0, mastered: 0 };
+    const counts = { all: state.words.length, new: 0, learning: 0, reviewing: 0, mastered: 0, known: 0 };
     state.words.forEach((word) => {
       counts[extension.wordList.stageOf(word)] += 1;
     });
@@ -361,6 +372,15 @@
     session.preview = session.practice
       ? null
       : extension.wordList.previewSchedule(word.review, now, { retention: state.settings.targetRetention });
+    // Known-word check-in: remembering keeps the word known (a struggle
+    // brings the next check-in closer); forgetting returns it to study.
+    if (session.preview && word.known) {
+      const checkIn = (days) => ({ ...word.review, due: now + days * DAY });
+      const days = extension.wordList.KNOWN_CHECK_IN_DAYS;
+      session.preview.hard = checkIn(Math.round(days / 2));
+      session.preview.good = checkIn(days);
+      session.preview.easy = checkIn(days);
+    }
     ui.gradeButtons.forEach((button) => {
       button.querySelector("small").textContent = session.preview
         ? formatInterval(session.preview[button.dataset.grade].due - now)
@@ -382,7 +402,8 @@
     let comesBackSoon = gradeName === "again";
     if (session.preview) {
       const next = session.preview[gradeName];
-      const updated = await extension.wordList.setReview(word.headword, next);
+      const forgotKnownWord = word.known && gradeName === "again";
+      const updated = await extension.wordList.setReview(word.headword, next, forgotKnownWord ? { known: false } : {});
       const index = state.words.findIndex((item) => item.headword === word.headword);
       if (updated && index >= 0) {
         state.words[index] = updated;

@@ -11,6 +11,9 @@
     linkChoiceWord: null,
     linkChoiceAnchor: null,
     settings: null,
+    // Saved-word knowledge for highlighting: headwords known (or mastered)
+    // and headwords saved but still being learned.
+    knowledge: { known: new Set(), learning: new Set() },
     spinner: null,
     stats: {
       processedNodes: 0,
@@ -46,6 +49,45 @@
     return true;
   }
 
+  function knowledgeClass(lookupKey) {
+    if (!state.settings?.highlightKnowledge) {
+      return "";
+    }
+    const key = extension.tibetan.normalizeLookupKey(lookupKey || "");
+    if (state.knowledge.known.has(key)) {
+      return "is-known";
+    }
+    return state.knowledge.learning.has(key) ? "is-learning" : "";
+  }
+
+  async function loadKnowledge() {
+    try {
+      updateKnowledge(await extension.wordList.getAll());
+    } catch (_error) {
+      // Storage is unavailable once the extension context is invalidated.
+    }
+  }
+
+  function updateKnowledge(words) {
+    const known = new Set();
+    const learning = new Set();
+    words.forEach((word) => {
+      const stage = extension.wordList.stageOf(word);
+      (stage === "known" || stage === "mastered" ? known : learning).add(word.headword);
+    });
+    state.knowledge = { known, learning };
+  }
+
+  // Re-tags words already on the page after the saved list changes, without
+  // re-segmenting the document.
+  function applyKnowledgeClasses() {
+    document.querySelectorAll(`.${extension.constants.classes.word}`).forEach((element) => {
+      const knowledge = knowledgeClass(element.dataset.lookupKey);
+      element.classList.toggle("is-known", knowledge === "is-known");
+      element.classList.toggle("is-learning", knowledge === "is-learning");
+    });
+  }
+
   function createWordElement(token) {
     const element = document.createElement("span");
     const posClass = state.settings?.colorByPos
@@ -54,7 +96,8 @@
     element.className = [
       extension.constants.classes.word,
       token.matched ? extension.constants.classes.wordMatched : extension.constants.classes.wordUnmatched,
-      posClass
+      posClass,
+      knowledgeClass(token.lookupKey || token.text)
     ].filter(Boolean).join(" ");
     element.tabIndex = 0;
     element.setAttribute("role", "button");
@@ -209,6 +252,7 @@
         console.warn('[Teahouse] extension.tokenizer.ensureReady is not a function!');
       }
 
+      await loadKnowledge();
       const stats = scanDocument();
       console.log('[Teahouse] scanDocument complete:', stats);
       return stats;
@@ -649,6 +693,11 @@
     extension.storage.onSettingsChanged((settings) => {
       state.settings = settings;
       scheduleRefresh();
+    });
+
+    extension.wordList.onChanged((words) => {
+      updateKnowledge(words);
+      applyKnowledgeClasses();
     });
 
     function insertTestText() {

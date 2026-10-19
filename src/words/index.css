@@ -79,8 +79,34 @@ a.result-headword {
   text-decoration: none;
 }
 
-.word-remove {
+.word-actions {
+  display: flex;
+  gap: 4px;
   margin-left: auto;
+}
+
+.word-known {
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.word-known:hover,
+.word-known:focus-visible {
+  border-color: rgba(47, 107, 58, 0.4);
+  color: #2f6b3a;
+}
+
+.word-known[aria-pressed="true"] {
+  background: rgba(47, 107, 58, 0.16);
+  color: #2f6b3a;
+}
+
+.word-remove {
   padding: 2px 8px;
   border: 0;
   border-radius: 999px;
@@ -217,6 +243,10 @@ a.result-headword {
 
 .word-stage.is-mastered {
   background: rgba(47, 107, 58, 0.18);
+}
+
+.word-stage.is-known {
+  background: rgba(47, 107, 58, 0.32);
 }
 
 /* Flashcard review */

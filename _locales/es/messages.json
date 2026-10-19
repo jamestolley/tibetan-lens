@@ -538,5 +538,21 @@
   "limitActive": {
     "message": "Las palabras nuevas están en pausa mientras muchas siguen en curso. Dominar palabras libera espacio.",
     "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Conocidas",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "Conozco esta palabra",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Marcada como conocida: haz clic para volver a estudiarla",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Atenuar las palabras que conozco para que destaquen las nuevas",
+    "description": "Setting: show known words as plain text so unknown words stand out"
   }
 }

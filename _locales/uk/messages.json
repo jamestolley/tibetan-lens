@@ -538,5 +538,21 @@
   "limitActive": {
     "message": "Нові слова призупинено, поки багато слів у процесі. Опанування слів звільняє місце.",
     "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Відомі",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "Я знаю це слово",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Позначено як відоме — натисніть, щоб знову вчити",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Приглушувати відомі слова, щоб виділялися нові",
+    "description": "Setting: show known words as plain text so unknown words stand out"
   }
 }

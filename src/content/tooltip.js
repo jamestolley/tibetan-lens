@@ -76,39 +76,62 @@
     button.setAttribute("aria-pressed", String(saved));
   }
 
-  // Star toggle that adds the word to (or removes it from) the saved word list.
-  function createSaveButton(headword, glosses) {
+  function setKnownState(button, known) {
+    const label = extension.i18n.getMessage(known ? "unmarkKnown" : "markKnown");
+    button.title = label;
+    button.setAttribute("aria-label", label);
+    button.setAttribute("aria-pressed", String(known));
+  }
+
+  // Star (save / unsave) and check mark (known / not known) for the word.
+  function createWordActions(headword, glosses) {
     if (!extension.wordList || !headword) {
       return null;
     }
 
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "tibetan-extension-tooltip-save";
-    setSaveState(button, false);
+    const actions = document.createElement("span");
+    actions.className = "tibetan-extension-tooltip-actions";
+    const known = document.createElement("button");
+    known.type = "button";
+    known.className = "tibetan-extension-tooltip-known";
+    known.textContent = "✓";
+    setKnownState(known, false);
+    const save = document.createElement("button");
+    save.type = "button";
+    save.className = "tibetan-extension-tooltip-save";
+    setSaveState(save, false);
+    actions.append(known, save);
 
-    extension.wordList
-      .has(headword)
-      .then((saved) => setSaveState(button, saved))
-      .catch(() => button.remove());
+    const word = { headword, glosses, source: { url: window.location.href, title: document.title } };
+    function show(record) {
+      setSaveState(save, Boolean(record));
+      setKnownState(known, Boolean(record?.known));
+    }
 
-    button.addEventListener("click", async (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      try {
-        const saved = await extension.wordList.toggle({
-          headword,
-          glosses,
-          source: { url: window.location.href, title: document.title }
-        });
-        setSaveState(button, saved);
-      } catch (_error) {
-        // Storage is unavailable once the extension reloads under this page.
-        button.remove();
-      }
-    });
+    // Storage becomes unavailable once the extension reloads under this page.
+    function handle(action) {
+      return async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        try {
+          await action();
+          show(await extension.wordList.get(headword));
+        } catch (_error) {
+          actions.remove();
+        }
+      };
+    }
 
-    return button;
+    extension.wordList.get(headword).then(show).catch(() => actions.remove());
+    save.addEventListener("click", handle(() => extension.wordList.toggle(word)));
+    known.addEventListener(
+      "click",
+      handle(async () => {
+        const record = await extension.wordList.get(headword);
+        await extension.wordList.setKnown(word, !record?.known);
+      })
+    );
+    return actions;
   }
 
   function renderTooltipContent(payload) {
@@ -123,9 +146,9 @@
     const savedGlosses = entries.length
       ? entries.flatMap((entry) => entry.glosses || [])
       : (parts || []).map((item) => `${item.part}་ ${item.gloss}`);
-    const saveButton = createSaveButton(lookupTerm || term, savedGlosses);
-    if (saveButton) {
-      heading.appendChild(saveButton);
+    const actions = createWordActions(lookupTerm || term, savedGlosses);
+    if (actions) {
+      heading.appendChild(actions);
     }
     fragment.appendChild(heading);
 

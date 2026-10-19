@@ -116,7 +116,11 @@
     inProgress: "In progress:",
     limitDaily: "You've started today's new words. More start tomorrow; the rest wait in New.",
     limitBacklog: "New words are paused until you catch up on your reviews.",
-    limitActive: "New words are paused while many words are still in progress. Mastering words frees up room."
+    limitActive: "New words are paused while many words are still in progress. Mastering words frees up room.",
+    stageKnown: "Known",
+    markKnown: "I know this word",
+    unmarkKnown: "Marked as known — click to study it again",
+    highlightKnowledge: "Fade words I know, so new words stand out"
   };
 
   extension.i18n = {

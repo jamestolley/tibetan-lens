@@ -14,6 +14,7 @@
       colorByPos: false,
       posColorTheme: "vivid",
       linkClickPrompt: true,
+      highlightKnowledge: true,
       newWordsPerDay: 10,
       targetRetention: 0.9
     }

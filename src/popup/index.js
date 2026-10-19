@@ -9,6 +9,7 @@
     ui.tooltipMode = document.getElementById("tooltipMode");
     ui.showWylie = document.getElementById("showWylie");
     ui.showPhonetic = document.getElementById("showPhonetic");
+    ui.highlightKnowledge = document.getElementById("highlightKnowledge");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.refreshPage = document.getElementById("refreshPage");
     ui.insertTestText = document.getElementById("insertTestText");
@@ -27,6 +28,7 @@
       tooltipMode: ui.tooltipMode.value,
       showWylie: ui.showWylie.checked,
       showPhonetic: ui.showPhonetic.checked,
+      highlightKnowledge: ui.highlightKnowledge.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16
     };
   }
@@ -78,6 +80,7 @@
     ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
     ui.showWylie.checked = settings.showWylie;
     ui.showPhonetic.checked = settings.showPhonetic;
+    ui.highlightKnowledge.checked = settings.highlightKnowledge;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
   }
 
@@ -92,6 +95,7 @@
     ui.tooltipMode.addEventListener("change", saveSettingsAndRefresh);
     ui.showWylie.addEventListener("change", saveSettingsAndRefresh);
     ui.showPhonetic.addEventListener("change", saveSettingsAndRefresh);
+    ui.highlightKnowledge.addEventListener("change", saveSettingsAndRefresh);
     ui.minTibetanFontSize.addEventListener("change", saveSettingsAndRefresh);
 
     ui.refreshPage.addEventListener("click", async () => {

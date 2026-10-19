@@ -538,5 +538,21 @@
   "limitActive": {
     "message": "進行中の単語が多いため、新しい単語は一時停止中です。単語を習得すると空きができます。",
     "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "既知",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "この単語は知っている",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "既知としてマーク済み — クリックで再び学習",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "知っている単語を目立たなくして、新しい単語を際立たせる",
+    "description": "Setting: show known words as plain text so unknown words stand out"
   }
 }

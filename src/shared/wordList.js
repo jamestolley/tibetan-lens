@@ -131,7 +131,14 @@
   // this only bites when someone falls well behind.
   const ACTIVE_PER_NEW_WORD = 15;
 
+  // Words marked "known" leave regular review; they come back for a quick
+  // check-in about twice a year.
+  const KNOWN_CHECK_IN_DAYS = 180;
+
   function stageOf(word) {
+    if (word.known) {
+      return "known";
+    }
     const review = migrateReview(word.review);
     if (review.state === STATES.new) {
       return "new";
@@ -162,6 +169,12 @@
 
     words.forEach((word) => {
       const stage = stageOf(word);
+      if (stage === "known") {
+        if ((word.review?.due ?? 0) <= now) {
+          reviews.push(word);
+        }
+        return;
+      }
       if (word.firstReviewedAt >= today) {
         introducedToday += 1;
       }
@@ -240,6 +253,43 @@
     stageOf,
     getStudyQueue,
     MASTERED_DAYS,
+    KNOWN_CHECK_IN_DAYS,
+
+    async get(headword) {
+      const words = await readAll();
+      return words[normalizeHeadword(headword)] || null;
+    },
+
+    // Marks a word known (saving it first if needed) or returns it to study.
+    // Known words skip regular review apart from a check-in every ~6 months;
+    // un-marking sends the word back to New.
+    async setKnown(word, known) {
+      const headword = normalizeHeadword(word.headword);
+      if (!headword) {
+        return null;
+      }
+      const words = await readAll();
+      const now = Date.now();
+      const existing = words[headword];
+      const gloss = word.gloss ?? snapshotGloss(word.glosses);
+      const record = existing || {
+        headword,
+        gloss: gloss || "",
+        source: word.source || null,
+        savedAt: now,
+        review: newReviewState(now)
+      };
+      record.known = Boolean(known);
+      record.review = known
+        ? { ...migrateReview(record.review, now), due: now + KNOWN_CHECK_IN_DAYS * DAY }
+        : newReviewState(now);
+      if (!known) {
+        delete record.firstReviewedAt;
+      }
+      words[headword] = record;
+      await writeAll(words);
+      return record;
+    },
 
     // All saved words, newest first.
     async getAll() {
@@ -302,13 +352,15 @@
       return getStudyQueue(await this.getAll(), settings, now);
     },
 
-    // Stores an already-computed review state (e.g. one shown in a preview).
-    async setReview(headword, review) {
+    // Stores an already-computed review state (e.g. one shown in a preview),
+    // optionally changing other fields such as `known` at the same time.
+    async setReview(headword, review, changes = {}) {
       const words = await readAll();
       const word = words[normalizeHeadword(headword)];
       if (!word) {
         return null;
       }
+      Object.assign(word, changes);
       applyReview(word, review, Date.now());
       await writeAll(words);
       return word;

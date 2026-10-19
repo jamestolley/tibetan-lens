@@ -91,6 +91,24 @@
 [data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--X     { color: #64748b; }
 [data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--UNKNOWN { color: #94a3b8; }
 
+/* Knowledge highlighting: known and mastered words read as plain text so new
+   words stand out; saved words still being learned get a saffron underline. */
+.tibetan-extension-word.is-known {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  color: inherit !important;
+  opacity: 1;
+}
+
+.tibetan-extension-word.is-learning {
+  border-bottom: 2px solid var(--tibetan-extension-saffron);
+}
+
+.tibetan-extension-word.is-known:hover,
+.tibetan-extension-word.is-known:focus-visible {
+  background: rgba(122, 47, 42, 0.08) !important;
+}
+
 .tibetan-extension-word:hover,
 .tibetan-extension-word:focus-visible {
   outline: none;
@@ -136,9 +154,36 @@
   font-weight: 700;
 }
 
-.tibetan-extension-tooltip-save {
+.tibetan-extension-tooltip-actions {
+  display: inline-flex;
   flex: none;
+  align-items: center;
+  gap: 0.15rem;
   margin: -0.15rem -0.3rem 0 0;
+}
+
+.tibetan-extension-tooltip-known {
+  padding: 0 0.3rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: rgba(44, 33, 23, 0.45);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.tibetan-extension-tooltip-known:hover,
+.tibetan-extension-tooltip-known:focus-visible {
+  color: #2f6b3a;
+}
+
+.tibetan-extension-tooltip-known[aria-pressed="true"] {
+  background: rgba(47, 107, 58, 0.16);
+  color: #2f6b3a;
+}
+
+.tibetan-extension-tooltip-save {
   padding: 0 0.3rem;
   border: 0;
   background: none;

@@ -269,6 +269,15 @@ if (fs.existsSync(manifestPath)) {
     getStudyQueue(mastered, { newWordsPerDay: 10 }, now).newWords.length === 10
   ]);
 
+  const knownLater = word(900, { ...card, due: now + 100 * DAY }, { known: true });
+  const knownDue = word(901, { ...card, due: now - DAY }, { known: true });
+  expectations.push(["known words are their own stage", stageOf(knownLater) === "known"]);
+  const withKnown = getStudyQueue([knownLater, knownDue, ...savedOnly], { newWordsPerDay: 10 }, now);
+  expectations.push([
+    "known words skip review until their check-in is due, and never count as in progress",
+    withKnown.reviews.length === 1 && withKnown.reviews[0] === knownDue && withKnown.active === 0
+  ]);
+
   expectations
     .filter(([, passed]) => !passed)
     .forEach(([name]) => errors.push(`wordList: expected ${name}`));

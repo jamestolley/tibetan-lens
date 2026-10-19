@@ -14,6 +14,7 @@
     ui.colorByPos = document.getElementById("colorByPos");
     ui.posColorTheme = document.getElementById("posColorTheme");
     ui.linkClickPrompt = document.getElementById("linkClickPrompt");
+    ui.highlightKnowledge = document.getElementById("highlightKnowledge");
     ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
@@ -66,6 +67,7 @@
       colorByPos: ui.colorByPos.checked,
       posColorTheme: ui.posColorTheme.value,
       linkClickPrompt: ui.linkClickPrompt.checked,
+      highlightKnowledge: ui.highlightKnowledge.checked,
       minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
       enabledDictionaries:
         enabledDictionaries.length > 0
@@ -102,6 +104,7 @@
     ui.colorByPos.checked = settings.colorByPos;
     ui.posColorTheme.value = settings.posColorTheme;
     ui.linkClickPrompt.checked = settings.linkClickPrompt;
+    ui.highlightKnowledge.checked = settings.highlightKnowledge;
     ui.minTibetanFontSize.value = settings.minTibetanFontSize;
     renderDictionaryList(settings);
   }
@@ -115,6 +118,7 @@
     ui.colorByPos.addEventListener("change", saveSettings);
     ui.posColorTheme.addEventListener("change", saveSettings);
     ui.linkClickPrompt.addEventListener("change", saveSettings);
+    ui.highlightKnowledge.addEventListener("change", saveSettings);
     ui.minTibetanFontSize.addEventListener("change", saveSettings);
 
     extension.storage.onSettingsChanged((settings) => {
@@ -126,6 +130,7 @@
       ui.colorByPos.checked = settings.colorByPos;
       ui.posColorTheme.value = settings.posColorTheme;
       ui.linkClickPrompt.checked = settings.linkClickPrompt;
+      ui.highlightKnowledge.checked = settings.highlightKnowledge;
       ui.minTibetanFontSize.value = settings.minTibetanFontSize;
       renderDictionaryList(settings);
     });

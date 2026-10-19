@@ -538,5 +538,21 @@
   "limitActive": {
     "message": "New words are paused while many words are still in progress. Mastering words frees up room.",
     "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Known",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "I know this word",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Marked as known — click to study it again",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Fade words I know, so new words stand out",
+    "description": "Setting: show known words as plain text so unknown words stand out"
   }
 }
