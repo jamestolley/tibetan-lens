@@ -18,7 +18,8 @@
       return true;
     }
 
-    if (parent.closest("[contenteditable]")) {
+    // Editable text, and anything a page marks as off-limits to Teahouse.
+    if (parent.closest("[contenteditable], [data-teahouse-skip]")) {
       return true;
     }
 

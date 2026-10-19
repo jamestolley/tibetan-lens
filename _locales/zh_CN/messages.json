@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "恢复",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "欢迎使用 Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "一切就绪。现在 Teahouse 可在任何含有藏文的网页上使用。请在下面的示例中试试看。",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "在这里试试",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "点击词语,查看释义、威利转写和读音。",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "点击释义中的 ☆ 收藏该词;如果已经认识,点击 ✓。",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "点击句末的 །,翻译整个句子。",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "让 Teahouse 随手可用",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "点击 Chrome 工具栏中的拼图图标,然后点击 Teahouse Tibetan 旁边的图钉。它的菜单中有词典、我的词语和快捷设置。",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "下一步",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "一切都在你的电脑上运行。你的词语只保存在此浏览器中,除非你选择翻译句子,否则不会发送任何内容。",
+    "description": "Welcome page: privacy reassurance"
   }
 }

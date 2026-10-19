@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Reprendre",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Bienvenue dans Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Tout est prêt. Teahouse fonctionne désormais sur toutes les pages web contenant du tibétain. Essayez-le avec l'exemple ci-dessous.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Essayez ici",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Cliquez sur un mot pour voir son sens, sa translittération Wylie et sa prononciation.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Cliquez sur ☆ dans la définition pour enregistrer le mot, ou sur ✓ si vous le connaissez déjà.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Cliquez sur le ། en fin de phrase pour traduire toute la phrase.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Gardez Teahouse à portée de main",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Cliquez sur l'icône en forme de pièce de puzzle dans la barre d'outils de Chrome, puis sur l'épingle à côté de Teahouse Tibetan. Son menu donne accès au dictionnaire, à vos mots et aux réglages rapides.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Étapes suivantes",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Tout fonctionne sur votre ordinateur. Vos mots restent dans ce navigateur et rien n'est envoyé, sauf si vous choisissez de traduire une phrase.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

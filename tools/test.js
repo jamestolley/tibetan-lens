@@ -56,7 +56,8 @@ const pages = [
   { html: "src/options/index.html", js: "src/options/index.js" },
   { html: "src/popup/index.html", js: "src/popup/index.js" },
   { html: "pages/dictionary.html", js: "src/dictionary/index.js" },
-  { html: "pages/words.html", js: "src/words/index.js" }
+  { html: "pages/words.html", js: "src/words/index.js" },
+  { html: "pages/welcome.html", js: "src/welcome/index.js" }
 ];
 
 for (const page of pages) {

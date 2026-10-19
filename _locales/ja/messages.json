@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "再開",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Teahouse Tibetan へようこそ",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "準備ができました。Teahouse はチベット語を含むすべてのウェブページで動作します。下の例文で試してみましょう。",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "ここで試す",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "単語をクリックすると、意味・ワイリー転写・発音が表示されます。",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "定義の ☆ をクリックすると単語を保存、知っている単語なら ✓ をクリックします。",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "文末の ། をクリックすると、文全体を翻訳できます。",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Teahouse をすぐ使えるように",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Chrome のツールバーにあるパズルのアイコンをクリックし、Teahouse Tibetan の横のピンをクリックします。メニューから辞書、保存した単語、クイック設定を開けます。",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "次のステップ",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "すべてお使いのパソコン上で動作します。単語はこのブラウザーに保存され、文の翻訳を選ばない限り、何も送信されません。",
+    "description": "Welcome page: privacy reassurance"
   }
 }

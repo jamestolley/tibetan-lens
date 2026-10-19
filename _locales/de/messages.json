@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Fortsetzen",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Willkommen bei Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Alles bereit. Teahouse funktioniert jetzt auf jeder Webseite mit tibetischem Text. Probiere es am Beispiel unten aus.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Hier ausprobieren",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Klicke auf ein Wort, um Bedeutung, Wylie und Aussprache zu sehen.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Klicke in der Definition auf ☆, um das Wort zu speichern, oder auf ✓, wenn du es schon kennst.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Klicke auf das ། am Satzende, um den ganzen Satz zu übersetzen.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Teahouse griffbereit halten",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Klicke in der Chrome-Symbolleiste auf das Puzzle-Symbol und dann auf die Stecknadel neben Teahouse Tibetan. Sein Menü bietet das Wörterbuch, deine Wörter und schnelle Einstellungen.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Nächste Schritte",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Alles läuft auf deinem Computer. Deine Wörter bleiben in diesem Browser, und nichts wird gesendet, außer du lässt einen Satz übersetzen.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "다시 사용",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Teahouse Tibetan에 오신 것을 환영합니다",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "준비가 끝났습니다. 이제 Teahouse는 티베트어가 있는 모든 웹 페이지에서 작동합니다. 아래 예문으로 사용해 보세요.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "여기서 사용해 보기",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "단어를 클릭하면 뜻, 와일리 표기, 발음을 볼 수 있습니다.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "정의에서 ☆를 클릭하면 단어가 저장되고, 이미 아는 단어라면 ✓를 클릭하세요.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "문장 끝의 །를 클릭하면 문장 전체를 번역할 수 있습니다.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Teahouse를 가까이 두세요",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Chrome 도구 모음의 퍼즐 아이콘을 클릭한 다음 Teahouse Tibetan 옆의 핀을 클릭하세요. 메뉴에서 사전, 내 단어, 빠른 설정을 열 수 있습니다.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "다음 단계",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "모든 작업은 내 컴퓨터에서 이루어집니다. 단어는 이 브라우저에만 저장되며, 문장 번역을 선택하지 않는 한 아무것도 전송되지 않습니다.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

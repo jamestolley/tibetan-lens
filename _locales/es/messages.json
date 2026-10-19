@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Reanudar",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Te damos la bienvenida a Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Todo listo. Teahouse ya funciona en cualquier página web con texto tibetano. Pruébalo con el ejemplo de abajo.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Pruébalo aquí",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Haz clic en una palabra para ver su significado, el Wylie y la pronunciación.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Haz clic en ☆ en la definición para guardar la palabra, o en ✓ si ya la conoces.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Haz clic en el ། al final de una oración para traducirla entera.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Ten Teahouse a mano",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Haz clic en el icono de pieza de rompecabezas de la barra de Chrome y luego en el pin junto a Teahouse Tibetan. Su menú incluye el diccionario, tus palabras y ajustes rápidos.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Próximos pasos",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Todo funciona en tu ordenador. Tus palabras se quedan en este navegador y no se envía nada a ningún sitio salvo que decidas traducir una oración.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

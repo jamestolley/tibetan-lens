@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionFullName__",
   "short_name": "__MSG_extensionName__",
-  "version": "0.50.43",
+  "version": "0.50.44",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
@@ -20,6 +20,9 @@
     "default_popup": "src/popup/index.html"
   },
   "options_page": "src/options/index.html",
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
   "web_accessible_resources": [
     {
       "resources": [

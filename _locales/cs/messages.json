@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Obnovit",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Vítejte v Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Vše je připraveno. Teahouse teď funguje na každé webové stránce s tibetským textem. Vyzkoušejte ho na ukázce níže.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Vyzkoušejte to",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Klikněte na slovo a uvidíte jeho význam, Wylie a výslovnost.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Kliknutím na ☆ v definici slovo uložíte, kliknutím na ✓ ho označíte jako známé.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Kliknutím na ། na konci věty přeložíte celou větu.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Mějte Teahouse po ruce",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Klikněte na ikonu dílku skládačky na liště Chromu a pak na špendlík u Teahouse Tibetan. Jeho nabídka obsahuje slovník, vaše slova a rychlá nastavení.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Další kroky",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Vše běží ve vašem počítači. Vaše slova zůstávají v tomto prohlížeči a nic se nikam neodesílá, pokud se nerozhodnete přeložit větu.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

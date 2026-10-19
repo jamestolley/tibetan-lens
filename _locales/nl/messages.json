@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Hervatten",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Welkom bij Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Alles is klaar. Teahouse werkt nu op elke webpagina met Tibetaanse tekst. Probeer het uit met het voorbeeld hieronder.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Probeer het hier",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Klik op een woord om de betekenis, Wylie en uitspraak te zien.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Klik op ☆ in de definitie om het woord te bewaren, of op ✓ als je het al kent.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Klik op de ། aan het eind van een zin om de hele zin te vertalen.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Houd Teahouse binnen handbereik",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Klik op het puzzelstukje in de werkbalk van Chrome en daarna op de punaise naast Teahouse Tibetan. Het menu bevat het woordenboek, je woorden en snelle instellingen.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Volgende stappen",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Alles draait op je eigen computer. Je woorden blijven in deze browser en er wordt niets verstuurd, tenzij je ervoor kiest een zin te vertalen.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

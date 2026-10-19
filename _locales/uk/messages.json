@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Відновити",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Ласкаво просимо до Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Усе готово. Тепер Teahouse працює на будь-якій вебсторінці з тибетським текстом. Спробуйте на прикладі нижче.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Спробуйте тут",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Натисніть на слово, щоб побачити його значення, транслітерацію Вайлі та вимову.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Натисніть ☆ у визначенні, щоб зберегти слово, або ✓, якщо ви його вже знаєте.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Натисніть ། наприкінці речення, щоб перекласти все речення.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Тримайте Teahouse під рукою",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Натисніть значок пазла на панелі Chrome, а потім шпильку поруч із Teahouse Tibetan. У його меню є словник, ваші слова та швидкі налаштування.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Що далі",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Усе працює на вашому комп'ютері. Ваші слова залишаються в цьому браузері, і нічого нікуди не надсилається, якщо ви самі не вирішите перекласти речення.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Возобновить",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Добро пожаловать в Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Всё готово. Теперь Teahouse работает на любой веб-странице с тибетским текстом. Попробуйте на примере ниже.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Попробуйте здесь",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Нажмите на слово, чтобы увидеть его значение, транслитерацию Уайли и произношение.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Нажмите ☆ в определении, чтобы сохранить слово, или ✓, если вы его уже знаете.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Нажмите ། в конце предложения, чтобы перевести всё предложение.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Держите Teahouse под рукой",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Нажмите значок пазла на панели Chrome, затем булавку рядом с Teahouse Tibetan. В его меню есть словарь, ваши слова и быстрые настройки.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Что дальше",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Всё работает на вашем компьютере. Ваши слова остаются в этом браузере, и ничего никуда не отправляется, если вы сами не решите перевести предложение.",
+    "description": "Welcome page: privacy reassurance"
   }
 }

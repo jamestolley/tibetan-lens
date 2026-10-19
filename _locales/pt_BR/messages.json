@@ -666,5 +666,45 @@
   "resumeSite": {
     "message": "Retomar",
     "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Boas-vindas ao Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Tudo pronto. O Teahouse agora funciona em qualquer página da web com texto tibetano. Experimente no exemplo abaixo.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Experimente aqui",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Clique em uma palavra para ver o significado, o Wylie e a pronúncia.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Clique em ☆ na definição para salvar a palavra, ou em ✓ se você já a conhece.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Clique no ། no fim de uma frase para traduzir a frase inteira.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Mantenha o Teahouse por perto",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Clique no ícone de peça de quebra-cabeça na barra do Chrome e depois no alfinete ao lado de Teahouse Tibetan. O menu traz o dicionário, suas palavras e configurações rápidas.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Próximos passos",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Tudo funciona no seu computador. Suas palavras ficam neste navegador, e nada é enviado a lugar nenhum, a menos que você escolha traduzir uma frase.",
+    "description": "Welcome page: privacy reassurance"
   }
 }
