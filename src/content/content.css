@@ -109,6 +109,32 @@
   background: rgba(122, 47, 42, 0.08) !important;
 }
 
+/* Sentence-ending marks (shad) offer "Translate this sentence". */
+.tibetan-extension-sentence-end {
+  border-radius: 0.2em;
+  padding: 0 0.1em;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+
+.tibetan-extension-sentence-end:hover,
+.tibetan-extension-sentence-end:focus-visible {
+  outline: none;
+  background: rgba(190, 134, 30, 0.28);
+}
+
+.tibetan-extension-tooltip-sentence {
+  margin: 0.2rem 0 0.6rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tibetan-extension-tooltip-translate {
+  color: var(--tibetan-extension-clay) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .tibetan-extension-word:hover,
 .tibetan-extension-word:focus-visible {
   outline: none;

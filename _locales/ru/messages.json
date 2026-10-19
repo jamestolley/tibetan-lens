@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "Приглушать известные слова, чтобы выделялись новые",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Перевести это предложение",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Открыть в Google Переводчике",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }

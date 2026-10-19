@@ -9,7 +9,8 @@
       wordUnmatched: "is-unmatched",
       tooltip: "tibetan-extension-tooltip",
       tooltipVisible: "is-visible",
-      linkChoice: "tibetan-extension-link-choice"
+      linkChoice: "tibetan-extension-link-choice",
+      sentenceEnd: "tibetan-extension-sentence-end"
     },
     messages: {
       refreshAnnotations: "refresh-annotations",

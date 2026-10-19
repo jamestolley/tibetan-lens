@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "Приглушувати відомі слова, щоб виділялися нові",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Перекласти це речення",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Відкрити в Google Перекладачі",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }

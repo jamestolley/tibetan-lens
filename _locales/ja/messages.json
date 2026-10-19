@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "知っている単語を目立たなくして、新しい単語を際立たせる",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "この文を翻訳",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Google 翻訳で開く",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }

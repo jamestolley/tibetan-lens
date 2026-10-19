@@ -264,13 +264,50 @@
     node.style.left = `${left}px`;
   }
 
+  const SENTENCE_PREVIEW_LENGTH = 220;
+
+  function renderSentenceContent({ sentence, url }) {
+    const fragment = document.createDocumentFragment();
+
+    const label = document.createElement("div");
+    label.className = "tibetan-extension-tooltip-label";
+    label.textContent = extension.i18n.getMessage("translateSentence");
+    fragment.appendChild(label);
+
+    const preview = document.createElement("div");
+    preview.className = "tibetan-extension-tooltip-sentence";
+    preview.lang = "bo";
+    preview.textContent =
+      sentence.length > SENTENCE_PREVIEW_LENGTH ? `${sentence.slice(0, SENTENCE_PREVIEW_LENGTH)}…` : `${sentence}།`;
+    fragment.appendChild(preview);
+
+    const link = document.createElement("a");
+    link.className = "tibetan-extension-tooltip-translate";
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = `${extension.i18n.getMessage("openInGoogleTranslate")} ↗`;
+    fragment.appendChild(link);
+
+    return fragment;
+  }
+
+  function showContent(anchor, content) {
+    const node = ensureTooltip();
+    node.innerHTML = "";
+    node.appendChild(content);
+    node.classList.add(tooltipVisible);
+    positionTooltip(anchor, node);
+  }
+
   extension.tooltip = {
     showTooltip(anchor, payload) {
-      const node = ensureTooltip();
-      node.innerHTML = "";
-      node.appendChild(renderTooltipContent(payload));
-      node.classList.add(tooltipVisible);
-      positionTooltip(anchor, node);
+      showContent(anchor, renderTooltipContent(payload));
+    },
+
+    // payload: { sentence, url } — the sentence a shad ends and its Google Translate link.
+    showSentence(anchor, payload) {
+      showContent(anchor, renderSentenceContent(payload));
     },
 
     hideTooltip() {

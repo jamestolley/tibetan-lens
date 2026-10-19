@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "Estomper les mots que je connais pour faire ressortir les nouveaux",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Traduire cette phrase",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Ouvrir dans Google Traduction",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }

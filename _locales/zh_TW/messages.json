@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "淡化我認識的詞，讓新詞更醒目",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "翻譯這句話",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "在 Google 翻譯中開啟",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }

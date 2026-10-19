@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "Ztlumit slova, která znám, aby nová vynikla",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Přeložit tuto větu",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Otevřít v Překladači Google",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }

@@ -120,7 +120,9 @@
     stageKnown: "Known",
     markKnown: "I know this word",
     unmarkKnown: "Marked as known — click to study it again",
-    highlightKnowledge: "Fade words I know, so new words stand out"
+    highlightKnowledge: "Fade words I know, so new words stand out",
+    translateSentence: "Translate this sentence",
+    openInGoogleTranslate: "Open in Google Translate"
   };
 
   extension.i18n = {

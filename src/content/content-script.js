@@ -120,6 +120,76 @@
     return element;
   }
 
+  // Shad and related marks end Tibetan sentences and clauses.
+  const SENTENCE_END_PATTERN = /([\u0f0d-\u0f12\u0f14]+)/u;
+  const SENTENCE_END_MARKS = /[\u0f0d-\u0f12\u0f14]+/gu;
+
+  // Appends punctuation, wrapping each run of sentence-ending marks in a
+  // focusable span that offers "Translate this sentence".
+  function appendPunctuation(fragment, text) {
+    text.split(SENTENCE_END_PATTERN).forEach((part, index) => {
+      if (!part) {
+        return;
+      }
+      if (index % 2 === 0) {
+        fragment.appendChild(document.createTextNode(part));
+        return;
+      }
+      const mark = document.createElement("span");
+      mark.className = extension.constants.classes.sentenceEnd;
+      mark.tabIndex = 0;
+      mark.setAttribute("role", "button");
+      mark.title = extension.i18n.getMessage("translateSentence");
+      mark.textContent = part;
+      fragment.appendChild(mark);
+    });
+  }
+
+  // The sentence a mark ends: the text since the previous sentence end in the
+  // same block. Marks that follow another mark (as in "། །") belong to the
+  // sentence before them.
+  function sentenceForMark(mark) {
+    const block =
+      mark.closest("p, li, td, th, dd, dt, blockquote, figcaption, h1, h2, h3, h4, h5, h6, div, section, article") ||
+      document.body;
+    const range = document.createRange();
+    range.setStart(block, 0);
+    range.setEndAfter(mark);
+    const parts = range
+      .toString()
+      .replace(/[\s\u0f0d-\u0f12\u0f14]+$/u, "")
+      .split(SENTENCE_END_MARKS);
+    return (parts[parts.length - 1] || "")
+      // Drop the spaces the extension inserts between words.
+      .replace(/(?<=[\u0f00-\u0fff])[ \u00a0]+(?=[\u0f00-\u0fff])/gu, "")
+      .trim()
+      // Tibetan drops the tsek before a shad, except after ང (ང་།).
+      .replace(/(?<!\u0f44)\u0f0b$/u, "");
+  }
+
+  // Google Translate wants a primary language code, except for Chinese,
+  // where the script variant matters.
+  function translateTargetLanguage() {
+    let language = "en";
+    try {
+      language = chrome.i18n.getUILanguage() || "en";
+    } catch (_error) {
+      // Fall back to English when the extension context is gone.
+    }
+    return /^zh/i.test(language) ? language.replace("_", "-") : language.split(/[-_]/)[0];
+  }
+
+  function showSentenceForMark(mark) {
+    const sentence = sentenceForMark(mark);
+    if (!sentence) {
+      return;
+    }
+    const url = `https://translate.google.com/?sl=bo&tl=${encodeURIComponent(translateTargetLanguage())}&text=${encodeURIComponent(
+      `${sentence}།`
+    )}&op=translate`;
+    extension.tooltip.showSentence(mark, { sentence, url });
+  }
+
   function appendTokens(fragment, tokens) {
     let annotatedWords = 0;
 
@@ -133,6 +203,11 @@
           fragment.appendChild(document.createTextNode(" "));
         }
 
+        return;
+      }
+
+      if (token.type === "punctuation") {
+        appendPunctuation(fragment, token.text);
         return;
       }
 
@@ -374,6 +449,14 @@
       return;
     }
 
+    const sentenceEnd = target.closest(`.${extension.constants.classes.sentenceEnd}`);
+    if (sentenceEnd && !sentenceEnd.closest("a")) {
+      hideLinkChoice();
+      cancelHideTooltip();
+      showSentenceForMark(sentenceEnd);
+      return;
+    }
+
     if (state.settings?.tooltipMode !== "click") {
       hideLinkChoice();
       return;
@@ -408,6 +491,15 @@
   function handleMouseOver(event) {
     const target = event.target;
     if (!(target instanceof Element)) {
+      return;
+    }
+
+    const sentenceEnd = target.closest(`.${extension.constants.classes.sentenceEnd}`);
+    if (sentenceEnd) {
+      if (state.settings?.tooltipMode === "hover" && !sentenceEnd.contains(event.relatedTarget)) {
+        cancelHideTooltip();
+        showSentenceForMark(sentenceEnd);
+      }
       return;
     }
 
@@ -446,6 +538,16 @@
   function handleMouseOut(event) {
     const target = event.target;
     if (!(target instanceof Element)) {
+      return;
+    }
+
+    const sentenceEnd = target.closest(`.${extension.constants.classes.sentenceEnd}`);
+    if (sentenceEnd) {
+      const into = event.relatedTarget;
+      const staying = into instanceof Element && (sentenceEnd.contains(into) || extension.tooltip.isTooltipElement(into));
+      if (state.settings?.tooltipMode === "hover" && !staying) {
+        scheduleHideTooltip();
+      }
       return;
     }
 
@@ -508,6 +610,13 @@
     if (word) {
       cancelHideTooltip();
       showTooltipForWord(word);
+      return;
+    }
+
+    const sentenceEnd = target.closest(`.${extension.constants.classes.sentenceEnd}`);
+    if (sentenceEnd) {
+      cancelHideTooltip();
+      showSentenceForMark(sentenceEnd);
     }
   }
 

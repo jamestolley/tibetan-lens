@@ -554,5 +554,13 @@
   "highlightKnowledge": {
     "message": "아는 단어를 흐리게 해서 새 단어가 돋보이게",
     "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "이 문장 번역",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Google 번역에서 열기",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
   }
 }
