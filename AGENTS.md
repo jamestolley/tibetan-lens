@@ -27,6 +27,12 @@
 - Extension pages beyond the popup and options (the dictionary and "My words" pages) live in top-level `pages/`; the build compiles every HTML file there to `dist/<browser>/pages/`. Open them with `chrome.runtime.getURL("pages/<name>.html")` and add each one to the page list in `tools/test.js`.
 - Saved words are stored in `chrome.storage.local` under `savedWords` (see `src/shared/wordList.js`); settings stay in `chrome.storage.sync`.
 
+## Websites
+
+- `site/` holds two static brochure sites: `teahouselanguages.com/` (umbrella) and `tibetan.teahouselanguages.com/` (one subdomain per language). There's no build step. Setup for hosting (Cloudflare Pages), email (Cloudflare Email Routing) and the Google Forms is in `site/README.md`.
+- `style.css` and `icon.png` are duplicated in each site folder; keep the copies identical.
+- The Chrome Web Store privacy policy URL is `https://tibetan.teahouselanguages.com/privacy.html`; update that page when the extension's data handling changes.
+
 ## Recent changes
 
 - Fixed a runtime `Failed to fetch` error for `curated_glosses.tsv` by adding it to `web_accessible_resources` in `manifest.json`.
