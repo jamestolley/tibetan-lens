@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse Tibetština",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse Tibetština: slovník a průvodce učením",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "Čtěte tibetštinu na každém webu: mezery mezi slovy, okamžité definice, slovník a uložená slova s opakováním v intervalech.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse Tibetština",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Nastavte, jak se tibetský text rozděluje na slova, zobrazuje a překládá.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse Tibetština",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Rozdělujte tibetský text na slova a klikněte na slova nebo na ně najeďte myší pro zobrazení definic.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Čtení",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Nastavte, co se stane, když je na stránce rozpoznán tibetský text.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Rozšíření zapnuto",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Vkládat mezery mezi slova",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Zobrazit překlady při",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Najetí myší",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Kliknutí",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Zobrazit Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Zobrazit výslovnost",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Obarvit slova podle slovního druhu",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Barevné odlišení",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Zvýrazněte slova podle slovního druhu a vyberte barevný motiv.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Barevný motiv slovních druhů",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Výrazný",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Jemný",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Pouze podtržení",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "Po kliknutí na tibetské slovo s odkazem se zeptat: otevřít odkaz, nebo zobrazit překlad",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Minimální velikost tibetského písma",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Slovníky",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Zapnuté slovníky určují výsledky v oknech a lexikon pro dělení na slova.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Zdroje slovníků",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Přiložená data zůstávají pod svou původní licencí. Úplné uvedení autorů najdete v přiloženém souboru NOTICE.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Nastavení se synchronizuje automaticky.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Uloženo do synchronizovaného úložiště Chrome.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Načítání slovníků…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Načítání…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Neznámé",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Žádný zapnutý slovník zatím pro tento výraz neobsahuje definici.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Zatím bez definice — toto slovo v přiložených slovnících není.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "pravděpodobně (podle korpusu)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Části slova",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Obnovit stránku",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Vložit ukázkový text",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Možnosti",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Otevřít odkaz",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Zobrazit překlad",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Tuto stránku nelze zastihnout — obnovte kartu nebo otevřete ukázkovou stránku.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Ukázková stránka",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Definice jsou zatím k dispozici pouze v angličtině.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Načítání Teahouse Tibetština",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Testovací text Teahouse Tibetština",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Vlastní jméno",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Podstatné jméno",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Sloveso",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Přídavné jméno",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Příslovce",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Zájmeno",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Determinátor",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Předložka/záložka",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Částice",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Číslovka",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Spojka",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Podřadicí spojka",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Citoslovce",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Interpunkce",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Pomocné sloveso",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Jiné",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Neznámé",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Základní slovník pro dělení tibetského textu na slova z botok-data (~31 000 hesel).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Tibetsko-anglický slovník Jeffreyho Hopkinse (~18 000 hesel).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Glosář projektu 84000: Translating the Words of the Buddha (~25 000 hesel).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Ručně vybraná hesla Teahouse pro složeniny a běžná slova, která v přiložených slovnících chybí.",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Slovník",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Slovník Teahouse Tibetština",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Slovník",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Vyhledejte slovo v tibetském písmu, ve Wylieho přepisu nebo anglicky.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Hledat ve slovníku",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Tibetská slova",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Tibetská slova z Wylieho přepisu",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Anglické významy",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Nic nenalezeno. Zkuste jiný pravopis, méně slabik nebo Wylieho přepis.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Napište slovo, které chcete vyhledat.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Slovníky se nepodařilo načíst. Obnovte stránku a zkuste to znovu.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Vyhledat toto slovo",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Uložit do mých slov",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Uloženo v mých slovech – kliknutím odeberete",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "Moje slova",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "Slova k opakování",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "Moje slova — Teahouse Tibetština",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "Moje slova",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "Slova, která jste označili hvězdičkou při čtení nebo ve slovníku.",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "Filtrovat moje slova",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "Řadit",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "Nejnovější první",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "Nejstarší první",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "Další opakování",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "Exportovat CSV",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "Uložená slova:",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "Zatím žádná uložená slova. Klikněte na ☆ v okně slova nebo ve slovníku a uložte ho sem.",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "Filtru neodpovídá žádné uložené slovo.",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "Odebrat",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "Slovo odebráno.",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "Zpět",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "Uloženo:",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "Další opakování:",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "k opakování teď",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "Zdroj:",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Opakovat",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Procvičit vše",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Zobrazit odpověď",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Znovu",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Těžké",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Dobře",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Snadné",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Ukončit opakování",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Prozatím vše zopakováno.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Procvičování dokončeno.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Klávesnice: mezerník zobrazí odpověď, 1–4 ohodnotí.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Režim procvičování — plán opakování se nezmění.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Zpět na moje slova",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Vše",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nová",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Učím se",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Opakuji",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Zvládnutá",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Nastavení studia",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nových slov denně",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Odhad denních opakování po ustálení:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Cílová paměť",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85 % — méně opakování",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90 % — doporučeno",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95 % — více opakování",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Uložená slova čekají v Nových, dokud není místo, takže jich můžete uložit kolik chcete. Zvládnutá slova uvolňují místo.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "Rozpracováno:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Dnešní nová slova jsou zahájena. Zítra začnou další; zbytek čeká v Nových.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Nová slova jsou pozastavena, dokud nedoženete opakování.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Nová slova jsou pozastavena, dokud je mnoho slov rozpracováno. Zvládnutí slov uvolňuje místo.",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Známá",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "Toto slovo znám",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Označeno jako známé — kliknutím ho začnete znovu učit",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Ztlumit slova, která znám, aby nová vynikla",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Přeložit tuto větu",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Otevřít v Překladači Google",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Záloha a import",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Vaše slova jsou uložena pouze v tomto prohlížeči. Občas, a také před změnou počítače, si stáhněte zálohu, abyste nikdy nepřišli o svůj pokrok.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Stáhnout zálohu",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Importovat soubor…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Poslední záloha:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "nikdy",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Importovat lze zálohy Teahouse (.json), náš export CSV, textové exporty z Anki a prosté seznamy tibetských slov. Slova, která už máte, si ponechají svůj pokrok.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Import dokončen",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Přidáno:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Aktualizováno:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Již uloženo:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Přeskočeno:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Tento soubor zálohy nelze přečíst. Je to záloha Teahouse?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "V tomto souboru nebyla nalezena žádná tibetská slova.",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "Nápověda a zpětná vazba",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "Máte otázku, nápad nebo něco nefunguje? Čteme každou zprávu.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "Nápověda a časté dotazy",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "Nahlásit chybu",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "Navrhnout definici",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "Zásady ochrany soukromí",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "Verze",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Pozastavit na tomto webu",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Pozastavené weby",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Na těchto webech zůstane Teahouse vypnutý. Web pozastavíte kliknutím na ikonu rozšíření, když jste na něm.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Žádné pozastavené weby.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Obnovit",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Vítejte v Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Vše je připraveno. Teahouse teď funguje na každé webové stránce s tibetským textem. Vyzkoušejte ho na ukázce níže.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Vyzkoušejte to",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Klikněte na slovo a uvidíte jeho význam, Wylie a výslovnost.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Kliknutím na ☆ v definici slovo uložíte, kliknutím na ✓ ho označíte jako známé.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Kliknutím na ། na konci věty přeložíte celou větu.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Mějte Teahouse po ruce",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Klikněte na ikonu dílku skládačky na liště Chromu a pak na špendlík u Teahouse Tibetan. Jeho nabídka obsahuje slovník, vaše slova a rychlá nastavení.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Další kroky",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Vše běží ve vašem počítači. Vaše slova zůstávají v tomto prohlížeči a nic se nikam neodesílá, pokud se nerozhodnete přeložit větu.",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

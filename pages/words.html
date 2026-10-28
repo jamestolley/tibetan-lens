@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="wordsPageTitle">My words — Teahouse Tibetan</title>
+    <link rel="stylesheet" href="../src/dictionary/index.css" />
+    <link rel="stylesheet" href="../src/words/index.css" />
+  </head>
+  <body>
+    <main class="dictionary-shell">
+      <header class="hero">
+        <p class="eyebrow"><span data-i18n="extensionName">Teahouse Tibetan</span> <span lang="bo">བོད་ཡིག་ཇ་ཁང་།</span></p>
+        <h1 data-i18n="wordsHeading">My words</h1>
+        <p class="intro" data-i18n="wordsIntro">Words you've starred while reading or in the dictionary.</p>
+        <nav class="page-nav">
+          <a href="dictionary.html" data-i18n="dictionaryButton">Dictionary</a>
+        </nav>
+      </header>
+
+      <section id="listView">
+        <div class="words-toolbar">
+          <button id="startReview" class="words-button is-primary" type="button"></button>
+          <label class="visually-hidden" for="wordsFilter" data-i18n="wordsFilterLabel">Filter my words</label>
+          <input
+            id="wordsFilter"
+            class="search-input words-filter"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            data-i18n-placeholder="wordsFilterLabel"
+          />
+          <label class="words-sort">
+            <span data-i18n="wordsSort">Sort</span>
+            <select id="wordsSort">
+              <option value="newest" data-i18n="wordsSortNewest">Newest first</option>
+              <option value="oldest" data-i18n="wordsSortOldest">Oldest first</option>
+              <option value="due" data-i18n="wordsSortDue">Next review</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="stageFilter" class="stage-filter">
+          <button type="button" data-stage="all"><span data-i18n="stageAll">All</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="new"><span data-i18n="stageNew">New</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="learning"><span data-i18n="stageLearning">Learning</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="reviewing"><span data-i18n="stageReviewing">Reviewing</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="mastered"><span data-i18n="stageMastered">Mastered</span> <span class="stage-count"></span></button>
+          <button type="button" data-stage="known"><span data-i18n="stageKnown">Known</span> <span class="stage-count"></span></button>
+        </div>
+
+        <p class="words-count"><span data-i18n="wordsCount">Saved words:</span> <strong id="wordsCountValue">0</strong></p>
+        <p id="studyNote" class="study-note" hidden></p>
+
+        <details class="study-settings">
+          <summary data-i18n="studySettings">Study settings</summary>
+          <label class="study-field" for="newWordsPerDay">
+            <span data-i18n="newWordsPerDay">New words per day</span>
+            <input id="newWordsPerDay" type="number" min="1" max="50" />
+          </label>
+          <p class="study-hint"><span data-i18n="workloadEstimate">Estimated daily reviews once settled:</span> <strong id="workloadValue"></strong></p>
+          <label class="study-field" for="targetRetention">
+            <span data-i18n="targetRetention">Target memory</span>
+            <select id="targetRetention">
+              <option value="0.85" data-i18n="retention85">85% — fewer reviews</option>
+              <option value="0.9" data-i18n="retention90">90% — recommended</option>
+              <option value="0.95" data-i18n="retention95">95% — more reviews</option>
+            </select>
+          </label>
+          <p class="study-hint" data-i18n="newWordsHint">Saved words wait in New until there's room, so you can save as many as you like. Mastered words free up room.</p>
+          <p class="study-hint"><span data-i18n="inProgress">In progress:</span> <strong id="activeValue"></strong></p>
+        </details>
+
+        <details id="backupPanel" class="study-settings">
+          <summary data-i18n="backupHeading">Backup &amp; import</summary>
+          <p class="study-hint" data-i18n="backupIntro">Your words are stored only in this browser. Download a backup now and then, and before changing computers, so you never lose your progress.</p>
+          <div class="backup-actions">
+            <button id="backupDownload" class="words-button is-primary" type="button" data-i18n="backupDownload">Download backup</button>
+            <button id="wordsExport" class="words-button" type="button" data-i18n="wordsExport">Export CSV</button>
+            <button id="importButton" class="words-button" type="button" data-i18n="importButton">Import a file…</button>
+            <input id="importFile" type="file" accept=".json,.csv,.tsv,.txt,application/json,text/csv,text/plain" hidden />
+          </div>
+          <p class="study-hint"><span data-i18n="backupLast">Last backup:</span> <strong id="backupLastValue"></strong></p>
+          <p class="study-hint" data-i18n="importHint">Import accepts Teahouse backups (.json), our CSV export, Anki text exports and plain lists of Tibetan words. Words you already have keep their progress.</p>
+        </details>
+        <p id="wordsStatus" class="status-line" role="status" aria-live="polite"></p>
+        <div id="wordsList" class="results"></div>
+      </section>
+
+      <section id="reviewView" class="review" hidden>
+        <div class="review-bar">
+          <span id="reviewProgress" class="review-progress"></span>
+          <button id="reviewEnd" class="words-link-button" type="button" data-i18n="reviewEnd">End review</button>
+        </div>
+        <p id="reviewPracticeNote" class="review-note" data-i18n="reviewPracticeNote" hidden>Practice mode — your review schedule won't change.</p>
+
+        <div id="reviewSession">
+          <article id="reviewCard" class="review-card" tabindex="-1">
+            <a id="reviewHeadword" class="review-headword" lang="bo" target="_blank"></a>
+            <div id="reviewAnswer" class="review-answer" hidden>
+              <p id="reviewRomanization" class="review-romanization"></p>
+              <p id="reviewGloss" class="review-gloss"></p>
+            </div>
+          </article>
+
+          <div class="review-actions">
+            <button id="reviewShow" class="words-button is-primary review-show" type="button" data-i18n="reviewShowAnswer">Show answer</button>
+            <div id="reviewGrades" class="review-grades" hidden>
+              <button class="review-grade is-again" type="button" data-grade="again"><span data-i18n="reviewAgain">Again</span><small></small></button>
+              <button class="review-grade is-hard" type="button" data-grade="hard"><span data-i18n="reviewHard">Hard</span><small></small></button>
+              <button class="review-grade is-good" type="button" data-grade="good"><span data-i18n="reviewGood">Good</span><small></small></button>
+              <button class="review-grade is-easy" type="button" data-grade="easy"><span data-i18n="reviewEasy">Easy</span><small></small></button>
+            </div>
+          </div>
+          <p class="review-hint" data-i18n="reviewKeyboardHint">Keyboard: Space shows the answer, 1–4 grade it.</p>
+        </div>
+
+        <div id="reviewDone" class="review-done" hidden>
+          <p id="reviewDoneMessage" class="review-done-message"></p>
+          <p id="reviewNextDue" class="review-note"></p>
+          <button id="reviewBack" class="words-button is-primary" type="button" data-i18n="reviewBack">Back to my words</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="../src/shared/constants.js"></script>
+    <script src="../src/shared/i18n.js"></script>
+    <script src="../src/shared/defaults.js"></script>
+    <script src="../src/shared/storage.js"></script>
+    <script src="../src/shared/tibetan.js"></script>
+    <script src="../src/shared/ts-fsrs.js"></script>
+    <script src="../src/shared/wordList.js"></script>
+    <script src="../src/shared/jsewts.js"></script>
+    <script src="../src/shared/ewts-converter.js"></script>
+    <script src="../src/words/index.js"></script>
+  </body>
+</html>

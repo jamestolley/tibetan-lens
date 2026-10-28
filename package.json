@@ -1,18 +1,27 @@
 {
-  "name": "tibetan-lens",
-  "version": "0.50.0",
+  "name": "teahouse-tibetan",
+  "version": "0.50.46",
   "private": true,
   "description": "A browser extension for learners of the Tibetan language.",
+  "license": "MIT",
   "scripts": {
-    "build:dictionaries": "node scripts/build-dictionaries.js",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test": "node tools/test.js",
+    "lint": "eslint .",
+    "build:dictionaries": "node tools/build-dictionaries.js",
+    "build:hopkins": "node tools/build-hopkins.js",
+    "dev": "extension dev --browser=chrome --no-telemetry",
+    "build": "extension build --browser=chrome,edge,firefox --zip --no-telemetry",
+    "start": "extension start --no-telemetry",
+    "preview": "extension preview --no-telemetry",
+    "publish:init": "publish-extension init",
+    "publish:stores": "publish-extension --chrome-zip dist/chrome/teahouse-tibetan-0.50.46.zip --edge-zip dist/edge/teahouse-tibetan-0.50.46.zip --firefox-zip dist/firefox/teahouse-tibetan-0.50.46.zip"
   },
   "devDependencies": {
-    "@vitest/coverage-v8": "^4.1.9",
-    "jsdom": "^28.1.0",
+    "@eslint/js": "9.39.5",
+    "eslint": "9.39.5",
+    "extension": "3.18.2",
+    "globals": "16.5.0",
     "jsewts": "^1.0.4",
-    "vitest": "^4.1.9"
+    "publish-browser-extension": "6.1.1"
   }
 }

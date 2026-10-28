@@ -19,7 +19,7 @@
 }
 
 .tibetan-extension-word.is-matched {
-  background: rgba(190, 134, 30, 0.08);
+  background: rgba(190, 134, 30, 0.14);
 }
 
 .tibetan-extension-word.is-unmatched {
@@ -27,20 +27,113 @@
   opacity: 0.84;
 }
 
-/* POS color-coding */
-.tibetan-extension-word.pos-noun { color: #1a5fb4; border-bottom-color: #1a5fb4; }
-.tibetan-extension-word.pos-propn { color: #1c3a6e; border-bottom-color: #1c3a6e; }
-.tibetan-extension-word.pos-verb { color: #b5360a; border-bottom-color: #b5360a; }
-.tibetan-extension-word.pos-adj { color: #1f7a3a; border-bottom-color: #1f7a3a; }
-.tibetan-extension-word.pos-adv { color: #6e3ab5; border-bottom-color: #6e3ab5; }
-.tibetan-extension-word.pos-part { color: #6b6b6b; border-bottom-color: #9e9e9e; }
-.tibetan-extension-word.pos-det { color: #6b6b6b; border-bottom-color: #9e9e9e; }
-.tibetan-extension-word.pos-adp { color: #6b6b6b; border-bottom-color: #9e9e9e; }
-.tibetan-extension-word.pos-conj { color: #6b6b6b; border-bottom-color: #9e9e9e; }
-.tibetan-extension-word.pos-pron { color: #4a6fa5; border-bottom-color: #4a6fa5; }
-.tibetan-extension-word.pos-num { color: #8b5e3c; border-bottom-color: #8b5e3c; }
-.tibetan-extension-word.pos-intj { color: #d4530a; border-bottom-color: #d4530a; }
-.tibetan-extension-word.pos-unknown { color: #5c4a32; border-bottom-color: #be861e; }
+/* POS coloring — "vivid" theme (default) */
+.tibetan-extension-word.tibetan-extension-word--PROPN { background-color: rgba(245, 158, 11, 0.55); }
+.tibetan-extension-word.tibetan-extension-word--NOUN  { background-color: rgba(59, 130, 246, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--VERB  { background-color: rgba(34, 197, 94, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--ADJ   { background-color: rgba(249, 115, 22, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--ADV   { background-color: rgba(168, 85, 247, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--PRON  { background-color: rgba(234, 179, 8, 0.55); }
+.tibetan-extension-word.tibetan-extension-word--DET   { background-color: rgba(6, 182, 212, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--ADP   { background-color: rgba(236, 72, 153, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--PART  { background-color: rgba(132, 204, 22, 0.50); }
+.tibetan-extension-word.tibetan-extension-word--NUM   { background-color: rgba(20, 184, 166, 0.50); }
+.tibetan-extension-word.tibetan-extension-word--CONJ  { background-color: rgba(239, 68, 68, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--INTJ  { background-color: rgba(99, 102, 241, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--PUNCT { background-color: rgba(107, 114, 128, 0.35); }
+.tibetan-extension-word.tibetan-extension-word--AUX   { background-color: rgba(139, 92, 246, 0.45); }
+.tibetan-extension-word.tibetan-extension-word--SCONJ { background-color: rgba(244, 63, 94, 0.40); }
+.tibetan-extension-word.tibetan-extension-word--OTHER,
+.tibetan-extension-word.tibetan-extension-word--X     { background-color: rgba(148, 163, 184, 0.35); }
+.tibetan-extension-word.tibetan-extension-word--UNKNOWN { background-color: rgba(148, 163, 184, 0.18); }
+
+/* "soft" theme — original pastel palette */
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PROPN { background-color: rgba(255, 223, 186, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--NOUN  { background-color: rgba(186, 255, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--VERB  { background-color: rgba(186, 223, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--ADJ   { background-color: rgba(223, 186, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--ADV   { background-color: rgba(255, 186, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PRON  { background-color: rgba(255, 255, 186, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--DET   { background-color: rgba(186, 255, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--ADP   { background-color: rgba(255, 186, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PART  { background-color: rgba(223, 255, 186, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--NUM   { background-color: rgba(186, 223, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--CONJ  { background-color: rgba(255, 223, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--INTJ  { background-color: rgba(223, 255, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--PUNCT { background-color: rgba(223, 223, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--AUX   { background-color: rgba(230, 214, 255, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--SCONJ { background-color: rgba(255, 214, 223, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--OTHER,
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--X     { background-color: rgba(230, 230, 230, 0.5); }
+[data-tibetan-extension-pos-theme="soft"] .tibetan-extension-word.tibetan-extension-word--UNKNOWN { background-color: rgba(230, 230, 230, 0.3); }
+
+/* "underline" theme — colored underline instead of background */
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word[class*="tibetan-extension-word--"] {
+  background-color: transparent;
+  border-bottom: 3px solid currentColor;
+}
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PROPN { color: #b45309; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--NOUN  { color: #1d4ed8; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--VERB  { color: #15803d; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--ADJ   { color: #c2410c; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--ADV   { color: #7e22ce; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PRON  { color: #a16207; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--DET   { color: #0e7490; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--ADP   { color: #be185d; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PART  { color: #4d7c0f; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--NUM   { color: #0f766e; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--CONJ  { color: #b91c1c; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--INTJ  { color: #4338ca; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--PUNCT { color: #4b5563; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--AUX   { color: #6d28d9; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--SCONJ { color: #be123c; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--OTHER,
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--X     { color: #64748b; }
+[data-tibetan-extension-pos-theme="underline"] .tibetan-extension-word.tibetan-extension-word--UNKNOWN { color: #94a3b8; }
+
+/* Knowledge highlighting: known and mastered words read as plain text so new
+   words stand out; saved words still being learned get a saffron underline. */
+.tibetan-extension-word.is-known {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  color: inherit !important;
+  opacity: 1;
+}
+
+.tibetan-extension-word.is-learning {
+  border-bottom: 2px solid var(--tibetan-extension-saffron);
+}
+
+.tibetan-extension-word.is-known:hover,
+.tibetan-extension-word.is-known:focus-visible {
+  background: rgba(122, 47, 42, 0.08) !important;
+}
+
+/* Sentence-ending marks (shad) offer "Translate this sentence". */
+.tibetan-extension-sentence-end {
+  border-radius: 0.2em;
+  padding: 0 0.1em;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+
+.tibetan-extension-sentence-end:hover,
+.tibetan-extension-sentence-end:focus-visible {
+  outline: none;
+  background: rgba(190, 134, 30, 0.28);
+}
+
+.tibetan-extension-tooltip-sentence {
+  margin: 0.2rem 0 0.6rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.tibetan-extension-tooltip-translate {
+  color: var(--tibetan-extension-clay) !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
 
 .tibetan-extension-word:hover,
 .tibetan-extension-word:focus-visible {
@@ -60,7 +153,16 @@
   background: linear-gradient(180deg, #fff9ef 0%, #f5ead0 100%);
   color: var(--tibetan-extension-ink);
   box-shadow: 0 16px 40px var(--tibetan-extension-shadow);
-  font: 14px/1.45 Georgia, "Palatino Linotype", serif;
+  font: 14px/1.45 Georgia, "Palatino Linotype", serif !important;
+}
+
+/* Page stylesheets can force their own fonts (e.g. a Tibetan webfont lacking
+   Latin diacritics) onto tooltip children — pin every descendant to our stack
+   so headings, glosses, and notes don't mix fonts mid-word. */
+.tibetan-extension-tooltip,
+.tibetan-extension-tooltip * {
+  font-family: Georgia, "Palatino Linotype", "Noto Serif Tibetan",
+    "Tibetan Machine Uni", "Microsoft Himalaya", serif !important;
 }
 
 .tibetan-extension-tooltip.is-visible {
@@ -68,10 +170,58 @@
 }
 
 .tibetan-extension-tooltip-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 0.2rem;
   color: var(--tibetan-extension-clay);
   font-size: 1.05rem;
   font-weight: 700;
+}
+
+.tibetan-extension-tooltip-actions {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.15rem;
+  margin: -0.15rem -0.3rem 0 0;
+}
+
+.tibetan-extension-tooltip-known {
+  padding: 0 0.3rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: rgba(44, 33, 23, 0.45);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.tibetan-extension-tooltip-known:hover,
+.tibetan-extension-tooltip-known:focus-visible {
+  color: #2f6b3a;
+}
+
+.tibetan-extension-tooltip-known[aria-pressed="true"] {
+  background: rgba(47, 107, 58, 0.16);
+  color: #2f6b3a;
+}
+
+.tibetan-extension-tooltip-save {
+  padding: 0 0.3rem;
+  border: 0;
+  background: none;
+  color: #bf8520;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.tibetan-extension-tooltip-save:hover,
+.tibetan-extension-tooltip-save:focus-visible {
+  color: var(--tibetan-extension-clay);
 }
 
 .tibetan-extension-tooltip-subheading {
@@ -100,6 +250,11 @@
   font-size: 0.96rem;
 }
 
+.tibetan-extension-tooltip-parts {
+  font-size: 0.92rem;
+  white-space: pre-line;
+}
+
 .tibetan-extension-tooltip-notes {
   margin-top: 0.25rem;
   color: rgba(44, 33, 23, 0.72);
@@ -108,4 +263,124 @@
 
 .tibetan-extension-tooltip-empty {
   color: rgba(44, 33, 23, 0.76);
+}
+
+.tibetan-extension-tooltip-extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.25rem 0 0.6rem;
+  font-size: 0.92rem;
+}
+
+.tibetan-extension-tooltip-pos {
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(190, 134, 30, 0.16);
+  color: rgba(122, 47, 42, 0.92);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tibetan-extension-tooltip-pos-inferred {
+  color: rgba(122, 47, 42, 0.6);
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+.tibetan-extension-tooltip-wylie,
+.tibetan-extension-tooltip-phonetic {
+  font-family: system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.tibetan-extension-tooltip-wylie {
+  color: #6b1f1a;
+}
+
+.tibetan-extension-tooltip-phonetic {
+  color: #7a4d00;
+  font-style: italic;
+}
+
+.teahouse-tibetan-loading {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147483647;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 251, 245, 0.94);
+  border: 1px solid rgba(122, 47, 42, 0.16);
+  box-shadow: 0 8px 24px rgba(44, 33, 23, 0.14);
+  color: var(--tibetan-extension-ink);
+  font: 13px/1.4 Georgia, "Palatino Linotype", serif;
+  pointer-events: none;
+}
+
+.teahouse-tibetan-loading.is-visible {
+  display: flex;
+}
+
+.teahouse-tibetan-spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(190, 134, 30, 0.3);
+  border-top-color: #bf8520;
+  border-radius: 50%;
+  animation: teahouse-tibetan-spin 0.9s linear infinite;
+}
+
+@keyframes teahouse-tibetan-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Link choice popover for linked Tibetan words in click mode */
+.tibetan-extension-link-choice {
+  position: absolute;
+  z-index: 2147483646;
+  display: none;
+  min-width: 12rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(44, 33, 23, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(44, 33, 23, 0.15);
+  font: 13px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.tibetan-extension-link-choice.is-visible {
+  display: block;
+}
+
+.tibetan-extension-link-choice button {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(44, 33, 23, 0.16);
+  border-radius: 6px;
+  background: #fff;
+  color: #2c2117;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tibetan-extension-link-choice button + button {
+  margin-left: 0.5rem;
+}
+
+.tibetan-extension-link-choice__primary {
+  background: #3d4c5c !important;
+  color: #fff !important;
+  border-color: #3d4c5c !important;
+}
+
+.tibetan-extension-link-choice__secondary {
+  background: #f8f8f8 !important;
 }

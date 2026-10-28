@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="welcomeTitle">Welcome to Teahouse Tibetan</title>
+    <link rel="stylesheet" href="../src/dictionary/index.css" />
+    <link rel="stylesheet" href="../src/content/content.css" />
+    <link rel="stylesheet" href="../src/welcome/index.css" />
+  </head>
+  <body>
+    <main class="dictionary-shell">
+      <header class="hero">
+        <p class="eyebrow"><span data-i18n="extensionName">Teahouse Tibetan</span> <span lang="bo" data-teahouse-skip>བོད་ཡིག་ཇ་ཁང་།</span></p>
+        <h1 data-i18n="welcomeTitle">Welcome to Teahouse Tibetan</h1>
+        <p class="intro" data-i18n="welcomeIntro">You're all set. Teahouse now works on every web page with Tibetan text. Try it on the sample below.</p>
+      </header>
+
+      <section class="welcome-card">
+        <h2 data-i18n="welcomeTryHeading">Try it here</h2>
+        <ol class="welcome-steps">
+          <li data-i18n="welcomeStepWord">Click a word to see its meaning, Wylie and pronunciation.</li>
+          <li data-i18n="welcomeStepSave">Click ☆ in the definition to save the word, or ✓ if you already know it.</li>
+          <li data-i18n="welcomeStepSentence">Click the ། at the end of a sentence to translate the whole sentence.</li>
+        </ol>
+        <article class="welcome-sample" lang="bo">
+          <p>བྱམས་པ་དང་སྙིང་རྗེ་ནི་སེམས་ཀྱི་ནོར་ཆེན་ཡིན།</p>
+          <p>དགེ་རྒན་ཞིག་གིས་བོད་སྐད་བསླབས།</p>
+          <p>བོད་ཀྱི་རི་རྒྱུད་མཐོང་ན་སེམས་དགའ་བ་ལངས།</p>
+        </article>
+      </section>
+
+      <section class="welcome-card">
+        <h2 data-i18n="welcomePinHeading">Keep Teahouse in reach</h2>
+        <p data-i18n="welcomePinText">Click the puzzle-piece icon in Chrome's toolbar, then the pin next to Teahouse Tibetan. Its menu has the dictionary, your words and quick settings.</p>
+      </section>
+
+      <section class="welcome-card">
+        <h2 data-i18n="welcomeNextHeading">Next steps</h2>
+        <div class="welcome-actions">
+          <a class="welcome-button is-primary" href="dictionary.html" data-i18n="dictionaryButton">Dictionary</a>
+          <a class="welcome-button" href="words.html" data-i18n="myWordsButton">My words</a>
+          <button id="welcomeOptions" class="welcome-button" type="button" data-i18n="options">Options</button>
+        </div>
+        <p class="welcome-note" data-i18n="welcomePrivacy">Everything runs on your computer. Your words stay in this browser, and nothing is sent anywhere unless you choose to translate a sentence.</p>
+      </section>
+    </main>
+
+    <!-- The content script files, so the sample above works like any web page. -->
+    <script src="../src/shared/constants.js"></script>
+    <script src="../src/shared/i18n.js"></script>
+    <script src="../src/shared/defaults.js"></script>
+    <script src="../src/shared/storage.js"></script>
+    <script src="../src/shared/tibetan.js"></script>
+    <script src="../src/shared/wordList.js"></script>
+    <script src="../src/shared/jsewts.js"></script>
+    <script src="../src/shared/ewts-converter.js"></script>
+    <script src="../src/core/botokPackManifest.js"></script>
+    <script src="../src/core/botokTokenizer.js"></script>
+    <script src="../src/content/replacement-engine.js"></script>
+    <script src="../src/content/tooltip.js"></script>
+    <script src="../src/content/content-script.js"></script>
+    <script src="../src/welcome/index.js"></script>
+  </body>
+</html>

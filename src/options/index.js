@@ -8,25 +8,26 @@
   function getControls() {
     ui.extensionEnabled = document.getElementById("extensionEnabled");
     ui.insertSpaces = document.getElementById("insertSpaces");
-    ui.showTooltips = document.getElementById("showTooltips");
-    ui.targetLanguage = document.getElementById("targetLanguage");
+    ui.tooltipMode = document.getElementById("tooltipMode");
+    ui.showWylie = document.getElementById("showWylie");
+    ui.showPhonetic = document.getElementById("showPhonetic");
+    ui.colorByPos = document.getElementById("colorByPos");
+    ui.posColorTheme = document.getElementById("posColorTheme");
+    ui.linkClickPrompt = document.getElementById("linkClickPrompt");
+    ui.highlightKnowledge = document.getElementById("highlightKnowledge");
+    ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.dictionaryList = document.getElementById("dictionaryList");
     ui.statusLine = document.getElementById("statusLine");
-  }
-
-  function populateLanguageSelect() {
-    extension.constants.supportedLanguages.forEach((language) => {
-      const option = document.createElement("option");
-      option.value = language.code;
-      option.textContent = language.label;
-      ui.targetLanguage.appendChild(option);
-    });
+    ui.pausedSitesList = document.getElementById("pausedSitesList");
   }
 
   function renderDictionaryList(settings) {
     ui.dictionaryList.innerHTML = "";
 
-    extension.dictionary.getDictionaryCatalog().forEach((dictionary) => {
+    const catalog = Object.values(extension.botokPackManifest.dictionaryCatalog)
+      .sort((left, right) => left.label.localeCompare(right.label));
+
+    catalog.forEach((dictionary) => {
       const label = document.createElement("label");
       label.className = "dictionary-item";
 
@@ -38,7 +39,10 @@
       copy.appendChild(name);
 
       const description = document.createElement("span");
-      description.textContent = dictionary.description;
+      description.textContent = extension.i18n.getMessage(
+        `dictDesc_${dictionary.id.replace(/\W/g, "_")}`,
+        dictionary.description
+      );
       copy.appendChild(description);
 
       const input = document.createElement("input");
@@ -53,6 +57,30 @@
     });
   }
 
+  function renderPausedSites(settings) {
+    const items = settings.pausedSites.map((site) => {
+      const item = document.createElement("li");
+      const name = document.createElement("span");
+      name.textContent = site;
+      const resume = document.createElement("button");
+      resume.type = "button";
+      resume.textContent = extension.i18n.getMessage("resumeSite");
+      resume.addEventListener("click", async () => {
+        const { pausedSites } = await extension.storage.getSettings();
+        await extension.storage.setSettings({ pausedSites: pausedSites.filter((paused) => paused !== site) });
+      });
+      item.append(name, resume);
+      return item;
+    });
+    if (!items.length) {
+      const empty = document.createElement("li");
+      empty.className = "is-empty";
+      empty.textContent = extension.i18n.getMessage("pausedSitesEmpty");
+      items.push(empty);
+    }
+    ui.pausedSitesList.replaceChildren(...items);
+  }
+
   function readSettingsFromControls() {
     const enabledDictionaries = Array.from(ui.dictionaryList.querySelectorAll("input:checked")).map(
       (input) => input.value
@@ -61,8 +89,14 @@
     return {
       extensionEnabled: ui.extensionEnabled.checked,
       insertSpaces: ui.insertSpaces.checked,
-      showTooltips: ui.showTooltips.checked,
-      targetLanguage: ui.targetLanguage.value,
+      tooltipMode: ui.tooltipMode.value,
+      showWylie: ui.showWylie.checked,
+      showPhonetic: ui.showPhonetic.checked,
+      colorByPos: ui.colorByPos.checked,
+      posColorTheme: ui.posColorTheme.value,
+      linkClickPrompt: ui.linkClickPrompt.checked,
+      highlightKnowledge: ui.highlightKnowledge.checked,
+      minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16,
       enabledDictionaries:
         enabledDictionaries.length > 0
           ? enabledDictionaries
@@ -71,14 +105,14 @@
   }
 
   function flashSavedState() {
-    ui.statusLine.textContent = "Saved to Chrome sync storage.";
+    ui.statusLine.textContent = extension.i18n.getMessage("settingsSaved");
 
     if (ui.saveTimer) {
       window.clearTimeout(ui.saveTimer);
     }
 
     ui.saveTimer = window.setTimeout(() => {
-      ui.statusLine.textContent = "Settings sync automatically.";
+      ui.statusLine.textContent = extension.i18n.getMessage("settingsSyncMessage");
       ui.saveTimer = null;
     }, 1800);
   }
@@ -92,29 +126,50 @@
     const settings = await extension.storage.getSettings();
     ui.extensionEnabled.checked = settings.extensionEnabled;
     ui.insertSpaces.checked = settings.insertSpaces;
-    ui.showTooltips.checked = settings.showTooltips;
-    ui.targetLanguage.value = settings.targetLanguage;
+    ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
+    ui.showWylie.checked = settings.showWylie;
+    ui.showPhonetic.checked = settings.showPhonetic;
+    ui.colorByPos.checked = settings.colorByPos;
+    ui.posColorTheme.value = settings.posColorTheme;
+    ui.linkClickPrompt.checked = settings.linkClickPrompt;
+    ui.highlightKnowledge.checked = settings.highlightKnowledge;
+    ui.minTibetanFontSize.value = settings.minTibetanFontSize;
     renderDictionaryList(settings);
+    renderPausedSites(settings);
   }
 
   function bindEvents() {
     ui.extensionEnabled.addEventListener("change", saveSettings);
     ui.insertSpaces.addEventListener("change", saveSettings);
-    ui.showTooltips.addEventListener("change", saveSettings);
-    ui.targetLanguage.addEventListener("change", saveSettings);
+    ui.tooltipMode.addEventListener("change", saveSettings);
+    ui.showWylie.addEventListener("change", saveSettings);
+    ui.showPhonetic.addEventListener("change", saveSettings);
+    ui.colorByPos.addEventListener("change", saveSettings);
+    ui.posColorTheme.addEventListener("change", saveSettings);
+    ui.linkClickPrompt.addEventListener("change", saveSettings);
+    ui.highlightKnowledge.addEventListener("change", saveSettings);
+    ui.minTibetanFontSize.addEventListener("change", saveSettings);
 
     extension.storage.onSettingsChanged((settings) => {
       ui.extensionEnabled.checked = settings.extensionEnabled;
       ui.insertSpaces.checked = settings.insertSpaces;
-      ui.showTooltips.checked = settings.showTooltips;
-      ui.targetLanguage.value = settings.targetLanguage;
+      ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
+      ui.showWylie.checked = settings.showWylie;
+      ui.showPhonetic.checked = settings.showPhonetic;
+      ui.colorByPos.checked = settings.colorByPos;
+      ui.posColorTheme.value = settings.posColorTheme;
+      ui.linkClickPrompt.checked = settings.linkClickPrompt;
+      ui.highlightKnowledge.checked = settings.highlightKnowledge;
+      ui.minTibetanFontSize.value = settings.minTibetanFontSize;
       renderDictionaryList(settings);
+      renderPausedSites(settings);
     });
   }
 
   async function init() {
     getControls();
-    populateLanguageSelect();
+    extension.i18n.localizePage();
+    document.getElementById("extensionVersion").textContent = chrome.runtime.getManifest().version;
     bindEvents();
     await loadSettings();
   }

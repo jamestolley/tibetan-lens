@@ -15,27 +15,17 @@
       "hopkins": {
         id: "hopkins",
         label: "Hopkins Tibetan-English",
-        description: "Jeffrey Hopkins' Tibetan-English dictionary (~18K entries). Buddhist philosophy and general vocabulary."
-      },
-      "jim-valby": {
-        id: "jim-valby",
-        label: "Jim Valby Tibetan-English",
-        description: "Jim Valby's Tibetan-English dictionary (~64K entries). Broad general vocabulary coverage."
-      },
-      "ives-waldo": {
-        id: "ives-waldo",
-        label: "Ives Waldo Tibetan-English",
-        description: "Ives Waldo's Tibetan-English dictionary (~121K entries). The largest open-source Tibetan-English dictionary."
-      },
-      "tsepak-rigdzin": {
-        id: "tsepak-rigdzin",
-        label: "Tsepak Rigdzin",
-        description: "Tsepak Rigdzin's Tibetan-English dictionary (~2.7K entries). Concise, authoritative definitions."
+        description: "Jeffrey Hopkins' Tibetan-Sanskrit-English dictionary (Dharma Drum Buddhist College digital edition, ~18.5K entries). Buddhist philosophy and general vocabulary. CC BY-SA 3.0."
       },
       "84000": {
         id: "84000",
         label: "84000 Dictionary",
-        description: "Glossary from 84000: Translating the Words of the Buddha (~25K entries). Buddhist canonical terminology."
+        description: "Glossary from 84000: Translating the Words of the Buddha (~25K entries). Buddhist canonical terminology. CC BY 4.0."
+      },
+      "curated": {
+        id: "curated",
+        label: "Teahouse Curated",
+        description: "Hand-curated Teahouse entries for compounds and common words missing from the bundled dictionaries."
       }
     },
     files: {
@@ -66,20 +56,36 @@
             dictionaryId: "hopkins"
           },
           {
-            path: "data/dialect_packs/botok_general/dictionary/words/jim-valby.tsv",
-            dictionaryId: "jim-valby"
-          },
-          {
-            path: "data/dialect_packs/botok_general/dictionary/words/ives-waldo.tsv",
-            dictionaryId: "ives-waldo"
-          },
-          {
-            path: "data/dialect_packs/botok_general/dictionary/words/tsepak-rigdzin.tsv",
-            dictionaryId: "tsepak-rigdzin"
-          },
-          {
             path: "data/dialect_packs/botok_general/dictionary/words/84000.tsv",
             dictionaryId: "84000"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/curated_glosses.tsv",
+            dictionaryId: "curated"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/pos_overrides.tsv",
+            dictionaryLabel: "Curated POS overrides",
+            posOnly: true,
+            posSource: "override"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/gloss_pos_inferred.tsv",
+            dictionaryLabel: "Gloss-inferred POS",
+            posOnly: true,
+            posSource: "gloss"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/soas_pos.tsv",
+            dictionaryLabel: "SOAS POS lexicon",
+            posOnly: true,
+            posSource: "soas"
+          },
+          {
+            path: "data/dialect_packs/botok_general/dictionary/words/actib_pos.tsv",
+            dictionaryLabel: "ACTib POS lexicon",
+            posOnly: true,
+            posSource: "corpus"
           }
         ],
         words_non_inflected: [

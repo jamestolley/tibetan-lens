@@ -4,33 +4,48 @@
   const ui = {};
 
   function getControls() {
-    ui.extensionEnabled = document.getElementById("extensionEnabled");
     ui.insertSpaces = document.getElementById("insertSpaces");
-    ui.showTooltips = document.getElementById("showTooltips");
-    ui.targetLanguage = document.getElementById("targetLanguage");
-    ui.processedNodes = document.getElementById("processedNodes");
-    ui.annotatedWords = document.getElementById("annotatedWords");
-    ui.pageMessage = document.getElementById("pageMessage");
+    ui.colorByPos = document.getElementById("colorByPos");
+    ui.tooltipMode = document.getElementById("tooltipMode");
+    ui.showWylie = document.getElementById("showWylie");
+    ui.showPhonetic = document.getElementById("showPhonetic");
+    ui.highlightKnowledge = document.getElementById("highlightKnowledge");
+    ui.minTibetanFontSize = document.getElementById("minTibetanFontSize");
     ui.refreshPage = document.getElementById("refreshPage");
+    ui.insertTestText = document.getElementById("insertTestText");
+    ui.samplePage = document.getElementById("samplePage");
     ui.openOptions = document.getElementById("openOptions");
-  }
-
-  function populateLanguageSelect() {
-    extension.constants.supportedLanguages.forEach((language) => {
-      const option = document.createElement("option");
-      option.value = language.code;
-      option.textContent = language.label;
-      ui.targetLanguage.appendChild(option);
-    });
+    ui.openDictionary = document.getElementById("openDictionary");
+    ui.openWords = document.getElementById("openWords");
+    ui.wordsDueBadge = document.getElementById("wordsDueBadge");
+    ui.popupStatus = document.getElementById("popupStatus");
+    ui.pauseSiteRow = document.getElementById("pauseSiteRow");
+    ui.pauseSite = document.getElementById("pauseSite");
+    ui.pauseSiteHost = document.getElementById("pauseSiteHost");
   }
 
   function readSettingsFromControls() {
     return {
-      extensionEnabled: ui.extensionEnabled.checked,
       insertSpaces: ui.insertSpaces.checked,
-      showTooltips: ui.showTooltips.checked,
-      targetLanguage: ui.targetLanguage.value
+      colorByPos: ui.colorByPos.checked,
+      tooltipMode: ui.tooltipMode.value,
+      showWylie: ui.showWylie.checked,
+      showPhonetic: ui.showPhonetic.checked,
+      highlightKnowledge: ui.highlightKnowledge.checked,
+      minTibetanFontSize: Number(ui.minTibetanFontSize.value) || 16
     };
+  }
+
+  function showStatus(message) {
+    if (ui.popupStatus) {
+      ui.popupStatus.textContent = message;
+    }
+  }
+
+  function clearStatus() {
+    if (ui.popupStatus) {
+      ui.popupStatus.textContent = "";
+    }
   }
 
   async function getActiveTab() {
@@ -39,66 +54,131 @@
   }
 
   async function sendPageMessage(type) {
+    clearStatus();
+
     try {
       const tab = await getActiveTab();
       if (!tab?.id) {
-        return null;
+        showStatus(extension.i18n.getMessage("pageNotReachable"));
+        return false;
       }
 
-      return await chrome.tabs.sendMessage(tab.id, { type });
+      const result = await chrome.tabs.sendMessage(tab.id, { type });
+      if (!result) {
+        showStatus(extension.i18n.getMessage("pageNotReachable"));
+        return false;
+      }
+
+      return true;
     } catch (_error) {
-      return null;
+      showStatus(extension.i18n.getMessage("pageNotReachable"));
+      return false;
     }
-  }
-
-  function updateStats(response) {
-    const stats = response?.stats;
-    ui.processedNodes.textContent = String(stats?.processedNodes || 0);
-    ui.annotatedWords.textContent = String(stats?.annotatedWords || 0);
-
-    if (!response?.ok) {
-      ui.pageMessage.textContent =
-        "This tab does not expose content scripts. Try a regular website instead of a browser-internal page.";
-      return;
-    }
-
-    ui.pageMessage.textContent = `Tokenizer: ${response.settings?.tokenizerMode || "mock-lexicon"}. Click a Tibetan token on the page to inspect its entries.`;
   }
 
   async function loadSettings() {
     const settings = await extension.storage.getSettings();
-    ui.extensionEnabled.checked = settings.extensionEnabled;
     ui.insertSpaces.checked = settings.insertSpaces;
-    ui.showTooltips.checked = settings.showTooltips;
-    ui.targetLanguage.value = settings.targetLanguage;
+    ui.colorByPos.checked = settings.colorByPos;
+    ui.tooltipMode.value = settings.tooltipMode === "hover" ? "hover" : "click";
+    ui.showWylie.checked = settings.showWylie;
+    ui.showPhonetic.checked = settings.showPhonetic;
+    ui.highlightKnowledge.checked = settings.highlightKnowledge;
+    ui.minTibetanFontSize.value = settings.minTibetanFontSize;
+    await loadPauseState(settings);
+  }
+
+  // The hostname of the active tab, or "" for pages the extension can't run
+  // on (browser pages, the Web Store, extension pages).
+  async function activeSite() {
+    try {
+      const url = new URL((await getActiveTab())?.url || "");
+      return /^https?:$/.test(url.protocol) ? url.hostname : "";
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  async function loadPauseState(settings) {
+    const site = await activeSite();
+    ui.pauseSiteRow.hidden = !site;
+    ui.pauseSiteHost.textContent = site;
+    ui.pauseSite.checked = Boolean(site) && settings.pausedSites.includes(site);
+  }
+
+  // The content script listens for settings changes, so the page updates itself.
+  async function togglePauseSite() {
+    const site = await activeSite();
+    if (!site) {
+      return;
+    }
+    const { pausedSites } = await extension.storage.getSettings();
+    const next = ui.pauseSite.checked
+      ? [...pausedSites, site]
+      : pausedSites.filter((paused) => paused !== site);
+    await extension.storage.setSettings({ pausedSites: next });
   }
 
   async function saveSettingsAndRefresh() {
     await extension.storage.setSettings(readSettingsFromControls());
-    updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));
+    await sendPageMessage(extension.constants.messages.refreshAnnotations);
   }
 
   function bindEvents() {
-    ui.extensionEnabled.addEventListener("change", saveSettingsAndRefresh);
     ui.insertSpaces.addEventListener("change", saveSettingsAndRefresh);
-    ui.showTooltips.addEventListener("change", saveSettingsAndRefresh);
-    ui.targetLanguage.addEventListener("change", saveSettingsAndRefresh);
+    ui.colorByPos.addEventListener("change", saveSettingsAndRefresh);
+    ui.tooltipMode.addEventListener("change", saveSettingsAndRefresh);
+    ui.showWylie.addEventListener("change", saveSettingsAndRefresh);
+    ui.showPhonetic.addEventListener("change", saveSettingsAndRefresh);
+    ui.highlightKnowledge.addEventListener("change", saveSettingsAndRefresh);
+    ui.minTibetanFontSize.addEventListener("change", saveSettingsAndRefresh);
+    ui.pauseSite.addEventListener("change", togglePauseSite);
 
     ui.refreshPage.addEventListener("click", async () => {
-      updateStats(await sendPageMessage(extension.constants.messages.refreshAnnotations));
+      await sendPageMessage(extension.constants.messages.refreshAnnotations);
+    });
+
+    ui.insertTestText.addEventListener("click", async () => {
+      await sendPageMessage(extension.constants.messages.insertTestText);
+    });
+
+    ui.samplePage.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("demo/index.html") });
+    });
+
+    ui.openDictionary.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("pages/dictionary.html") });
+    });
+
+    ui.openWords.addEventListener("click", () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL("pages/words.html") });
     });
 
     ui.openOptions.addEventListener("click", () => {
       chrome.runtime.openOptionsPage();
     });
+
+    chrome.storage.onChanged.addListener((_changes, areaName) => {
+      if (areaName === "sync") {
+        loadSettings();
+      }
+    });
+  }
+
+  async function showDueCount() {
+    const queue = await extension.wordList.studyQueue(await extension.storage.getSettings());
+    const count = queue.reviews.length + queue.newWords.length;
+    ui.wordsDueBadge.textContent = String(count);
+    ui.wordsDueBadge.hidden = count === 0;
   }
 
   async function init() {
     getControls();
-    populateLanguageSelect();
+    extension.i18n.localizePage();
+    document.getElementById("extensionVersion").textContent = chrome.runtime.getManifest().version;
     bindEvents();
     await loadSettings();
-    updateStats(await sendPageMessage(extension.constants.messages.getAnnotationStats));
+    await showDueCount();
   }
 
   document.addEventListener("DOMContentLoaded", init, { once: true });

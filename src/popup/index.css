@@ -1,11 +1,14 @@
 :root {
   color-scheme: light;
-  --ink: #291f16;
-  --paper: #f8eedb;
-  --paper-deep: #efe0bf;
-  --clay: #7b302b;
-  --saffron: #bf8520;
-  --line: rgba(41, 31, 22, 0.12);
+  --ink: #1f2937;
+  --paper: #ffffff;
+  --muted: #6b7280;
+  --line: rgba(31, 41, 55, 0.12);
+  --primary: #3d4c5c;
+  --primary-text: #ffffff;
+  --secondary-bg: #ffffff;
+  --secondary-border: rgba(31, 41, 55, 0.18);
+  --status: #92400e;
 }
 
 * {
@@ -15,12 +18,9 @@
 body {
   margin: 0;
   width: 360px;
-  min-height: 480px;
-  background:
-    radial-gradient(circle at top left, rgba(191, 133, 32, 0.18), transparent 42%),
-    linear-gradient(180deg, #fcf6ea 0%, var(--paper) 56%, var(--paper-deep) 100%);
+  background: var(--paper);
   color: var(--ink);
-  font: 14px/1.45 Georgia, "Palatino Linotype", serif;
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 button,
@@ -30,39 +30,33 @@ select {
 }
 
 .popup-shell {
-  padding: 18px;
+  padding: 14px;
 }
 
 .hero {
-  margin-bottom: 14px;
-}
-
-.eyebrow {
-  margin: 0 0 6px;
-  color: var(--clay);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.intro {
-  margin: 8px 0 0;
-  color: rgba(41, 31, 22, 0.76);
+.hero h1 span {
+  margin-left: 0.35em;
+  color: var(--muted);
+  font-size: 0.85em;
+  font-weight: 400;
 }
 
 .card {
-  margin-bottom: 14px;
-  padding: 14px;
+  margin-bottom: 12px;
+  padding: 12px;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(255, 251, 243, 0.86);
-  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  background: #f9fafb;
 }
 
 .toggle-row,
@@ -70,69 +64,100 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 
 .toggle-row + .toggle-row,
 .toggle-row + .field {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
-.field select {
-  min-width: 124px;
-  padding: 7px 10px;
-  border: 1px solid rgba(41, 31, 22, 0.16);
-  border-radius: 999px;
+.field select,
+.field input[type="number"] {
+  min-width: 80px;
+  padding: 6px 8px;
+  border: 1px solid var(--secondary-border);
+  border-radius: 6px;
   background: #fff;
+  text-align: center;
+  text-align-last: center;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.stat {
-  padding: 12px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(191, 133, 32, 0.14), rgba(123, 48, 43, 0.08));
-}
-
-.stat strong {
-  display: block;
-  font-size: 1.5rem;
-}
-
-.stat span {
-  color: rgba(41, 31, 22, 0.72);
-  font-size: 0.88rem;
-}
-
-.page-message {
-  margin: 12px 0 0;
-  color: rgba(41, 31, 22, 0.74);
+.field option {
+  text-align: center;
 }
 
 .actions {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .actions button {
-  flex: 1;
-  padding: 11px 14px;
-  border-radius: 999px;
-  border: 0;
+  flex: 1 1 0;
+  min-width: 90px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .actions .primary {
-  background: linear-gradient(180deg, #9d3d36 0%, var(--clay) 100%);
-  color: #fff7ef;
+  background: var(--primary);
+  color: var(--primary-text);
 }
 
 .actions .secondary {
-  border: 1px solid rgba(41, 31, 22, 0.12);
-  background: rgba(255, 255, 255, 0.66);
+  background: var(--secondary-bg);
+  border-color: var(--secondary-border);
   color: var(--ink);
+}
+
+.badge {
+  display: inline-block;
+  min-width: 1.4em;
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #7a302a;
+  color: #fff;
+  font-size: 0.75em;
+  line-height: 1.5;
+}
+
+.badge[hidden] {
+  display: none;
+}
+
+.pause-row[hidden] {
+  display: none;
+}
+
+.pause-host {
+  display: block;
+  color: var(--status);
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 0 0;
+  color: var(--status);
+  font-size: 0.82rem;
+}
+
+.popup-footer a {
+  color: #7a302a;
+}
+
+.status-line {
+  margin: 10px 0 0;
+  min-height: 1.3em;
+  color: var(--status);
+  font-size: 0.92rem;
+  line-height: 1.35;
 }

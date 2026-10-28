@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse तिब्बती",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse तिब्बती: शब्दकोश और अध्ययन साथी",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "किसी भी वेब पेज पर तिब्बती पढ़ें: शब्दों में अंतर, तुरंत परिभाषाएँ, शब्दकोश, और अंतराल दोहराव के साथ सहेजे शब्द।",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse तिब्बती",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "तय करें कि तिब्बती पाठ को कैसे बाँटा, दिखाया और अनुवादित किया जाए।",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse तिब्बती",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "तिब्बती पाठ को शब्दों में बाँटें और परिभाषाएँ देखने के लिए शब्दों पर क्लिक करें या माउस ले जाएँ।",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "पढ़ने का अनुभव",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "तय करें कि किसी पेज पर तिब्बती पाठ मिलने पर क्या हो।",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "एक्सटेंशन चालू",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "शब्दों के बीच रिक्त स्थान जोड़ें",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "अनुवाद कब दिखाएँ",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "माउस ले जाने पर",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "क्लिक करने पर",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie दिखाएँ",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "उच्चारण दिखाएँ",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "शब्दभेद के अनुसार शब्दों को रंगें",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "रंग कोडिंग",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "शब्दभेद के अनुसार शब्दों को हाइलाइट करें और रंग थीम चुनें।",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "शब्दभेद रंग थीम",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "चटकीला",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "हल्का",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "केवल रेखांकन",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "लिंक वाले तिब्बती शब्द पर क्लिक करने पर पूछें: लिंक खोलें या अनुवाद दिखाएँ",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "तिब्बती फ़ॉन्ट का न्यूनतम आकार",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "शब्दकोश",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "चालू शब्दकोश पॉपअप के परिणाम और शब्द-विभाजन की शब्दावली तय करते हैं।",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "शब्दकोश स्रोत",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "शामिल डेटा अपने मूल लाइसेंस के अधीन रहता है। पूरा श्रेय देखने के लिए साथ दी गई NOTICE फ़ाइल देखें।",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "सेटिंग अपने-आप सिंक होती हैं।",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Chrome सिंक स्टोरेज में सहेजा गया।",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "शब्दकोश लोड हो रहे हैं…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "लोड हो रहा है…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "अज्ञात",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "किसी भी चालू शब्दकोश में अभी इस शब्द की परिभाषा नहीं है।",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "अभी कोई परिभाषा नहीं — यह शब्द शामिल शब्दकोशों में नहीं है।",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "संभावित (कॉर्पस के आधार पर)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "शब्द के भाग",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "पेज रीफ़्रेश करें",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "नमूना पाठ जोड़ें",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "विकल्प",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "लिंक खोलें",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "अनुवाद दिखाएँ",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "यह पेज उपलब्ध नहीं है — टैब को फिर से लोड करें या नमूना पेज खोलें।",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "नमूना पेज",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "फ़िलहाल परिभाषाएँ केवल अंग्रेज़ी में उपलब्ध हैं।",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Teahouse तिब्बती लोड हो रहा है",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Teahouse तिब्बती परीक्षण पाठ",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "व्यक्तिवाचक संज्ञा",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "संज्ञा",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "क्रिया",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "विशेषण",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "क्रियाविशेषण",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "सर्वनाम",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "निर्धारक",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "संबंधबोधक",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "निपात",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "संख्या",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "समुच्चयबोधक",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "अधीनस्थ समुच्चयबोधक",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "विस्मयादिबोधक",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "विराम चिह्न",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "सहायक क्रिया",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "अन्य",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "अज्ञात",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "botok-data से मुख्य तिब्बती शब्द-विभाजन शब्दकोश (~31,000 प्रविष्टियाँ)।",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "जेफ़्री हॉपकिंस का तिब्बती-अंग्रेज़ी शब्दकोश (~18,000 प्रविष्टियाँ)।",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000: Translating the Words of the Buddha की शब्दावली (~25,000 प्रविष्टियाँ)।",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "शामिल शब्दकोशों में न मिलने वाले समास और आम शब्दों के लिए Teahouse की हाथ से चुनी गई प्रविष्टियाँ।",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "शब्दकोश",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse तिब्बती शब्दकोश",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "शब्दकोश",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "तिब्बती लिपि, वायली या अंग्रेज़ी में कोई शब्द खोजें।",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "शब्दकोश में खोजें",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "तिब्बती शब्द",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "वायली से तिब्बती शब्द",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "अंग्रेज़ी अर्थ",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "कोई परिणाम नहीं। दूसरी वर्तनी, कम अक्षर या वायली आज़माएँ।",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "खोजने के लिए कोई शब्द लिखें।",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "शब्दकोश लोड नहीं हो सके। फिर से कोशिश करने के लिए पेज को रीलोड करें।",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "यह शब्द खोजें",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "मेरे शब्दों में सहेजें",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "मेरे शब्दों में सहेजा गया — हटाने के लिए क्लिक करें",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "मेरे शब्द",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "दोहराने के लिए शब्द",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "मेरे शब्द — Teahouse तिब्बती",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "मेरे शब्द",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "पढ़ते समय या शब्दकोश में आपने जिन शब्दों पर तारा लगाया।",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "मेरे शब्द छाँटें",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "क्रम",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "नए पहले",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "पुराने पहले",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "अगली दोहराई",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "CSV निर्यात करें",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "सहेजे गए शब्द:",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "अभी कोई शब्द सहेजा नहीं गया। किसी शब्द के पॉप-अप या शब्दकोश में ☆ पर क्लिक करके उसे यहाँ सहेजें।",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "इस फ़िल्टर से कोई सहेजा गया शब्द मेल नहीं खाता।",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "हटाएँ",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "शब्द हटाया गया।",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "पूर्ववत करें",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "सहेजा गया:",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "अगली दोहराई:",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "अभी दोहराएँ",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "स्रोत:",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "दोहराएँ",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "सबका अभ्यास करें",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "उत्तर दिखाएँ",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "फिर से",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "कठिन",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "ठीक",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "आसान",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "दोहराई समाप्त करें",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "अभी के लिए सब दोहरा लिया।",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "अभ्यास दौर पूरा हुआ।",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "कीबोर्ड: स्पेस से उत्तर दिखाएँ, 1–4 से आँकें।",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "अभ्यास मोड — आपकी दोहराई की समय-सारणी नहीं बदलेगी।",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "मेरे शब्दों पर लौटें",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "सभी",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "नए",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "सीख रहे",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "दोहरा रहे",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "महारत",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "अध्ययन सेटिंग",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "प्रतिदिन नए शब्द",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "स्थिर होने पर अनुमानित दैनिक दोहराई:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "लक्ष्य स्मृति",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — कम दोहराई",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — सुझाया गया",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — अधिक दोहराई",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "सहेजे गए शब्द जगह होने तक 'नए' में रहते हैं, इसलिए आप जितने चाहें सहेज सकते हैं। महारत वाले शब्द जगह खाली करते हैं।",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "प्रगति में:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "आज के नए शब्द शुरू हो गए। कल और शुरू होंगे; बाकी 'नए' में इंतज़ार करते हैं।",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "जब तक आप दोहराई पूरी नहीं कर लेते, नए शब्द रुके हुए हैं।",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "कई शब्द प्रगति में हैं, इसलिए नए शब्द रुके हुए हैं। शब्दों में महारत से जगह खाली होती है।",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "जाने हुए",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "मैं यह शब्द जानता/जानती हूँ",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "जाना हुआ चिह्नित — फिर से सीखने के लिए क्लिक करें",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "जाने हुए शब्द धुंधले करें, ताकि नए शब्द उभरें",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "यह वाक्य अनुवाद करें",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Google अनुवाद में खोलें",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "बैकअप और आयात",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "आपके शब्द केवल इसी ब्राउज़र में सहेजे जाते हैं। समय-समय पर, और कंप्यूटर बदलने से पहले, बैकअप डाउनलोड करें ताकि आपकी प्रगति कभी न खोए।",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "बैकअप डाउनलोड करें",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "फ़ाइल आयात करें…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "पिछला बैकअप:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "कभी नहीं",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "आयात में Teahouse बैकअप (.json), हमारा CSV निर्यात, Anki टेक्स्ट निर्यात और तिब्बती शब्दों की सादी सूचियाँ स्वीकार हैं। पहले से सहेजे शब्दों की प्रगति बनी रहती है।",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "आयात पूरा हुआ",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "जोड़े गए:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "अपडेट किए गए:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "पहले से सहेजे:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "छोड़े गए:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "यह बैकअप फ़ाइल पढ़ी नहीं जा सकी। क्या यह Teahouse बैकअप है?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "इस फ़ाइल में कोई तिब्बती शब्द नहीं मिला।",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "सहायता और सुझाव",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "कोई प्रश्न, सुझाव या कुछ काम नहीं कर रहा? हम हर संदेश पढ़ते हैं।",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "सहायता और सामान्य प्रश्न",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "बग की रिपोर्ट करें",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "परिभाषा सुझाएँ",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "गोपनीयता नीति",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "संस्करण",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "इस साइट पर रोकें",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "रोकी गई साइटें",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "इन साइटों पर Teahouse बंद रहता है। किसी साइट को रोकने के लिए, उस पर रहते हुए एक्सटेंशन आइकन पर क्लिक करें।",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "कोई साइट रोकी नहीं गई है।",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "फिर से चालू करें",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Teahouse Tibetan में आपका स्वागत है",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "सब तैयार है। Teahouse अब तिब्बती पाठ वाले हर वेब पेज पर काम करता है। नीचे दिए नमूने पर आज़माएँ।",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "यहाँ आज़माएँ",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "किसी शब्द पर क्लिक करें और उसका अर्थ, Wylie और उच्चारण देखें।",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "शब्द सहेजने के लिए परिभाषा में ☆ पर क्लिक करें, या अगर आप उसे जानते हैं तो ✓ पर।",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "पूरे वाक्य का अनुवाद करने के लिए वाक्य के अंत में ། पर क्लिक करें।",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Teahouse को पास रखें",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Chrome टूलबार में पज़ल-पीस आइकन पर क्लिक करें, फिर Teahouse Tibetan के पास पिन पर। इसके मेनू में शब्दकोश, आपके शब्द और त्वरित सेटिंग्स हैं।",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "आगे क्या करें",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "सब कुछ आपके कंप्यूटर पर चलता है। आपके शब्द इसी ब्राउज़र में रहते हैं, और जब तक आप किसी वाक्य का अनुवाद नहीं चुनते, कुछ भी कहीं नहीं भेजा जाता।",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

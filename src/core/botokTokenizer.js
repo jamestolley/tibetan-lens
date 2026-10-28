@@ -108,28 +108,57 @@
     return extension.defaults.settings.enabledDictionaries;
   }
 
+  function contextInvalidatedError() {
+    const err = new Error('Extension context invalidated — reload this page to re-enable Teahouse Tibetan.');
+    err.contextInvalidated = true;
+    return err;
+  }
+
+  function isContextValid() {
+    try {
+      return Boolean(chrome?.runtime?.id);
+    } catch (_e) {
+      return false;
+    }
+  }
+
   async function fetchText(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[TibetanLens:tokenizer] fetching:', path, '->', url);
-    const response = await fetch(url);
+    let response;
+    try {
+      response = await fetch(url);
+    } catch (err) {
+      if (!isContextValid()) {
+        throw contextInvalidatedError();
+      }
+      console.error('[Teahouse:tokenizer] fetch threw for:', path, err);
+      throw new Error(`Failed to fetch extension resource: ${path} (${err.message})`);
+    }
 
     if (!response.ok) {
-      console.error('[TibetanLens:tokenizer] FAILED to load:', path, 'status:', response.status);
+      console.error('[Teahouse:tokenizer] FAILED to load:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
     const text = await response.text();
-    console.log('[TibetanLens:tokenizer] loaded:', path, '(' + text.length + ' chars)');
     return text;
   }
 
   async function fetchJson(path) {
     const url = chrome.runtime.getURL(path);
-    console.log('[TibetanLens:tokenizer] fetching JSON:', path, '->', url);
-    const response = await fetch(url);
+    let response;
+    try {
+      response = await fetch(url);
+    } catch (err) {
+      if (!isContextValid()) {
+        throw contextInvalidatedError();
+      }
+      console.error('[Teahouse:tokenizer] fetch JSON threw for:', path, err);
+      throw new Error(`Failed to fetch extension resource: ${path} (${err.message})`);
+    }
 
     if (!response.ok) {
-      console.error('[TibetanLens:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
+      console.error('[Teahouse:tokenizer] FAILED to load JSON:', path, 'status:', response.status);
       throw new Error(`Failed to load extension resource: ${path}`);
     }
 
@@ -137,10 +166,8 @@
   }
 
   async function loadFileEntries(fileDescriptor, component, category) {
-    console.log('[TibetanLens:tokenizer] loadFileEntries:', fileDescriptor.path, 'dictId:', fileDescriptor.dictionaryId);
     const text = await fetchText(fileDescriptor.path);
     const rows = cleanDataLines(text);
-    console.log('[TibetanLens:tokenizer] parsed', rows.length, 'rows from', fileDescriptor.path);
 
     return rows
       .map((line) => (category === "remove" ? parseRemoveRow(line) : parseWordRow(line)))
@@ -151,6 +178,10 @@
         category,
         dictionaryId: fileDescriptor.dictionaryId || null,
         dictionaryLabel: fileDescriptor.dictionaryLabel || null,
+        posOnly: Boolean(fileDescriptor.posOnly),
+        posSource: fileDescriptor.posOnly
+          ? fileDescriptor.posSource || "corpus"
+          : null,
         sourcePath: fileDescriptor.path
       }));
   }
@@ -596,6 +627,11 @@
     }
 
     addEntry(entry, category) {
+      if (entry.posOnly) {
+        this.inflectAndAddData(entry, category !== "words_non_inflected");
+        return;
+      }
+
       if (category === "words") {
         this.inflectAndModify(entry.form);
         this.inflectAndAddData(entry);
@@ -672,6 +708,8 @@
             affixed: Boolean(affixData),
             dictionaryId: entry.dictionaryId,
             dictionaryLabel: entry.dictionaryLabel,
+            posOnly: entry.posOnly,
+            posSource: entry.posSource,
             sourcePath: entry.sourcePath
           }).filter(([, value]) => value !== null && value !== undefined && value !== "")
         );
@@ -822,12 +860,53 @@
     return [...group].sort((left, right) => Object.keys(right).length - Object.keys(left).length)[0];
   }
 
+  const POS_SOURCE_RANK = {
+    override: 0,
+    gloss: 2,
+    soas: 3,
+    corpus: 4
+  };
+
+  function sensePosRank(sense) {
+    if (sense.posSource === "override") {
+      return POS_SOURCE_RANK.override;
+    }
+    if (!sense.posOnly) {
+      return 1; // explicit dictionary tag
+    }
+    return POS_SOURCE_RANK[sense.posSource] ?? 5;
+  }
+
+  function collectPosInfo(senses) {
+    const ranked = [];
+    senses.forEach((sense, index) => {
+      if (sense.pos) {
+        ranked.push({ pos: sense.pos, rank: sensePosRank(sense), index });
+      }
+    });
+    ranked.sort((a, b) => a.rank - b.rank || a.index - b.index);
+
+    const posList = [];
+    for (const item of ranked) {
+      if (!posList.includes(item.pos)) {
+        posList.push(item.pos);
+      }
+    }
+
+    return {
+      pos: posList[0] || null,
+      posList,
+      posInferred: ranked.length > 0 && ranked[0].rank > 1
+    };
+  }
+
   function createWordToken(syllables, match) {
     const surfaceText = joinSurfaceSyllables(syllables);
     const formKey = normalizeForm(surfaceText);
     const trieData = match?.node?.data ? structuredClone(match.node.data) : { _: {} };
     const senses = Array.isArray(trieData.senses) ? trieData.senses : [];
     const defaultSense = chooseDefaultSense(senses);
+    const posInfo = collectPosInfo(senses);
 
     return {
       type: "word",
@@ -838,8 +917,48 @@
       start: syllables[0].start,
       end: syllables[syllables.length - 1].end,
       lemma: defaultSense?.lemma || null,
-      pos: defaultSense?.pos || null,
+      pos: posInfo.pos,
+      posList: posInfo.posList,
+      posInferred: posInfo.posInferred,
       senses
+    };
+  }
+
+  function isTibetanDigitRun(text) {
+    return /^[\u0f20-\u0f29]+$/u.test(text || "");
+  }
+
+  function tibetanDigitsToArabic(text) {
+    return (text || "").replace(/[\u0f20-\u0f29]/gu, (char) =>
+      String(char.charCodeAt(0) - 0x0f20)
+    );
+  }
+
+  function createNumberToken(syllables) {
+    const surfaceText = joinSurfaceSyllables(syllables);
+    const digitText = syllables.map((syllable) => syllable.cleanText).join("");
+    const arabic = tibetanDigitsToArabic(digitText);
+
+    return {
+      type: "word",
+      text: digitText,
+      surfaceText,
+      lookupKey: digitText,
+      matched: true,
+      start: syllables[0].start,
+      end: syllables[syllables.length - 1].end,
+      lemma: digitText,
+      pos: "NUM",
+      posList: ["NUM"],
+      posInferred: false,
+      senses: [
+        {
+          sense: `${arabic} (Tibetan numeral ${digitText})`,
+          pos: "NUM",
+          dictionaryId: "tibetan-numerals",
+          dictionaryLabel: "Tibetan numerals"
+        }
+      ]
     };
   }
 
@@ -848,6 +967,19 @@
     let index = 0;
 
     while (index < syllables.length) {
+      if (isTibetanDigitRun(syllables[index].cleanText)) {
+        let endIndex = index;
+        while (
+          endIndex < syllables.length &&
+          isTibetanDigitRun(syllables[endIndex].cleanText)
+        ) {
+          endIndex += 1;
+        }
+        tokens.push(createNumberToken(syllables.slice(index, endIndex)));
+        index = endIndex;
+        continue;
+      }
+
       const match = findLongestMatch(syllables, index, trie);
 
       if (match) {
@@ -980,49 +1112,242 @@
     return "Botok Demo Pack";
   }
 
+  // Headword index shared by tooltip lookups and the dictionary page.
+  // Built lazily on first use: entries are grouped under both their form and
+  // their lemma (preserving pack order), and every gloss is flattened into a
+  // lowercase list for English reverse search.
+  function getSearchIndex() {
+    if (runtime.searchIndex?.pack === runtime.pack) {
+      return runtime.searchIndex;
+    }
+
+    const byKey = new Map();
+    const byForm = new Map();
+    const glosses = [];
+
+    function push(map, key, entry) {
+      if (!map.has(key)) {
+        map.set(key, []);
+      }
+      const list = map.get(key);
+      if (list[list.length - 1] !== entry) {
+        list.push(entry);
+      }
+    }
+
+    [runtime.pack.dictionary, runtime.pack.adjustments].forEach((componentEntries) => {
+      Object.entries(componentEntries || {}).forEach(([category, entries]) => {
+        if (category === "remove") {
+          return;
+        }
+
+        (entries || []).forEach((entry) => {
+          push(byForm, entry.formKey, entry);
+          push(byKey, entry.formKey, entry);
+          const lemmaKey = normalizeForm(entry.lemma || "");
+          if (lemmaKey) {
+            push(byKey, lemmaKey, entry);
+          }
+
+          if (!entry.posOnly) {
+            splitGlosses(entry.sense).forEach((gloss) => {
+              glosses.push({ headword: entry.formKey, dictionaryId: entry.dictionaryId, text: gloss.toLowerCase() });
+            });
+          }
+        });
+      });
+    });
+
+    runtime.searchIndex = {
+      pack: runtime.pack,
+      byKey,
+      byForm,
+      headwords: [...byForm.keys()].sort(),
+      glosses
+    };
+    return runtime.searchIndex;
+  }
+
+  function isEnabledEntry(entry, enabledDictionaryIds) {
+    return !entry.dictionaryId || enabledDictionaryIds.has(entry.dictionaryId);
+  }
+
+  function headwordFreq(headword, enabledDictionaryIds) {
+    const entries = getSearchIndex().byForm.get(headword) || [];
+    return entries.reduce(
+      (max, entry) => (isEnabledEntry(entry, enabledDictionaryIds) && entry.freq > max ? entry.freq : max),
+      0
+    );
+  }
+
+  function describeHeadword(headword, settings) {
+    const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
+    const forms = (getSearchIndex().byForm.get(headword) || []).filter((entry) =>
+      isEnabledEntry(entry, enabledDictionaryIds)
+    );
+
+    return {
+      headword,
+      entries: lookupFromPack(headword, settings),
+      ...collectPosInfo(forms)
+    };
+  }
+
+  function searchTibetan(term, settings, limit = 40) {
+    if (!runtime.pack) {
+      return [];
+    }
+
+    const key = normalizeForm(term);
+    if (!key) {
+      return [];
+    }
+
+    const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
+    const { headwords } = getSearchIndex();
+    const prefix = key + TSEK;
+    let low = 0;
+    let high = headwords.length;
+    while (low < high) {
+      const mid = (low + high) >> 1;
+      if (headwords[mid] < prefix) {
+        low = mid + 1;
+      } else {
+        high = mid;
+      }
+    }
+
+    const candidates = [];
+    for (let i = low; i < headwords.length && candidates.length < 3000 && headwords[i].startsWith(prefix); i += 1) {
+      candidates.push(headwords[i]);
+    }
+
+    const ranked = candidates
+      .map((headword) => ({
+        headword,
+        syllables: headword.split(TSEK).length,
+        freq: headwordFreq(headword, enabledDictionaryIds)
+      }))
+      .sort((a, b) => a.syllables - b.syllables || b.freq - a.freq || a.headword.localeCompare(b.headword));
+
+    const results = [];
+    for (const headword of [key, ...ranked.map((item) => item.headword)]) {
+      if (results.length >= limit) {
+        break;
+      }
+      const result = describeHeadword(headword, settings);
+      if (result.entries.length) {
+        results.push(result);
+      }
+    }
+    return results;
+  }
+
+  function escapeRegExp(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  // Rank English glosses: an exact gloss ("compassion", "to see") beats one
+  // that starts with the query, which beats one merely containing it as a word.
+  function searchEnglish(text, settings, limit = 40) {
+    if (!runtime.pack) {
+      return [];
+    }
+
+    const query = (text || "").trim().toLowerCase().replace(/\s+/g, " ");
+    if (query.length < 2) {
+      return [];
+    }
+
+    const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
+    const wordPattern = new RegExp(`(^|[^\\p{L}])${escapeRegExp(query)}($|[^\\p{L}])`, "u");
+    const best = new Map();
+
+    getSearchIndex().glosses.forEach((gloss) => {
+      if (!gloss.text.includes(query) || !isEnabledEntry(gloss, enabledDictionaryIds)) {
+        return;
+      }
+      if (!wordPattern.test(gloss.text)) {
+        return;
+      }
+
+      const core = gloss.text.replace(/^(to|a|an|the)\s+/, "").replace(/[\s.,;:!?]+$/, "");
+      const score = core === query || gloss.text === query ? 0 : core.startsWith(query) ? 1 : 2;
+      const previous = best.get(gloss.headword);
+      if (!previous || score < previous.score || (score === previous.score && gloss.text.length < previous.length)) {
+        best.set(gloss.headword, { score, length: gloss.text.length });
+      }
+    });
+
+    return [...best.entries()]
+      .map(([headword, match]) => ({ headword, ...match, freq: headwordFreq(headword, enabledDictionaryIds) }))
+      .sort((a, b) => a.score - b.score || b.freq - a.freq || a.length - b.length)
+      .slice(0, limit)
+      .map((match) => describeHeadword(match.headword, settings))
+      .filter((result) => result.entries.length);
+  }
+
   function lookupFromPack(term, settings) {
     if (!runtime.pack) {
       return [];
+    }
+
+    const digitText = (term || "").replace(/[\u0f0b\s]/gu, "");
+    if (isTibetanDigitRun(digitText)) {
+      const arabic = tibetanDigitsToArabic(digitText);
+      return [
+        {
+          dictionaryId: "tibetan-numerals",
+          dictionaryLabel: "Tibetan numerals",
+          headword: digitText,
+          glosses: [`${arabic} — Tibetan numeral`],
+          notes: `Each digit maps ༠–༩ to 0–9; this reads as the number ${arabic}.`
+        }
+      ];
     }
 
     const enabledDictionaryIds = new Set(getEnabledDictionaryIds(settings));
     const headword = normalizeForm(term);
     const unique = new Map();
 
-    [runtime.pack.dictionary, runtime.pack.adjustments].forEach((componentEntries) => {
-      Object.values(componentEntries || {}).forEach((entries) => {
-        (entries || []).forEach((entry) => {
-          if (entry.dictionaryId && !enabledDictionaryIds.has(entry.dictionaryId)) {
-            return;
-          }
+    (getSearchIndex().byKey.get(headword) || []).forEach((entry) => {
+      if (entry.dictionaryId && !enabledDictionaryIds.has(entry.dictionaryId)) {
+        return;
+      }
 
-          const matchTargets = [entry.formKey, normalizeForm(entry.lemma || "")].filter(Boolean);
-          if (!matchTargets.includes(headword)) {
-            return;
-          }
+      if (entry.posOnly) {
+        return;
+      }
 
-          const glosses = splitGlosses(entry.sense);
-          const dictionaryId = entry.dictionaryId || "pack-grammar";
-          const notes = joinNotes([
-            entry.lemma && normalizeForm(entry.lemma) !== headword ? `Lemma: ${normalizeForm(entry.lemma)}` : "",
-            entry.pos ? `POS: ${entry.pos}` : ""
-          ]);
+      const matchTargets = [entry.formKey, normalizeForm(entry.lemma || "")].filter(Boolean);
+      if (!matchTargets.includes(headword)) {
+        return;
+      }
 
-          if (!glosses.length && !notes) {
-            return;
-          }
+      const glosses = splitGlosses(entry.sense);
+      const dictionaryId = entry.dictionaryId || "pack-grammar";
+      const lemmaNote =
+        entry.lemma && normalizeForm(entry.lemma) !== headword
+          ? `Lemma: ${normalizeForm(entry.lemma)}`
+          : "";
+      const notes = joinNotes([lemmaNote, entry.pos ? `POS: ${entry.pos}` : ""]);
 
-          const normalizedEntry = {
-            dictionaryId,
-            dictionaryLabel: getDictionaryLabel(entry),
-            headword,
-            glosses: glosses.length ? glosses : [normalizeForm(entry.lemma || entry.form)],
-            notes
-          };
-          const key = JSON.stringify(normalizedEntry);
-          unique.set(key, normalizedEntry);
-        });
-      });
+      // Gloss-less rows (wordlists, POS/frequency lists) only echo the
+      // headword back — not a definition. Keep them for POS data, but
+      // don't show them as dictionary entries.
+      if (!glosses.length && !lemmaNote) {
+        return;
+      }
+
+      const normalizedEntry = {
+        dictionaryId,
+        dictionaryLabel: getDictionaryLabel(entry),
+        headword,
+        glosses: glosses.length ? glosses : [normalizeForm(entry.lemma)],
+        notes
+      };
+      const key = JSON.stringify(normalizedEntry);
+      unique.set(key, normalizedEntry);
     });
 
     return [...unique.values()];
@@ -1032,7 +1357,9 @@
     ensureReady,
     lookup(term, settings) {
       return lookupFromPack(term, settings);
-    }
+    },
+    searchTibetan,
+    searchEnglish
   };
 
   extension.tokenizer = {

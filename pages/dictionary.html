@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="dictionaryPageTitle">Teahouse Tibetan Dictionary</title>
+    <link rel="stylesheet" href="../src/dictionary/index.css" />
+  </head>
+  <body>
+    <main class="dictionary-shell">
+      <header class="hero">
+        <p class="eyebrow"><span data-i18n="extensionName">Teahouse Tibetan</span> <span lang="bo">བོད་ཡིག་ཇ་ཁང་།</span></p>
+        <h1 data-i18n="dictionaryHeading">Dictionary</h1>
+        <p class="intro" data-i18n="dictionaryIntro">Look up a word in Tibetan script, Wylie, or English.</p>
+        <nav class="page-nav">
+          <a href="words.html" data-i18n="myWordsButton">My words</a>
+        </nav>
+      </header>
+
+      <form id="dictionaryForm" class="search-panel" role="search">
+        <label class="visually-hidden" for="dictionarySearch" data-i18n="dictionarySearchLabel">Search the dictionary</label>
+        <input
+          id="dictionarySearch"
+          class="search-input"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          autofocus
+          placeholder="སྙིང་རྗེ · snying rje · compassion"
+        />
+        <p class="search-note" data-i18n="definitionsInEnglish">Definitions are currently available in English only.</p>
+      </form>
+
+      <p id="dictionaryStatus" class="status-line" role="status" aria-live="polite"></p>
+      <div id="dictionaryResults" class="results"></div>
+    </main>
+
+    <script src="../src/shared/constants.js"></script>
+    <script src="../src/shared/i18n.js"></script>
+    <script src="../src/shared/defaults.js"></script>
+    <script src="../src/shared/storage.js"></script>
+    <script src="../src/shared/tibetan.js"></script>
+    <script src="../src/shared/wordList.js"></script>
+    <script src="../src/shared/jsewts.js"></script>
+    <script src="../src/shared/ewts-converter.js"></script>
+    <script src="../src/core/botokPackManifest.js"></script>
+    <script src="../src/core/botokTokenizer.js"></script>
+    <script src="../src/dictionary/index.js"></script>
+  </body>
+</html>

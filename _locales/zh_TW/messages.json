@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse 藏文",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse 藏文：詞典與學習夥伴",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "在任何網頁上閱讀藏文:自動分詞、即時釋義、詞典,以及具間隔重複複習的生詞本。",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse 藏文",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "設定藏文的斷詞、顯示和翻譯方式。",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse 藏文",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "為藏文斷詞，點擊或將游標停留在詞語上即可查看釋義。",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "閱讀體驗",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "設定在頁面上偵測到藏文時的行為。",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "啟用擴充功能",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "在詞語之間插入空格",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "顯示翻譯的方式",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "游標停留",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "點擊",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "顯示 Wylie 轉寫",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "顯示讀音",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "依詞性為詞語上色",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "顏色標示",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "依詞性醒目標示詞語，並選擇配色主題。",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "詞性配色主題",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "鮮豔",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "柔和",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "僅底線",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "點擊帶連結的藏文詞語時詢問：開啟連結還是顯示翻譯",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "藏文最小字型大小",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "字典",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "已啟用的字典決定彈出視窗的結果與斷詞詞庫。",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "字典來源",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "隨附資料仍適用其原始授權。完整署名請參閱隨附的 NOTICE 檔案。",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "設定會自動同步。",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "已儲存至 Chrome 同步儲存空間。",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "正在載入字典…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "正在載入…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "未知",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "已啟用的字典中尚無此詞條的釋義。",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "尚無釋義——此詞不在隨附字典中。",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "可能（依據語料庫）",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "詞語組成",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "重新整理頁面",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "插入範例文字",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "選項",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "開啟連結",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "顯示翻譯",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "無法連線至此頁面——請重新載入分頁或開啟範例頁面。",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "範例頁面",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "目前釋義僅提供英文版本。",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Teahouse 藏文正在載入",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Teahouse 藏文測試文字",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "專有名詞",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "名詞",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "動詞",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "形容詞",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "副詞",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "代名詞",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "限定詞",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "介詞",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "助詞",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "數詞",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "連接詞",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "從屬連接詞",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "感嘆詞",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "標點",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "助動詞",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "其他",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "未知",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "來自 botok-data 的核心藏文斷詞字典（約 3.1 萬條）。",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Jeffrey Hopkins 的藏英字典（約 1.8 萬條）。",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000（Translating the Words of the Buddha）詞彙表（約 2.5 萬條）。",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Teahouse 人工整理的詞條，收錄隨附字典中缺少的複合詞與常用詞。",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "詞典",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse 藏文詞典",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "詞典",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "以藏文、威利轉寫或英文查詞。",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "搜尋詞典",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "藏文詞語",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "威利轉寫對應的藏文詞語",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "英文釋義",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "沒有結果。請嘗試其他拼寫、較少的音節或威利轉寫。",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "輸入一個詞開始查詢。",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "無法載入詞典。請重新載入此頁面後再試。",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "查詢這個詞",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "儲存到我的生詞",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "已儲存到我的生詞——點擊移除",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "我的生詞",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "待複習的生詞",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "我的生詞 — Teahouse 藏文",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "我的生詞",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "你在閱讀或詞典中加星號的詞語。",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "篩選我的生詞",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "排序",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "最新優先",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "最早優先",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "下次複習",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "匯出 CSV",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "已儲存的詞：",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "還沒有儲存的詞。在詞語彈出視窗或詞典中點擊 ☆ 即可儲存到這裡。",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "沒有符合此篩選條件的生詞。",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "移除",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "已移除該詞。",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "復原",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "儲存於：",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "下次複習：",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "現在複習",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "來源：",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "複習",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "全部練習",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "顯示答案",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "重來",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "困難",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "良好",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "簡單",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "結束複習",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "暫時都複習完了。",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "練習完成。",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "鍵盤：空白鍵顯示答案，1–4 評分。",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "練習模式——不會改變你的複習排程。",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "返回我的生詞",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "全部",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "新詞",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "學習中",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "複習中",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "已掌握",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "學習設定",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "每天新詞數",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "穩定後的預估每日複習量：",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "目標記憶率",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — 複習較少",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — 推薦",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — 複習較多",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "儲存的詞會在「新詞」中等待，有空位時才開始學習，所以想存多少都可以。掌握的詞會騰出空位。",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "進行中：",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "今天的新詞已經開始。明天會開始更多；其餘的在「新詞」中等待。",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "新詞已暫停，等你補完複習後繼續。",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "進行中的詞較多，新詞已暫停。掌握詞語會騰出空位。",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "已認識",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "我認識這個詞",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "已標記為認識——點擊重新學習",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "淡化我認識的詞，讓新詞更醒目",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "翻譯這句話",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "在 Google 翻譯中開啟",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "備份與匯入",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "你的詞語只儲存在此瀏覽器中。請不時下載備份,換電腦前也請備份,以免遺失學習進度。",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "下載備份",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "匯入檔案…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "上次備份:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "從未",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "可匯入 Teahouse 備份 (.json)、本擴充功能匯出的 CSV、Anki 文字匯出以及藏文詞語清單。已有詞語會保留學習進度。",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "匯入完成",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "新增:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "已更新:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "已儲存:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "已略過:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "無法讀取此備份檔案。它是 Teahouse 備份嗎?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "此檔案中找不到藏文詞語。",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "說明與意見回饋",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "有問題、想法或遇到故障?我們會閱讀每一則訊息。",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "說明與常見問題",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "回報問題",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "建議釋義",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "隱私權政策",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "版本",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "在此網站暫停",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "已暫停的網站",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Teahouse 在這些網站上保持關閉。要暫停某個網站,請在該網站上點擊擴充功能圖示。",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "沒有已暫停的網站。",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "恢復",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "歡迎使用 Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "一切就緒。現在 Teahouse 可在任何含有藏文的網頁上使用。請在下方的範例中試試看。",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "在這裡試試",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "點擊詞語,查看釋義、威利轉寫和讀音。",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "點擊釋義中的 ☆ 收藏該詞;如果已經認識,點擊 ✓。",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "點擊句末的 །,翻譯整個句子。",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "讓 Teahouse 隨手可用",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "點擊 Chrome 工具列中的拼圖圖示,然後點擊 Teahouse Tibetan 旁邊的圖釘。它的選單中有詞典、我的詞語和快速設定。",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "下一步",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "一切都在你的電腦上執行。你的詞語只儲存在此瀏覽器中,除非你選擇翻譯句子,否則不會傳送任何內容。",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

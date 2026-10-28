@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse Тибетский",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse Тибетский: словарь и спутник в изучении",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "Читайте по-тибетски на любом сайте: пробелы между словами, мгновенные определения, словарь и сохранённые слова с повторением.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse Тибетский",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Настройте, как тибетский текст разбивается на слова, отображается и переводится.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse Тибетский",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Разбивайте тибетский текст на слова и нажимайте на слова или наводите на них курсор, чтобы увидеть определения.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Чтение",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Настройте, что происходит, когда на странице обнаружен тибетский текст.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Расширение включено",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Вставлять пробелы между словами",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Показывать перевод по",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Наведению",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Нажатию",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Показывать Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Показывать транскрипцию",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Выделять слова цветом по части речи",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Цветовая разметка",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Выделяйте слова по части речи и выберите цветовую тему.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Цветовая тема частей речи",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Яркая",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Мягкая",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Только подчёркивание",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "При нажатии на тибетское слово-ссылку спрашивать: перейти по ссылке или показать перевод",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Минимальный размер тибетского шрифта",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Словари",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Включённые словари определяют результаты подсказок и лексикон для разбиения на слова.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Источники словарей",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Включённые данные распространяются на условиях своих исходных лицензий. Полные сведения об авторстве — в прилагаемом файле NOTICE.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Настройки синхронизируются автоматически.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Сохранено в синхронизируемом хранилище Chrome.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Загрузка словарей…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Загрузка…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Неизвестно",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Ни в одном из включённых словарей пока нет определения этого термина.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Определения пока нет — этого слова нет во встроенных словарях.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "вероятно (по данным корпуса)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Части слова",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Обновить страницу",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Вставить пример текста",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Настройки",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Перейти по ссылке",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Показать перевод",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Не удаётся связаться с этой страницей — перезагрузите вкладку или откройте страницу с примером.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Страница с примером",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Пока определения доступны только на английском языке.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Загрузка Teahouse Тибетский",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Тестовый текст Teahouse Тибетский",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Имя собственное",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Существительное",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Глагол",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Прилагательное",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Наречие",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Местоимение",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Определитель",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Предлог/послелог",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Частица",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Числительное",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Союз",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Подчинительный союз",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Междометие",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Пунктуация",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Вспомогательный глагол",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Другое",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Неизвестно",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Основной словарь для разбиения тибетского текста на слова из botok-data (~31 тыс. статей).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Тибетско-английский словарь Джеффри Хопкинса (~18 тыс. статей).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Глоссарий 84000: Translating the Words of the Buddha (~25 тыс. статей).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Подобранные вручную статьи Teahouse для составных и частых слов, которых нет во встроенных словарях.",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Словарь",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Словарь Teahouse Тибетский",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Словарь",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Найдите слово тибетским письмом, в транслитерации Wylie или по-английски.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Поиск по словарю",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Тибетские слова",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Тибетские слова из Wylie",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Значения на английском",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Ничего не найдено. Попробуйте другое написание, меньше слогов или Wylie.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Введите слово для поиска.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Не удалось загрузить словари. Перезагрузите страницу и попробуйте снова.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Найти это слово",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Сохранить в мои слова",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Сохранено в моих словах — нажмите, чтобы удалить",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "Мои слова",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "Слова к повторению",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "Мои слова — Teahouse Тибетский",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "Мои слова",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "Слова, отмеченные звёздочкой при чтении или в словаре.",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "Фильтр моих слов",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "Сортировка",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "Сначала новые",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "Сначала старые",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "Следующее повторение",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "Экспорт в CSV",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "Сохранено слов:",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "Сохранённых слов пока нет. Нажмите ☆ во всплывающем окне слова или в словаре, чтобы сохранить его здесь.",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "Ни одно сохранённое слово не подходит под фильтр.",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "Удалить",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "Слово удалено.",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "Отменить",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "Сохранено:",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "Следующее повторение:",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "пора повторить",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "Источник:",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Повторить",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Практиковать все",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Показать ответ",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Снова",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Трудно",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Хорошо",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Легко",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Завершить повторение",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Пока всё повторено.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Практика завершена.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Клавиатура: пробел показывает ответ, 1–4 — оценка.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Режим практики — расписание повторений не изменится.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Назад к моим словам",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Все",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Новые",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Изучаются",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Повторяются",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Освоены",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Настройки занятий",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Новых слов в день",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Примерно повторений в день со временем:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Целевая память",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — меньше повторений",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — рекомендуется",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — больше повторений",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Сохранённые слова ждут в «Новых», пока не освободится место, так что сохранять можно сколько угодно. Освоенные слова освобождают место.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "В процессе:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Новые слова на сегодня начаты. Завтра начнутся ещё; остальные ждут в «Новых».",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Новые слова приостановлены, пока вы не наверстаете повторения.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Новые слова приостановлены, пока много слов в процессе. Освоение слов освобождает место.",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Известные",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "Я знаю это слово",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Отмечено как известное — нажмите, чтобы снова учить",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Приглушать известные слова, чтобы выделялись новые",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Перевести это предложение",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Открыть в Google Переводчике",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Резервная копия и импорт",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Ваши слова хранятся только в этом браузере. Время от времени, а также перед сменой компьютера, скачивайте резервную копию, чтобы не потерять прогресс.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Скачать копию",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Импортировать файл…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Последняя копия:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "никогда",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Можно импортировать копии Teahouse (.json), наш экспорт CSV, текстовые экспорты Anki и простые списки тибетских слов. Уже сохранённые слова сохраняют свой прогресс.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Импорт завершён",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Добавлено:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Обновлено:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Уже сохранены:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Пропущено:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Не удалось прочитать этот файл копии. Это копия Teahouse?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "В этом файле не найдено тибетских слов.",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "Помощь и отзывы",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "Вопросы, идеи или что-то не работает? Мы читаем каждое сообщение.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "Помощь и FAQ",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "Сообщить об ошибке",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "Предложить определение",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "Политика конфиденциальности",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "Версия",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Приостановить на этом сайте",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Приостановленные сайты",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "На этих сайтах Teahouse остаётся выключенным. Чтобы приостановить сайт, нажмите значок расширения, находясь на нём.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Нет приостановленных сайтов.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Возобновить",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Добро пожаловать в Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Всё готово. Теперь Teahouse работает на любой веб-странице с тибетским текстом. Попробуйте на примере ниже.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Попробуйте здесь",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Нажмите на слово, чтобы увидеть его значение, транслитерацию Уайли и произношение.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Нажмите ☆ в определении, чтобы сохранить слово, или ✓, если вы его уже знаете.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Нажмите ། в конце предложения, чтобы перевести всё предложение.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Держите Teahouse под рукой",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Нажмите значок пазла на панели Chrome, затем булавку рядом с Teahouse Tibetan. В его меню есть словарь, ваши слова и быстрые настройки.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Что дальше",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Всё работает на вашем компьютере. Ваши слова остаются в этом браузере, и ничего никуда не отправляется, если вы сами не решите перевести предложение.",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

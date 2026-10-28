@@ -3,69 +3,84 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tibetan Page Tools</title>
+    <title data-i18n="popupTitle">Teahouse Tibetan</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <main class="popup-shell">
       <header class="hero">
-        <p class="eyebrow">Tibetan Page Tools</p>
-        <h1>Page controls</h1>
-        <p class="intro">
-          Segment Tibetan text on the current page, add readable spacing, and click tokens for
-          dictionary popups.
-        </p>
+        <h1><span data-i18n="extensionName">Teahouse Tibetan</span> <span lang="bo">བོད་ཡིག་ཇ་ཁང་།</span></h1>
       </header>
 
       <section class="card">
-        <label class="toggle-row" for="extensionEnabled">
-          <span>Extension enabled</span>
-          <input id="extensionEnabled" type="checkbox" />
+        <label id="pauseSiteRow" class="toggle-row pause-row" for="pauseSite" hidden>
+          <span><span data-i18n="pauseOnSite">Pause on this site</span> <small id="pauseSiteHost" class="pause-host"></small></span>
+          <input id="pauseSite" type="checkbox" />
         </label>
 
         <label class="toggle-row" for="insertSpaces">
-          <span>Insert spaces between tokens</span>
+          <span data-i18n="insertSpaces">Insert spaces between tokens</span>
           <input id="insertSpaces" type="checkbox" />
         </label>
 
-        <label class="toggle-row" for="showTooltips">
-          <span>Show click-to-open popups</span>
-          <input id="showTooltips" type="checkbox" />
+        <label class="toggle-row" for="colorByPos">
+          <span data-i18n="colorByPos">Color words by part of speech</span>
+          <input id="colorByPos" type="checkbox" />
         </label>
 
-        <label class="field" for="targetLanguage">
-          <span>Translation language</span>
-          <select id="targetLanguage"></select>
+        <label class="field" for="tooltipMode">
+          <span data-i18n="showTranslationsOn">Show translations on</span>
+          <select id="tooltipMode">
+            <option value="hover" data-i18n="tooltipModeHover">Hover</option>
+            <option value="click" data-i18n="tooltipModeClick">Click</option>
+          </select>
         </label>
-      </section>
 
-      <section class="card">
-        <div class="stats-grid">
-          <article class="stat">
-            <strong id="processedNodes">0</strong>
-            <span>processed nodes</span>
-          </article>
-          <article class="stat">
-            <strong id="annotatedWords">0</strong>
-            <span>annotated words</span>
-          </article>
-        </div>
+        <label class="toggle-row" for="showWylie">
+          <span data-i18n="showWylie">Show Wylie</span>
+          <input id="showWylie" type="checkbox" />
+        </label>
 
-        <p id="pageMessage" class="page-message">
-          Open a standard web page to inspect the current page scan.
-        </p>
+        <label class="toggle-row" for="showPhonetic">
+          <span data-i18n="showPhonetic">Show phonetic</span>
+          <input id="showPhonetic" type="checkbox" />
+        </label>
+
+        <label class="toggle-row" for="highlightKnowledge">
+          <span data-i18n="highlightKnowledge">Fade words I know, so new words stand out</span>
+          <input id="highlightKnowledge" type="checkbox" />
+        </label>
+
+        <label class="field" for="minTibetanFontSize">
+          <span data-i18n="minTibetanFontSize">Minimum Tibetan font size</span>
+          <input id="minTibetanFontSize" type="number" min="10" max="72" value="16" />
+        </label>
       </section>
 
       <div class="actions">
-        <button id="refreshPage" class="primary" type="button">Refresh page</button>
-        <button id="openOptions" class="secondary" type="button">Dictionaries</button>
+        <button id="refreshPage" class="primary" type="button" data-i18n="refreshPage">Refresh page</button>
+        <button id="openDictionary" class="secondary" type="button" data-i18n="dictionaryButton">Dictionary</button>
+        <button id="openWords" class="secondary" type="button">
+          <span data-i18n="myWordsButton">My words</span>
+          <span id="wordsDueBadge" class="badge" data-i18n-title="wordsDueBadgeTitle" hidden></span>
+        </button>
+        <button id="insertTestText" class="secondary" type="button" data-i18n="insertTestText">Insert sample text</button>
+        <button id="samplePage" class="secondary" type="button" data-i18n="samplePage">Sample page</button>
+        <button id="openOptions" class="secondary" type="button" data-i18n="options">Options</button>
       </div>
+
+      <p id="popupStatus" class="status-line" role="status" aria-live="polite"></p>
+      <p class="popup-footer">
+        <a href="https://tibetan.teahouselanguages.com/support.html" target="_blank" rel="noopener" data-i18n="helpHeading">Help &amp; feedback</a>
+        <span><span data-i18n="versionLabel">Version</span> <span id="extensionVersion"></span></span>
+      </p>
     </main>
 
     <script src="../shared/constants.js"></script>
+    <script src="../shared/i18n.js"></script>
     <script src="../shared/defaults.js"></script>
     <script src="../shared/storage.js"></script>
-    <script src="../core/mockDictionary.js"></script>
+    <script src="../shared/wordList.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

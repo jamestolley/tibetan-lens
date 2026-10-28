@@ -5,10 +5,20 @@
     settings: {
       extensionEnabled: true,
       insertSpaces: true,
-      showTooltips: true,
-      targetLanguage: "en",
-      enabledDictionaries: ["botok-core", "hopkins", "jim-valby", "ives-waldo", "tsepak-rigdzin", "84000"],
-      tokenizerMode: "botok-general"
+      tooltipMode: "click",
+      showWylie: true,
+      showPhonetic: false,
+      minTibetanFontSize: 16,
+      enabledDictionaries: ["botok-core", "curated", "84000", "hopkins"],
+      tokenizerMode: "botok-general",
+      colorByPos: false,
+      posColorTheme: "vivid",
+      linkClickPrompt: true,
+      highlightKnowledge: true,
+      newWordsPerDay: 10,
+      targetRetention: 0.9,
+      // Hostnames where the user paused the extension from the popup.
+      pausedSites: []
     }
   };
 })();

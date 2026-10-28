@@ -8,16 +8,13 @@
       wordMatched: "is-matched",
       wordUnmatched: "is-unmatched",
       tooltip: "tibetan-extension-tooltip",
-      tooltipVisible: "is-visible"
+      tooltipVisible: "is-visible",
+      linkChoice: "tibetan-extension-link-choice",
+      sentenceEnd: "tibetan-extension-sentence-end"
     },
     messages: {
       refreshAnnotations: "refresh-annotations",
-      getAnnotationStats: "get-annotation-stats"
-    },
-    supportedLanguages: [
-      { code: "en", label: "English" },
-      { code: "es", label: "Spanish" },
-      { code: "fr", label: "French" }
-    ]
+      insertTestText: "insert-test-text"
+    }
   };
 })();

@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse Tibetaans",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse Tibetaans: woordenboek en leermaatje",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "Lees Tibetaans op elke webpagina: woordafstand, directe definities, een woordenboek en bewaarde woorden met gespreide herhaling.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse Tibetaans",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Bepaal hoe Tibetaanse tekst wordt gesegmenteerd, weergegeven en vertaald.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse Tibetaans",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Segmenteer Tibetaanse tekst en klik op woorden of wijs ze aan voor definities.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Leeservaring",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Bepaal wat er gebeurt wanneer Tibetaanse tekst op een pagina wordt gevonden.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Extensie ingeschakeld",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Spaties tussen woorden invoegen",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Vertalingen tonen bij",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Aanwijzen",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Klikken",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie tonen",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Fonetiek tonen",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Woorden kleuren op woordsoort",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Kleurcodering",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Markeer woorden op woordsoort en kies een kleurthema.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Kleurthema voor woordsoorten",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Fel",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Zacht",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Alleen onderstrepen",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "Bij klikken op een gelinkt Tibetaans woord vragen: link volgen of vertaling tonen",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Minimale Tibetaanse lettergrootte",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Woordenboeken",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Ingeschakelde woordenboeken bepalen de pop-upresultaten en het lexicon voor segmentatie.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Bronnen van woordenboeken",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Meegeleverde gegevens vallen onder hun oorspronkelijke licentie. Zie het meegeleverde NOTICE-bestand voor de volledige bronvermelding.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Instellingen worden automatisch gesynchroniseerd.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Opgeslagen in de Chrome-synchronisatieopslag.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Woordenboeken laden…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Laden…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Onbekend",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Geen ingeschakeld woordenboek heeft al een definitie voor deze term.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Nog geen definitie — dit woord staat niet in de meegeleverde woordenboeken.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "waarschijnlijk (op basis van corpus)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Woorddelen",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Pagina vernieuwen",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Voorbeeldtekst invoegen",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Opties",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Link volgen",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Vertaling tonen",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Kan deze pagina niet bereiken — laad het tabblad opnieuw of open de voorbeeldpagina.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Voorbeeldpagina",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Definities zijn voorlopig alleen in het Engels beschikbaar.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Teahouse Tibetaans wordt geladen",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Testtekst van Teahouse Tibetaans",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Eigennaam",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Zelfstandig naamwoord",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Werkwoord",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Bijvoeglijk naamwoord",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Bijwoord",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Voornaamwoord",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Determinator",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Adpositie",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Partikel",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Getal",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Voegwoord",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Onderschikkend voegwoord",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Tussenwerpsel",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Leesteken",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Hulpwerkwoord",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Overig",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Onbekend",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Kernwoordenboek voor Tibetaanse woordsegmentatie uit botok-data (~31.000 items).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Tibetaans-Engels woordenboek van Jeffrey Hopkins (~18.000 items).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Woordenlijst van 84000: Translating the Words of the Buddha (~25.000 items).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Handmatig samengestelde Teahouse-items voor samenstellingen en veelvoorkomende woorden die in de meegeleverde woordenboeken ontbreken.",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Woordenboek",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse Tibetaans – woordenboek",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Woordenboek",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Zoek een woord op in Tibetaans schrift, in Wylie of in het Engels.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Zoeken in het woordenboek",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Tibetaanse woorden",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Tibetaanse woorden uit Wylie",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Engelse betekenissen",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Geen resultaten. Probeer een andere spelling, minder lettergrepen of Wylie.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Typ een woord om het op te zoeken.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "De woordenboeken konden niet worden geladen. Laad de pagina opnieuw om het nog eens te proberen.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Dit woord opzoeken",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Opslaan in mijn woorden",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Opgeslagen in mijn woorden — klik om te verwijderen",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "Mijn woorden",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "Woorden om te herhalen",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "Mijn woorden — Teahouse Tibetaans",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "Mijn woorden",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "Woorden die je tijdens het lezen of in het woordenboek met een ster hebt gemarkeerd.",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "Mijn woorden filteren",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "Sorteren",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "Nieuwste eerst",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "Oudste eerst",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "Volgende herhaling",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "CSV exporteren",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "Opgeslagen woorden:",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "Nog geen woorden opgeslagen. Klik op ☆ in de pop-up van een woord of in het woordenboek om het hier op te slaan.",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "Geen opgeslagen woorden komen overeen met dit filter.",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "Verwijderen",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "Woord verwijderd.",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "Ongedaan maken",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "Opgeslagen:",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "Volgende herhaling:",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "nu aan de beurt",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "Van:",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Herhalen",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Alles oefenen",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Antwoord tonen",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "Opnieuw",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Moeilijk",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Goed",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Makkelijk",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Herhaling stoppen",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Voorlopig alles herhaald.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Oefenronde voltooid.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Toetsenbord: spatie toont het antwoord, 1–4 om te beoordelen.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Oefenmodus — je herhaalschema verandert niet.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Terug naar mijn woorden",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Alle",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nieuw",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "Leren",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "Herhalen",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Beheerst",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Studie-instellingen",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nieuwe woorden per dag",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Geschatte herhalingen per dag op termijn:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Doelgeheugen",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — minder herhalingen",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — aanbevolen",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — meer herhalingen",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Opgeslagen woorden wachten in Nieuw tot er ruimte is, dus je kunt er zoveel opslaan als je wilt. Beheerste woorden maken ruimte vrij.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "Bezig:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Je bent begonnen aan de nieuwe woorden van vandaag. Morgen starten er meer; de rest wacht in Nieuw.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Nieuwe woorden zijn gepauzeerd tot je je herhalingen hebt ingehaald.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Nieuwe woorden zijn gepauzeerd zolang veel woorden nog bezig zijn. Woorden beheersen maakt ruimte vrij.",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Bekend",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "Dit woord ken ik",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Gemarkeerd als bekend — klik om het opnieuw te leren",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Bekende woorden vervagen, zodat nieuwe opvallen",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Deze zin vertalen",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Openen in Google Translate",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Back-up en import",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Je woorden worden alleen in deze browser bewaard. Download af en toe een back-up, en vóór je van computer wisselt, zodat je je voortgang nooit kwijtraakt.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Back-up downloaden",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Bestand importeren…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Laatste back-up:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "nooit",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Je kunt Teahouse-back-ups (.json), onze CSV-export, Anki-tekstexports en gewone lijsten met Tibetaanse woorden importeren. Woorden die je al hebt, behouden hun voortgang.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Import voltooid",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Toegevoegd:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Bijgewerkt:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Al bewaard:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Overgeslagen:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Dit back-upbestand kan niet worden gelezen. Is het een Teahouse-back-up?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "Er zijn geen Tibetaanse woorden in dit bestand gevonden.",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "Hulp en feedback",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "Vragen, ideeën of werkt er iets niet? We lezen elk bericht.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "Hulp en veelgestelde vragen",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "Bug melden",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "Definitie voorstellen",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "Privacybeleid",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "Versie",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Pauzeren op deze site",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Gepauzeerde sites",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Op deze sites blijft Teahouse uit. Klik op het extensiepictogram terwijl je op een site bent om die te pauzeren.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Geen gepauzeerde sites.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Hervatten",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Welkom bij Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Alles is klaar. Teahouse werkt nu op elke webpagina met Tibetaanse tekst. Probeer het uit met het voorbeeld hieronder.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Probeer het hier",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Klik op een woord om de betekenis, Wylie en uitspraak te zien.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Klik op ☆ in de definitie om het woord te bewaren, of op ✓ als je het al kent.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Klik op de ། aan het eind van een zin om de hele zin te vertalen.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Houd Teahouse binnen handbereik",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Klik op het puzzelstukje in de werkbalk van Chrome en daarna op de punaise naast Teahouse Tibetan. Het menu bevat het woordenboek, je woorden en snelle instellingen.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Volgende stappen",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Alles draait op je eigen computer. Je woorden blijven in deze browser en er wordt niets verstuurd, tenzij je ervoor kiest een zin te vertalen.",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse Tibétain",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse Tibétain : dictionnaire et compagnon d'apprentissage",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "Lisez le tibétain sur tout le web : mots espacés, définitions instantanées, dictionnaire et mots enregistrés à réviser.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse Tibétain",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "Choisissez comment le texte tibétain est segmenté, affiché et traduit.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse Tibétain",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "Segmentez le texte tibétain et cliquez ou survolez les mots pour voir leurs définitions.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "Expérience de lecture",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "Choisissez ce qui se passe lorsqu'un texte tibétain est détecté sur une page.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "Extension activée",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "Insérer des espaces entre les mots",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "Afficher les traductions au",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "Survol",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "Clic",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Afficher le Wylie",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "Afficher la phonétique",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "Colorer les mots selon leur catégorie grammaticale",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "Code couleur",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "Mettez en évidence les mots selon leur catégorie grammaticale et choisissez un thème de couleurs.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "Thème de couleurs des catégories grammaticales",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "Vif",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "Doux",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "Soulignement uniquement",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "En cliquant sur un mot tibétain lié, demander : suivre le lien ou afficher la traduction",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "Taille minimale de la police tibétaine",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "Dictionnaires",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "Les dictionnaires activés déterminent les résultats des infobulles et le lexique de segmentation.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "Sources des dictionnaires",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "Les données incluses restent soumises à leur licence d'origine. Consultez le fichier NOTICE fourni pour l'attribution complète.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "Les paramètres se synchronisent automatiquement.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Enregistré dans le stockage synchronisé de Chrome.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "Chargement des dictionnaires…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "Chargement…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "Inconnu",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "Aucun dictionnaire activé ne contient encore de définition pour ce terme.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "Pas encore de définition — ce mot ne figure pas dans les dictionnaires inclus.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "probable (d'après le corpus)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "Composants du mot",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "Actualiser la page",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "Insérer un texte d'exemple",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "Suivre le lien",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "Afficher la traduction",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "Impossible d'accéder à cette page — rechargez l'onglet ou ouvrez la page d'exemple.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "Page d'exemple",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "Pour l'instant, les définitions ne sont disponibles qu'en anglais.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Chargement de Teahouse Tibétain",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Texte de test de Teahouse Tibétain",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "Nom propre",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "Nom",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "Verbe",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "Adjectif",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "Adverbe",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "Pronom",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "Déterminant",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "Adposition",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "Particule",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "Nombre",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "Conjonction",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "Subordonnant",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "Interjection",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "Ponctuation",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "Auxiliaire",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "Autre",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "Inconnu",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "Dictionnaire principal de segmentation des mots tibétains issu de botok-data (~31 000 entrées).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Dictionnaire tibétain-anglais de Jeffrey Hopkins (~18 000 entrées).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "Glossaire de 84000 : Translating the Words of the Buddha (~25 000 entrées).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "Entrées Teahouse sélectionnées à la main pour des mots composés et des mots courants absents des dictionnaires inclus.",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "Dictionnaire",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Dictionnaire Teahouse Tibétain",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "Dictionnaire",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "Cherchez un mot en écriture tibétaine, en Wylie ou en anglais.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "Rechercher dans le dictionnaire",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "Mots tibétains",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "Mots tibétains depuis le Wylie",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "Sens en anglais",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "Aucun résultat. Essayez une autre orthographe, moins de syllabes ou le Wylie.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "Saisissez un mot pour le chercher.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "Impossible de charger les dictionnaires. Rechargez la page pour réessayer.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "Chercher ce mot",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "Ajouter à mes mots",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "Enregistré dans mes mots — cliquez pour retirer",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "Mes mots",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "Mots à réviser",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "Mes mots — Teahouse Tibétain",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "Mes mots",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "Les mots que vous avez marqués d'une étoile en lisant ou dans le dictionnaire.",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "Filtrer mes mots",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "Trier",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "Plus récents d'abord",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "Plus anciens d'abord",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "Prochaine révision",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "Exporter en CSV",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "Mots enregistrés :",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "Aucun mot enregistré pour l'instant. Cliquez sur ☆ dans la fenêtre d'un mot ou dans le dictionnaire pour l'enregistrer ici.",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "Aucun mot enregistré ne correspond à ce filtre.",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "Retirer",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "Mot retiré.",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "Annuler",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "Enregistré :",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "Prochaine révision :",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "à réviser maintenant",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "Source :",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "Réviser",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "Tout pratiquer",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "Afficher la réponse",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "À revoir",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "Difficile",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "Bien",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "Facile",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "Terminer la révision",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "Tout est à jour pour l'instant.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "Séance d'entraînement terminée.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "Clavier : Espace affiche la réponse, 1–4 pour évaluer.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "Mode entraînement — votre calendrier de révision ne change pas.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "Retour à mes mots",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "Tous",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "Nouveaux",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "En apprentissage",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "En révision",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "Maîtrisés",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "Réglages d'étude",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "Nouveaux mots par jour",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "Révisions quotidiennes estimées à terme :",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "Mémoire visée",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85 % — moins de révisions",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90 % — recommandé",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95 % — plus de révisions",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "Les mots enregistrés attendent dans « Nouveaux » qu'il y ait de la place : vous pouvez donc en enregistrer autant que vous voulez. Les mots maîtrisés libèrent de la place.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "En cours :",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "Vous avez commencé les nouveaux mots du jour. D'autres commenceront demain ; les autres attendent dans « Nouveaux ».",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "Les nouveaux mots sont en pause jusqu'à ce que vous ayez rattrapé vos révisions.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "Les nouveaux mots sont en pause tant que beaucoup de mots sont en cours. Maîtriser des mots libère de la place.",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "Connus",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "Je connais ce mot",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "Marqué comme connu — cliquez pour l'étudier à nouveau",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "Estomper les mots que je connais pour faire ressortir les nouveaux",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "Traduire cette phrase",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Ouvrir dans Google Traduction",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "Sauvegarde et import",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "Vos mots sont enregistrés uniquement dans ce navigateur. Téléchargez une sauvegarde de temps en temps, et avant de changer d'ordinateur, pour ne jamais perdre votre progression.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "Télécharger une sauvegarde",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "Importer un fichier…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "Dernière sauvegarde :",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "jamais",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "L'import accepte les sauvegardes Teahouse (.json), notre export CSV, les exports texte d'Anki et les simples listes de mots tibétains. Les mots déjà enregistrés conservent leur progression.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "Import terminé",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "Ajoutés :",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "Mis à jour :",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "Déjà enregistrés :",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "Ignorés :",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "Impossible de lire ce fichier de sauvegarde. S'agit-il d'une sauvegarde Teahouse ?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "Aucun mot tibétain n'a été trouvé dans ce fichier.",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "Aide et commentaires",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "Une question, une idée ou un problème ? Nous lisons tous les messages.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "Aide et FAQ",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "Signaler un bug",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "Proposer une définition",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "Politique de confidentialité",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "Version",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "Mettre en pause sur ce site",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "Sites en pause",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "Teahouse reste désactivé sur ces sites. Pour mettre un site en pause, cliquez sur l'icône de l'extension lorsque vous y êtes.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "Aucun site en pause.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "Reprendre",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Bienvenue dans Teahouse Tibetan",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "Tout est prêt. Teahouse fonctionne désormais sur toutes les pages web contenant du tibétain. Essayez-le avec l'exemple ci-dessous.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "Essayez ici",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "Cliquez sur un mot pour voir son sens, sa translittération Wylie et sa prononciation.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "Cliquez sur ☆ dans la définition pour enregistrer le mot, ou sur ✓ si vous le connaissez déjà.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "Cliquez sur le ། en fin de phrase pour traduire toute la phrase.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Gardez Teahouse à portée de main",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Cliquez sur l'icône en forme de pièce de puzzle dans la barre d'outils de Chrome, puis sur l'épingle à côté de Teahouse Tibetan. Son menu donne accès au dictionnaire, à vos mots et aux réglages rapides.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "Étapes suivantes",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "Tout fonctionne sur votre ordinateur. Vos mots restent dans ce navigateur et rien n'est envoyé, sauf si vous choisissez de traduire une phrase.",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

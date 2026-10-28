@@ -51,6 +51,13 @@ select {
   font-size: clamp(2rem, 3vw, 3rem);
 }
 
+.hero h1 span {
+  margin-left: 0.45em;
+  color: var(--clay);
+  font-size: 0.7em;
+  font-weight: 500;
+}
+
 .intro {
   max-width: 48rem;
   margin: 10px 0 0;
@@ -99,12 +106,19 @@ select {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.field select {
-  min-width: 160px;
+.field select,
+.field input[type="number"] {
+  min-width: 120px;
   padding: 9px 12px;
   border: 1px solid rgba(40, 31, 23, 0.16);
   border-radius: 999px;
   background: #fff;
+  text-align: center;
+  text-align-last: center;
+}
+
+.field option {
+  text-align: center;
 }
 
 .dictionary-list {
@@ -126,6 +140,70 @@ select {
 .status-line {
   margin: 16px 0 0;
   color: rgba(40, 31, 23, 0.76);
+}
+
+.source-list {
+  margin: 14px 0 0;
+  padding-left: 1.2rem;
+}
+
+.source-list li {
+  margin-bottom: 10px;
+  color: rgba(40, 31, 23, 0.78);
+}
+
+.source-list strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ink);
+}
+
+.source-list a {
+  color: var(--clay);
+}
+
+.paused-sites {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paused-sites li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  overflow-wrap: anywhere;
+}
+
+.paused-sites .is-empty {
+  color: rgba(40, 31, 23, 0.7);
+}
+
+.paused-sites button {
+  padding: 4px 14px;
+  border: 1px solid var(--clay);
+  border-radius: 999px;
+  background: none;
+  color: var(--clay);
+  font: inherit;
+  cursor: pointer;
+}
+
+.help-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.help-links a {
+  color: var(--clay);
+  font-weight: 700;
 }
 
 @media (max-width: 640px) {

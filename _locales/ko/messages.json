@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse 티베트어",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse 티베트어: 사전 및 학습 동반자",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "모든 웹 페이지에서 티베트어 읽기: 단어 띄어쓰기, 즉시 뜻 보기, 사전, 간격 반복 복습이 되는 단어장.",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse 티베트어",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "티베트어 텍스트를 나누고 표시하고 번역하는 방식을 설정합니다.",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse 티베트어",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "티베트어 텍스트를 단어로 나누고, 단어를 클릭하거나 마우스를 올리면 뜻을 볼 수 있습니다.",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "읽기 환경",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "페이지에서 티베트어 텍스트가 감지되었을 때의 동작을 설정합니다.",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "확장 프로그램 사용",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "단어 사이에 띄어쓰기 넣기",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "번역 표시 방식",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "마우스 오버",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "클릭",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie 표기 표시",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "발음 표시",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "품사별로 단어 색칠",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "색상 구분",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "품사별로 단어를 강조하고 색상 테마를 선택합니다.",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "품사 색상 테마",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "선명하게",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "부드럽게",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "밑줄만",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "링크가 있는 티베트어 단어를 클릭하면 링크로 이동할지 번역을 표시할지 묻기",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "티베트어 최소 글꼴 크기",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "사전",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "사용 중인 사전이 팝업 결과와 단어 분할 어휘를 결정합니다.",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "사전 출처",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "포함된 데이터는 원래의 라이선스를 따릅니다. 전체 저작자 표시는 포함된 NOTICE 파일을 참고하세요.",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "설정은 자동으로 동기화됩니다.",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Chrome 동기화 저장소에 저장했습니다.",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "사전 불러오는 중…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "불러오는 중…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "알 수 없음",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "사용 중인 사전에 아직 이 단어의 뜻풀이가 없습니다.",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "아직 뜻풀이가 없습니다 — 이 단어는 포함된 사전에 없습니다.",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "추정(말뭉치 기반)",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "단어 구성 요소",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "페이지 새로고침",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "예시 텍스트 삽입",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "옵션",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "링크로 이동",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "번역 표시",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "이 페이지에 연결할 수 없습니다 — 탭을 새로고침하거나 예시 페이지를 여세요.",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "예시 페이지",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "현재 뜻풀이는 영어로만 제공됩니다.",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Teahouse 티베트어 불러오는 중",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Teahouse 티베트어 테스트 텍스트",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "고유 명사",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "명사",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "동사",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "형용사",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "부사",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "대명사",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "한정사",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "부치사",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "조사",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "수사",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "접속사",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "종속 접속사",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "감탄사",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "문장 부호",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "보조 동사",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "기타",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "알 수 없음",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "botok-data의 핵심 티베트어 단어 분할 사전(약 31,000개 항목).",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Jeffrey Hopkins의 티베트어-영어 사전(약 18,000개 항목).",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000: Translating the Words of the Buddha 용어집(약 25,000개 항목).",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "포함된 사전에 없는 복합어와 일반 단어를 위해 Teahouse가 직접 정리한 항목.",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "사전",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse 티베트어 사전",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "사전",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "티베트 문자, 와일리 표기 또는 영어로 단어를 찾아보세요.",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "사전 검색",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "티베트어 단어",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "와일리 표기에서 변환한 티베트어 단어",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "영어 뜻",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "결과가 없습니다. 다른 철자, 더 적은 음절 또는 와일리 표기로 시도해 보세요.",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "찾아볼 단어를 입력하세요.",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "사전을 불러오지 못했습니다. 페이지를 새로고침한 후 다시 시도하세요.",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "이 단어 찾아보기",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "내 단어에 저장",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "내 단어에 저장됨 — 클릭하여 삭제",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "내 단어",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "복습할 단어",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "내 단어 — Teahouse 티베트어",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "내 단어",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "읽는 중이나 사전에서 별표한 단어입니다.",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "내 단어 필터",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "정렬",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "최신순",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "오래된순",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "다음 복습순",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "CSV 내보내기",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "저장한 단어:",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "아직 저장한 단어가 없습니다. 단어 팝업이나 사전에서 ☆을 클릭하면 여기에 저장됩니다.",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "이 필터와 일치하는 단어가 없습니다.",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "삭제",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "단어를 삭제했습니다.",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "실행 취소",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "저장일:",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "다음 복습:",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "지금 복습",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "출처:",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "복습",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "모두 연습",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "정답 보기",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "다시",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "어려움",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "알맞음",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "쉬움",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "복습 종료",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "지금은 복습할 단어가 없습니다.",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "연습을 마쳤습니다.",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "키보드: 스페이스로 정답 보기, 1–4로 평가.",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "연습 모드 — 복습 일정은 바뀌지 않습니다.",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "내 단어로 돌아가기",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "전체",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "새 단어",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "학습 중",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "복습 중",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "숙달",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "학습 설정",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "하루 새 단어 수",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "안정 후 예상 하루 복습 수:",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "목표 기억률",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — 복습 적게",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — 권장",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — 복습 많이",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "저장한 단어는 자리가 날 때까지 '새 단어'에서 기다리므로 원하는 만큼 저장할 수 있습니다. 숙달한 단어가 자리를 만듭니다.",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "진행 중:",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "오늘의 새 단어를 시작했습니다. 내일 더 시작되며 나머지는 '새 단어'에서 기다립니다.",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "복습을 따라잡을 때까지 새 단어가 일시 중지됩니다.",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "진행 중인 단어가 많아 새 단어가 일시 중지되었습니다. 단어를 숙달하면 자리가 생깁니다.",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "아는 단어",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "이 단어를 압니다",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "아는 단어로 표시됨 — 클릭하면 다시 학습",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "아는 단어를 흐리게 해서 새 단어가 돋보이게",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "이 문장 번역",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Google 번역에서 열기",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "백업 및 가져오기",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "단어는 이 브라우저에만 저장됩니다. 진행 상황을 잃지 않도록 가끔, 그리고 컴퓨터를 바꾸기 전에 백업을 내려받으세요.",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "백업 내려받기",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "파일 가져오기…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "마지막 백업:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "없음",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Teahouse 백업(.json), 저희 CSV 내보내기, Anki 텍스트 내보내기, 티베트어 단어 목록을 가져올 수 있습니다. 이미 저장된 단어는 진행 상황이 유지됩니다.",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "가져오기 완료",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "추가됨:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "업데이트됨:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "이미 저장됨:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "건너뜀:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "이 백업 파일을 읽을 수 없습니다. Teahouse 백업이 맞나요?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "이 파일에서 티베트어 단어를 찾지 못했습니다.",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "도움말 및 의견",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "질문이나 아이디어가 있거나 문제가 있나요? 모든 메시지를 읽습니다.",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "도움말 및 FAQ",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "버그 신고",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "정의 제안",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "개인정보 처리방침",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "버전",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "이 사이트에서 일시 중지",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "일시 중지된 사이트",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "이 사이트에서는 Teahouse가 꺼져 있습니다. 사이트를 일시 중지하려면 해당 사이트에서 확장 프로그램 아이콘을 클릭하세요.",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "일시 중지된 사이트가 없습니다.",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "다시 사용",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Teahouse Tibetan에 오신 것을 환영합니다",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "준비가 끝났습니다. 이제 Teahouse는 티베트어가 있는 모든 웹 페이지에서 작동합니다. 아래 예문으로 사용해 보세요.",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "여기서 사용해 보기",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "단어를 클릭하면 뜻, 와일리 표기, 발음을 볼 수 있습니다.",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "정의에서 ☆를 클릭하면 단어가 저장되고, 이미 아는 단어라면 ✓를 클릭하세요.",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "문장 끝의 །를 클릭하면 문장 전체를 번역할 수 있습니다.",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Teahouse를 가까이 두세요",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Chrome 도구 모음의 퍼즐 아이콘을 클릭한 다음 Teahouse Tibetan 옆의 핀을 클릭하세요. 메뉴에서 사전, 내 단어, 빠른 설정을 열 수 있습니다.",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "다음 단계",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "모든 작업은 내 컴퓨터에서 이루어집니다. 단어는 이 브라우저에만 저장되며, 문장 번역을 선택하지 않는 한 아무것도 전송되지 않습니다.",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

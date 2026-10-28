@@ -1,0 +1,710 @@
+{
+  "extensionName": {
+    "message": "Teahouse チベット語",
+    "description": "Short extension name (toolbar, popup header)"
+  },
+  "extensionFullName": {
+    "message": "Teahouse チベット語：辞書と学習パートナー",
+    "description": "Full extension name shown in the Chrome Web Store and extensions page"
+  },
+  "extensionDescription": {
+    "message": "どのウェブページでもチベット語を読める:単語の分かち書き、即時の定義表示、辞書、間隔反復で復習できる単語帳。",
+    "description": "Extension description"
+  },
+  "settingsTitle": {
+    "message": "Teahouse チベット語",
+    "description": "Options page title"
+  },
+  "settingsIntro": {
+    "message": "チベット語テキストの分割・表示・翻訳の方法を設定します。",
+    "description": "Options page intro"
+  },
+  "popupTitle": {
+    "message": "Teahouse チベット語",
+    "description": "Popup title"
+  },
+  "popupIntro": {
+    "message": "チベット語テキストを単語に分割し、単語をクリックまたはホバーすると意味を表示します。",
+    "description": "Popup intro"
+  },
+  "readingExperience": {
+    "message": "読書設定",
+    "description": "Options section heading"
+  },
+  "readingExperienceHint": {
+    "message": "ページ上でチベット語テキストが検出されたときの動作を設定します。",
+    "description": "Options section hint"
+  },
+  "extensionEnabled": {
+    "message": "拡張機能を有効にする",
+    "description": "Extension enabled toggle label"
+  },
+  "insertSpaces": {
+    "message": "単語の間にスペースを挿入",
+    "description": "Insert spaces toggle label"
+  },
+  "showTranslationsOn": {
+    "message": "翻訳を表示するタイミング",
+    "description": "Tooltip mode select label"
+  },
+  "tooltipModeHover": {
+    "message": "ホバー",
+    "description": "Tooltip mode option"
+  },
+  "tooltipModeClick": {
+    "message": "クリック",
+    "description": "Tooltip mode option"
+  },
+  "showWylie": {
+    "message": "Wylie 転写を表示",
+    "description": "Show Wylie toggle label"
+  },
+  "showPhonetic": {
+    "message": "発音を表示",
+    "description": "Show phonetic toggle label"
+  },
+  "colorByPos": {
+    "message": "品詞ごとに単語を色分け",
+    "description": "Color by POS toggle label"
+  },
+  "colorCoding": {
+    "message": "色分け",
+    "description": "Color coding section heading"
+  },
+  "colorCodingHint": {
+    "message": "品詞ごとに単語を強調表示し、配色テーマを選択します。",
+    "description": "Color coding section hint"
+  },
+  "posColorTheme": {
+    "message": "品詞の配色テーマ",
+    "description": "POS color theme select label"
+  },
+  "posThemeVivid": {
+    "message": "鮮やか",
+    "description": "POS color theme option"
+  },
+  "posThemeSoft": {
+    "message": "控えめ",
+    "description": "POS color theme option"
+  },
+  "posThemeUnderline": {
+    "message": "下線のみ",
+    "description": "POS color theme option"
+  },
+  "linkClickPrompt": {
+    "message": "リンク付きのチベット語単語をクリックしたとき、リンクを開くか翻訳を表示するかを確認する",
+    "description": "Linked Tibetan word click behavior toggle label"
+  },
+  "minTibetanFontSize": {
+    "message": "チベット語の最小フォントサイズ",
+    "description": "Minimum font size label"
+  },
+  "dictionaries": {
+    "message": "辞書",
+    "description": "Dictionaries section heading"
+  },
+  "dictionariesHint": {
+    "message": "有効な辞書がポップアップの結果と単語分割用の語彙を決定します。",
+    "description": "Dictionaries section hint"
+  },
+  "dictionarySources": {
+    "message": "辞書の出典",
+    "description": "Dictionary sources section heading"
+  },
+  "dictionarySourcesNote": {
+    "message": "同梱データは元のライセンスに従います。詳しい帰属表示は同梱の NOTICE ファイルをご覧ください。",
+    "description": "Dictionary sources note"
+  },
+  "settingsSyncMessage": {
+    "message": "設定は自動的に同期されます。",
+    "description": "Status line default"
+  },
+  "settingsSaved": {
+    "message": "Chrome の同期ストレージに保存しました。",
+    "description": "Status line after save"
+  },
+  "loadingDictionaries": {
+    "message": "辞書を読み込み中…",
+    "description": "Loading spinner message"
+  },
+  "loadingDefault": {
+    "message": "読み込み中…",
+    "description": "Generic loading spinner text"
+  },
+  "posUnknown": {
+    "message": "不明",
+    "description": "Part-of-speech label shown when the dictionary has no POS data for the word"
+  },
+  "noEnabledDictionary": {
+    "message": "有効な辞書には、この語の定義がまだありません。",
+    "description": "Tooltip empty state"
+  },
+  "noDefinitionWithPos": {
+    "message": "定義はまだありません — この語は同梱の辞書に含まれていません。",
+    "description": "Tooltip empty state shown when a part-of-speech tag is known but no dictionary definition exists"
+  },
+  "posInferred": {
+    "message": "推定（コーパスに基づく）",
+    "description": "Marker shown next to part-of-speech tags that were inferred from corpus data rather than a dictionary"
+  },
+  "wordParts": {
+    "message": "語の構成要素",
+    "description": "Label above the per-syllable glosses shown when a compound word has no dictionary definition"
+  },
+  "refreshPage": {
+    "message": "ページを更新",
+    "description": "Popup refresh button"
+  },
+  "insertTestText": {
+    "message": "サンプルテキストを挿入",
+    "description": "Popup insert sample Tibetan text button"
+  },
+  "options": {
+    "message": "オプション",
+    "description": "Popup options button"
+  },
+  "brandTibetan": {
+    "message": "བོད་ཡིག་ཇ་ཁང་།",
+    "description": "Tibetan script brand name"
+  },
+  "followLink": {
+    "message": "リンクを開く",
+    "description": "Link chooser follow button"
+  },
+  "showTranslation": {
+    "message": "翻訳を表示",
+    "description": "Link chooser show translation button"
+  },
+  "pageNotReachable": {
+    "message": "このページに接続できません — タブを再読み込みするか、サンプルページを開いてください。",
+    "description": "Popup status when the current page cannot receive messages"
+  },
+  "samplePage": {
+    "message": "サンプルページ",
+    "description": "Popup button to open the bundled demo page"
+  },
+  "definitionsInEnglish": {
+    "message": "現在、語義は英語でのみ提供されています。",
+    "description": "Options note that dictionary definitions are English-only for now"
+  },
+  "loadingAria": {
+    "message": "Teahouse チベット語を読み込み中",
+    "description": "Accessible label for the in-page loading indicator"
+  },
+  "testTextHeading": {
+    "message": "Teahouse チベット語のテストテキスト",
+    "description": "Heading above the sample Tibetan text inserted into a page"
+  },
+  "pos_PROPN": {
+    "message": "固有名詞",
+    "description": "Part-of-speech label shown in the tooltip: proper noun"
+  },
+  "pos_NOUN": {
+    "message": "名詞",
+    "description": "Part-of-speech label shown in the tooltip: noun"
+  },
+  "pos_VERB": {
+    "message": "動詞",
+    "description": "Part-of-speech label shown in the tooltip: verb"
+  },
+  "pos_ADJ": {
+    "message": "形容詞",
+    "description": "Part-of-speech label shown in the tooltip: adjective"
+  },
+  "pos_ADV": {
+    "message": "副詞",
+    "description": "Part-of-speech label shown in the tooltip: adverb"
+  },
+  "pos_PRON": {
+    "message": "代名詞",
+    "description": "Part-of-speech label shown in the tooltip: pronoun"
+  },
+  "pos_DET": {
+    "message": "限定詞",
+    "description": "Part-of-speech label shown in the tooltip: determiner"
+  },
+  "pos_ADP": {
+    "message": "接置詞",
+    "description": "Part-of-speech label shown in the tooltip: adposition (case particle / postposition)"
+  },
+  "pos_PART": {
+    "message": "助詞",
+    "description": "Part-of-speech label shown in the tooltip: particle"
+  },
+  "pos_NUM": {
+    "message": "数詞",
+    "description": "Part-of-speech label shown in the tooltip: number"
+  },
+  "pos_CONJ": {
+    "message": "接続詞",
+    "description": "Part-of-speech label shown in the tooltip: conjunction"
+  },
+  "pos_SCONJ": {
+    "message": "従属接続詞",
+    "description": "Part-of-speech label shown in the tooltip: subordinating conjunction"
+  },
+  "pos_INTJ": {
+    "message": "間投詞",
+    "description": "Part-of-speech label shown in the tooltip: interjection"
+  },
+  "pos_PUNCT": {
+    "message": "句読点",
+    "description": "Part-of-speech label shown in the tooltip: punctuation"
+  },
+  "pos_AUX": {
+    "message": "助動詞",
+    "description": "Part-of-speech label shown in the tooltip: auxiliary verb"
+  },
+  "pos_OTHER": {
+    "message": "その他",
+    "description": "Part-of-speech label shown in the tooltip: other"
+  },
+  "pos_X": {
+    "message": "不明",
+    "description": "Part-of-speech label shown in the tooltip: unknown"
+  },
+  "dictDesc_botok_core": {
+    "message": "botok-data の基本チベット語単語分割辞書（約 31,000 語）。",
+    "description": "Options page description of the Botok core wordlist"
+  },
+  "dictDesc_hopkins": {
+    "message": "Jeffrey Hopkins によるチベット語–英語辞典（約 18,000 語）。",
+    "description": "Options page description of the Hopkins dictionary"
+  },
+  "dictDesc_84000": {
+    "message": "84000: Translating the Words of the Buddha の用語集（約 25,000 語）。",
+    "description": "Options page description of the 84000 glossary"
+  },
+  "dictDesc_curated": {
+    "message": "同梱の辞書にない複合語やよく使われる語のために、Teahouse が手作業で編集した項目。",
+    "description": "Options page description of the curated Teahouse entries"
+  },
+  "dictionaryButton": {
+    "message": "辞書",
+    "description": "Popup button that opens the dictionary page"
+  },
+  "dictionaryPageTitle": {
+    "message": "Teahouse チベット語辞書",
+    "description": "Browser tab title of the dictionary page"
+  },
+  "dictionaryHeading": {
+    "message": "辞書",
+    "description": "Main heading of the dictionary page"
+  },
+  "dictionaryIntro": {
+    "message": "チベット文字、ワイリー方式、または英語で単語を調べます。",
+    "description": "Short explanation under the dictionary heading"
+  },
+  "dictionarySearchLabel": {
+    "message": "辞書を検索",
+    "description": "Accessible label for the dictionary search box"
+  },
+  "dictionaryResultsTibetan": {
+    "message": "チベット語の単語",
+    "description": "Heading above results for a Tibetan-script search"
+  },
+  "dictionaryResultsWylie": {
+    "message": "ワイリー方式から変換したチベット語の単語",
+    "description": "Heading above Tibetan results found by converting the Wylie input; followed by the converted Tibetan"
+  },
+  "dictionaryResultsEnglish": {
+    "message": "英語の意味",
+    "description": "Heading above words whose English definitions match the search"
+  },
+  "dictionaryNoResults": {
+    "message": "見つかりませんでした。別の綴り、少ない音節、またはワイリー方式をお試しください。",
+    "description": "Shown when a dictionary search finds nothing"
+  },
+  "dictionaryEmpty": {
+    "message": "単語を入力して調べてください。",
+    "description": "Shown when the dictionary search box is empty"
+  },
+  "dictionaryLoadError": {
+    "message": "辞書を読み込めませんでした。ページを再読み込みしてもう一度お試しください。",
+    "description": "Shown when the dictionary data fails to load"
+  },
+  "dictionaryLookUpWord": {
+    "message": "この単語を調べる",
+    "description": "Tooltip on a headword button that searches for that word"
+  },
+  "saveWord": {
+    "message": "単語帳に保存",
+    "description": "Label of the star button that saves a word to the user's word list"
+  },
+  "savedWord": {
+    "message": "単語帳に保存済み — クリックで削除",
+    "description": "Label of the filled star button on a word that is already saved"
+  },
+  "myWordsButton": {
+    "message": "単語帳",
+    "description": "Button/link that opens the saved word list"
+  },
+  "wordsDueBadgeTitle": {
+    "message": "復習予定の単語",
+    "description": "Tooltip on the popup badge showing how many saved words are due for review"
+  },
+  "wordsPageTitle": {
+    "message": "単語帳 — Teahouse チベット語",
+    "description": "Browser tab title of the saved word list page"
+  },
+  "wordsHeading": {
+    "message": "単語帳",
+    "description": "Main heading of the saved word list page"
+  },
+  "wordsIntro": {
+    "message": "読書中や辞書で星を付けた単語です。",
+    "description": "Short explanation under the word list heading"
+  },
+  "wordsFilterLabel": {
+    "message": "単語帳を絞り込む",
+    "description": "Label and placeholder of the box that filters saved words"
+  },
+  "wordsSort": {
+    "message": "並べ替え",
+    "description": "Label before the sort-order menu"
+  },
+  "wordsSortNewest": {
+    "message": "新しい順",
+    "description": "Sort option: most recently saved first"
+  },
+  "wordsSortOldest": {
+    "message": "古い順",
+    "description": "Sort option: earliest saved first"
+  },
+  "wordsSortDue": {
+    "message": "次の復習順",
+    "description": "Sort option: words due for review soonest first"
+  },
+  "wordsExport": {
+    "message": "CSV を書き出す",
+    "description": "Button that downloads the word list as a CSV file"
+  },
+  "wordsCount": {
+    "message": "保存した単語：",
+    "description": "Label before the number of saved words; followed by the number"
+  },
+  "wordsEmpty": {
+    "message": "まだ保存した単語はありません。単語のポップアップや辞書で ☆ をクリックすると、ここに保存されます。",
+    "description": "Shown when no words have been saved yet"
+  },
+  "wordsNoMatches": {
+    "message": "この条件に一致する単語はありません。",
+    "description": "Shown when the filter matches no saved words"
+  },
+  "wordsRemove": {
+    "message": "削除",
+    "description": "Label of the button that removes a word from the list"
+  },
+  "wordsRemoved": {
+    "message": "単語を削除しました。",
+    "description": "Status message after removing a word; followed by an Undo button"
+  },
+  "wordsUndo": {
+    "message": "元に戻す",
+    "description": "Button that restores the word just removed"
+  },
+  "wordsSavedOn": {
+    "message": "保存日：",
+    "description": "Label before the date a word was saved; followed by the date"
+  },
+  "wordsNextReview": {
+    "message": "次の復習：",
+    "description": "Label before the next review date; followed by a date or 'due now'"
+  },
+  "wordsDueNow": {
+    "message": "今すぐ復習",
+    "description": "Shown instead of a date when a word is due for review now"
+  },
+  "wordsFrom": {
+    "message": "出典：",
+    "description": "Label before a link to the page where the word was saved"
+  },
+  "wordsReview": {
+    "message": "復習",
+    "description": "Button that starts reviewing due words; followed by the number due in parentheses"
+  },
+  "wordsPractice": {
+    "message": "すべて練習",
+    "description": "Button that starts a practice round over all words when none are due"
+  },
+  "reviewShowAnswer": {
+    "message": "答えを表示",
+    "description": "Flashcard button that reveals the meaning"
+  },
+  "reviewAgain": {
+    "message": "もう一度",
+    "description": "Flashcard grade: forgot the word, show it again soon"
+  },
+  "reviewHard": {
+    "message": "難しい",
+    "description": "Flashcard grade: remembered with difficulty"
+  },
+  "reviewGood": {
+    "message": "正解",
+    "description": "Flashcard grade: remembered"
+  },
+  "reviewEasy": {
+    "message": "簡単",
+    "description": "Flashcard grade: remembered easily"
+  },
+  "reviewEnd": {
+    "message": "復習を終了",
+    "description": "Link that leaves the flashcard review"
+  },
+  "reviewDone": {
+    "message": "今のところ復習はすべて完了です。",
+    "description": "Shown when all due words have been reviewed"
+  },
+  "reviewPracticeDone": {
+    "message": "練習ラウンド完了。",
+    "description": "Shown at the end of a practice round"
+  },
+  "reviewKeyboardHint": {
+    "message": "キーボード：スペースで答えを表示、1〜4 で評価。",
+    "description": "Keyboard shortcut hint under the flashcards"
+  },
+  "reviewPracticeNote": {
+    "message": "練習モード — 復習スケジュールは変わりません。",
+    "description": "Note shown during a practice round"
+  },
+  "reviewBack": {
+    "message": "単語帳に戻る",
+    "description": "Button that returns from the finished review to the word list"
+  },
+  "stageAll": {
+    "message": "すべて",
+    "description": "Filter showing saved words in every stage"
+  },
+  "stageNew": {
+    "message": "新規",
+    "description": "Stage: saved but not yet studied"
+  },
+  "stageLearning": {
+    "message": "学習中",
+    "description": "Stage: being learned in short steps"
+  },
+  "stageReviewing": {
+    "message": "復習中",
+    "description": "Stage: in regular review, interval under three weeks"
+  },
+  "stageMastered": {
+    "message": "習得済み",
+    "description": "Stage: review interval of three weeks or more"
+  },
+  "studySettings": {
+    "message": "学習設定",
+    "description": "Heading of the collapsible study settings panel"
+  },
+  "newWordsPerDay": {
+    "message": "1 日の新しい単語数",
+    "description": "Setting: how many new words start review each day"
+  },
+  "workloadEstimate": {
+    "message": "安定後の 1 日の復習数（目安）：",
+    "description": "Label before the estimated number of daily reviews"
+  },
+  "targetRetention": {
+    "message": "目標記憶率",
+    "description": "Setting: how likely the user should be to remember a word at review time"
+  },
+  "retention85": {
+    "message": "85% — 復習が少なめ",
+    "description": "Target memory option: 85%"
+  },
+  "retention90": {
+    "message": "90% — おすすめ",
+    "description": "Target memory option: 90% (default)"
+  },
+  "retention95": {
+    "message": "95% — 復習が多め",
+    "description": "Target memory option: 95%"
+  },
+  "newWordsHint": {
+    "message": "保存した単語は空きができるまで「新規」で待つので、いくつでも保存できます。習得した単語が空きを作ります。",
+    "description": "Explains that saving is unlimited and new words start when there is room"
+  },
+  "inProgress": {
+    "message": "進行中：",
+    "description": "Label before the count of words in progress and its limit"
+  },
+  "limitDaily": {
+    "message": "今日の新しい単語を始めました。明日また始まります。残りは「新規」で待機中です。",
+    "description": "Shown when today's new words have all started"
+  },
+  "limitBacklog": {
+    "message": "復習が追いつくまで新しい単語は一時停止中です。",
+    "description": "Shown when new words pause because many reviews are waiting"
+  },
+  "limitActive": {
+    "message": "進行中の単語が多いため、新しい単語は一時停止中です。単語を習得すると空きができます。",
+    "description": "Shown when new words pause because many words are still in progress"
+  },
+  "stageKnown": {
+    "message": "既知",
+    "description": "Stage: the user marked the word as already known"
+  },
+  "markKnown": {
+    "message": "この単語は知っている",
+    "description": "Label of the check-mark button that marks a word as known"
+  },
+  "unmarkKnown": {
+    "message": "既知としてマーク済み — クリックで再び学習",
+    "description": "Label of the pressed check-mark button on a known word"
+  },
+  "highlightKnowledge": {
+    "message": "知っている単語を目立たなくして、新しい単語を際立たせる",
+    "description": "Setting: show known words as plain text so unknown words stand out"
+  },
+  "translateSentence": {
+    "message": "この文を翻訳",
+    "description": "Label/tooltip on a sentence-ending mark (shad) that offers translating the sentence"
+  },
+  "openInGoogleTranslate": {
+    "message": "Google 翻訳で開く",
+    "description": "Link that opens the sentence in Google Translate in a new tab"
+  },
+  "backupHeading": {
+    "message": "バックアップとインポート",
+    "description": "Heading of the My words panel for backups and importing"
+  },
+  "backupIntro": {
+    "message": "単語はこのブラウザーにのみ保存されます。進捗を失わないよう、ときどき、またパソコンを替える前にバックアップをダウンロードしてください。",
+    "description": "Explains why to download backups of saved words"
+  },
+  "backupDownload": {
+    "message": "バックアップをダウンロード",
+    "description": "Button: download a JSON backup of saved words"
+  },
+  "importButton": {
+    "message": "ファイルをインポート…",
+    "description": "Button: choose a file of words to import"
+  },
+  "backupLast": {
+    "message": "前回のバックアップ:",
+    "description": "Label before the date of the last backup"
+  },
+  "backupNever": {
+    "message": "なし",
+    "description": "Shown instead of a date when no backup has been made"
+  },
+  "importHint": {
+    "message": "Teahouse のバックアップ (.json)、当拡張機能の CSV、Anki のテキスト書き出し、チベット語の単語リストをインポートできます。保存済みの単語の進捗はそのまま残ります。",
+    "description": "Explains which files can be imported"
+  },
+  "importDone": {
+    "message": "インポート完了",
+    "description": "Status after an import finishes; followed by counts"
+  },
+  "importAdded": {
+    "message": "追加:",
+    "description": "Import count label: newly added words"
+  },
+  "importUpdated": {
+    "message": "更新:",
+    "description": "Import count label: existing words updated"
+  },
+  "importUnchanged": {
+    "message": "保存済み:",
+    "description": "Import count label: words already saved, unchanged"
+  },
+  "importSkipped": {
+    "message": "スキップ:",
+    "description": "Import count label: rows that were not valid Tibetan words"
+  },
+  "importInvalid": {
+    "message": "このバックアップファイルを読み込めませんでした。Teahouse のバックアップですか?",
+    "description": "Error: the backup file could not be read"
+  },
+  "importNoWords": {
+    "message": "このファイルにチベット語の単語が見つかりませんでした。",
+    "description": "Error: no Tibetan words found in the chosen file"
+  },
+  "helpHeading": {
+    "message": "ヘルプとフィードバック",
+    "description": "Heading/link: help and feedback section"
+  },
+  "helpIntro": {
+    "message": "質問やご意見、不具合などがあればお知らせください。すべてのメッセージに目を通しています。",
+    "description": "Intro under the Help & feedback heading in Options"
+  },
+  "helpLink": {
+    "message": "ヘルプとよくある質問",
+    "description": "Link to the help and FAQ page on the website"
+  },
+  "reportBug": {
+    "message": "不具合を報告",
+    "description": "Link to the bug report form"
+  },
+  "suggestDefinition": {
+    "message": "定義を提案",
+    "description": "Link to the form for suggesting a dictionary definition"
+  },
+  "privacyPolicy": {
+    "message": "プライバシーポリシー",
+    "description": "Link to the privacy policy"
+  },
+  "versionLabel": {
+    "message": "バージョン",
+    "description": "Label before the extension version number"
+  },
+  "pauseOnSite": {
+    "message": "このサイトで一時停止",
+    "description": "Popup switch: turn the extension off on the current website"
+  },
+  "pausedSitesHeading": {
+    "message": "一時停止中のサイト",
+    "description": "Options heading: list of websites where the extension is paused"
+  },
+  "pausedSitesHint": {
+    "message": "これらのサイトでは Teahouse はオフのままです。サイトを一時停止するには、そのサイトを開いた状態で拡張機能のアイコンをクリックします。",
+    "description": "Explains the paused sites list and how to pause a site"
+  },
+  "pausedSitesEmpty": {
+    "message": "一時停止中のサイトはありません。",
+    "description": "Shown when no sites are paused"
+  },
+  "resumeSite": {
+    "message": "再開",
+    "description": "Button: turn the extension back on for this site"
+  },
+  "welcomeTitle": {
+    "message": "Teahouse Tibetan へようこそ",
+    "description": "Title of the page shown after installing"
+  },
+  "welcomeIntro": {
+    "message": "準備ができました。Teahouse はチベット語を含むすべてのウェブページで動作します。下の例文で試してみましょう。",
+    "description": "Welcome page intro"
+  },
+  "welcomeTryHeading": {
+    "message": "ここで試す",
+    "description": "Welcome page: heading above the sample text"
+  },
+  "welcomeStepWord": {
+    "message": "単語をクリックすると、意味・ワイリー転写・発音が表示されます。",
+    "description": "Welcome step: click a word"
+  },
+  "welcomeStepSave": {
+    "message": "定義の ☆ をクリックすると単語を保存、知っている単語なら ✓ をクリックします。",
+    "description": "Welcome step: save or mark a word as known (keep the ☆ and ✓ symbols)"
+  },
+  "welcomeStepSentence": {
+    "message": "文末の ། をクリックすると、文全体を翻訳できます。",
+    "description": "Welcome step: translate a sentence (keep the ། symbol)"
+  },
+  "welcomePinHeading": {
+    "message": "Teahouse をすぐ使えるように",
+    "description": "Welcome page: heading for pinning the extension"
+  },
+  "welcomePinText": {
+    "message": "Chrome のツールバーにあるパズルのアイコンをクリックし、Teahouse Tibetan の横のピンをクリックします。メニューから辞書、保存した単語、クイック設定を開けます。",
+    "description": "Welcome page: how to pin the extension to the toolbar"
+  },
+  "welcomeNextHeading": {
+    "message": "次のステップ",
+    "description": "Welcome page: heading above links to other pages"
+  },
+  "welcomePrivacy": {
+    "message": "すべてお使いのパソコン上で動作します。単語はこのブラウザーに保存され、文の翻訳を選ばない限り、何も送信されません。",
+    "description": "Welcome page: privacy reassurance"
+  }
+}

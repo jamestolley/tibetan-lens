@@ -3,75 +3,164 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tibetan Page Tools Settings</title>
+    <title data-i18n="settingsTitle">Teahouse Tibetan</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <main class="options-shell">
       <header class="hero">
-        <p class="eyebrow">Tibetan Page Tools</p>
-        <h1>Extension settings</h1>
-        <p class="intro">
-          This repo holds the browser-facing layer. The future Botok JS port can plug into the
-          tokenizer boundary later without changing popup, options, tooltip, or DOM behaviors.
+        <p class="eyebrow" data-i18n="extensionName">Teahouse Tibetan</p>
+        <h1><span data-i18n="extensionName">Teahouse Tibetan</span> <span lang="bo">བོད་ཡིག་ཇ་ཁང་།</span></h1>
+        <p class="intro" data-i18n="settingsIntro">
+          Control how Tibetan text is segmented, displayed, and translated.
         </p>
       </header>
 
       <section class="panel">
         <div class="panel-head">
-          <h2>Reading experience</h2>
-          <p>Control what happens when Tibetan text is detected on a page.</p>
+          <h2 data-i18n="readingExperience">Reading experience</h2>
+          <p data-i18n="readingExperienceHint">Control what happens when Tibetan text is detected on a page.</p>
         </div>
 
         <div class="settings-grid">
           <label class="toggle-row" for="extensionEnabled">
-            <span>Extension enabled</span>
+            <span data-i18n="extensionEnabled">Extension enabled</span>
             <input id="extensionEnabled" type="checkbox" />
           </label>
 
           <label class="toggle-row" for="insertSpaces">
-            <span>Insert spaces between tokens</span>
+            <span data-i18n="insertSpaces">Insert spaces between tokens</span>
             <input id="insertSpaces" type="checkbox" />
           </label>
 
-          <label class="toggle-row" for="showTooltips">
-            <span>Show click-to-open popups</span>
-            <input id="showTooltips" type="checkbox" />
+          <label class="field" for="tooltipMode">
+            <span data-i18n="showTranslationsOn">Show translations on</span>
+            <select id="tooltipMode">
+              <option value="hover" data-i18n="tooltipModeHover">Hover</option>
+              <option value="click" data-i18n="tooltipModeClick">Click</option>
+            </select>
           </label>
 
-          <label class="field" for="targetLanguage">
-            <span>Translation language</span>
-            <select id="targetLanguage"></select>
+          <label class="toggle-row" for="showWylie">
+            <span data-i18n="showWylie">Show Wylie</span>
+            <input id="showWylie" type="checkbox" />
+          </label>
+
+          <label class="toggle-row" for="linkClickPrompt">
+            <span data-i18n="linkClickPrompt">When clicking a linked Tibetan word, ask: follow link or show translation</span>
+            <input id="linkClickPrompt" type="checkbox" />
+          </label>
+
+          <label class="toggle-row" for="highlightKnowledge">
+            <span data-i18n="highlightKnowledge">Fade words I know, so new words stand out</span>
+            <input id="highlightKnowledge" type="checkbox" />
+          </label>
+
+          <label class="toggle-row" for="showPhonetic">
+            <span data-i18n="showPhonetic">Show phonetic</span>
+            <input id="showPhonetic" type="checkbox" />
+          </label>
+
+          <label class="field" for="minTibetanFontSize">
+            <span data-i18n="minTibetanFontSize">Minimum Tibetan font size</span>
+            <input id="minTibetanFontSize" type="number" min="10" max="72" value="16" />
           </label>
         </div>
       </section>
 
       <section class="panel">
         <div class="panel-head">
-          <h2>Dictionaries</h2>
-          <p>Enabled dictionaries drive both tooltip results and the mock lexicon tokenizer.</p>
+          <h2 data-i18n="colorCoding">Color coding</h2>
+          <p data-i18n="colorCodingHint">Highlight words by part of speech and choose a color theme.</p>
+        </div>
+
+        <div class="settings-grid">
+          <label class="toggle-row" for="colorByPos">
+            <span data-i18n="colorByPos">Color words by part of speech</span>
+            <input id="colorByPos" type="checkbox" />
+          </label>
+
+          <label class="field" for="posColorTheme">
+            <span data-i18n="posColorTheme">Part-of-speech color theme</span>
+            <select id="posColorTheme">
+              <option value="vivid" data-i18n="posThemeVivid">Vivid</option>
+              <option value="soft" data-i18n="posThemeSoft">Soft</option>
+              <option value="underline" data-i18n="posThemeUnderline">Underline only</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="dictionaries">Dictionaries</h2>
+          <p data-i18n="dictionariesHint">Enabled dictionaries drive tooltip results and the tokenizer lexicon.</p>
+          <p data-i18n="definitionsInEnglish">Definitions are currently available in English only.</p>
         </div>
 
         <div id="dictionaryList" class="dictionary-list"></div>
-        <p id="statusLine" class="status-line">Settings sync automatically.</p>
+        <p id="statusLine" class="status-line" data-i18n="settingsSyncMessage">Settings sync automatically.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2 data-i18n="pausedSitesHeading">Paused sites</h2>
+          <p data-i18n="pausedSitesHint">Teahouse stays off on these sites. To pause a site, click the extension icon while you're on it.</p>
+        </div>
+        <ul id="pausedSitesList" class="paused-sites"></ul>
       </section>
 
       <section class="panel panel-note">
         <div class="panel-head">
-          <h2>Botok JS handoff</h2>
+          <h2 data-i18n="dictionarySources">Dictionary sources</h2>
+          <p data-i18n="dictionarySourcesNote">Bundled data remains under its original license. See the included NOTICE file for full attribution.</p>
         </div>
-        <p>
-          The current tokenizer is intentionally small and local. Once the separate GitHub repo is
-          ready, replace the implementation behind the tokenizer boundary and keep the rest of this
-          extension unchanged.
-        </p>
+
+        <ul class="source-list">
+          <li>
+            <strong>Botok wordlists</strong>
+            <span>Esukhia / OpenPecha — <a href="https://github.com/Esukhia/botok-data" target="_blank" rel="noopener">CC-BY 4.0</a></span>
+          </li>
+          <li>
+            <strong>84000 glossary</strong>
+            <span>84000: Translating the Words of the Buddha — <a href="https://read.84000.co/glossary/downloads.html" target="_blank" rel="noopener">CC BY 4.0</a></span>
+          </li>
+          <li>
+            <strong>Hopkins dictionary</strong>
+            <span>Jeffrey Hopkins / Dharma Drum Buddhist College — <a href="https://glossaries.dila.edu.tw/data/hopkins.dila.pdf" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
+          </li>
+          <li>
+            <strong>ACTib POS lexicon</strong>
+            <span>Annotated Corpus of Classical Tibetan / Esukhia bo-pos — <a href="https://doi.org/10.5281/zenodo.822537" target="_blank" rel="noopener">CC BY 4.0</a></span>
+          </li>
+          <li>
+            <strong>SOAS POS lexicon</strong>
+            <span>SOAS POS-tagged corpus of Classical Tibetan / Esukhia bo-pos — <a href="https://doi.org/10.5281/zenodo.574878" target="_blank" rel="noopener">CC BY 4.0</a></span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel panel-note">
+        <div class="panel-head">
+          <h2 data-i18n="helpHeading">Help &amp; feedback</h2>
+          <p data-i18n="helpIntro">Questions, ideas or something not working? We read every message.</p>
+        </div>
+        <ul class="help-links">
+          <li><a href="https://tibetan.teahouselanguages.com/support.html" target="_blank" rel="noopener" data-i18n="helpLink">Help &amp; FAQ</a></li>
+          <li><a href="https://tibetan.teahouselanguages.com/support.html#bug" target="_blank" rel="noopener" data-i18n="reportBug">Report a bug</a></li>
+          <li><a href="https://tibetan.teahouselanguages.com/support.html#definition" target="_blank" rel="noopener" data-i18n="suggestDefinition">Suggest a definition</a></li>
+          <li><a href="https://tibetan.teahouselanguages.com/privacy.html" target="_blank" rel="noopener" data-i18n="privacyPolicy">Privacy policy</a></li>
+          <li><a href="mailto:support@teahouselanguages.com">support@teahouselanguages.com</a></li>
+        </ul>
+        <p class="status-line"><span data-i18n="versionLabel">Version</span> <span id="extensionVersion"></span></p>
       </section>
     </main>
 
     <script src="../shared/constants.js"></script>
+    <script src="../shared/i18n.js"></script>
     <script src="../shared/defaults.js"></script>
     <script src="../shared/storage.js"></script>
-    <script src="../core/mockDictionary.js"></script>
+    <script src="../core/botokPackManifest.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
